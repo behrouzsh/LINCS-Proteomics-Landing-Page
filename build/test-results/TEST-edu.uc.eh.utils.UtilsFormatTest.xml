@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="edu.uc.eh.utils.UtilsFormatTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-12-09T20:45:58" hostname="behrouz-Inspiron-N5110" time="0.023">
+  <properties/>
+  <testcase name="testModificationToCharDouble" classname="edu.uc.eh.utils.UtilsFormatTest" time="0.023"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
