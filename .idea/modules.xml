@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LINCS-Proteomics-Landing-Page.iml" filepath="$PROJECT_DIR$/.idea/modules/LINCS-Proteomics-Landing-Page.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LINCS-Proteomics-Landing-Page_main.iml" filepath="$PROJECT_DIR$/.idea/modules/LINCS-Proteomics-Landing-Page_main.iml" group="LINCS-Proteomics-Landing-Page" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LINCS-Proteomics-Landing-Page_test.iml" filepath="$PROJECT_DIR$/.idea/modules/LINCS-Proteomics-Landing-Page_test.iml" group="LINCS-Proteomics-Landing-Page" />
+    </modules>
+  </component>
+</project>

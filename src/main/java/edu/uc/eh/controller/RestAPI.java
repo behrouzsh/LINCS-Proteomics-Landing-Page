@@ -1,7 +1,9 @@
 package edu.uc.eh.controller;
 
-import edu.uc.eh.service.*;
-import edu.uc.eh.structures.StringDoubleStringList;
+import edu.uc.eh.service.KinaseService;
+import edu.uc.eh.service.PCGService;
+import edu.uc.eh.service.PilincsApiAssayService;
+import edu.uc.eh.service.PilincsApiGetService;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.slf4j.Logger;
@@ -14,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 //import org.json.JSONObject;
 
@@ -36,70 +37,41 @@ public class RestAPI {
     private static final Logger log = LoggerFactory.getLogger(RestAPI.class);
     //private static final Logger log2 = LoggerFactory.getLogger(UniprotService.class);
 
-    private final PrositeService prositeService;
-    private final PsiModService psiModService;
-    private final UniprotService uniprotService;
-    private final EnrichrService enrichrService;
-    private final ShorthandService shorthandService;
+
     private final PCGService pcgService;
     private final KinaseService kinaseService;
-
-//    @Value("${resources.pathway}")
-//    String pathWay;
-
+    private final PilincsApiGetService pilincsApiGetService;
+    private final PilincsApiAssayService pilincsApiAssayService;
 
     @Autowired
-    public RestAPI(PrositeService prositeService, PsiModService psiModService, UniprotService uniprotService, EnrichrService enrichrService, PCGService pcgService, KinaseService kinaseService, ShorthandService shorthandService) {
+    public RestAPI(PCGService pcgService, KinaseService kinaseService, PilincsApiGetService pilincsApiGetService, PilincsApiAssayService pilincsApiAssayService) {
 
-        this.prositeService = prositeService;
-        this.psiModService = psiModService;
-        this.uniprotService = uniprotService;
-        this.enrichrService = enrichrService;
-        this.shorthandService = shorthandService;
+        this.pilincsApiGetService = pilincsApiGetService;
+        this.pilincsApiAssayService = pilincsApiAssayService;
         this.pcgService = pcgService;
         this.kinaseService = kinaseService;
     }
 
-//    @RequestMapping(value = "api/shorthand.html", method = RequestMethod.GET)
-//    public
-//    @ResponseBody
-//    String getFromUniprot(@PathVariable String protein) {
-//        log.info(String.format("Get the protein information from uniprot with argument: %s", protein));
-//
-//        return uniprotService.getTable(protein);
-//    }
 
-
-
-
-
-    @RequestMapping(value = "api/uniprot/{protein}", method = RequestMethod.GET)
+    @RequestMapping(value = "api/pilincs/", method = RequestMethod.GET)
     public
     @ResponseBody
-    JSONObject getFromUniprot(@PathVariable String protein) {
-        log.info(String.format("Get the protein information from uniprot with argument: %s", protein));
+    JSONArray getApiFromPilincs() {
+        log.info("Get the perturbagen and cell line information from pilincs");
 
-        return uniprotService.getTable(protein);
+        return pilincsApiGetService.getPilincsmetaData();
     }
 
-    @RequestMapping(value = "api/prosite/{peptide}", method = RequestMethod.GET)
+    @RequestMapping(value = "api/pilincs/perturb/{perturb}", method = RequestMethod.GET)
     public
     @ResponseBody
-    String getFromProsite(@PathVariable String peptide) {
-        //log.info(String.format("Run convertToPLN with argument: %s", peptide));
+    JSONArray getApiFromPilincs(@PathVariable String perturb) {
+        log.info("Get the perturbagen data information from pilincs");
 
-        return prositeService.getTable(peptide);
+        return pilincsApiAssayService.getPilincsPerturbData(perturb);
     }
 
 
-    @RequestMapping(value = "api/psimod/{modification:.+}", method = RequestMethod.GET)
-    public
-    @ResponseBody
-    StringDoubleStringList getFromPsiMod(@PathVariable("modification") String modification) {
-        log.info(String.format("Get modification from api/psimod identifier: %s", modification));
-        //log.info(String.format("==== %s ======", modification));
-        return psiModService.getIdentifier(modification, 1.0);
-    }
 
     @RequestMapping(value = "api/pcg/checkgenes/{geneList}", method = RequestMethod.GET)
     public
@@ -125,47 +97,6 @@ public class RestAPI {
         return pcgService.getTable(genePositions);
     }
 
-
-
-
-    @RequestMapping(value = "api/pathway/genes/{geneList}", method = RequestMethod.GET)
-    public
-    @ResponseBody
-    JSONObject getFromEnrichr(@PathVariable String[] geneList) {
-        //log.info(String.format("Run pathway analysis with argument: %s ", library));
-//        String[] geneList =
-//        String[] geneListSplit = geneList.split(",");
-        JSONObject geneListInfo = new JSONObject();
-
-        System.out.println(Arrays.toString(geneList));
-        for (int i = 0; i < geneList.length; i++) {
-            System.out.println(geneList[i]);
-            geneListInfo.put(geneList[i].replaceAll("[^a-zA-Z0-9\\s]", ""), enrichrService.getGeneInfo(geneList[i].replaceAll("[^a-zA-Z0-9\\s]", "")));
-        }
-
-        return geneListInfo;
-    }
-
-    @RequestMapping(value = "api/network/genes/{geneList}", method = RequestMethod.GET)
-    public
-    @ResponseBody
-    JSONObject computeNetworkFromEnrichr(@PathVariable String[] geneList) {
-        //log.info(String.format("Run pathway analysis with argument: %s ", library));
-//        String[] geneList =
-//        String[] geneListSplit = geneList.split(",");
-        JSONObject networkInput = new JSONObject();
-        JSONObject network = new JSONObject();
-
-        networkInput = getFromEnrichr(geneList);
-        network = enrichrService.computeNetwork(networkInput);
-//        System.out.println(Arrays.toString(geneList));
-//        for (int i = 0; i < geneList.length; i++) {
-//            System.out.println(geneList[i]);
-//            geneListinfo.put(geneList[i].replaceAll("[^a-zA-Z0-9\\s]", ""), enrichrService.getGeneInfo(geneList[i].replaceAll("[^a-zA-Z0-9\\s]", "")));
-//        }
-
-        return network;
-    }
 
     @RequestMapping(value = "api/kinase/genes/{geneList}", method = RequestMethod.GET)
     public
