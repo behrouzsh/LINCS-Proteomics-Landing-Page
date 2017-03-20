@@ -347,6 +347,18 @@ rect {                                                      /* NEW */
     vertical-align: middle;
     /*background-color: #d6f1f9; !*Optional*!*/
 }
+
+.vcenter {
+
+    vertical-align: middle;
+
+}
+.vertical-align {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
 /*.imageContainer {*/
     /*width:200px;*/
     /*height:200px;*/

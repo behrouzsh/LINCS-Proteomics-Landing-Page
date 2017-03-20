@@ -1,14 +1,24 @@
 <br/>
-<br/>
+<div class="well" >
+    <div class="row vertical-align">
+        <div class="col-sm-4 vcenter" >
+            <img src="images/lens4.png"  align="left" width=35% >
+        </div>
+
+        <div class="col-sm-8 vcenter" >
+            <h3 style="height:1.5em;"> Data View of LINCS Proteomics P100 Assay</h3>
+        </div>
+    </div>
+</div>
 
 <div class="container" ng-init="initNetworkApi()">
     <!--<div class="container" ng-init="initNetworkApi()">-->
     <!--<div >-->
-    <h3> Data View of LINCS Proteomics P100 Assay</h3>
-    <hr/>
+    <!--<h3> Data View of LINCS Proteomics P100 Assay</h3>-->
+    <!--<hr/>-->
     <br/>
     <div class="bs-docs-section" >
-    <!--<div class="bs-docs-section" ng-controller="TypeaheadDemoCtrl">-->
+        <!--<div class="bs-docs-section" ng-controller="TypeaheadDemoCtrl">-->
 
         <div class="bs-example" style="padding-bottom: 24px;" append-source>
             <form class="form-inline" role="form">
@@ -18,11 +28,11 @@
                 </div>
 
                 <div style="float:right; padding-bottom: 20px;">
-                    <a ng-href="http://www.ilincs.org/apps/precomputed/heatmap/?data_set=LDG-1193" target="_blank" style="color: #337AB7;"
-                       class="btn btn-default">View Heatmap in iLINCS</a>
+                    <a ng-href="http://eh3.uc.edu/pilincs/#/technical-profiles" target="_blank" style="color: #337AB7;"
+                       class="btn btn-default">Data view for P100 and GCP assays in PiLINCS</a>
                     <!--&nbsp;-->
                     <!--<a ng-href="#export/2" style="color: #337AB7;"-->
-                       <!--class="btn btn-default">Export</a>-->
+                    <!--class="btn btn-default">Export</a>-->
                 </div>
 
 
@@ -31,7 +41,10 @@
 
             </form>
         </div>
-        <h3>{{ctrl.selectedPerturbation}}</h3>
+        <div ng-show="ctrl.showSVG && ctrl.showTable">
+        Sample annotation for the selected perturbagen: <strong>{{ctrl.selectedPerturbation}}</strong>
+        </div>
+        <br/>
 
 
 
@@ -93,23 +106,47 @@
         </table>
     </div>
 
-    <br/>
-
-    <br/>
-
-
-
-    <div class="container" ng-show = "ctrl.showSVG">
+    <div class="container" ng-show = "ctrl.showSVG && ctrl.showTable">
         <br/>
-        <br/>
+        <div class="bs-docs-section" >
+            <!--<div class="bs-docs-section" ng-controller="TypeaheadDemoCtrl">-->
+
+            <div class="bs-example"  append-source>
+                <form class="form-inline" role="form">
+                    <div class="form-group">
+                        <h4>
+                            The heatmap data is generated from the average values of all of the similar samples.
+                        </h4>
+
+                    </div>
+
+                    <div style="float:right; padding-bottom: 20px;">
+                        <a ng-href="http://www.ilincs.org/apps/precomputed/heatmap/?data_set=LDG-1193" target="_blank" style="color: #337AB7;"
+                           class="btn btn-default">View Heatmap in iLINCS</a>
+                        <!--&nbsp;-->
+                        <!--<a ng-href="#export/2" style="color: #337AB7;"-->
+                        <!--class="btn btn-default">Export</a>-->
+                    </div>
 
 
-        <!--<button>-->
-            <!--<a id="download2" href="#">Download SVG-->
-            <!--</a>-->
-        <!--</button>-->
-        <!--<br/>-->
-        <!--<br/>-->
+                </form>
+            </div>
+        <hr/>
+        <div class="container">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <strong>Peptide / Protein / gene</strong>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <strong>-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; experiments</strong>
+
+        </div>
+
+
+
         <div id="chart"></div>
 
     </div>

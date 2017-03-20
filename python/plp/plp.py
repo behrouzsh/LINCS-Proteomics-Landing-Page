@@ -1106,7 +1106,7 @@ class Plp(object):
             pertPeptide = []
 
             for pepIter in range(0,96):
-                pertPeptide.append(P100_data[8][11+pepIter])
+                pertPeptide.append(P100_data[8][11+pepIter] + " / "+P100_data[9][11+pepIter] +" / "+P100_data[2][11+pepIter])
             val = unique.get(key)
             for item in val:
                 #print item

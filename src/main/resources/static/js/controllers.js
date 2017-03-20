@@ -61,9 +61,9 @@ appModule.controller('DataViewCtrl', ['$scope', '$location', '$http', '$timeout'
         //*************** HeatMap Stuff ***************************
         //*************** HeatMap Stuff ***************************
         //*************** HeatMap Stuff ***************************
-        var margin = { top: 50, right: 0, bottom: 100, left: 300 },
+        var margin = { top: 50, right: 0, bottom: 100, left: 400 },
             width = 960 - margin.left - margin.right,
-            height = 2800 - margin.top - margin.bottom,
+            height = 2400 - margin.top - margin.bottom,
             height_legend = margin.bottom,
             gridSize = Math.floor(width / 24),
             legendElementWidth = gridSize*1.15*2,
