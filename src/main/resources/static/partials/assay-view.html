@@ -11,11 +11,45 @@
     </div>
 </div>
 
-<div class="container">
+<div class="container" ng-init="initNetworkApi()">
 
-    <h3> LINCS Proteomics Assays (Data Generating Centers)</h3>
-    <hr/>
-    <div >
+    <div class="bs-example" style="padding-bottom: 24px;" append-source>
+        <form class="form-inline" role="form">
+            <div class="form-group">
+                 LINCS Proteomics Assays (Data Generating Centers)
+            </div>
+
+            <div style="float:right; ">
+                <a ng-href="http://eh3.uc.edu/pinet/pinet.html" target="_blank" style="color: #337AB7;"
+                   class="btn btn-default">Assay view in piNET</a>
+                <!--&nbsp;-->
+                <!--<a ng-href="#export/2" style="color: #337AB7;"-->
+                <!--class="btn btn-default">Export</a>-->
+            </div>
+
+
+            <!--<button type="button" class="btn btn-default" style="border: 2px solid #00FFFF;" ng-class="{'btn-primary': display.GCP}" ng-click="showNetwork(ctrl.selectedPerturbation)" >Show New Heatmap</button>-->
+
+
+        </form>
+    </div>
+
+
+
+
+
+
+    <!--<h3> LINCS Proteomics Assays (Data Generating Centers)</h3>-->
+
+    <!--<div style="float:right; padding-bottom: 20px;">-->
+        <!--<a ng-href="http://eh3.uc.edu/pilincs/#/technical-profiles" target="_blank" style="color: #337AB7;"-->
+           <!--class="btn btn-default">Data view for P100 and GCP assays in PiLINCS</a>-->
+        <!--&lt;!&ndash;&nbsp;&ndash;&gt;-->
+        <!--&lt;!&ndash;<a ng-href="#export/2" style="color: #337AB7;"&ndash;&gt;-->
+        <!--&lt;!&ndash;class="btn btn-default">Export</a>&ndash;&gt;-->
+    <!--</div>-->
+    <!--<hr/>-->
+    <!--<div >-->
 
 
         <div class="column4">
@@ -83,13 +117,18 @@
     <br/>
 
 
+    <select
+            ng-model="selectedPathways"
+            ng-change="changedValue(selectedPathways)"
+            ng-options = "x.value for x in pathways">
+    </select>
     <button>
-        <a id="download2" href="#">Download SVG
+        <a id="download" href="#">Download SVG
         </a>
     </button>
     <br/>
     <br/>
-    <div id="chart3"></div>
+    <div id="chart5"></div>
 
 </div>
 

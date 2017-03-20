@@ -134,7 +134,9 @@
 
 
                     <div class="column4">
-                        <button type="button" class="btn btn-default" style="border: 2px solid #4CAF50;" ng-class="{'btn-primary': display.P100}" ng-click="showNetwork('P100')" >P100 (PCCSE)</button>
+                        <!--<button type="button" class="btn btn-default" style="border: 2px solid #4CAF50;" ng-class="{'btn-primary': display.P100}" ng-click="showNetwork('P100')" >P100 (PCCSE)</button>-->
+                        <button type="button" class="btn btn-default" style="border: 2px solid #4CAF50;" ng-class="{'btn-primary': display.P100}" ng-click="showPhosphoNetwork('P100')" >P100 (PCCSE)</button>
+
                         <span>
                         <button type="button" class="btn btn-default" style="border: 2px solid #4CAF50;" ng-click="customDownloadP100('P100')">Download</button>
                         </span>
@@ -202,6 +204,15 @@
                     <p class="lead">P100 has been designed to measure the phosphorylation state of cellular systems, using a set of about hundred
                         target pospho-peptides whose abundance levels are measured using mass spectrometry. <a href="https://panoramaweb.org/labkey/project/LINCS/begin.view?" target="_blank">More ...</a>
                     </p>
+
+                </div>
+                <hr/>
+                <div class="bs-callout bs-callout-primary" ng-show = "ctrl.showP100div">
+                    <p> Kinase network of phosphorylated genes reflects the connection between kinases and gene products phosphorylated
+                        at specific sites. Solid lines mean known relations between the kinases and target genes (in Known_Kinase_TargetGene) or
+                        exact matching between the kinase target and the peptide sequence in (Known+Predicted_Blosum50_Kinase_TargetGene and
+                        Known+Predicted_Probability_Kinase_TargetGene). Dashed lines show probable inkage between kinase and target genes based on blosum50 similarity scores or phosphosite plus connectivity networks.
+                    </p>
                 </div>
             </div>
 
@@ -214,15 +225,24 @@
                 </div>
             </div>
 
+                <div ng-show = "ctrl.showP100div"  >
+
+                    <select
+                            ng-model="selectedphosphoPathways"
+                            ng-change="changedPhosphoValue(selectedphosphoPathways)"
+                            ng-options = "x.value for x in phosphoOptions">
+                    </select>
+                    <hr/>
+                </div>
 
             <div class="container" ng-show = "ctrl.showSVG">
-                <button>
-                    <a id="download2" href="#">Download SVG
-                    </a>
-                </button>
+                <!--<button>-->
+                    <!--<a id="download2" href="#">Download SVG-->
+                    <!--</a>-->
+                <!--</button>-->
 
                 <br/>
-                <div id="chart3"></div>
+                <div id="chart"></div>
 
             </div>
 
@@ -308,7 +328,7 @@
 
 
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.8/angular-filter.min.js"></script>-->
-    <script src="bower_components/angular-filter.min.js"></script>
+    <script src="bower_components/https/angular-filter.min.js"></script>
 
     <!--d3js-->
     <!--<script src="https://d3js.org/d3-selection.v1.min.js"></script>-->

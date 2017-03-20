@@ -73,7 +73,7 @@ appModule.controller('DataViewCtrl', ['$scope', '$location', '$http', '$timeout'
         //     times = ["1a", "2a", "3a", "4a", "5a", "6a", "7a", "8a", "9a", "10a", "11a", "12a", "1p", "2p", "3p", "4p", "5p", "6p", "7p", "8p", "9p", "10p", "11p", "12p"];
         // //datasets = ["heatmap_data.tsv", "data2.tsv"];
 
-        var svg = d3.select("#chart").append("svg")
+        var svg = d3.select("#chart2").append("svg")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
             .append("g")
@@ -159,8 +159,8 @@ appModule.controller('DataViewCtrl', ['$scope', '$location', '$http', '$timeout'
             // var colorScale = d3.scale.quantile()
             //     .domain(data.value.sort()).range(colors);
 
-            console.log("colorScale");
-            console.log(colorScale);
+            // console.log("colorScale");
+            // console.log(colorScale);
             var cards = svg.selectAll(".pertId")
                 .data(data, function(d) {return d.pepId+':'+d.pertId;});
 
@@ -274,16 +274,34 @@ appModule.controller('DataViewCtrl', ['$scope', '$location', '$http', '$timeout'
 appModule.controller('assayViewCtrl', ['$scope', '$location', '$http', function ($scope, $location, $http) {
     var self = this;
     self.showSVG = false;
+
+
+    $scope.initNetworkApi = function() {
+
+        $http.get('/lincsproteomics/data/assay-view.json').success(function (data) {
+            self.assayData = data;
+            console.log(self.assayData);
+            console.log(self.assayData.GCP);
+
+        })
+    };
+
+
+    var svg = d3.selectAll("#chart5").append("svg");
+
+
+
     $scope.showNetwork = function(item) {
         //var net = item.value;
         console.log(item);
         //console.log(item.value);
         var net = item.toString();
         console.log(net);
-
-        var network = self.initNetworkJSON[net];
-        console.log('network');
-        console.log(network);
+        self.initNetworkJSON = self.assayData[net];
+        //var network = self.assayData[net];
+        //var network = self.initNetworkJSON[net];
+        console.log('self.initNetworkJSON');
+        console.log(self.initNetworkJSON);
 
         if (net === "P100") {
 
@@ -328,7 +346,8 @@ appModule.controller('assayViewCtrl', ['$scope', '$location', '$http', function 
 
 
 
-        var svg = d3.selectAll("#chart").append("svg");
+
+
 
 
 
@@ -348,7 +367,6 @@ appModule.controller('assayViewCtrl', ['$scope', '$location', '$http', function 
 
 
 
-
         function update(nodes, links) {
             //
             //var svg;
@@ -362,7 +380,7 @@ appModule.controller('assayViewCtrl', ['$scope', '$location', '$http', function 
                 hyp2 = Math.pow(radius, 2),
                 nodeBaseRad = 5;
 
-            svg = d3.select("#chart")
+            svg = d3.select("#chart5")
                 .append("svg")
                 .attr("style", "outline: thin solid blue;")
                 .attr("width", w)
@@ -498,7 +516,7 @@ appModule.controller('assayViewCtrl', ['$scope', '$location', '$http', function 
             //.text(function(d) { return d.name })
             node.append("svg:text")
             //****************************************
-                .attr("class", function(d){ return d.name })
+                .attr("class", function(d){ return d.full_name })
                 //****************************************
                 .attr("x", 16)
                 .attr("y", ".31em")
@@ -509,7 +527,7 @@ appModule.controller('assayViewCtrl', ['$scope', '$location', '$http', function 
                 //.style("font-size","12px")
                 //****************************************
                 .attr("class", "shadow")
-                .style("font", "15px Times New Roman")
+                .style("font", "14px Times New Roman")
                 //****************************************
                 //.attr("text-anchor", "middle")
                 //****************************************
@@ -522,7 +540,7 @@ appModule.controller('assayViewCtrl', ['$scope', '$location', '$http', function 
             //This one is for the actual text
             node.append("svg:text")
             //****************************************
-                .attr("class", function(d){ return d.name })
+                .attr("class", function(d){ return d.full_name })
                 //****************************************
                 .attr("x", 16)
                 .attr("y", ".31em")
@@ -532,7 +550,7 @@ appModule.controller('assayViewCtrl', ['$scope', '$location', '$http', function 
                 // .attr("dy", ".35em")
                 //.style("font-size","12px")
                 //****************************************
-                .style("font", "15px Times New Roman")
+                .style("font", "14px Times New Roman")
                 //****************************************
                 //.attr("text-anchor", "middle")
                 //****************************************
@@ -548,8 +566,26 @@ appModule.controller('assayViewCtrl', ['$scope', '$location', '$http', function 
                         return d.full_name;
                     })
                     //.style("font-size", "15px")
-                    .style("font", "15px Times New Roman");
+                    .style("font", "14px Times New Roman");
 
+                d3.select(this).select("text")
+                    .transition()
+                    .duration(300)
+                    .text(function (d) {
+                        return d.full_name;
+                    })
+                    //.style("font-size", "15px")
+                    //.attr("class", "shadow")
+                    .style("font", "14px Times New Roman");
+                d3.select(this).select("text")
+                    .transition()
+                    .duration(300)
+                    .text(function (d) {
+                        return d.full_name;
+                    })
+
+                    .style("fill",'black')
+                    .style("font", "14px Times New Roman");
 
                 //d3.selectAll("text").remove();
                 //d3.select(this).style("stroke-width", 6);
@@ -603,13 +639,22 @@ appModule.controller('assayViewCtrl', ['$scope', '$location', '$http', function 
                         .transition()
                         .duration(300)
                         .text(function (d) {
-                            return d.full_name;
+
+                            return d.name;
                         });
                     d3.select(this).select("text")
                     //*******************************
-                        .style("font", "15px Times New Roman")
+                        .style("font", "14px Times New Roman")
                         //*******************************
-                        .style("font-size", "15px")
+                        .style("font-size", "14px")
+                        .style("fill",'black')
+                        .style("font-weight", "normal");
+
+                    d3.select(this).select("text")
+                    //*******************************
+                        .style("font", "14px Times New Roman")
+                        //*******************************
+                        .style("font-size", "14px")
                         .style("fill",'black')
                         .style("font-weight", "normal");
                     //d3.select(this).style("stroke", "black");
@@ -734,74 +779,59 @@ appModule.controller('assayViewCtrl', ['$scope', '$location', '$http', function 
 
             d3.select("#download").on("click", function(){
                 d3.select(this)
-                    .attr("href", 'data:application/octet-stream;base64,' + btoa(d3.select("#chart").html()))
+                    .attr("href", 'data:application/octet-stream;base64,' + btoa(d3.select("#chart5").html()))
                     .attr("download", "pathway_network.svg")
             })
 
-            // d3.select("#download").on("click", function(){
-            //     var html = d3.select("svg")
-            //         .attr("version", 1.1)
-            //         .attr("xmlns", "http://www.w3.org/2000/svg")
-            //         .node().parentNode.innerHTML;
-            //
-            //     //console.log(html);
-            //     var imgsrc = 'data:image/svg+xml;base64,'+ btoa(html);
-            //     var img = '<img src="'+imgsrc+'">';
-            //     d3.select("#svgdataurl").html(img);
-            //
-            //
-            //     var canvas = document.querySelector("canvas"),
-            //         context = canvas.getContext("2d");
-            //
-            //     var image = new Image;
-            //     image.src = imgsrc;
-            //     image.onload = function() {
-            //         context.drawImage(image, 0, 0);
-            //
-            //         var canvasdata = canvas.toDataURL("image/png");
-            //
-            //         var pngimg = '<img src="'+canvasdata+'">';
-            //         d3.select("#pngdataurl").html(pngimg);
-            //
-            //         var a = document.createElement("a");
-            //         a.download = "sample.png";
-            //         a.href = canvasdata;
-            //         a.click();
-            //     };
-            //
-            // });
-
-
-
 
         }
 
 
+        $scope.pathways = [
+            {value: "KEGG_2013"},
+            {value: "KEGG_2015"},
+            {value: "KEGG_2016"},
+            {value: "WikiPathways_2013"},
+            {value: "WikiPathways_2015"},
+            {value: "WikiPathways_2016"},
+            {value: "Panther_2015"},
+            {value: "Panther_2016"},
+            {value: "Kinase_Perturbations_from_GEO_up"},
+            {value: "Kinase_Perturbations_from_GEO_down"},
+            // {value: "LINCS_L1000_Kinase_Perturbations_up"},
+            // {value: "LINCS_L1000_Kinase_Perturbations_down"},
+            {value: "Kinase_Perturbations_from_GEO"}
+        ];
+        self.showSVG = true;
+        console.log("here-assay");
+
+        $scope.selectedPathways = $scope.pathways[2];
 
 
+        //self.initNetworkJSON = self.assayData[net];
+        var network = self.initNetworkJSON.KEGG_2016;
+        //var network = self.network.KEGG_2016;
+        //console.log(self.network);
+        console.log(network);
+        update(network.nodes, network.edges);
 
+        $scope.changedValue = function (item) {
+            //var net = item.value;
+            //self.showSVG = false;
+            console.log(item);
+            console.log(item.value);
+            var net = item.value.toString();
+            console.log(net);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            var network = self.initNetworkJSON[net];
+            console.log('network');
+            console.log(network);
+            update(network.nodes, network.edges);
+            self.showSVG = true;
+            //$scope.itemList.push(item.value);
         }
+
+    }
 
 
 }]);
@@ -818,15 +848,15 @@ appModule.controller('NavigationCtrl', ['$scope', '$location', '$http', '$window
     var self = this;
     console.log("here");
     $scope.tabs = [
-        { link : '#/', label : 'Home' },
-        { link : '#/assay-view', label : 'Assay View' },
-        { link : '#/data-view', label : 'Data View' },
-        { link : '#/tools', label : 'Tools' },
-        { link : '#/about', label : 'About' }
+        {link: '#/', label: 'Home'},
+        {link: '#/assay-view', label: 'Assay View'},
+        {link: '#/data-view', label: 'Data View'},
+        {link: '#/tools', label: 'Tools'},
+        {link: '#/about', label: 'About'}
     ];
 
     $scope.selectedTab = $scope.tabs[0];
-    $scope.setSelectedTab = function(tab) {
+    $scope.setSelectedTab = function (tab) {
         $scope.selectedTab = tab;
         console.log($scope.selectedTab.link);
         console.log($scope.selectedTab.label);
@@ -834,7 +864,7 @@ appModule.controller('NavigationCtrl', ['$scope', '$location', '$http', '$window
     }
     console.log($scope.selectedTab.link);
     console.log($scope.selectedTab.label);
-    $scope.tabClass = function(tab) {
+    $scope.tabClass = function (tab) {
         if ($scope.selectedTab == tab) {
             self.activeSite = $scope.selectedTab.link;
             return "active";
@@ -848,21 +878,26 @@ appModule.controller('NavigationCtrl', ['$scope', '$location', '$http', '$window
     self.initNetworkJSON = {};
 
 
-
-    $scope.initNetwork = function() {
+    $scope.initNetwork = function () {
 
         $http.get('/lincsproteomics/data/content.json').success(function (data) {
             self.initNetworkJSON = data;
             console.log("initNetworkJSON");
             console.log(self.initNetworkJSON);
+        });
+
+        $http.get('/lincsproteomics/data/phospho_network_p100.json').success(function (data) {
+            self.p100phospho = data;
+            console.log("p100phospho");
+            console.log(self.p100phospho);
 
 
-    })
+        });
     };
     //$scope.initNetwork();
 
 
-    $scope.customDownload = function(msg){
+    $scope.customDownload = function (msg) {
         $window.localStorage.setItem("message", msg);
         $window.open("http://lincsportal.ccs.miami.edu/dcic-portal/", '_blank');
 
@@ -879,34 +914,33 @@ appModule.controller('NavigationCtrl', ['$scope', '$location', '$http', '$window
         //     http://lincsportal.ccs.miami.edu/datasets-beta/#?query=assayname:SWATH-MS%20protein%20quantification%20assay
 
 
-
         // self.inputGenesForPathway = $window.localStorage.getItem("genes");
         // var inputGenesForPathway = $window.localStorage.getItem("genes");
         console.log("message");
         console.log(message);
     };
-    $scope.customDownloadSWATH = function(msg){
+    $scope.customDownloadSWATH = function (msg) {
         $window.localStorage.setItem("message", msg);
         $window.open("http://lincsportal.ccs.miami.edu/datasets-beta/#?query=assayname:SWATH-MS%20protein%20quantification%20assay", '_blank');
         console.log("message");
         console.log(message);
 
     };
-    $scope.customDownloadRPPA = function(msg){
+    $scope.customDownloadRPPA = function (msg) {
         $window.localStorage.setItem("message", msg);
         $window.open("http://lincsportal.ccs.miami.edu/datasets-beta/#?query=assayname:RPPA%20protein%20state%20assay", '_blank');
         console.log("message");
         console.log(message);
 
     };
-    $scope.customDownloadDToxS = function(msg){
+    $scope.customDownloadDToxS = function (msg) {
         $window.localStorage.setItem("message", msg);
         $window.open("http://lincsportal.ccs.miami.edu/datasets-beta/#?query=assayname:MS%20protein%20state%20assay", '_blank');
         console.log("message");
         console.log(message);
 
     };
-    $scope.customDownloadGCP = function(msg){
+    $scope.customDownloadGCP = function (msg) {
         $window.localStorage.setItem("message", msg);
         $window.open("http://lincsportal.ccs.miami.edu/datasets-beta/#?query=assayname:Global%20chromatin%20epigenetic%20profiling%20assay", '_blank');
         console.log("message");
@@ -914,13 +948,470 @@ appModule.controller('NavigationCtrl', ['$scope', '$location', '$http', '$window
 
     };
 
-    $scope.customDownloadP100 = function(msg){
+    $scope.customDownloadP100 = function (msg) {
         $window.localStorage.setItem("message", msg);
         $window.open("http://lincsportal.ccs.miami.edu/datasets-beta/#?query=assayname:P100%20phosphoprotein%20quantification%20assay", '_blank');
         console.log("message");
         console.log(message);
 
     };
+
+    var svg = d3.selectAll("#chart").append("svg");
+
+    $scope.showPhosphoNetwork = function(item){
+        //var net = item.value;
+
+        //var net = item.value;
+        console.log(item);
+        //console.log(item.value);
+        var net = item.toString();
+        console.log(net);
+
+
+        // {value: "Known+Predicted_Probability_Kinase_TargetGene"}
+        // ];
+        //
+
+
+        if (net === "P100"){
+
+            self.showP100div = true;
+            self.showGCPdiv = false;
+            self.showRPPAdiv = false;
+            self.showSWATHdiv = false;
+            self.showDToxSdiv = false;
+        }
+
+
+
+        var force;
+
+        var xScale = d3.scale.linear().range([5, 15]);
+        var colNodeScaleSeparate = d3.scale.ordinal()
+            .range(["#767776", "#f91104", "#0af702"])
+            .domain([0,1,2]);
+        var colNodeScale = d3.scale.linear().range(["grey", "red"]);
+        var colScale = d3.scale.linear().range(["grey", "red"]);
+
+
+
+
+
+        function updatePhospho(nodes, links) {
+            //
+            //var svg;
+            svg.remove();
+
+            var margin = 100,
+                w = 1500 - 2 * margin,
+                h = w,
+                radius = w / 2,
+                strokeWidth = 4,
+                hyp2 = Math.pow(radius, 2),
+                nodeBaseRad = 5;
+
+            svg = d3.select("#chart")
+                .append("svg")
+                .attr("style", "outline: thin solid blue;")
+                .attr("width", w)
+                .attr("height", h);
+
+            // var pool = svg.append('circle')
+            //     .style('stroke-width', strokeWidth * 2)
+            //     .style('stroke-width', strokeWidth * 2)
+            //     .attr({
+            //         class: 'pool',
+            //         r: radius,
+            //         index: -1,
+            //         cy: 0,
+            //         cx: 0,
+            //         transform: 'translate(' + w / 2 + ',' + h / 2 + ')'
+            //     });
+
+            force = d3.layout.force()
+                .nodes(nodes)
+                .links(links)
+                .size([w, h])
+                .gravity(.25)
+                .linkDistance(100)
+                .charge(-500)
+                //.gravity(0.05)
+                .on("tick", tick)
+                .start();
+
+
+            xScale.domain(d3.extent(nodes, function (d) {
+                return d.weight;
+            }));
+            colNodeScale.domain(d3.extent(nodes, function (d) {
+                return d.group;
+            }));
+            colScale.domain(d3.extent(links, function (d) {
+                return d.weight;
+            }));
+            // edgeWeightScale.domain(d3.extent(links, function (d) {
+            //     return d.value;
+            // }));
+
+            //var edgeWeightScale = d3.scale.linear().range([1, 300]);
+
+    //             function linkMouseover(d){
+    //                 chart.selectAll(".node").classed("active", function(p) { return d3.select(this).classed("active") || p === d.source || p === d.target; });
+    //             }
+    // // Highlight the node and connected links on mouseover.
+    //             function nodeMouseover(d) {
+    //                 chart.selectAll(".link").classed("active", function(p) { return d3.select(this).classed("active") || p.source === d || p.target === d; });
+    //                 chart.selectAll(".link.active").each(function(d){linkMouseover(d)})
+    //                 d3.select(this).classed("active", true);
+    //             }
+
+
+            var path = svg.append("svg:g").selectAll("path")
+            //.data(links)
+                .data(force.links())
+                .attr("r", function (d) {
+                    return xScale(d.weight);
+                })
+                .enter().append("svg:path")
+                // .style("stroke-width", function (d) {
+                //     return edgeWeightScale(d.value) + "px";
+                // })
+                .attr("stroke-dasharray", function (d) {
+                    if (d.value < 100) {
+                        return "5,5"; //these classes are defined in custom.css
+                    } else {
+                        return "5,0";//these classes are defined in custom.css
+                    }
+                })
+                //.style("stroke-dasharray", function (d) { return edgeWeightScale(d.value) + "px"; })
+                //.style("stroke", function (d) {return colScale(d.value); })
+                .attr("class", function (d) {
+                    return "link";
+                });
+
+
+            var text = svg.append("svg:g").selectAll("g")
+                .data(force.nodes())
+                .style("font", "15px Times New Roman")
+                .enter().append("svg:g");
+            // .on("mouseover", function(d) {
+            //
+            //     )};
+
+            // A copy of the text with a thick white stroke for legibility.
+            text.append("svg:text")
+                .attr("x", 16)
+                .attr("y", ".31em")
+                .attr("class", "shadow")
+                .style("font", "15px Times New Roman")
+                .text(function (d) {
+                    return d.name;
+                });
+
+
+            //This one is for the actual text
+            text.append("svg:text")
+                .attr("x", 16)
+                .attr("y", ".31em")
+                .style("font", "15px Times New Roman")
+                .text(function (d) {
+                    return d.name;
+                });
+
+
+            // text.append("svg:text")
+            //     .attr("x", 12)
+            //     .attr("y", ".31em")
+            //     .style("font", "15px Times New Roman")
+            //     .text(function(d) { return d.name; });
+            // .on("mouseover", function(){ console.log("mouseOver"); d3.select(this).select("text").style("fill", "#000");} )
+            // .on("mouseout", function(){ console.log("mouseOut"); d3.select(this).select("text").style("fill", "#ccc");} ); ;
+
+            // function randomNodes(n) {
+            //     var data = [],
+            //         range = d3.range(n);
+            //
+            //     for (var i = range.length - 1; i >= 0; i--) {
+            //         data.push({
+            //             rad: Math.floor(Math.random() * 12)
+            //         });
+            //     }
+            //     return data;
+            // }
+
+
+            var circle = svg.append("svg:g").selectAll("circle")
+            //.data(nodes)
+                .data(force.nodes())
+                // for (var i = range.length - 1; i >= 0; i--) {
+                //     data.push({
+                //         rad: Math.floor(Math.random() * 12)
+                //     });
+                // }
+                .enter().append("svg:circle")
+                .attr("r", function (d) {
+                    return xScale(d.weight);
+                })
+                .style("fill", function (d) {
+                    return colNodeScale(d.group);
+                })
+                .on("dblclick", dblclick)
+                .call(force.drag)
+                .on("mouseover", function (d) {
+                    d3.select(this).append("text")
+                        .attr("x", 16)
+                        .attr("y", ".31em")
+                        .attr("class", "shadow")
+                        .text(d.name);
+
+                    //d3.selectAll("text").remove();
+                    d3.select(this).style("stroke-width", 6);
+
+                    d3.select(this).style("stroke", "blue");
+
+                    var nodeNeighbors = links.filter(function (link) {
+                        // Filter the list of links to only those links that have our target
+                        // node as a source or target
+                        return link.source.index === d.index || link.target.index === d.index;
+                    })
+                        .map(function (link) {
+                            // Map the list of links to a simple array of the neighboring indices - this is
+                            // technically not required but makes the code below simpler because we can use
+                            // indexOf instead of iterating and searching ourselves.
+                            return link.source.index === d.index ? link.target.index : link.source.index;
+                        });
+
+                    d3.selectAll('circle').filter(function (node) {
+                        // I filter the selection of all circles to only those that hold a node with an
+                        // index in my listg of neighbors
+                        return nodeNeighbors.indexOf(node.index) > -1;
+                    })
+                        .style('stroke', 'blue')
+
+                    //d3.selectAll('text').filter(d).style('fill', 'blue');
+
+                    d3.selectAll('text').filter(function (node) {
+                        // I filter the selection of all circles to only those that hold a node with an
+                        // index in my listg of neighbors
+                        return nodeNeighbors.indexOf(node.index) > -1;
+                    }).style('fill', 'blue')
+                    //.style("font-size", "16px")
+                        .style("font-weight", "bold");
+
+                    path.style('stroke', function (l) {
+                        if (d === l.source || d === l.target)
+                            return "blue";
+                        else
+                            return "grey";
+                    })
+
+                    // path.style('stroke-width', function(l) {
+                    //     if (d === l.source || d === l.target)
+                    //         return 3;
+                    //     else
+                    //         return 1;
+                    // })
+
+                })
+                .on("mouseout", function (d) {
+                    //d3.select(this).classed("hover", false);
+                    // if(isConnected(d, o)) {
+                    //svg.selectAll('circle').style('stroke', 'black');
+                    //d3.select(this).style("stroke-width", 3);
+                    d3.select(this).style("stroke", "#333");
+                    // d3.select(this).select("circle").style("stroke", "black");
+                    // d3.select(this).select("text").style("font", "12px Times New Roman");
+                    // d3.selectAll("rect." + d.location).style("stroke-width", 1);
+                    // d3.selectAll("rect." + d.location).style("stroke", "gray");
+                    // d3.selectAll("text." + d.location).style("font", "12px Times New Roman");
+                    // d3.selectAll("tr." + d.name).style("background-color", "white");
+                    path.style('stroke', "grey");
+                    //path.style('stroke-width', 1);
+                    //circle.style('stroke', "grey");
+                    circle.style("stroke-width", 3);
+                    circle.style("stroke", "#333");
+                    d3.selectAll('text').style('fill', 'black')
+                        .style("font-weight", "normal");
+                    //.style("font-size", "12px");
+                    //}
+                });
+
+
+            function pythag(r, b, coord) {
+                r += nodeBaseRad;
+
+                // force use of b coord that exists in circle to avoid sqrt(x<0)
+                b = Math.min(w - r - strokeWidth, Math.max(r + strokeWidth, b));
+
+                var b2 = Math.pow((b - radius), 2),
+                    a = Math.sqrt(hyp2 - b2);
+
+                // radius - sqrt(hyp^2 - b^2) < coord < sqrt(hyp^2 - b^2) + radius
+                coord = Math.max(radius - a + r + strokeWidth,
+                    Math.min(a + radius - r - strokeWidth, coord));
+
+                return coord;
+            }
+
+            function tick(e) {
+                path.attr("d", function (d) {
+                    var dx = d.target.x - d.source.x,
+                        dy = d.target.y - d.source.y,
+
+                        dr = Math.sqrt(dx * dx + dy * dy);
+                    //console.log(d.source.x);
+                    // console.log(d.target.x);
+                    return "M" + d.source.x + "," + d.source.y + "," + d.target.x + "," + d.target.y;
+                    //return "M" + d.source.x + "," + d.source.y + "A" + dr + "," + dr + " 0 0,1 " + d.target.x + "," + d.target.y;
+                });
+
+                circle.attr('x', function (d) {
+                    return d.x = pythag(Math.random() * 12, d.y, d.x);
+                })
+                    .attr('y', function (d) {
+                        return d.y = pythag(Math.random() * 12, d.x, d.y);
+                    })
+                    .attr("transform", function (d) {
+                        return "translate(" + d.x + "," + d.y + ")"
+                    });
+
+                // circle.attr("transform", function(d) {
+                //     return "translate(" + d.x + "," + d.y + ")";
+                // });
+
+                text.attr("transform", function (d) {
+                    return "translate(" + d.x + "," + d.y + ")";
+                });
+            }
+
+            //For not moving after drag
+            var drag = force.drag()
+                .on("dragstart", dragstart);
+            //.on("dblclick", dblclick);
+
+            //For not moving after drag
+            function dblclick(d) {
+                d3.select(this).classed("fixed", d.fixed = false);
+            }
+
+            //For not moving after drag
+            function dragstart(d) {
+                d3.select(this).classed("fixed", d.fixed = true);
+                for (i = 0; i < nodes.length; i++) {
+                    nodes[i].fixed = true;
+                }
+
+            }
+
+
+            // For legend
+            var colNodeScaleSeparateInfo = d3.scale.ordinal()
+                .range(["#767776", "#f91104"])
+                .domain(["Query Gene Set", "Kinases Perturbation"]);
+
+
+            var legend = svg.selectAll(".legend")
+                .data(colNodeScaleSeparateInfo.domain())
+                .enter().append("g")
+                .attr("class", "legend")
+                .attr("transform", function (d, i) {
+                    return "translate(0," + (i) * 25 + ")";
+                });
+
+            legend.append("rect")
+                .attr("x", w - 25)
+                .attr("width", 25)
+                .attr("height", 25)
+                .style("fill", colNodeScaleSeparateInfo);
+
+            legend.append("text")
+                .attr("x", w - 35)
+                .attr("y", 12.5)
+                .attr("dy", ".35em")
+                .style("text-anchor", "end")
+                .text(function (d) {
+                    return d;
+                });
+
+            d3.select("#download3").on("click", function () {
+                d3.select(this)
+                    .attr("href", 'data:application/octet-stream;base64,' + btoa(d3.select("#chart").html()))
+                    .attr("download", "phospho_network.svg")
+            })
+        }
+
+
+
+
+
+
+        $scope.phosphoOptions = [
+            {value: "Known_Kinase_TargetGene"},
+            {value: "Known+Predicted_Blosum50_Kinase_TargetGene"},
+            {value: "Known+Predicted_Probability_Kinase_TargetGene"}
+        ];
+
+        // $scope.selectedphosphoPathways = $scope.phosphoOptions[0];
+        // var pNetwork = self.phosphoNetwork.Known+Predicted_Probability_Kinase_TargetGene;
+        // var network = self.phosphoNetwork.Known+Predicted_Probability_Kinase_TargetGene;
+        // console.log('network');
+        // console.log(network);
+
+        $scope.selectedphosphoPathways = $scope.phosphoOptions[0];
+        var pNetwork = self.p100phospho.Known_Kinase_TargetGene;
+        console.log("here");
+        console.log(pNetwork);
+        console.log(self.p100phospho);
+        updatePhospho(pNetwork.nodes, pNetwork.edges);
+        $scope.changedPhosphoValue = function (item) {
+            //var net = item.value;
+            console.log(item);
+            console.log(item.value);
+            var net = item.value.toString();
+            console.log(net);
+
+            var pNetwork = self.p100phospho[net];
+            console.log('network');
+            console.log(pNetwork);
+            updatePhospho(pNetwork.nodes, pNetwork.edges);
+            //$scope.itemList.push(item.value);
+        }
+
+        //
+        //
+        // console.log('network');
+        // console.log(network);
+        //
+        //
+        // updatePhospho(network.nodes, network.links);
+        self.showSVG = true;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     $scope.showNetwork = function(item){
         //var net = item.value;
         console.log(item);
@@ -987,8 +1478,8 @@ appModule.controller('NavigationCtrl', ['$scope', '$location', '$http', '$window
         //++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         //++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         //++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-        var svg = d3.selectAll("#chart").append("svg");
-        var svg2 = d3.selectAll("#chart2").append("svg");
+        // var svg = d3.selectAll("#chart").append("svg");
+        // var svg2 = d3.selectAll("#chart2").append("svg");
 
 
 
@@ -1023,7 +1514,7 @@ appModule.controller('NavigationCtrl', ['$scope', '$location', '$http', '$window
                 hyp2 = Math.pow(radius, 2),
                 nodeBaseRad = 5;
 
-            svg = d3.select("#chart3")
+            svg = d3.select("#chart")
                 .append("svg")
                 .attr("style", "outline: thin solid blue;")
                 .attr("width", w)
@@ -1352,12 +1843,16 @@ appModule.controller('NavigationCtrl', ['$scope', '$location', '$http', '$window
 
 
 
-
-            d3.select("#download2").on("click", function(){
-                d3.select(this)
-                    .attr("href", 'data:application/octet-stream;base64,' + btoa(d3.select("#chart3").html()))
-                    .attr("download", "kinase_network.svg")
-            })
+            // d3.select("#download").on("click", function(){
+            //     d3.select(this)
+            //         .attr("href", 'data:application/octet-stream;base64,' + btoa(d3.select("#chart").html()))
+            //         .attr("download", "pathway_network.svg")
+            // })
+            // d3.select("#download").on("click", function(){
+            //     d3.select(this
+            //         .attr("href", 'data:application/octet-stream;base64,' + btoa(d3.select("#chart").html()))
+            //         .attr("download", "kinase_network.svg")
+            // })
         }
 
 
@@ -1759,11 +2254,11 @@ appModule.controller('MainCtrl', ['$http', '$scope', '$window', function ($http,
                 .style("text-anchor", "end")
                 .text(function(d) { return d; });
 
-            d3.select("#download").on("click", function(){
-                d3.select(this)
-                    .attr("href", 'data:application/octet-stream;base64,' + btoa(d3.select("#chart").html()))
-                    .attr("download", "pathway_network.svg")
-            })
+            // d3.select("#download").on("click", function(){
+            //     d3.select(this)
+            //         .attr("href", 'data:application/octet-stream;base64,' + btoa(d3.select("#chart").html()))
+            //         .attr("download", "pathway_network.svg")
+            // })
         }
 
 
