@@ -13,10 +13,13 @@ class EnrichrClient(object):
         self.ENRICHR_URL = str('http://amp.pharm.mssm.edu/Enrichr/addList')
         self.ENRICHR_URL_A = str('http://amp.pharm.mssm.edu/Enrichr/view?userListId=%s')
         self.ENRICHR_URL = str('http://amp.pharm.mssm.edu/Enrichr/enrich')
+        self.DOWNLOAD_URL = str('http://amp.pharm.mssm.edu/Enrichr/export')
         self.query_string = str('?userListId=%s&backgroundType=%s')
+        self.query_string_download = '?userListId=%s&filename=%s&backgroundType=%s'
         self.enrichr_library = enrichr_library
         self.listdesrciption = listdesrciption
         self.enrichr_results = enrichr_results
+        #"pathway_library": "Kinase_Perturbations_from_GEO",
 
 
     def obtain_client_id(self, gene_list, ):
@@ -30,8 +33,8 @@ class EnrichrClient(object):
         genes_str = '\n'.join(str(e) for e in gene_list)
         genes_str = genes_str + '\n'
         #genes_str = str(gene_list)
-        print "genes_str"
-        print genes_str
+        print "In obtain_client_id  ==============================="
+        #print genes_str
         #print type(genes_str)
         # name of analysis or list
         # description = 'Example gene list'
@@ -46,7 +49,9 @@ class EnrichrClient(object):
         #print payload
         # response
         response = requests.post('http://amp.pharm.mssm.edu/Enrichr/addList',files=payload)
-
+        print("response.url")
+        print(response.url)
+        print("-----------------")
         if not response.ok:
             raise Exception('Error analyzing gene list')
         #print type(self.ENRICHR_URL)
@@ -55,11 +60,13 @@ class EnrichrClient(object):
         job_id = json.loads(response.text)
         #job_id = response.text.json()
 
+        print("job_id")
         print(job_id)
         return job_id
 
 
     def print_gene_list(self, param):
+        print "In print_gene_list ==============================="
         print 'Gene list file is:', param
 
         job_id = param
@@ -75,7 +82,7 @@ class EnrichrClient(object):
 
     def obtain_network(self, param):
         print 'Input file is:', param
-
+        print "In obtain_network  ==============================="
         ## get id data
         job_id = param
         user_list_id = job_id['userListId']
@@ -93,6 +100,48 @@ class EnrichrClient(object):
         data = json.loads(response.text)
         print(data)
         return data
+
+    def download_network(self, param):
+        print 'Input file is:', param
+        print "In download_network  ==============================="
+        ## get id data
+        job_id = param
+        user_list_id = job_id['userListId']
+        #self.query_string = '?userListId=%s&filename=%s&backgroundType=%s'
+        print(user_list_id)
+        file_name = 'example_enrichment'
+        ## Libraray
+        gene_set_library = str(self.enrichr_library)
+
+        #response = requests.get(
+        url = self.DOWNLOAD_URL + self.query_string_download % (str(user_list_id), file_name, gene_set_library)
+        #)
+        response = requests.get(url, stream=True)
+
+        with open(file_name + '.txt', 'wb') as f:
+            for chunk in response.iter_content(chunk_size=1024):
+                if chunk:
+                    f.write(chunk)
+        #if not response.ok:
+         #   raise Exception('Error fetching enrichment results')
+
+        #data = json.loads(response.text)
+        #print(data)
+        #return data
+
+    # ENRICHR_URL = 'http://amp.pharm.mssm.edu/Enrichr/export'
+    # query_string = '?userListId=%s&filename=%s&backgroundType=%s'
+    # //////user_list_id = 363320
+    # filename = 'example_enrichment'
+    # ////gene_set_library = 'KEGG_2015'
+    #
+    # url = ENRICHR_URL + query_string % (user_list_id, filename, gene_set_library)
+    # response = requests.get(url, stream=True)
+    #
+    # with open(filename + '.txt', 'wb') as f:
+    #     for chunk in response.iter_content(chunk_size=1024):
+    #         if chunk:
+    #             f.write(chunk)
 
 
 

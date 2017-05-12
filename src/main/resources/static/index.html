@@ -1,296 +1,1244 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="plpApplication" xmlns:width="http://www.w3.org/1999/xhtml">
-<meta charset="UTF-8">
-<title>LINCS Proteomics Landing Page</title>
-
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
 <head>
-    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
-    
-    <!--&lt;!&ndash; Custom  CSS &ndash;&gt;-->
-    <link rel="stylesheet" href="css/custom.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>LINCS Proteomics Landing Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Free HTML5 Template by FREEHTML5.CO"/>
+    <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive"/>
+    <meta name="author" content="FREEHTML5.CO"/>
 
-    <script>document.write('<base href="' + document.location + '" />');</script>
-    <!-- Favicon -->
+    <!--
+      //////////////////////////////////////////////////////
+
+      FREE HTML5 TEMPLATE
+      DESIGNED & DEVELOPED by FREEHTML5.CO
+
+      Website: 		http://freehtml5.co/
+      Email: 			info@freehtml5.co
+      Twitter: 		http://twitter.com/fh5co
+      Facebook: 		https://www.facebook.com/fh5co
+
+      //////////////////////////////////////////////////////
+       -->
+
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content=""/>
+    <meta property="og:image" content=""/>
+    <meta property="og:url" content=""/>
+    <meta property="og:site_name" content=""/>
+    <meta property="og:description" content=""/>
+    <meta name="twitter:title" content=""/>
+    <meta name="twitter:image" content=""/>
+    <meta name="twitter:url" content=""/>
+    <meta name="twitter:card" content=""/>
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="shortcut icon"
           href="http://www.lincs-dcic.org/images/dcic-logo/favicon.png?v=2"/>
+    <!--<link rel="shortcut icon" href="favicon.ico">-->
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,600,400italic,700' rel='stylesheet'
+          type='text/css'>
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- Flexslider -->
+    <link rel="stylesheet" href="css/flexslider.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="css/icomoon.css">
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <!--
+    Default Theme Style
+    You can change the style.css (default color purple) to one of these styles
+
+
+
+    -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Styleswitcher ( This style is for demo purposes only, you may delete this anytime. ) -->
+    <link rel="stylesheet" id="theme-switch" href="css/style.css">
+    <!-- End demo purposes only -->
+
+
+    <style>
+        /* For demo purpose only */
+
+        /*
+        GREEN
+        8dc63f
+        RED
+        FA5555
+        TURQUOISE
+        27E1CE
+        BLUE
+        2772DB
+        ORANGE
+        FF7844
+        YELLOW
+        FCDA05
+        PINK
+        F64662
+        PURPLE
+        7045FF
+
+        */
+
+        /* For Demo Purposes Only ( You can delete this anytime :-) */
+        #colour-variations {
+            padding: 10px;
+            -webkit-transition: 0.5s;
+            -o-transition: 0.5s;
+            transition: 0.5s;
+            width: 140px;
+            position: fixed;
+            left: 0;
+            top: 100px;
+            z-index: 999999;
+            background: #fff;
+            /*border-radius: 4px;*/
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+            -webkit-box-shadow: 0 0 9px 0 rgba(0, 0, 0, .1);
+            -moz-box-shadow: 0 0 9px 0 rgba(0, 0, 0, .1);
+            -ms-box-shadow: 0 0 9px 0 rgba(0, 0, 0, .1);
+            box-shadow: 0 0 9px 0 rgba(0, 0, 0, .1);
+        }
+
+        #colour-variations.sleep {
+            margin-left: -140px;
+        }
+
+        #colour-variations h3 {
+            text-align: center;;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #777;
+            margin: 0 0 10px 0;
+            padding: 0;;
+        }
+
+        #colour-variations ul,
+        #colour-variations ul li {
+            padding: 0;
+            margin: 0;
+        }
+
+        #colour-variations ul {
+            margin-bottom: 20px;
+            float: left;
+        }
+
+        #colour-variations li {
+            list-style: none;
+            display: inline;
+        }
+
+        #colour-variations li a {
+            width: 20px;
+            height: 20px;
+            position: relative;
+            float: left;
+            margin: 5px;
+        }
+
+        #colour-variations li a[data-theme="style"] {
+            background: #8dc63f;
+        }
+
+        #colour-variations li a[data-theme="red"] {
+            background: #FA5555;
+        }
+
+        #colour-variations li a[data-theme="turquoise"] {
+            background: #27E1CE;
+        }
+
+        #colour-variations li a[data-theme="blue"] {
+            background: #2772DB;
+        }
+
+        #colour-variations li a[data-theme="orange"] {
+            background: #FF7844;
+        }
+
+        #colour-variations li a[data-theme="yellow"] {
+            background: #FCDA05;
+        }
+
+        #colour-variations li a[data-theme="pink"] {
+            background: #F64662;
+        }
+
+        #colour-variations li a[data-theme="purple"] {
+            background: #7045FF;
+        }
+
+        #colour-variations a[data-layout="boxed"],
+        #colour-variations a[data-layout="wide"] {
+            padding: 2px 0;
+            width: 48%;
+            border: 1px solid #ededed;
+            text-align: center;
+            color: #777;
+            display: block;
+        }
+
+        #colour-variations a[data-layout="boxed"]:hover,
+        #colour-variations a[data-layout="wide"]:hover {
+            border: 1px solid #777;
+        }
+
+        #colour-variations a[data-layout="boxed"] {
+            float: left;
+        }
+
+        #colour-variations a[data-layout="wide"] {
+            float: right;
+        }
+
+        .option-toggle {
+            position: absolute;
+            right: 0;
+            top: 0;
+            margin-top: 5px;
+            margin-right: -30px;
+            width: 30px;
+            height: 30px;
+            background: #8dc63f;
+            text-align: center;
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+            color: #fff;
+            cursor: pointer;
+            -webkit-box-shadow: 0 0 9px 0 rgba(0, 0, 0, .1);
+            -moz-box-shadow: 0 0 9px 0 rgba(0, 0, 0, .1);
+            -ms-box-shadow: 0 0 9px 0 rgba(0, 0, 0, .1);
+            box-shadow: 0 0 9px 0 rgba(0, 0, 0, .1);
+        }
+
+        .option-toggle i {
+            top: 2px;
+            position: relative;
+        }
+
+        .option-toggle:hover, .option-toggle:focus, .option-toggle:active {
+            color: #fff;
+            text-decoration: none;
+            outline: none;
+        }
+    </style>
+    <!-- End demo purposes only -->
+
+
+    <!-- Modernizr JS -->
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+
 </head>
 
+
+<!--
+    INFO:
+    Add 'boxed' class to body element to make the layout as boxed style.
+    Example:
+    <body class="boxed">
+-->
 <body>
-
-<!--<div ng-controller="MainCtrl as ctrl" ng-init="initNetwork()>-->
 <div ng-controller="NavigationCtrl as ctrl" ng-init="initNetwork()">
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header" >
 
-                <ul class="nav nav-tabs nav-tabs-center" >
+    <!-- Loader -->
+    <div class="fh5co-loader"></div>
 
-                    <li ng-class="tabClass(tab)" ng-repeat="tab in tabs" tab="tab">
-                        <a href="{{tab.link}}" ng-click="setSelectedTab(tab)">{{tab.label}}</a></li>
-                    <!--<li><a href="https://github.com/uc-bd2k/Pilincs/wiki" target="_blank">Wiki</a>-->
-                    <!--</li>-->
-                    <li><a href="http://dev3.ccs.miami.edu:8080/dcic-proteomics/" target="_blank">Download</a></li>
-                    <!--<li><a href="https://github.com/behrouzsh/LINCS-Proteomics-Landing-Page" target="_blank">GitHub</a></li>-->
-                </ul>
+    <div id="fh5co-page">
+        <section id="fh5co-header">
+            <div class="container">
+                <nav role="navigation">
+                    <ul class="pull-left left-menu">
+                        <!--	<li><a href="about.html">About</a></li> -->
+                        <li><a href="assay.html">Assay View</a></li>
+                        <li><a href="data.html">Data View</a></li>
+                        <li><a href="tools.html">Tools</a></li>
+                    </ul>
+                    <h1 id="fh5co-logo"><a href="index.html">LINCS PROTEOMICS<span>.</span></a></h1>
+                    <ul class="pull-right right-menu">
+                        <li><a href="about.html">About</a></li>
 
-                <ul class="nav navbar-nav navbar-right">
+                        <li><a href="http://dev3.ccs.miami.edu:8080/dcic-proteomics/" target="_blank">Download</a></li>
 
-                </ul>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+        <!-- #fh5co-header -->
+
+        <section id="fh5co-hero" class="js-fullheight" style="background-image: url(images/lens-final.png);"
+                 data-next="yes">
+            <div class="fh5co-overlay"></div>
+            <div class="container">
+                <div class="fh5co-intro js-fullheight">
+                    <div class="fh5co-intro-text">
+                        <!--
+                            INFO:
+                            Change the class to 'fh5co-right-position' or 'fh5co-center-position' to change the layout position
+                            Example:
+                            <div class="fh5co-right-position">
+                        -->
+                        <div class="fh5co-left-position">
+                            <h2 class="animate-box">Explore LINCS Proteomics Data with Different Lenses. </h2>
+                            <!--<p class="animate-box"><a href="https://vimeo.com/channels/staffpicks/93951774" class="btn btn-outline popup-vimeo btn-video"><i class="icon-play2"></i> Watch video</a> -->
+
+                            <!--<a href="http://dev3.ccs.miami.edu:8080/dcic-proteomics/" target="_blank"-->
+                               <!--class="btn btn-info">Download Data</a></p>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fh5co-learn-more animate-box">
+                <a href="#" class="scroll-btn">
+                    <span class="text">Explore more about LINCS Proteomics data</span>
+                    <span class="arrow"><i class="icon-chevron-down"></i></span>
+                </a>
+            </div>
+        </section>
+        <!-- END #fh5co-hero -->
+
+
+        <section id="fh5co-projects2">
+            <div class="container">
+                <div class="row row-bottom-padded-md">
+                    <div class="col-md-6 col-md-offset-3 text-center">
+                        <h2 class="fh5co-lead animate-box">What is LINCS?</h2>
+                        <p class="fh5co-sub-lead animate-box">The Library of Network-Based Cellular Signatures (LINCS)
+                            Program aims to create a network-based understanding of biology by cataloging changes in
+                            gene
+                            expression and other cellular processes that occur when cells are exposed to a variety of
+                            perturbing agents. </p>
+                    </div>
+                </div>
+
+                <div class="row row-bottom-padded-md">
+                    <div class="col-md-6 col-md-offset-3 text-center">
+                        <h2 class="fh5co-lead animate-box">What is LINCS Proteomics landing page?</h2>
+                        <p class="fh5co-sub-lead animate-box">LINCS Proteomics Landing Page is designed to provide a
+                            platform for
+                            exploration of proteomics data and related resources made available as part of the NIH LINCS
+                            Program. </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="fh5co-testimonials" class="boredr-top">
+            <div class="container">
+                <div class="row row-bottom-padded-sm">
+                    <div class="col-md-6 col-md-offset-3 text-center">
+
+                        <h2 class="fh5co-lead animate-box">LINCS Proteomics Data Centers </h2>
+                        <div class="fh5co-label animate-box">This list includes data generating and data
+                            processing centers
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 text-center animate-box">
+                        <div class="flexslider">
+                            <ul class="slides">
+                                <li>
+                                    <blockquote>
+                                        <h3>LINCS PCCSE </h3>
+                                        <p>The LINCS Proteomic Characterization Center for Signaling and Epigenetics at
+                                            the
+                                            Broad Institute/MIT/University of Washington utilizes the P100 and GCP
+                                            assays to
+                                            profile the response of human cell lines to perturbations.</p>
+                                        <p><cite>&nbsp;</cite></p>
+                                    </blockquote>
+                                </li>
+                                <li>
+                                    <blockquote>
+                                        <h3>LINCS DToxS </h3>
+                                        <p>The Drug Toxicity Signature Generation Center is a Systems Pharmacology
+                                            research
+                                            center at the Icahn School of Medicine. The proteomics experiments are
+                                            conducted at
+                                            the Center for Advanced Proteomics, Rutgers-New Jersey Medical School.</p>
+                                        <p><cite>&nbsp;</cite></p>
+                                    </blockquote>
+                                </li>
+                                <li>
+                                    <blockquote>
+                                        <h3>HMS LINCS </h3>
+                                        <p>The HMS LINCS Center collects multiplex perturbagen-response data across a
+                                            number of complementary
+                                            experimental platforms including live- and fixed-cell imaging, sandwich
+                                            immunoassays, protein mass
+                                            spectrometry, and mRNA profiling as a means to measure the levels,
+                                            localization, and states of modification.</p>
+                                        <p><cite>&nbsp;</cite></p>
+                                    </blockquote>
+                                </li>
+                                <li>
+                                    <blockquote>
+                                        <h3>NeuroLINCS </h3>
+                                        <p>The NeuroLINCS Center studies ALS and SMA by characterizing the molecular
+                                            networks within
+                                            patient-derived iPSCs, and their differentiated progeny, across many
+                                            regulatory layers.</p>
+                                        <p><cite>&nbsp;</cite></p>
+                                    </blockquote>
+                                </li>
+                                <li>
+                                    <blockquote>
+                                        <h3>BD2K-LINCS DCIC </h3>
+                                        <p>The BD2K-LINCS Data Coordination and Integration Centers at Icahn School of
+                                            Medicine, university of Miami
+                                            and university of Cincinnati are responsible for harmonizing
+                                            LINCS data with other available resources.</p>
+                                        <p><cite>&nbsp;</cite></p>
+                                    </blockquote>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="flexslider-controls">
+                            <ol class="flex-control-nav">
+                                <li class="animate-box"><img src="images/labkey-logo2.png"
+                                                             alt="Free HTML5 Bootstrap Template by FREEHTML5.co"></li>
+                                <li class="animate-box"><img src="images/dtoxs2.png"
+                                                             alt="Free HTML5 Bootstrap Template by FREEHTML5.co"></li>
+                                <li class="animate-box"><img src="images/hms-lincs2.png"
+                                                             alt="Free HTML5 Bootstrap Template by FREEHTML5.co"></li>
+                                <li class="animate-box"><img src="images/neurolincs2.jpeg"
+                                                             alt="Free HTML5 Bootstrap Template by FREEHTML5.co"></li>
+                                <li class="animate-box"><img src="images/dcic3.png"
+                                                             alt="Free HTML5 Bootstrap Template by FREEHTML5.co"></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
             </div>
 
 
-            
-            <!--<div id="navbar" class="collapse navbar-collapse">-->
-                <!--<ul class="nav navbar-nav">-->
-                    <!--<li ng-class="{active:ctrl.activeSite=='data-view'}"><a href="#/data-view"-->
-                                                                           <!--ng-click="ctrl.changeSite('data-view')">Data View</a>-->
-		    <!--</li>-->
-		    <!--<li ng-class="{active:ctrl.activeSite=='tools'}"><a href="#/tools"-->
-                                                                                         <!--ng-click="ctrl.changeSite('tools')">Tools</a>-->
-                    <!--</li>-->
-                <!--</ul>-->
-            <!--</div>-->
-        <!--/.nav-collapse -->
-        </div>
-    </nav>
+            <hr/>
+
+            <div id="fh5co-about">
+                <div class="container">
+                    <!--<div class="row row-bottom-padded-lg">-->
+                    <!--<div class="col-md-6">-->
+                    <!--<figure class="animate-box">-->
+                    <!--<img src="images/img_3.jpg" alt="Free HTML5 Bootstrap Template by FREEHTML5.co"-->
+                    <!--class="img-responsive">-->
+                    <!--</figure>-->
+                    <!--</div>-->
+                    <!--<div class="col-md-6">-->
+                    <!--<div class="fh5co-label animate-box">Who We Are</div>-->
+                    <!--<h2 class="fh5co-lead animate-box">We Are Thinkers, Innovators, Scientist, etc.</h2>-->
+                    <!--<p class="fh5co-sub-lead animate-box">Far far away, behind the word mountains, far from the-->
+                    <!--countries Vokalia and Consonantia, there live the blind texts. Separated they live in-->
+                    <!--Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river-->
+                    <!--named Duden flows by their place and supplies it with the necessary regelialia. It is a-->
+                    <!--paradisematic country, in which roasted parts of sentences fly into your mouth.</p>-->
+                    <!--</div>-->
+                    <!--</div>-->
+
+                    <div class="row text-center row-bottom-padded-md">
+                        <div class="col-md-8 col-md-offset-2">
+
+                            <h2 class="fh5co-lead animate-box">LINCS Proteomics Assays</h2>
+                            <!--<p class="fh5co-sub-lead animate-box">This list includes data generating and data-->
+                            <!--processing centers. </p>-->
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="fh5co-person">
+                                <figure class="animate-box">
+                                    <img src="images/database.png" alt="Free HTML5 Bootstrap Template by FREEHTML5.co"
+                                         class="img-responsive">
+                                </figure>
+                                <h3 class="fh5co-name animate-box">P100</h3>
+                                <h4 class="fh5co-designation animate-box">LINCS PCCSE</h4>
+                                <p class="fh5co-bio animate-box">P100 has been designed to measure the phosphorylation
+                                    state of cellular systems, using
+                                    a set of about hundred pospho-peptide probes whose abundance levels are measured
+                                    using
+                                    mass spectrometry techniques. P100 can be classified as a 'targeted proteomics'
+                                    assay that
+                                    provides a snapshot of cellular signaling cascades that involve phosphorylation of
+                                    the P100
+                                    target sites/peptides.</p>
+                                <!--<ul class="fh5co-social">-->
+                                <!--<li class="animate-box"><a href="#"><i class="icon-twitter"></i></a></li>-->
+                                <!--<li class="animate-box"><a href="#"><i class="icon-dribbble"></i></a></li>-->
+                                <!--<li class="animate-box"><a href="#"><i class="icon-globe"></i></a></li>-->
+                                <!--</ul>-->
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="fh5co-person">
+                                <figure class="animate-box">
+                                    <img src="images/database.png" alt="Free HTML5 Bootstrap Template by FREEHTML5.co"
+                                         class="img-responsive">
+                                </figure>
+                                <h3 class="fh5co-name animate-box">GCP</h3>
+                                <h4 class="fh5co-designation animate-box">LINCS PCCSE</h4>
+                                <p class="fh5co-bio animate-box">GCP has been designed to measure the histone
+                                    modification state, and thus indirectly the chromatin state of cellular
+                                    systems, using a set of about sixty target modified (acetylated, methylated etc.)
+                                    histone peptides whose abundance levels are measured
+                                    using mass spectrometry.</p>
+                                <!--<ul class="fh5co-social">-->
+                                <!--<li class="animate-box"><a href="#"><i class="icon-twitter"></i></a></li>-->
+                                <!--<li class="animate-box"><a href="#"><i class="icon-dribbble"></i></a></li>-->
+                                <!--<li class="animate-box"><a href="#"><i class="icon-globe"></i></a></li>-->
+                                <!--</ul>-->
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="fh5co-person">
+                                <figure class="animate-box">
+                                    <img src="images/database.png" alt="Free HTML5 Bootstrap Template by FREEHTML5.co"
+                                         class="img-responsive">
+                                </figure>
+                                <h3 class="fh5co-name animate-box">MS Protein State assay</h3>
+                                <h4 class="fh5co-designation animate-box">LINCS DToxS</h4>
+                                <p class="fh5co-bio animate-box">Mass spectrometry is a sensitive technique that
+                                    measures the mass-to-charge ratio of ions to
+                                    identify and quantify molecules in simple and
+                                    complex mixtures. Samples are loaded into the mass spectrometer in liquid, gas or
+                                    dried form
+                                    and then vaporized and ionized by the ion source. The charge that these molecules
+                                    receive allows
+                                    the mass spectrometer to accelerate the ions throughout the remainder of the system.
+                                    The ions
+                                    encounter electric and/or magnetic fields from mass analyzers, which deflect the
+                                    paths of individual
+                                    ions based on their mass and charge (m/z). Ions that have successfully been
+                                    deflected by the mass
+                                    analyzers then hit the ion detector that registers the number of ions at each m/z
+                                    value.</p>
+                                <!--<ul class="fh5co-social">-->
+                                <!--<li class="animate-box"><a href="#"><i class="icon-twitter"></i></a></li>-->
+                                <!--<li class="animate-box"><a href="#"><i class="icon-dribbble"></i></a></li>-->
+                                <!--<li class="animate-box"><a href="#"><i class="icon-globe"></i></a></li>-->
+                                <!--</ul>-->
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="fh5co-person">
+                                <figure class="animate-box">
+                                    <img src="images/database.png" alt="Free HTML5 Bootstrap Template by FREEHTML5.co"
+                                         class="img-responsive">
+                                </figure>
+                                <h3 class="fh5co-name animate-box">RPPA protein state assay</h3>
+                                <h4 class="fh5co-designation animate-box">HMS LINCS</h4>
+                                <p class="fh5co-bio animate-box">Reverse phase protein array (RPPA) is a high-throughput
+                                    technology that performs protein assays on
+                                    thousands of samples simultaneously, including tissue and cell lysates, serum,
+                                    plasma or other
+                                    body fluids that measure the levels of protein expression, as well as protein
+                                    modifications such
+                                    as phosphorylation. Protein lysates are arrayed as microspots on nitrocellulized
+                                    coated glass slides
+                                    and probed with highly specific antibodies that have been validated for RPPA. When
+                                    specific antibodies
+                                    are used, RPPA can generate 1,000 times more data points using 10,000 times less
+                                    sample volume than
+                                    an ordinary western blot, enabling researchers to monitor quantitative proteomic
+                                    responses for various
+                                    time-scale and input-dose gradients simultaneously.</p>
+                                <!--<ul class="fh5co-social">-->
+                                <!--<li class="animate-box"><a href="#"><i class="icon-twitter"></i></a></li>-->
+                                <!--<li class="animate-box"><a href="#"><i class="icon-github"></i></a></li>-->
+                                <!--<li class="animate-box"><a href="#"><i class="icon-globe"></i></a></li>-->
+                                <!--</ul>-->
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="fh5co-person">
+                                <figure class="animate-box">
+                                    <img src="images/database.png" alt="Free HTML5 Bootstrap Template by FREEHTML5.co"
+                                         class="img-responsive">
+                                </figure>
+                                <h3 class="fh5co-name animate-box">SWATH-MS protein quantification assay</h3>
+                                <h4 class="fh5co-designation animate-box">NeuroLINCS</h4>
+                                <p class="fh5co-bio animate-box">SWATH (sequential window acquisition of all theoretical
+                                    fragment ion spectra) is a new strategy for high
+                                    throughput, label-free protein quantification. It generates global, quantitative
+                                    protein maps using
+                                    data-independent acquisition of collision-induced dissociation (CID) spectra of all
+                                    precursor ions.
+                                    As a data-independent acquisition (also referred to as MS/MSall) SWATH-MS has a
+                                    greater coverage of
+                                    peptide identification compared to classical discovery approaches.
+                                    Using known fingerprints of target peptides comprising precursor mass,
+                                    chromatographic retention
+                                    time and MRM transitions SWATH protein maps can be interrogated for targeted
+                                    quantification of proteins
+                                    of interest based on high resolution MRM-like signatures. SWATH acquires all MRM
+                                    transitions of all
+                                    precursors and thus does not require tedious assay development and allows for a more
+                                    dynamic data
+                                    interpretation compared to classical MRM experiments.</p>
+                                <!--<ul class="fh5co-social">-->
+                                <!--<li class="animate-box"><a href="#"><i class="icon-twitter"></i></a></li>-->
+                                <!--<li class="animate-box"><a href="#"><i class="icon-dribbble"></i></a></li>-->
+                                <!--<li class="animate-box"><a href="#"><i class="icon-globe"></i></a></li>-->
+                                <!--</ul>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 
+        <!--<hr/>-->
+        <!--<section id="fh5co-testimonials2" class="boredr-top">-->
+
+        <!--<div class="container">-->
+        <!--<div class="row row-bottom-padded-sm">-->
+        <!--<div class="col-md-6 col-md-offset-3 text-center">-->
+        <!--<div class="fh5co-label animate-box">Testimonials</div>-->
+        <!--<h2 class="fh5co-lead animate-box">Join the 1 Million Users using Our Products </h2>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="row">-->
+        <!--<div class="col-md-8 col-md-offset-2 text-center animate-box">-->
+        <!--<div class="flexslider">-->
+        <!--<ul class="slides">-->
+        <!--<li>-->
+        <!--<blockquote>-->
+        <!--<p>&ldquo;Creativity is just connecting things. When you ask creative people how-->
+        <!--they did something, they feel a little guilty because they didn’t really do-->
+        <!--it, they just saw something. It seemed obvious to them after a-->
+        <!--while.&rdquo;</p>-->
+        <!--<p><cite>&mdash; Steve Jobs</cite></p>-->
+        <!--</blockquote>-->
+        <!--</li>-->
+        <!--<li>-->
+        <!--<blockquote>-->
+        <!--<p>&ldquo;I think design would be better if designers were much more skeptical-->
+        <!--about its applications. If you believe in the potency of your craft, where-->
+        <!--you choose to dole it out is not something to take lightly.&rdquo;</p>-->
+        <!--<p><cite>&mdash; Frank Chimero</cite></p>-->
+        <!--</blockquote>-->
+        <!--</li>-->
+        <!--<li>-->
+        <!--<blockquote>-->
+        <!--<p>&ldquo;Design must be functional and functionality must be translated into-->
+        <!--visual aesthetics, without any reliance on gimmicks that have to be-->
+        <!--explained.&rdquo;</p>-->
+        <!--<p><cite>&mdash; Ferdinand A. Porsche</cite></p>-->
+        <!--</blockquote>-->
+        <!--</li>-->
+        <!--<li>-->
+        <!--<blockquote>-->
+        <!--<p>&ldquo;4444Design must be functional and functionality must be translated into-->
+        <!--visual aesthetics, without any reliance on gimmicks that have to be-->
+        <!--explained.&rdquo;</p>-->
+        <!--<p><cite>&mdash; Ferdinand A. Porsche</cite></p>-->
+        <!--</blockquote>-->
+        <!--</li>-->
+        <!--<li>-->
+        <!--<blockquote>-->
+        <!--<p>&ldquo;5555Design must be functional and functionality must be translated into-->
+        <!--visual aesthetics, without any reliance on gimmicks that have to be-->
+        <!--explained.&rdquo;</p>-->
+        <!--<p><cite>&mdash; Ferdinand A. Porsche</cite></p>-->
+        <!--</blockquote>-->
+        <!--</li>-->
+        <!--</ul>-->
+        <!--</div>-->
+        <!--<div class="flexslider-controls">-->
+        <!--<ol class="flex-control-nav">-->
+        <!--<li class="animate-box"><img src="images/database.png"-->
+        <!--alt="Free HTML5 Bootstrap Template by FREEHTML5.co">-->
+        <!--&lt;!&ndash;<h3>P100 assay</h3>&ndash;&gt;-->
+        <!--</li>-->
+        <!--<li class="animate-box"><img src="images/database.png"-->
+        <!--alt="Free HTML5 Bootstrap Template by FREEHTML5.co">-->
+        <!--&lt;!&ndash;<h3>GCP assay</h3>&ndash;&gt;-->
+        <!--</li>-->
+        <!--<li class="animate-box"><img src="images/database.png"-->
+        <!--alt="Free HTML5 Bootstrap Template by FREEHTML5.co">-->
+        <!--&lt;!&ndash;<h3>MS Protein State assay</h3>&ndash;&gt;-->
+        <!--</li>-->
+        <!--<li class="animate-box"><img src="images/database.png"-->
+        <!--alt="Free HTML5 Bootstrap Template by FREEHTML5.co">-->
+        <!--&lt;!&ndash;<h3>RPPA protein state assay</h3>&ndash;&gt;-->
+        <!--</li>-->
+        <!--<li class="animate-box"><img src="images/database.png"-->
+        <!--alt="Free HTML5 Bootstrap Template by FREEHTML5.co">-->
+        <!--&lt;!&ndash;<h3>SWATH-MS protein quantification assay</h3>&ndash;&gt;-->
+        <!--</li>-->
+        <!--</ol>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
 
 
-
-    <br/>
-    <br/>
-    <div class="container" >
-        <!--<div >-->
-            <div ng-show="ctrl.activeSite == '#/' ">
+        <!--</section>-->
 
 
-            <div ng-show = "!ctrl.showSVG">
-                <!--<div class="container" >-->
-                <div class="well" >
-                    <h1>LINCS Proteomics Landing Page</h1>
-                    <p >
-                        LINCS Proteomics Landing Page is designed to provide a platform for <br>
-                        exploration of proteomics data and related resources made available as part of the NIH LINCS Program.
-                    </p>
+        <!--<section id="fh5co-features">-->
+        <!--<div class="container">-->
+        <!--<div class="row text-center row-bottom-padded-md">-->
+        <!--<div class="col-md-8 col-md-offset-2">-->
+        <!--<figure class="fh5co-devices animate-box"><img src="images/centers.jpg"-->
+        <!--alt="Free HTML5 Bootstrap Template"-->
+        <!--class="img-responsive"></figure>-->
+        <!--<h2 class="fh5co-lead animate-box">LINCS Proteomics Data Centers</h2>-->
+        <!--<p class="fh5co-sub-lead animate-box">This list includes data generating and data-->
+        <!--processing centers. </p>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="row">-->
+        <!--<div class="col-md-4 col-sm-6 col-xs-12 animate-box">-->
+        <!--<div class="fh5co-feature">-->
+        <!--<div class="fh5co-icon">-->
+        <!--<i class="icon-database"></i>-->
+        <!--</div>-->
+        <!--<h3>LINCS PCCSE</h3>-->
+        <!--<p>The LINCS Proteomic Characterization Center for Signaling and Epigenetics at the-->
+        <!--Broad Institute/MIT/University of Washington utilizes the P100 and GCP assays to-->
+        <!--profile the response of human cell lines to perturbations.</p>-->
+        <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="col-md-4 col-sm-6 col-xs-12 animate-box">-->
+        <!--<div class="fh5co-feature">-->
+        <!--<div class="fh5co-icon">-->
+        <!--<i class="icon-database"></i>-->
+        <!--</div>-->
+        <!--<h3>LINCS DToxS</h3>-->
+        <!--<p>The Drug Toxicity Signature Generation Center is a Systems Pharmacology research-->
+        <!--center at the Icahn School of Medicine. The proteomics experiments are conducted at-->
+        <!--the Center for Advanced Proteomics, Rutgers-New Jersey Medical School. </p>-->
+        <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="clearfix visible-sm-block"></div>-->
+        <!--<div class="col-md-4 col-sm-6 col-xs-12 animate-box">-->
+        <!--<div class="fh5co-feature">-->
+        <!--<div class="fh5co-icon">-->
+        <!--<i class="icon-database"></i>-->
+        <!--</div>-->
+        <!--<h3>HMS LINCS</h3>-->
+        <!--<p>The HMS LINCS Center collects multiplex perturbagen-response data across a number of complementary-->
+        <!--experimental platforms including live- and fixed-cell imaging, sandwich immunoassays, protein mass-->
+        <!--spectrometry, and mRNA profiling as a means to measure the levels, localization, and states of modification.</p>-->
+
+        <!--&lt;!&ndash;The Harvard Medical School LINCS Center studies how normal and diseased human cells respond&ndash;&gt;-->
+        <!--&lt;!&ndash;at the molecular level to perturbation by drugs, mutations, and the local environment.</p>&ndash;&gt;-->
+        <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="col-md-4 col-sm-6 col-xs-12 animate-box">-->
+        <!--<div class="fh5co-feature">-->
+        <!--<div class="fh5co-icon">-->
+        <!--<i class="icon-database"></i>-->
+        <!--</div>-->
+        <!--<h3>NeuroLINCS</h3>-->
+        <!--<p>The NeuroLINCS Center studies ALS and SMA by characterizing the molecular networks within-->
+        <!--patient-derived iPSCs, and their differentiated progeny, across many regulatory layers.</p>-->
+        <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="clearfix visible-sm-block"></div>-->
+        <!--<div class="col-md-4 col-sm-6 col-xs-12 animate-box">-->
+        <!--<div class="fh5co-feature">-->
+        <!--<div class="fh5co-icon">-->
+        <!--<i class="icon-database"></i>-->
+        <!--</div>-->
+        <!--<h3>BD2K-LINCS DCIC</h3>-->
+        <!--<p>The BD2K-LINCS Data Coordination and Integration Centers at Icahn School of Medicine, university of Miami-->
+        <!--and university of Cincinnati are responsible for harmonizing-->
+        <!--LINCS data with other available resources.</p>-->
+        <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="clearfix visible-sm-block"></div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<hr/>-->
+        <!--<div class="container">-->
+        <!--<div class="row text-center row-bottom-padded-md">-->
+        <!--<div class="col-md-8 col-md-offset-2">-->
+
+        <!--<h2 class="fh5co-lead animate-box">LINCS Proteomics Assays</h2>-->
+        <!--&lt;!&ndash;<p class="fh5co-sub-lead animate-box">This list includes data generating and data&ndash;&gt;-->
+        <!--&lt;!&ndash;processing centers. </p>&ndash;&gt;-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="row">-->
 
 
-                        <!--<div class="row">-->
-                            <!--<div class="col-sm-3" >-->
-                                <!--<strong>The LINCS-Proteomics portal aims to:</strong>-->
-                            <!--</div>-->
+        <!--<div class="clearfix visible-sm-block"></div>-->
+        <!--<div class="col-md-4 col-sm-6 col-xs-12 animate-box">-->
+        <!--<div class="fh5co-feature">-->
+        <!--<div class="fh5co-icon">-->
+        <!--<i class="icon-info"></i>-->
+        <!--</div>-->
+        <!--<h3>MS Protein State assay</h3>-->
+        <!--<p>Mass spectrometry is a sensitive technique that measures the mass-to-charge ratio of ions to-->
+        <!--identify and quantify molecules in simple and-->
+        <!--complex mixtures. Samples are loaded into the mass spectrometer in liquid, gas or dried form-->
+        <!--and then vaporized and ionized by the ion source. The charge that these molecules receive allows-->
+        <!--the mass spectrometer to accelerate the ions throughout the remainder of the system. The ions-->
+        <!--encounter electric and/or magnetic fields from mass analyzers, which deflect the paths of individual-->
+        <!--ions based on their mass and charge (m/z). Ions that have successfully been deflected by the mass-->
+        <!--analyzers then hit the ion detector that registers the number of ions at each m/z value.-->
+        <!--</p>-->
 
-                            <!--<div class="col-sm-9" >-->
-                                <!--<p > <span style="color:blue">&#10004;</span> Facilitate navigation, search, and interpretation of LINCS proteomics data using alternative “data-centric” and “assay-centric” lens or views<br>-->
-                                <!--</p>-->
-                                <!--<p > <span style="color:blue">&#10004;</span> Provide a guide to LINCS Data Portal other resources developed by LINCS-DCIC to facilitate finding and downloading proteomic data<br>-->
-                                <!--</p>-->
-                                <!--<p > <span style="color:blue">&#10004;</span> Provide intuitive representations of relationship between protein entities that are measured as the snapshot of the biological state provided by each method/assay<br>-->
-                                <!--</p>-->
-                                <!--<p > <span style="color:blue">&#10004;</span> Provide links to other resources and tools for proteomics, in particular those developed as part of the LINCS consortium<br>-->
-                                <!--</p>-->
-                            <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="col-md-4 col-sm-6 col-xs-12 animate-box">-->
+        <!--<div class="fh5co-feature">-->
+        <!--<div class="fh5co-icon">-->
+        <!--<i class="icon-info"></i>-->
+        <!--</div>-->
+        <!--<h3>RPPA protein state assay</h3>-->
+        <!--<p>Reverse phase protein array (RPPA) is a high-throughput technology that performs protein assays on-->
+        <!--thousands of samples simultaneously, including tissue and cell lysates, serum, plasma or other-->
+        <!--body fluids that measure the levels of protein expression, as well as protein modifications such-->
+        <!--as phosphorylation. Protein lysates are arrayed as microspots on nitrocellulized coated glass slides-->
+        <!--and probed with highly specific antibodies that have been validated for RPPA. When specific antibodies-->
+        <!--are used, RPPA can generate 1,000 times more data points using 10,000 times less sample volume than-->
+        <!--an ordinary western blot, enabling researchers to monitor quantitative proteomic responses for various-->
+        <!--time-scale and input-dose gradients simultaneously.</p>-->
+        <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="clearfix visible-sm-block"></div>-->
+        <!--<div class="col-md-4 col-sm-6 col-xs-12 animate-box">-->
+        <!--<div class="fh5co-feature">-->
+        <!--<div class="fh5co-icon">-->
+        <!--<i class="icon-info"></i>-->
+        <!--</div>-->
+        <!--<h3>SWATH-MS protein quantification assay</h3>-->
+        <!--<p>SWATH (sequential window acquisition of all theoretical fragment ion spectra) is a new strategy for high-->
+        <!--throughput, label-free protein quantification. It generates global, quantitative protein maps using-->
+        <!--data-independent acquisition of collision-induced dissociation (CID) spectra of all precursor ions.-->
+        <!--As a data-independent acquisition (also referred to as MS/MSall) SWATH-MS has a greater coverage of-->
+        <!--peptide identification compared to classical discovery approaches.-->
+        <!--Using known fingerprints of target peptides comprising precursor mass, chromatographic retention-->
+        <!--time and MRM transitions SWATH protein maps can be interrogated for targeted quantification of proteins-->
+        <!--of interest based on high resolution MRM-like signatures. SWATH acquires all MRM transitions of all-->
+        <!--precursors and thus does not require tedious assay development and allows for a more dynamic data-->
+        <!--interpretation compared to classical MRM experiments. </p>-->
+        <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="col-md-4 col-sm-6 col-xs-12 animate-box">-->
+        <!--<div class="fh5co-feature">-->
+        <!--<div class="fh5co-icon">-->
+        <!--<i class="icon-info"></i>-->
+        <!--</div>-->
+        <!--<h3>P100 assay</h3>-->
+        <!--<p>P100 has been designed to measure the phosphorylation state of cellular systems, using-->
+        <!--a set of about hundred pospho-peptide probes whose abundance levels are measured using-->
+        <!--mass spectrometry techniques. P100 can be classified as a 'targeted proteomics' assay that-->
+        <!--provides a snapshot of cellular signaling cascades that involve phosphorylation of the P100-->
+        <!--target sites/peptides.<a href="https://panoramaweb.org/labkey/project/LINCS/begin.view?" target="_blank">More ...</a></p>-->
+        <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="col-md-4 col-sm-6 col-xs-12 animate-box">-->
+        <!--<div class="fh5co-feature">-->
+        <!--<div class="fh5co-icon">-->
+        <!--<i class="icon-info"></i>-->
+        <!--</div>-->
+        <!--<h3>GCP assay</h3>-->
+        <!--<p>GCP has been designed to measure the histone modification state, and thus indirectly the chromatin state of cellular-->
+        <!--systems, using a set of about sixty target modified (acetylated, methylated etc.) histone peptides whose abundance levels are measured-->
+        <!--using mass spectrometry. <a href="https://panoramaweb.org/labkey/project/LINCS/begin.view?" target="_blank">More ... </a></p>-->
+        <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="clearfix visible-sm-block"></div>-->
+        <!--</div>-->
+        <!--</div>-->
+
+
+        <!--<hr/>-->
+
+
+        <!--</section>-->
+
+
+        <section id="fh5co-features-2">
+            <div class="container">
+
+
+                <!--<div class="container">-->
+                    <div class="row text-center row-bottom-padded-md">
+                        <div class="col-md-8 col-md-offset-2">
+
+
+                            <h2 class="fh5co-lead animate-box"> LINCS Proteomics Assays (Data Generating Centers)</h2>
+                            <!--<hr/>-->
+                            <div class="fh5co-lead animate-box">
+
+
+                                <div >
+                                    <!--<button type="button" class="btn btn-default">-->
+                                    <!--<i class="fa fa-shopping-cart"></i> Buy Now-->
+                                    <!--</button>-->
+                                    <!--<button type="button" class="btn btn-default" style="border: 2px solid #4CAF50;" ng-class="{'btn-primary': display.P100}" ng-click="showNetwork('P100')" >P100 (PCCSE)</button>-->
+                                    <button type="button" class="btn btn-info" style="border: 2px solid #4CAF50;"
+                                            ng-class="{'btn-primary': display.P100}"
+                                            ng-click="showNetwork('P100')"> P100 (PCCSE)
+                                            <!--ng-click="showPhosphoNetwork('P100')"> P100 (PCCSE)-->
+
+                                    </button>
+
+                                    <span>
+                                    <button type="button" class="btn btn-info" style="border: 2px solid #4CAF50;"
+                                            ng-click="customDownloadP100('P100')">Download
+                                    </button>
+                                    </span>
+                                </div>
+                                <div >
+                                    <button type="button" class="btn btn-info" style="border: 2px solid #00FFFF;"
+                                            ng-class="{'btn-primary': display.GCP}" ng-click="showNetwork('GCP')">GCP
+                                        (PCCSE)
+                                    </button>
+                                    <span>
+                                        <button type="button" class="btn btn-info" style="border: 2px solid #00FFFF;"
+                                                ng-click="customDownloadGCP('GCP')">Download
+                                        </button>
+                                    </span>
+                                </div>
+                                <div >
+                                    <button type="button" class="btn btn-info" style="border: 2px solid #A52A2A;"
+                                            ng-class="{'btn-primary': display.DToxS}" ng-click="showNetwork('DToxS')">MS
+                                        Protein State (DToxS)
+                                    </button>
+                                    <span>
+                                        <button type="button" class="btn btn-info" style="border: 2px solid #A52A2A;"
+                                                ng-click="customDownloadDToxS('DToxS')">Download
+                                        </button>
+                                    </span>
+                                </div>
+                                <div>
+                                    <button type="button" class="btn btn-info" style="border: 2px solid #7FFF00;"
+                                            ng-class="{'btn-primary': display.SWATH}" ng-click="showNetwork('SWATH')">
+                                        SWATH (Neuro-LINCS)
+                                    </button>
+                                    <span>
+                                        <button type="button" class="btn btn-info" style="border: 2px solid #7FFF00;"
+                                                ng-click="customDownloadSWATH('SWATH')">Download
+                                        </button>
+                                    </span>
+                                </div>
+                                <div>
+                                    <button type="button" disabled class="btn btn-info"
+                                            style="border: 2px solid #FF7F50;" ng-class="{'btn-primary': display.RPPA}"
+                                            ng-click="showNetwork('RPPA')">RPPA (HMS-LINCS)
+                                    </button>
+                                    <span>
+                                        <button type="button" class="btn btn-info" style="border: 2px solid #FF7F50;"
+                                                ng-click="customDownloadRPPA('RPPA')">Download
+                                        </button>
+                                    </span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div>
+                        <div class="container" style="padding-top: 20px;">
+                            <div class="bs-callout bs-callout-primary" ng-show="ctrl.showDToxSdiv">
+                                <p class="lead"> Mass spectrometry is a sensitive technique that measures the
+                                    mass-to-charge ratio of ions to identify and quantify molecules in simple and
+                                    complex mixtures. Samples are loaded into the mass spectrometer in liquid, gas or
+                                    dried form and then vaporized and ionized by the ion source. The charge that these
+                                    molecules receive allows the mass spectrometer to accelerate the ions throughout the
+                                    remainder of the system. The ions encounter electric and/or magnetic fields from
+                                    mass analyzers, which deflect the paths of individual ions based on their mass and
+                                    charge (m/z). Ions that have successfully been deflected by the mass analyzers then
+                                    hit the ion detector that registers the number of ions at each m/z value.</p>
+                                <hr/>
+                            </div>
+                            <div class="bs-callout bs-callout-primary" ng-show="ctrl.showDToxSdiv">
+                                <p> Gray nodes are the query gene set, red nodes are activating kinases, phosphorylating
+                                    the query gene set and green nodes are down stream gene sets, phosphorylated by the
+                                    gene set.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="container" style="padding-top: 20px;">
+                            <div class="bs-callout bs-callout-primary" ng-show="ctrl.showSWATHdiv">
+                                <p class="lead"> SWATH (sequential window acquisition of all theoretical fragment ion
+                                    spectra) is a new strategy for high throughput, label-free protein quantification.
+                                    It generates global, quantitative protein maps using data-independent acquisition of
+                                    collision-induced dissociation (CID) spectra of all precursor ions. As a
+                                    data-independent acquisition (also referred to as MS/MSall) SWATH-MS has a greater
+                                    coverage of peptide identification compared to classical discovery approaches.
+                                </p>
+                                <hr/>
+                            </div>
+                            <div class="bs-callout bs-callout-primary" ng-show="ctrl.showSWATHdiv">
+                                <p> Gray nodes are the query gene set, red nodes are activating kinases, phosphorylating
+                                    the query gene set and green nodes are down stream gene sets, phosphorylated by the
+                                    gene set.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="container" style="padding-top: 20px;">
+                            <div class="bs-callout bs-callout-primary" ng-show="ctrl.showRPPAdiv">
+                                <p class="lead"> Reverse phase protein array (RPPA) is a high-throughput technology that
+                                    performs protein assays on thousands of samples simultaneously, including tissue and
+                                    cell lysates, serum, plasma or other body fluids that measure the levels of protein
+                                    expression, as well as protein modifications such as phosphorylation. Protein
+                                    lysates are arrayed as microspots on nitrocellulized coated glass slides and probed
+                                    with highly specific antibodies that have been validated for RPPA. When specific
+                                    antibodies are used, RPPA can generate 1,000 times more data points using 10,000
+                                    times less sample volume than an ordinary western blot, enabling researchers to
+                                    monitor quantitative proteomic responses for various time-scale and input-dose
+                                    gradients simultaneously.</p>
+                                <hr/>
+                            </div>
+
+                            <div class="bs-callout bs-callout-primary" ng-show="ctrl.showRPPAdiv">
+                                <p> Gray nodes are the query gene set, red nodes are activating kinases, phosphorylating
+                                    the query gene set and green nodes are down stream gene sets, phosphorylated by the
+                                    gene set.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="container" style="padding-top: 20px;">
+                            <div class="bs-callout bs-callout-primary" ng-show="ctrl.showP100div">
+                                <p class="lead">P100 has been designed to measure the phosphorylation state of cellular
+                                    systems, using a set of about hundred pospho-peptide probes whose abundance levels
+                                    are measured using mass spectrometry techniques. P100 can be classified as a
+                                    'targeted
+                                    proteomics' assay that provides a snapshot of cellular signaling cascades that
+                                    involve
+                                    phosphorylation of the P100 target sites/peptides.
+
+                                    <a href="https://panoramaweb.org/labkey/project/LINCS/begin.view?" target="_blank">More
+                                        ...</a>
+                                </p>
+                                <hr/>
+                            </div>
+
+                            <div class="bs-callout bs-callout-primary" ng-show="ctrl.showP100div">
+                                <p> Gray nodes are the query gene set, red nodes are activating kinases, phosphorylating
+                                    the query gene set and green nodes are down stream gene sets, phosphorylated by the
+                                    gene set.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="container" style="padding-top: 20px;">
+                            <div class="bs-callout bs-callout-primary" ng-show="ctrl.showGCPdiv">
+                                <p class="lead">GCP has been designed to measure the histone modification state, and
+                                    thus indirectly the chromatin state of cellular
+                                    systems, using a set of about sixty target modified (acetylated, methylated etc.)
+                                    histone peptides whose abundance levels are measured
+                                    using mass spectrometry. <a
+                                            href="https://panoramaweb.org/labkey/project/LINCS/begin.view?"
+                                            target="_blank">More ...</a>
+                                </p>
+                                <hr/>
+                            </div>
+                            <div class="bs-callout bs-callout-primary" ng-show="ctrl.showGCPdiv">
+                                <p> Gray nodes are the query gene set, red nodes are activating kinases, phosphorylating
+                                    the query gene set and green nodes are down stream gene sets, phosphorylated by the
+                                    gene set.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!--<div ng-show = "ctrl.showP100div"  >-->
+
+                        <!--<select-->
+                        <!--ng-model="selectedphosphoPathways"-->
+                        <!--ng-change="changedPhosphoValue(selectedphosphoPathways)"-->
+                        <!--ng-options = "x.value for x in phosphoOptions">-->
+                        <!--</select>-->
+                        <!--<hr/>-->
                         <!--</div>-->
 
-                    <br>
-                    <img src="images/lens3.jpg" align="center" margin = "0 auto" width="50%" alt="logo3" >
+                        <div class="category-container" ng-show="ctrl.showSVG">
+                            <!--<button>-->
+                            <!--<a id="download2" href="#">Download SVG-->
+                            <!--</a>-->
+                            <!--</button>-->
 
-                    <br>
+                            <br/>
+                            <div id="chart"></div>
+
+                        </div>
+                    </div>
+                <!--</div>-->
+
+
+            </div>
+        </section>
+        <!-- END #fh5co-features-2 -->
+
+        <footer id="fh5co-footer">
+            <div class="container">
+
+                <div class="row row-bottom-padded-md">
+
+                    <div class="col-md-5 col-sm-6 col-xs-10 animate-box">
+                        <div class="fh5co-footer-widget">
+                            <!--<h3>Company</h3>-->
+                            <ul class="fh5co-links">
+                                <li class="animate-box"><img src="images/footnote.jpg"
+                                                             alt="Free HTML5 Bootstrap Template by FREEHTML5.co"></li>
+                            </ul>
+                        </div>
+                    </div>
+
 
                 </div>
 
-
             </div>
 
-            <div class="container"  ng-show = "ctrl.showSVG">
-                <div class="well" >
+
+            <div class="fh5co-copyright animate-box">
+                <div class="container">
                     <div class="row">
-                        <div class="col-sm-4" >
-                            <img src="images/lens4.png"  align="left" width=55% >
-                        </div>
+                        <div class="col-md-12">
 
-                        <div class="col-sm-8" >
-                            <h1>LINCS Proteomics Landing Page</h1>
-                            <p class="lead">LINCS Proteomics Landing Page is designed to provide a platform for <br>
-                                exploration of proteomics data and related resources made available as part of the NIH LINCS Program.
+                            <p class="fh5co-left">
 
+                                <small>&copy; 2017 <a href="http://www.lincsproject.org/">LINCS Program. All rights
+                                    reserved.</a></small>
+                            </p>
+                            <p class="fh5co-right">
+                                <small class="fh5co-right">Developed within NIH funded <a
+                                        href="http://www.lincsproject.org/" target="_blank">LINCS</a> project.
+                                </small>
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
-
-
-
-
-
-            <div class="container">
-
-                <h3> LINCS Proteomics Assays (Data Generating Centers)</h3>
-                <hr/>
-                <div >
-
-
-                    <div class="column4">
-                        <!--<button type="button" class="btn btn-default" style="border: 2px solid #4CAF50;" ng-class="{'btn-primary': display.P100}" ng-click="showNetwork('P100')" >P100 (PCCSE)</button>-->
-                        <button type="button" class="btn btn-default" style="border: 2px solid #4CAF50;" ng-class="{'btn-primary': display.P100}" ng-click="showPhosphoNetwork('P100')" >P100 (PCCSE)</button>
-
-                        <span>
-                        <button type="button" class="btn btn-default" style="border: 2px solid #4CAF50;" ng-click="customDownloadP100('P100')">Download</button>
-                        </span>
-                    </div>
-                    <div class="column4">
-                        <button type="button" class="btn btn-default" style="border: 2px solid #00FFFF;" ng-class="{'btn-primary': display.GCP}" ng-click="showNetwork('GCP')" >GCP (PCCSE)</button>
-                        <span>
-                        <button type="button" class="btn btn-default" style="border: 2px solid #00FFFF;" ng-click="customDownloadGCP('GCP')">Download</button>
-                        </span>
-                    </div>
-                    <div class="column4">
-                        <button type="button" class="btn btn-default" style="border: 2px solid #A52A2A;"ng-class="{'btn-primary': display.DToxS}" ng-click="showNetwork('DToxS')" >MS Protein State (DToxS)</button>
-                        <span>
-                        <button type="button" class="btn btn-default" style="border: 2px solid #A52A2A;" ng-click="customDownloadDToxS('DToxS')">Download</button>
-                        </span>
-                    </div>
-                    <div class="column4">
-                        <button type="button" class="btn btn-default" style="border: 2px solid #7FFF00;" ng-class="{'btn-primary': display.SWATH}" ng-click="showNetwork('SWATH')" >SWATH (Neuro-LINCS)</button>
-                        <span>
-                        <button type="button" class="btn btn-default" style="border: 2px solid #7FFF00;" ng-click="customDownloadSWATH('SWATH')">Download</button>
-                        </span>
-                    </div>
-                    <div class="column4">
-                        <button type="button" disabled class="btn btn-default" style="border: 2px solid #FF7F50;" ng-class="{'btn-primary': display.RPPA}" ng-click="showNetwork('RPPA')" >RPPA (HMS-LINCS)</button>
-                        <span>
-                        <button type="button" class="btn btn-default" style="border: 2px solid #FF7F50;" ng-click="customDownloadRPPA('RPPA')">Download</button>
-                        </span>
-                    </div>
-                    <!--<div class="column4">-->
-                    <!--<button type="button" class="btn btn-default" style="border: 2px solid #00008B;" ng-class="{'btn-primary': display.Kinome}" ng-click="showMoreFunc('Kinome')" >Kinome</button>-->
-                    <!--<span>-->
-                    <!--<button type="button" class="btn btn-default" style="border: 2px solid #00008B;" ng-click="customDownload('P100')">Download</button>-->
-                    <!--</span>-->
-                    <!--</div>-->
-                    <!--<div class="column4">-->
-                        <!--<button type="button" class="btn btn-default" style="border: 2px solid #A9A9A9;" ng-class="{'btn-primary': display.foo}" ng-click="showNetwork('foo')" >........</button>-->
-
-                        <!--<span>-->
-                        <!--<button type="button" class="btn btn-default" style="border: 2px solid #A9A9A9;" ng-click="customDownload('foo')">Download</button>-->
-                        <!--</span>-->
-                    <!--</div>-->
-                </div>
-            </div>
-
-            <div class="container" style="padding-top: 20px;">
-                <div class="bs-callout bs-callout-primary" ng-show = "ctrl.showSWATHdiv">
-                    <p class="lead">SWATH (sequential window acquisition of all theoretical fragment ion spectra) is a new strategy for high throughput, label-free protein quantification. It generates global, quantitative protein maps using data-independent acquisition of collision-induced dissociation (CID) spectra of all precursor ions. As a data-independent acquisition (also referred to as MS/MSall) SWATH-MS has a greater coverage of peptide identification compared to classical discovery approaches. Using known fingerprints of target peptides comprising precursor mass, chromatographic retention time and MRM transitions SWATH protein maps can be interrogated for targeted quantification of proteins of interest based on high resolution MRM-like signatures. SWATH acquires all MRM transitions of all precursors and thus does not require tedious assay development and allows for a more dynamic data interpretation compared to classical MRM experiments. New proteins can be added to the list of targets during the process of data interpretation without the requirement of additional data acquisition.  </p>
-                </div>
-            </div>
-
-            <div class="container" style="padding-top: 20px;">
-                <div class="bs-callout bs-callout-primary" ng-show = "ctrl.showDToxSdiv">
-                    <p class="lead"> Mass spectrometry is a sensitive technique that measures the mass-to-charge ratio of ions to identify and quantify molecules in simple and complex mixtures. Samples are loaded into the mass spectrometer in liquid, gas or dried form and then vaporized and ionized by the ion source. The charge that these molecules receive allows the mass spectrometer to accelerate the ions throughout the remainder of the system. The ions encounter electric and/or magnetic fields from mass analyzers, which deflect the paths of individual ions based on their mass and charge (m/z). Ions that have successfully been deflected by the mass analyzers then hit the ion detector that registers the number of ions at each m/z value.</p>
-                </div>
-            </div>
-
-            <div class="container" style="padding-top: 20px;">
-                <div class="bs-callout bs-callout-primary" ng-show = "ctrl.showRPPAdiv">
-                    <p class="lead"> Reverse phase protein array (RPPA) is a high-throughput technology that performs protein assays on thousands of samples simultaneously, including tissue and cell lysates, serum, plasma or other body fluids that measure the levels of protein expression, as well as protein modifications such as phosphorylation. Protein lysates are arrayed as microspots on nitrocellulized coated glass slides and probed with highly specific antibodies that have been validated for RPPA. When specific antibodies are used, RPPA can generate 1,000 times more data points using 10,000 times less sample volume than an ordinary western blot, enabling researchers to monitor quantitative proteomic responses for various time-scale and input-dose gradients simultaneously.</p>
-                </div>
-            </div>
-
-            <div class="container" style="padding-top: 20px;">
-                <div class="bs-callout bs-callout-primary" ng-show = "ctrl.showP100div">
-                    <p class="lead">P100 has been designed to measure the phosphorylation state of cellular systems, using a set of about hundred
-                        target pospho-peptides whose abundance levels are measured using mass spectrometry. <a href="https://panoramaweb.org/labkey/project/LINCS/begin.view?" target="_blank">More ...</a>
-                    </p>
-
-                </div>
-                <hr/>
-                <div class="bs-callout bs-callout-primary" ng-show = "ctrl.showP100div">
-                    <p> Kinase network of phosphorylated genes reflects the connection between kinases and gene products phosphorylated
-                        at specific sites. Solid lines mean known relations between the kinases and target genes (in Known_Kinase_TargetGene) or
-                        exact matching between the kinase target and the peptide sequence in (Known+Predicted_Blosum50_Kinase_TargetGene and
-                        Known+Predicted_Probability_Kinase_TargetGene). Dashed lines show probable inkage between kinase and target genes based on blosum50 similarity scores or phosphosite plus connectivity networks.
-                    </p>
-                </div>
-            </div>
-
-            <div class="container" style="padding-top: 20px;">
-                <div class="bs-callout bs-callout-primary" ng-show = "ctrl.showGCPdiv">
-                    <p class="lead">GCP has been designed to measure the histone modification state, and thus indirectly the chromatin state of cellular
-                        systems, using a set of about sixty target modified (acetylated, methylated etc.) histone peptides whose abundance levels are measured
-                        using mass spectrometry. <a href="https://panoramaweb.org/labkey/project/LINCS/begin.view?" target="_blank">More ...</a>
-                    </p>
-                </div>
-            </div>
-
-                <div ng-show = "ctrl.showP100div"  >
-
-                    <select
-                            ng-model="selectedphosphoPathways"
-                            ng-change="changedPhosphoValue(selectedphosphoPathways)"
-                            ng-options = "x.value for x in phosphoOptions">
-                    </select>
-                    <hr/>
-                </div>
-
-            <div class="container" ng-show = "ctrl.showSVG">
-                <!--<button>-->
-                    <!--<a id="download2" href="#">Download SVG-->
-                    <!--</a>-->
-                <!--</button>-->
-
-                <br/>
-                <div id="chart"></div>
-
-            </div>
-
-
-
-
-
-
-
-
-
-        </div>
-
-        <div ng-view ></div>
+        </footer>
+        <!-- END #fh5co-footer -->
     </div>
+    <!-- END #fh5co-page -->
+    <!--
+     For demo purposes Only ( You may delete this anytime :-)
+    <div id="colour-variations">
+        <a class="option-toggle"><i class="icon-gear"></i></a>
+        <h3>Preset Colors</h3>
+        <ul>
+            <li><a href="javascript: void(0);" data-theme="style"></a></li>
+            <li><a href="javascript: void(0);" data-theme="red"></a></li>
+            <li><a href="javascript: void(0);" data-theme="turquoise"></a></li>
+            <li><a href="javascript: void(0);" data-theme="blue"></a></li>
+            <li><a href="javascript: void(0);" data-theme="orange"></a></li>
+            <li><a href="javascript: void(0);" data-theme="yellow"></a></li>
+            <li><a href="javascript: void(0);" data-theme="pink"></a></li>
+            <li><a href="javascript: void(0);" data-theme="purple"></a></li>
+        </ul>
+        <a href="#" data-layout="boxed">Boxed</a>
+        <a href="#" data-layout="wide">Wide</a>
+    </div>-->
+    <!-- End demo purposes only -->
 
 
+    <!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+    <!-- jQuery Easing -->
+    <script src="js/jquery.easing.1.3.js"></script>
+    <!-- Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Waypoints -->
+    <script src="js/jquery.waypoints.min.js"></script>
+    <!-- Flexslider -->
+    <script src="js/jquery.flexslider-min.js"></script>
+    <!-- Magnific Popup -->
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/magnific-popup-options.js"></script>
+
+    <!-- For demo purposes only styleswitcher ( You may delete this anytime ) -->
+    <script src="js/jquery.style.switcher.js"></script>
+    <script>
+        $(function () {
+            $('#colour-variations ul').styleSwitcher({
+                defaultThemeId: 'theme-switch',
+                hasPreview: false,
+                cookie: {
+                    expires: 30,
+                    isManagingLoad: true
+                }
+            });
+            $('.option-toggle').click(function () {
+                $('#colour-variations').toggleClass('sleep');
+            });
+        });
+    </script>
+    <!-- End demo purposes only -->
 
 
+    <!--
+    INFO:
+    jQuery Cookie for Demo Purposes Only.
+    The code below is to toggle the layout to boxed or wide
+    -->
+    <script src="js/jquery.cookie.js"></script>
+    <script>
+        $(function () {
 
-</div>
-<!--{{ctrl.responseRaw}}-->
-<!--{{ctrl.uniprotResponseRaw[0]}}-->
-<!--style="padding-top: 100px;"-->
-<footer class="footer" >
-    <div class="container" style="padding-bottom: 100px;">
-        <div class="columnleft">
-            <img src="images/dcic2.png"  align="left" width="330" height="90" alt="logo1">
-        </div>
+            if ($.cookie('layoutCookie') != '') {
+                $('body').addClass($.cookie('layoutCookie'));
+            }
 
-        <div class="columnright" >
-            <img src="images/lincs.gif" align="right" width="330" height="90" alt="logo2" >
-        </div>
-    </div>
-    <br/>
-    <br/>
-    <div class="well" style="background-color: #f5f5f5">
-    <!--style="background-color: #f5f5f5"-->
-        <p class="text-muted" style="padding-top:5px; text-align: right;">Developed within NIH funded <a
-                href="http://lincsproject.org" target="_blank">LINCS Project</a></p>
-    </div>
+            $('a[data-layout="boxed"]').click(function (event) {
+                event.preventDefault();
+                $.cookie('layoutCookie', 'boxed', {expires: 7, path: '/'});
+                $('body').addClass($.cookie('layoutCookie')); // the value is boxed.
+            });
+
+            $('a[data-layout="wide"]').click(function (event) {
+                event.preventDefault();
+                $('body').removeClass($.cookie('layoutCookie')); // the value is boxed.
+                $.removeCookie('layoutCookie', {path: '/'}); // remove the value of our cookie 'layoutCookie'
+            });
+        });
+
+    </script>
 
 
     <!-- JavaScript -->
-    <script src="lib/jquery/jquery-2.1.4.min.js" type="application/javascript"></script>
+    <!--<script src="lib/jquery/jquery-2.1.4.min.js" type="application/javascript"></script>-->
 
     <!-- jQuery required by Bootstrap -->
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <!--<script src="bower_components/jquery/dist/jquery.min.js"></script>-->
 
     <script>
         $(document).ready(function () {
@@ -308,8 +1256,7 @@
     <!-- Animation/Autocomplete -->
     <!--<script src="https://cdn.jsdelivr.net/angularjs/1.5.5/angular-animate.min.js" data-semver="1.5.5"></script>-->
     <!--<script src="https://cdn.jsdelivr.net/angularjs/1.5.5/angular-sanitize.min.js" data-semver="1.5.5"></script>-->
-   <!---->
-
+    <!---->
 
 
     <script src="bower_components/https/angular-strap.js" data-semver="v2.3.8"></script>
@@ -336,11 +1283,16 @@
     <script src="bower_components/d3/d3.legend.js"></script>
 
     <!-- PLP js -->
-    <script src="js/app.js"></script>
-    <script src="js/controllers.js"></script>
+
     <!-- Ng-tags-input-->
     <script src="bower_components/ng-tags-input/ng-tags-input.min.js"></script>
-</footer>
 
+    <!-- Main JS (Do not remove) -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <!--<script src="js/main.js"></script>-->
+
+</div>
 </body>
 </html>
+

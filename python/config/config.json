@@ -1,7 +1,7 @@
 {
     "open_in_local_host": "false",
     "input_format": 1,
-    "pathway_library": "KEGG_2015",
+    "pathway_library": "Kinase_Perturbations_from_GEO",
 
     "mysql":{
         "host": "localhost",

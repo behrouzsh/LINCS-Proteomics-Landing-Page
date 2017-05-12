@@ -10,7 +10,7 @@ from plp.plp import Plp
 
 if __name__ == '__main__':
     plp = Plp()
-    # plp.read_config_json_file()
+    plp.read_config_json_file()
     # plp.read_input_file()
     # plp.extract_motifs(plp.motifs_data)
     # plp.call_psimod()
@@ -24,10 +24,14 @@ if __name__ == '__main__':
     #plp.call_harmonizome()
 
 
-
-    # genes = ['DYR1A', 'DYR1B', 'KS6A3', 'HN1', 'NIPA', 'NCOR2', 'UH1BL', 'OCAD1', 'PDPK1', 'PDPK2', 'ABI1', 'WDR20', 'MAP4', 'SPF45', 'IQGA3', 'NIBL1', 'TYB4', 'CLCA', 'SYNRG', 'ZC3HE', 'PFKAP', 'LAR4B', 'HAT1', 'M3K7', 'SRRM1', 'BRD4', 'ULK1', 'KIF4A', 'K0930', 'DHX16', 'BRAF', 'FOSL2', 'JUND', 'JUN', 'RL12', 'NU214', 'IF4A3', 'LAP2B', 'PRC2A', 'FAS', 'FA76B', 'RS6', 'AHNK', 'PAK2', 'KS6A1', 'KS6A6', 'ZN672', 'NCBP3', 'ATAD2', 'NUFP2', 'RBBP6', 'CASC3', 'GPAM1', 'CCYL1', 'NF2IP', 'RN169', 'ZN740', 'DDX54', 'ATX2L', 'ATRIP', 'REQU', 'SMRC1', 'FUBP2', 'SH3K1', 'CHAP1', 'RBM14', 'ALS2', 'PP1RA', 'TPX2', 'RSF1', 'WAC', 'BAP1', 'UBE2O', 'WDR26', 'ANLN', 'SIAS', 'TE2IP', 'LRWD1', 'LIMA1', 'GPTC8', 'SRRT', 'M3K2', 'TR150', 'NOC2L', 'VPRBP', 'PRC2C', 'MARK2', 'S38A1', 'CDK1', 'LAP2A', 'NOLC1', 'PLEC', 'SRRM2']
-    # print len(genes)
-    # plp.call_enrichr(genes)
+    genes = ['PKP2','PRKCG','MOBP','CORO7','SHISA6','GFAP','WDR1','YWHAG','YWHAZ','ALB','KALRN','CNKSR2','NAPB','NSF','FGA','TUBB4A',
+    'DOCK4',    'DLG4',    'VCAN',    'HSPA12A',    'AK5',    'CAMK2A',    'LANCL1',    'PRKCB',    'DLGAP3',    'CAMK2B',
+    'KIAA1045',    'TUBA1A',    'PLP1',    'LRRC7',    'SYNGAP1',    'CKB',    'CNP',    'RRBP1',    'AGAP3',
+    'MBP',    'TUFM',    'TUBB',    'ANKS1B',    'TUBB2A',    'MAPRE2',    'TUBB4B',    'ACTB',    'DLGAP1',
+    'TUBA1B',    'ACTA2',    'CAMK2D',    'FGG',    'APOE',    'SHANK3']
+    #genes = ['DYR1A', 'DYR1B', 'KS6A3', 'HN1', 'NIPA', 'NCOR2', 'UH1BL', 'OCAD1', 'PDPK1', 'PDPK2', 'ABI1', 'WDR20', 'MAP4', 'SPF45', 'IQGA3', 'NIBL1', 'TYB4', 'CLCA', 'SYNRG', 'ZC3HE', 'PFKAP', 'LAR4B', 'HAT1', 'M3K7', 'SRRM1', 'BRD4', 'ULK1', 'KIF4A', 'K0930', 'DHX16', 'BRAF', 'FOSL2', 'JUND', 'JUN', 'RL12', 'NU214', 'IF4A3', 'LAP2B', 'PRC2A', 'FAS', 'FA76B', 'RS6', 'AHNK', 'PAK2', 'KS6A1', 'KS6A6', 'ZN672', 'NCBP3', 'ATAD2', 'NUFP2', 'RBBP6', 'CASC3', 'GPAM1', 'CCYL1', 'NF2IP', 'RN169', 'ZN740', 'DDX54', 'ATX2L', 'ATRIP', 'REQU', 'SMRC1', 'FUBP2', 'SH3K1', 'CHAP1', 'RBM14', 'ALS2', 'PP1RA', 'TPX2', 'RSF1', 'WAC', 'BAP1', 'UBE2O', 'WDR26', 'ANLN', 'SIAS', 'TE2IP', 'LRWD1', 'LIMA1', 'GPTC8', 'SRRT', 'M3K2', 'TR150', 'NOC2L', 'VPRBP', 'PRC2C', 'MARK2', 'S38A1', 'CDK1', 'LAP2A', 'NOLC1', 'PLEC', 'SRRM2']
+    print len(genes)
+    plp.call_enrichr(genes)
     # plp.call_flask(genes, plp.pathway_list, plp.gene_to_pathway_list)
 
     # plp.read_write_gene_json_file()
@@ -35,8 +39,12 @@ if __name__ == '__main__':
     # plp.read_write_kinase_file()
     # plp.find_nonhuman_kinase_file()
     # plp.merge_kinase_files()
-    # plp.process_P100_GCT_file_for_signature()
-    plp.process_P100_GCT_file_for_perturbagen()
+    # This is for creating signatures for ilincs
+
+    # In the modified version we do not include crispr and one sample signatures
+    #plp.process_P100_GCT_file_for_signature_modified()
+    # This is for uniquing perturbagens for lincsproteomics
+    #plp.process_P100_GCT_file_for_perturbagen()
     # plp.convert_csv_2_json_file()
 
 

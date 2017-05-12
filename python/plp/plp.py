@@ -8,6 +8,8 @@ import json
 import re
 import numpy as np
 import pandas as pd
+from scipy import stats
+import math
 #from pprint import pprint
 import sys
 import string
@@ -239,11 +241,13 @@ class Plp(object):
         return
 
     def call_enrichr(self, gene_list):
-        self.enrichr_client = EnrichrClient(self._config_data["pathway_library"], "my_test", "KEGG_2015__enrichment")
+        self.enrichr_client = EnrichrClient(self._config_data["pathway_library"], "kinase_pertubation_info", "enrichment_results")
         gene_id_list = self.enrichr_client.obtain_client_id(gene_list)
         self.enrichr_client.print_gene_list(gene_id_list)
         self.network = self.enrichr_client.obtain_network(gene_id_list)
+        self.enrichr_client.download_network(gene_id_list)
         print "Network"
+        print self.network
         self.pathway_networks = self.network[self._config_data["pathway_library"]]
         print len(self.pathway_networks)
         for item in self.pathway_networks:
@@ -731,9 +735,212 @@ class Plp(object):
             json.dump(phospho_amino_2kinase_2sequence, open("resources/kinase_2gene_2sequence.json", 'w'))
 
 
+    def preprocess_read_write_kinase_file(self):
+        """preprocess_read_write_kinase_file method is for preprocessing the phosphositeplus site table
+        First the list of non-human peptides in the table is found and then this list is preprocessed in
+        the eh3.uc.edu/plp then a file at "resources/non_human_peptide_edited.csv" is provided with flag "1"
+        for human peptides and "0" for animal peptides. Then this csv file along with the "Kinase_Substrate_Dataset.csv"
+        is used to generate a couple of files.
+
+        1- json.dump(gene2Kinase, open("resources/gene2Kinase_human.json", 'w')):
+        human gene to kinase
 
 
-    def process_P100_GCT_file_for_signature(self):
+        2- json.dump(kinase2Gene, open("resources/kinase2Gene_human.json", 'w'))
+        kinase to human gene
+
+
+        3- json.dump(geneName2KinaseName, open("resources/geneName2KinaseName_human.json", 'w'))
+        map between gene name and kinase name
+
+        4- json.dump(gene_meta2Kinase, open("resources/gene2Kinase_human_info.json", 'w'))
+        map between gene[p*@*] and kinase for human
+
+        5- json.dump(phospho_amino_probability, open("resources/amino_probability.json", 'w'))
+        a probability vector for each gene that might be a target of a kinase for example for each gene phosphorylated
+        at * we find the probability of each +-7 site (meaning 20*15, 20 for site position and 15 for total sites) that
+        each amino acid might appear.
+
+        """
+
+        geneName2KinaseName = {}
+        gene2Kinase = {}
+        kinase2Gene = {}
+        # with open('resources/non_human_peptide_edited.csv') as csvfile_flag:
+        #     falg_reader = csv.reader(csvfile_flag, delimiter=',')
+        # flag_iter = 0
+
+        with open('resources/Kinase_Substrate_Dataset_merged.csv') as csvfile:
+            reader = csv.reader(csvfile, delimiter=',')
+
+
+            first_line = True
+            gene_meta2Kinase = {}
+            total_kinase = 0
+
+            amino_total = []
+            amino_probability = [[0.0] * 15*20 for i in range(20)]
+            phospho_amino_probability = {}
+            phospho_amino_2kinase = {}
+            phospho_amino_2kinase_2sequence = {}
+            amino_acids = ["A","R","N","D","C","Q","E","G","H","I","L","K","M","F","P","S","T","W","Y","V"]
+
+            # initiate phodpho amino files
+            for amino_iter in range(0, len(amino_acids)):
+                phospho_amino_probability[amino_acids[amino_iter]] = {}
+                phospho_amino_2kinase[amino_acids[amino_iter]] = {}
+                phospho_amino_2kinase_2sequence[amino_acids[amino_iter]] = {}
+                #amino_probability.append(initial)
+                amino_total.append(0.0)
+
+
+
+            print phospho_amino_probability
+            print phospho_amino_2kinase
+
+            # print amino_probability
+            phospho_amino_acids = {"S","T","Y","K","D","H"}
+            amino_acids_dic = {"A":0,"R":1,"N":2,"D":3,"C":4,"Q":5,"E":6,"G":7,"H":8,"I":9,"L":10,"K":11,"M":12,"F":13,"P":14,"S":15,"T":16,"W":17,"Y":18,"V":19,"_":-1}
+            for row in reader:
+                if first_line:
+                    first_line = False
+                    continue
+
+                total_kinase += 1
+                kinase = str(row[1])
+                organism = str(row[19])
+                kinaseGene = str(row[0]).upper()
+                gene = str(row[7]).upper()
+                sequence = str(row[11]).upper()
+                site = re.findall(r'\d+', str(row[9]))[0]
+
+                amino = re.findall(r'[^\W\d_]', str(row[9]))[0]
+                toGene_meta = str(gene + "[P" + amino + "@" + site + "]")
+                amino_total[amino_acids_dic[amino]] += 1
+
+                # phospho_amino_2kinase shows how many kinases is attacking amino acids no matter human or animal
+                if kinase not in phospho_amino_2kinase.get(amino).keys():
+                    phospho_amino_2kinase.get(amino)[kinase] = 1
+                else:
+                    phospho_amino_2kinase.get(amino)[kinase] += 1
+
+                # phospho_amino_2kinase_2sequence shows the kinases and the sequence of targeted genes no matter human or animal
+                if kinase not in phospho_amino_2kinase_2sequence.get(amino).keys():
+                    phospho_amino_2kinase_2sequence.get(amino)[kinase] = []
+                    phospho_amino_2kinase_2sequence.get(amino)[kinase].append([organism,sequence])
+                else:
+                    phospho_amino_2kinase_2sequence.get(amino)[kinase].append([organism, sequence])
+
+                # initial and then complete probability_vector for each line
+                probability_vector = [0.0]*15*20
+
+                for char_iter in range(0, len(sequence)):
+                    char = sequence[char_iter]
+                    #print char
+                    if char != "_":
+                        char_dic = amino_acids_dic[char]
+                        probability_vector[char_iter*20 + char_dic] += 1
+
+                # add the probability_vector to each amino acid/kinase map
+                if kinase not in phospho_amino_probability.get(amino).keys():
+                    phospho_amino_probability.get(amino)[kinase] = probability_vector
+                else:
+                    for item_iter in range(0, 20 * 15):
+                        phospho_amino_probability.get(amino)[kinase][item_iter] += probability_vector[item_iter]
+                    #for pr_iter in range(15*20):
+
+
+                if (row[18] == "1"):
+
+                    # Generate kinase2Gene and kinase2Gene files that maps gene to kinases or vice versa for human
+                    if kinaseGene not in kinase2Gene.keys():
+                        kinase2Gene[kinaseGene] = []
+                        kinase2Gene.get(kinaseGene).append(gene)
+                    else:
+                        # There might be an existing gene in this list, thus ->
+                        if gene not in kinase2Gene.get(kinaseGene):
+                            kinase2Gene.get(kinaseGene).append(gene)
+
+                    #geneName2kinaseName
+                    if kinaseGene not in geneName2KinaseName.keys():
+                        geneName2KinaseName[kinaseGene] = kinase
+
+                    #gene2Kinase
+                    if gene not in gene2Kinase.keys():
+                        gene2Kinase[gene] = []
+                        if kinaseGene != gene:
+                            gene2Kinase.get(gene).append(kinaseGene)
+                    else:
+                        if kinaseGene not in gene2Kinase.get(gene):
+                            # because this relation already exists in kinase2gene
+                            if kinaseGene != gene:
+                                gene2Kinase.get(gene).append(kinaseGene)
+
+
+
+
+                    # Generate gene_meta2Kinase file that maps gene[p*@*] to kinases
+                    if toGene_meta not in gene_meta2Kinase.keys():
+                        gene_meta2Kinase[toGene_meta] = []
+                        gene_meta2Kinase.get(toGene_meta).append(kinase)
+                    else:
+                        if kinase not in gene_meta2Kinase.get(toGene_meta):
+                            gene_meta2Kinase.get(toGene_meta).append(kinase)
+
+            # for site_key in amino_probability.keys():
+            #     print site_key, amino_total[site_key]
+            #print gene_meta2Kinase
+            # print amino_probability[13]
+            #
+            # print amino_probability[14]
+            #
+            # print amino_probability[15]
+
+
+            # for site_key in amino_probability.keys():
+            #     print site_key, "-----------------------\n"
+            #     for item_iter in range(0,20*15):
+            #         print amino_probability[site_key][item_iter],
+
+
+
+
+
+            # Devide the number of amino probability by the total number of repeatation of specific amino and kinase pairs
+            print phospho_amino_probability.get("H")
+            #print amino_probability
+            print "total_kinase"
+            print total_kinase
+            #print phospho_amino_probability
+            #print phospho_amino_2kinase
+
+
+            # Devide the number of amino probability by the total number of repeatation of specific amino and kinase pairs
+            for key in phospho_amino_2kinase.keys():
+                num = 0
+                #print key
+                for kin in phospho_amino_2kinase[key]:
+                    #print kin
+                    for iter in range(15*20):
+                        phospho_amino_probability[key][kin][iter] /= phospho_amino_2kinase[key][kin]
+                    num += phospho_amino_2kinase[key][kin]
+                #print key, num
+            print amino_total
+            #print phospho_amino_probability.get("H")
+            print "phospho_amino_2kinase_2sequence"
+            print phospho_amino_2kinase_2sequence
+
+            json.dump(gene2Kinase, open("resources/gene2Kinase_human.json", 'w'))
+            json.dump(kinase2Gene, open("resources/kinase2Gene_human.json", 'w'))
+            json.dump(geneName2KinaseName, open("resources/geneName2KinaseName_human.json", 'w'))
+            json.dump(gene_meta2Kinase, open("resources/gene2Kinase_human_info.json", 'w'))
+            json.dump(phospho_amino_probability, open("resources/amino_probability.json", 'w'))
+            json.dump(phospho_amino_2kinase_2sequence, open("resources/kinase_2gene_2sequence.json", 'w'))
+
+
+
+
+    def process_P100_GCT_file_for_signature_modified(self):
         """process_P100_GCT_file method is for concatenating and averaging duplicates in P100 GCT file
         """
 
@@ -753,11 +960,16 @@ class Plp(object):
         colIter = 0
         unique = {}
         unique_complete = {}
+        unique_complete_modified = {}
         #constituting the unique tuples
         for column in range (10,P100_data.shape[1]):
             #print (column)
             identifier = str(P100_data[column][10])  +"+"+str(P100_data[column][3])  +"+"+ str(P100_data[column][7]) +"+"+ str(P100_data[column][11])
-            identifier_complete = str(P100_data[column][3]) +"+"+ str(P100_data[column][7]) +"+"+ str(P100_data[column][9])+"+"+ str(P100_data[column][10])+"+"+ str(P100_data[column][11])+"+"+ str(P100_data[column][13])+"+"+ str(P100_data[column][14])+"+"+ str(P100_data[column][15])+"+"+ str(P100_data[column][16])
+            identifier_complete = str(P100_data[column][3]) +"+"+ str(P100_data[column][7]) +"+"+ \
+                                  str(P100_data[column][9])+"+"+ str(P100_data[column][10])+"+"+ \
+                                  str(P100_data[column][11])+"+"+ str(P100_data[column][13])+"+"\
+                                  + str(P100_data[column][14])+"+"+\
+                                  str(P100_data[column][15])+"+"+ str(P100_data[column][16])
             #print identifier
 
             if identifier_complete not in unique_complete:
@@ -773,11 +985,21 @@ class Plp(object):
             else:
                 unique.get(identifier).append(column)
 
+        for key in unique_complete:
+
+            val = unique_complete.get(key)
+            item = list(val)
+            if len(item) > 1 :
+                key_list = key.split('+')
+                if "Disruption" not in key_list:
+                    unique_complete_modified[key] = val
 
 
+        #print unique_complete_modified
 
         total = 0
         total_complete = 0
+
         #print unique.
         print "size of unique"
 
@@ -786,6 +1008,10 @@ class Plp(object):
         print "size of unique_complete"
 
         print len(unique_complete)
+
+        print "size of unique_complete_modified"
+
+        print len(unique_complete_modified)
         # for ite in range (0,len(unique)):
         #
         #     print unique.keys()[ite]
@@ -793,39 +1019,91 @@ class Plp(object):
         #     print unique_complete.keys()[ite]
 
         unique_sum = {}
+        unique_sum_modified = {}
+        unique_pvalue = {}
+
+        # print unique_complete
+        # for iterator in range(len(unique)):
+        #     key1 =
+
+
         for key in unique:
             val = unique.get(key)
             #print key
             item = list(val)
             total += len(item)
             #print len(item)
+        keyIter = 0
 
         for key in unique_complete:
-            initial = [0.0]*96
-            unique_sum[key] = initial
+            initial3 = [0.0]*96
+
+            unique_sum[key] = initial3
             val = unique_complete.get(key)
-            # print key
             item = list(val)
             total_complete += len(item)
+            keyIter += 1
+        print "Total"
+        print total
+        print "total_complete"
+        print total_complete
+        keyIter = 0
+        for key in unique_complete_modified:
+            initial = [0.0]*96
+            initial2 = [0.0] * 96
+            unique_sum_modified[key] = initial
+            unique_pvalue[key] = initial2
+            val = unique_complete_modified.get(key)
 
-        #print unique_sum
-        for column in range(10, P100_data.shape[1]):
+            item = list(val)
+            if len(item) == 1:
+                print '111111   %d  =========== %s %s' % (keyIter, key, val)
 
-            identifier_complete = str(P100_data[column][3]) + "+" + str(P100_data[column][7]) + "+" + str(
-                P100_data[column][9]) + "+" + str(P100_data[column][10]) + "+" + str(
-                P100_data[column][11]) + "+" + str(P100_data[column][13]) + "+" + str(
-                P100_data[column][14]) + "+" + str(P100_data[column][15]) + "+" + str(P100_data[column][16])
+            keyIter += 1
+            print '%d , %s, %s' %(keyIter, key, val)
 
             for item_iter in range(0, 96):
-                # print unique_sum.get(identifier_complete)[item_iter]
-                # print P100_data[column][item_iter + 17]
-                # print "before"
-                # print unique_sum.get(identifier_complete)[item_iter]
-                unique_sum.get(identifier_complete)[item_iter] += float(P100_data[column][item_iter + 17])
-                # print "after"
-                # print unique_sum.get(identifier_complete)[item_iter]
+
+                aux_list = []
+                for col in item:
+                    aux_list.append(float(P100_data[col][item_iter + 17]))
+                    unique_sum_modified.get(key)[item_iter] += float(P100_data[col][item_iter + 17])
+                unique_sum_modified.get(key)[item_iter] /= float(len(item))
+
+                meanValue = np.mean(aux_list)
+                average = sum(aux_list) / len(aux_list)
+                if len(aux_list) > 1:
+                    variance2 = sum((average - value) ** 2 for value in aux_list) / (len(aux_list)-1)
+
+                #variance = np.var(aux_list)
+
+                # print aux_list
+                #t_stat = meanValue/np.sqrt(variance/float(len(item)))
+                t_stat2 = meanValue / np.sqrt(variance2 / float(len(item)))
+                #p_val = stats.t.sf(abs(t_stat), len(item)-1)*2
+                p_val2 = stats.t.sf(abs(t_stat2), len(item) - 1) * 2
+                if keyIter == 81:
+                    print '--------------- %d' %len(item)
+                    print aux_list
+                    print '%d , %d , %s,  %s, %f, %f, %f, %f'%(item_iter, keyIter, key, val, meanValue, variance2, t_stat2, p_val2)
+
+
+                unique_pvalue.get(key)[item_iter] = p_val2
+
+
+
+        for key in unique_complete:
+
+            val = unique_complete.get(key)
+            item = list(val)
+            for col in item:
+
+                for item_iter in range(0, 96):
+                    unique_sum.get(key)[item_iter] += float(P100_data[col][item_iter + 17])
+                unique_sum.get(key)[item_iter] /= float(len(item))
 
         #print unique_sum
+        #This is a test
         for key in unique_complete:
             # print "key"
             # print key
@@ -842,9 +1120,6 @@ class Plp(object):
             length = len(items)
             value1 /= float(length)
             value2 /= float(length)
-            for item_iter in range(0, 96):
-
-                unique_sum.get(key)[item_iter] /= float(length)
 
 
             # print "values"
@@ -874,6 +1149,7 @@ class Plp(object):
         x2 = x1[:, np.newaxis]
         my_data_final = np.asarray(x2)
 
+
         print my_data_final.shape
         #second to 10th col
         for col in range(1,10):
@@ -897,11 +1173,13 @@ class Plp(object):
             col_data_final = np.asarray(x2)
             my_data_final = np.hstack((my_data_final, col_data_final))
 
-        print my_data_final
-        print my_data_final.shape
+
+        # print my_data_final
+        # print my_data_final.shape
         np.savetxt("resources/pilincs/processed_data.csv", my_data_final, delimiter=",", fmt="%s")
 
         my_data_con = my_data_final
+
         global_iter = 1
 
         # Add shorthand notation column to the table
@@ -917,12 +1195,14 @@ class Plp(object):
         ith_col.append(str(""))
         ith_col.append(str(""))
         ith_col.append(str(""))
+
+        # This is for generating the shorthand notation
         for i in range(0, 96):
             site = re.findall(r'\d+', str(P100_data[7][17 + i]))[0]
 
             amino = re.findall(r'[^\W\d_]', str(P100_data[7][17 + i]))[0]
-            print("%d ========================  " % (i+12))
-            print("%s %s  " % (site, amino))
+            # print("%d ========================  " % (i+12))
+            # print("%s %s  " % (site, amino))
 
             filter1 = re.compile("\b[+80]\b")
             peptide = str(P100_data[8][17 + i])
@@ -931,21 +1211,21 @@ class Plp(object):
             # phospho_place = re.search(r"\b[+80]\b", peptide).pos
             phospho_sign = "p"
             match = re.search(r'80', peptide)
-            print match
+            #print match
             if match == None:
                 phospho_sign = "x"
                 match = re.search(r'122', peptide)
             phospho_place = match.start()
 
 
-            print phospho_place
+            # print phospho_place
             # phospho_place = re.search(r"\b[+80]\b", peptide).start()
             # print phospho_place
             mod_place1 = [(m.start(0), m.end(0)) for m in re.finditer("\[", peptide)]
             mod_place2 = [(m.start(0), m.end(0)) for m in re.finditer("\]", peptide)]
-            print mod_place1
-            print mod_place2
-            print phospho_place
+            # print mod_place1
+            # print mod_place2
+            # print phospho_place
             modification = ""
             place = int(site)
             site_list = []
@@ -956,9 +1236,9 @@ class Plp(object):
                 if mod_item[1] == phospho_place - 1:
                     p_place = iterator
                 iterator += 1
-            print "==============================================="
-            print site_list
-            print p_place
+            # print "==============================================="
+            # print site_list
+            # print p_place
             offset = 0
             offset_list = [0]
             for j in range (1, len(mod_place1)):
@@ -970,12 +1250,12 @@ class Plp(object):
             site_list_before = []
             for item in  site_list:
                 site_list_before.append(item)
-            for j in range (0, len(mod_place1)):
+            for j in range(0, len(mod_place1)):
                 site_list[j] += int(site) - site_list_before[p_place]
 
 
-            print "==============================================="
-            print site_list
+            #print "==============================================="
+            #print site_list
             item_iter = 0
             for mod_item in mod_place1:
                 amino_mod = peptide[mod_item[0]-1]
@@ -995,14 +1275,20 @@ class Plp(object):
             ith_col.append(shortthand)
 
         key_arr1 = np.array(ith_col)
+        #This is for making data n by 1 instead of 1 by n
         col_data = key_arr1[:, np.newaxis]
 
         my_data_con = np.hstack((my_data_con, col_data))
+        my_data_con2 = my_data_con
+        my_data_con3 = my_data_con
+        my_pvalue_con = my_data_con2
+        my_data_modified_con = my_data_con3
 
         # this part is to convert values to n by 1 vector to be concatenated to the final csv file
 
-
+        global_iter = 1
         for i in range(0,len(unique_sum)):
+
             key_list = unique_sum.keys()[i].split('+')
 
             # print key_list
@@ -1012,8 +1298,9 @@ class Plp(object):
             global_iter += 1
             for list_member in key_list:
                 key_list1.append(list_member)
-
+            #change list to array
             key_arr1 = np.array(key_list1)
+            # This is for making data n by 1 instead of 1 by n
             key_arr2 = key_arr1[:, np.newaxis]
             x1 = np.array(unique_sum.values()[i])
             x2 = x1[:, np.newaxis]
@@ -1021,23 +1308,57 @@ class Plp(object):
             my_data = np.asarray(x2)
             col_data = np.vstack((key_arr2, my_data))
 
-
-
-
-
-
-
-            # x1 = np.array(unique_sum.values()[i])
-            # x2 = x1[:, np.newaxis]
-            # col_data = np.asarray(x2)
-
-            #my_data = np.append(my_data, np.asarray(list(unique_sum.values()[i])), i-1)
             my_data_con = np.hstack((my_data_con, col_data))
+
 
         print "my_data.shape"
         print my_data_con.shape
 
+
         np.savetxt("resources/pilincs/P100_processed.csv", my_data_con, delimiter=",", fmt="%s")
+
+        global_iter = 1
+        for i in range(0,len(unique_sum_modified)):
+            sum_key = unique_sum_modified.keys()[i]
+            key_list = unique_sum_modified.keys()[i].split('+')
+
+            # print key_list
+            key_list1 = []
+            key_list1.append("")
+            key_list1.append("LINCSTP_" + str("%04d" % (global_iter,)) )
+            global_iter += 1
+            for list_member in key_list:
+                key_list1.append(list_member)
+            #change list to array
+            key_arr1 = np.array(key_list1)
+            # This is for making data n by 1 instead of 1 by n
+            key_arr2 = key_arr1[:, np.newaxis]
+            x1 = np.array(unique_sum_modified.values()[i])
+            x2 = x1[:, np.newaxis]
+
+            my_data = np.asarray(x2)
+            col_data = np.vstack((key_arr2, my_data))
+
+            # Repeating for p-values
+            x3 = np.array(unique_pvalue.get(sum_key))
+            x4 = x3[:, np.newaxis]
+
+            my_data_pvalue = np.asarray(x4)
+            col_data_pvalue = np.vstack((key_arr2, my_data_pvalue))
+
+
+            my_data_modified_con = np.hstack((my_data_modified_con, col_data))
+            my_pvalue_con = np.hstack((my_pvalue_con, col_data_pvalue))
+
+        print "my_data_modified.shape"
+        print my_data_modified_con.shape
+
+        print "my_pvalue.shape"
+        print my_data_modified_con.shape
+
+        np.savetxt("resources/pilincs/P100_processed_modified.csv", my_data_modified_con, delimiter=",", fmt="%s")
+        np.savetxt("resources/pilincs/P100_pvalues_modified.csv", my_pvalue_con, delimiter=",", fmt="%s")
+
 
 
 
