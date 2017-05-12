@@ -53,7 +53,7 @@ body {
     width: 100%;
     /* Set the fixed height of the footer here */
     height: 30px;
-    background-color: #f5f5f5;
+    /*background-color: #f5f5f5;*/
 }
 
 /* Callouts */
@@ -170,6 +170,8 @@ th {
 }
 
 
+
+
 /*For radial graph*/
 
 .node circle {
@@ -268,27 +270,171 @@ rect {                                                      /* NEW */
     width:100%;
 }
 
-.column1 {
-    width:18.3%;
-    float:left;
+.columnright {
+    position: absolute;
+    right: 0px;
+    width: 330px;
+    width:50%;
+    /*float:left;*/
     height:auto;
     align-content: center;
+    /*margin-top: 0.5cm;*/
+}
+.columnleft {
+    width:50%;
+    /*float:right;*/
+    height:auto;
+
+    position: absolute;
+    left: 0px;
+    width: 330px;
+    /*align-content: center;*/
     margin-top: 0.5cm;
 }
-.column3 {
-    width:18.3%;
+.column4 {
+    width:20%;
     float:left;
     height:auto;
     align-content: center;
-    margin-top: 1.5cm;
 }
-.column2 {
-    width:63.2%;
+.column1 {
+    width:25%;
+    /*left: 0px;*/
+    /*position: absolute;*/
     float:left;
     align-content: center;
-
+    text-align: center;
+    height:auto;
+    color: black;
 
 }
+.column2-left {
+    width:40%;
+    /*right: 0px;*/
+    /*position: absolute;*/
+    float:left;
+    align-content: center;
+    text-align: center;
+    height:auto;
+    color: black;
+
+}
+.column2-right {
+    width:60%;
+    /*right: 0px;*/
+    /*position: absolute;*/
+    float:right;
+    align-content: center;
+    text-align: center;
+    height:auto;
+    color: black;
+
+}
+
+.Row3
+{
+    display: table;
+    width: 100%; /*Optional*/
+    table-layout: fixed; /*Optional*/
+    border-spacing: 10px; /*Optional*/
+    vertical-align: middle;
+}
+.Column3
+{
+    display: table-cell;
+    border-style: solid;
+    border-color: #d6f1f9;
+    vertical-align: middle;
+    /*background-color: #d6f1f9; !*Optional*!*/
+}
+
+.vcenter {
+
+    vertical-align: middle;
+
+}
+.vertical-align {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+/*.imageContainer {*/
+    /*width:200px;*/
+    /*height:200px;*/
+    /*background-image: url("images/lens2.jpg");*/
+    /*align:center;*/
+    /*width:100%;*/
+/*}*/
+
+/*.relative{position:relative; width:100%;}*/
+/*.absolute-text{position:absolute; bottom:0; font-size:24px; font-family:"vedana"; background:rgba(251,251,251,0.5);*/
+    /*padding:10px 20px; width:100%; text-align:center;}*/
+/*.absolute-text a{font-size:16px; color:blue;}*/
+
+
+/*.container {*/
+    /*position: relative;*/
+/*}*/
+
+/*.image {*/
+    /*position: relative;*/
+    /*!*width: 100%; !* for IE 6 *!*!*/
+/*}*/
+
+/*.h5 {*/
+    /*text-align: center;*/
+    /*width: auto;*/
+    /*color: blue;*/
+/*}*/
+/*.p2 {*/
+    /*text-align: center;*/
+    /*width: auto;*/
+    /*color: blue;*/
+/*}*/
+/*h2 {*/
+    /*position: absolute;*/
+    /*top: 10%;*/
+    /*!*left: 0;*!*/
+    /*width: 100%;*/
+    /*text-align: center;*/
+    /*width: auto;*/
+    /*color: blue;*/
+/*}*/
+
+/*.img-holder {position: relative;}*/
+/*.img-holder .link {*/
+    /*position: absolute;*/
+    /*bottom: 10px; !*your button position*!*/
+    /*right: 10px; !*your button position*!*/
+/*}*/
+/*.classic_button_next{ position: absolute; right: 5px; top: 5px; }*/
+/*.classic_button_prev { position: absolute; right: 88px; top: 5px; }*/
+
+/*.right {*/
+    /*position: absolute;*/
+    /*right: 0px;*/
+    /*width: 330px;*/
+/*}*/
+
+/*.left {*/
+    /*position: absolute;*/
+    /*left: 0px;*/
+    /*width: 330px;*/
+/*}*/
+
+/*.wraptocenter {*/
+    /*display: table-cell;*/
+    /*text-align: center;*/
+    /*vertical-align: middle;*/
+    /*width: 200px;*/
+    /*height: 200px;*/
+    /*background-color: #999;*/
+/*}*/
+/*.wraptocenter * {*/
+    /*vertical-align: middle;*/
+/*}*/
+
 /*img.classname{*/
     /*position:absolute;*/
     /*top:50%;*/
@@ -304,3 +450,44 @@ rect {                                                      /* NEW */
 /*marker#licensing {*/
     /*fill: lightgreen;*/
 /*}*/
+
+/*.nav-tabs > li, .nav-pills > li {*/
+    /*float:none;*/
+    /*display:inline-block;*/
+    /**display:inline; !* ie7 fix *!*/
+    /*zoom:1; !* hasLayout ie7 trigger *!*/
+/*}*/
+
+/*.nav-tabs, .nav-pills {*/
+    /*text-align:center;*/
+/*}*/
+.nav-tabs > li
+{
+    float: none;
+    text-align: center;
+}
+.nav > li
+{
+    display: inline-block;
+}
+/*For d3 heatmap*/
+rect.bordered {
+    stroke: #E6E6E6;
+    stroke-width:2px;
+}
+
+text.mono {
+    font-size: 9pt;
+    font-family: Consolas, courier;
+    fill: #aaa;
+}
+
+text.axis-workweek {
+    fill: #000;
+}
+
+text.axis-worktime {
+    fill: #000;
+}
+/*For d3 heatmap*/
+
