@@ -1,63 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08e3ec83-a888-4436-962f-df28bfa57941" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/data/phospho_network_p100.json" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/edu/uc/eh/service/EnrichrService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/edu/uc/eh/service/PrositeService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/edu/uc/eh/service/PsiModService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/edu/uc/eh/service/ShorthandService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/edu/uc/eh/service/UniprotService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/distributions/PLP.tar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/distributions/PLP.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/scripts/PLP" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/scripts/PLP.bat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/static/data/#assay-view.json#" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/static/data/.#assay-view.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/static/images/pinet.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.14/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.14/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.14/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin" afterPath="$PROJECT_DIR$/.gradle/2.14/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.14/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14/taskArtifacts/treeSnapshotUsage.bin" afterPath="$PROJECT_DIR$/.gradle/2.14/taskArtifacts/treeSnapshotUsage.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14/taskArtifacts/treeSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.14/taskArtifacts/treeSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/edu/uc/eh/controller/RestAPI.class" afterPath="$PROJECT_DIR$/build/classes/main/edu/uc/eh/controller/RestAPI.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/edu/uc/eh/utils/UtilsIO.class" afterPath="$PROJECT_DIR$/build/classes/main/edu/uc/eh/utils/UtilsIO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/plp-0.0.1.jar" afterPath="$PROJECT_DIR$/build/libs/plp-0.0.1.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/plp-0.0.1.jar.original" afterPath="$PROJECT_DIR$/build/libs/plp-0.0.1.jar.original" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/static/bower_components/angular/angular.min.js.gzip" afterPath="$PROJECT_DIR$/build/resources/main/static/bower_components/angular/angular.min.js.gzip" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/test-results/binary/test/output.bin" afterPath="$PROJECT_DIR$/build/test-results/binary/test/output.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/test-results/binary/test/output.bin.idx" afterPath="$PROJECT_DIR$/build/test-results/binary/test/output.bin.idx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/test-results/binary/test/results.bin" afterPath="$PROJECT_DIR$/build/test-results/binary/test/results.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/reports/tests/classes/edu.uc.eh.PlnPortalApplicationTests.html" afterPath="$PROJECT_DIR$/build/reports/tests/classes/edu.uc.eh.PlnPortalApplicationTests.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/reports/tests/classes/edu.uc.eh.utils.UtilsFormatTest.html" afterPath="$PROJECT_DIR$/build/reports/tests/classes/edu.uc.eh.utils.UtilsFormatTest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/reports/tests/index.html" afterPath="$PROJECT_DIR$/build/reports/tests/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/reports/tests/packages/edu.uc.eh.html" afterPath="$PROJECT_DIR$/build/reports/tests/packages/edu.uc.eh.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/reports/tests/packages/edu.uc.eh.utils.html" afterPath="$PROJECT_DIR$/build/reports/tests/packages/edu.uc.eh.utils.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/application.yml" afterPath="$PROJECT_DIR$/build/resources/main/application.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/static/bower_components/angular/.bower.json" afterPath="$PROJECT_DIR$/build/resources/main/static/bower_components/angular/.bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/static/bower_components/angular/angular.js" afterPath="$PROJECT_DIR$/build/resources/main/static/bower_components/angular/angular.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/static/bower_components/angular/angular.min.js" afterPath="$PROJECT_DIR$/build/resources/main/static/bower_components/angular/angular.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/static/bower_components/angular/angular.min.js.map" afterPath="$PROJECT_DIR$/build/resources/main/static/bower_components/angular/angular.min.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/static/bower_components/angular/bower.json" afterPath="$PROJECT_DIR$/build/resources/main/static/bower_components/angular/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/static/bower_components/angular/package.json" afterPath="$PROJECT_DIR$/build/resources/main/static/bower_components/angular/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/static/bower_components/bootstrap/Gruntfile.js" afterPath="$PROJECT_DIR$/build/resources/main/static/bower_components/bootstrap/Gruntfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/static/css/custom.css" afterPath="$PROJECT_DIR$/build/resources/main/static/css/custom.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/static/css/style.css" afterPath="$PROJECT_DIR$/build/resources/main/static/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/static/data/peptide.csv" afterPath="$PROJECT_DIR$/build/resources/main/static/data/peptide.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/static/index.html" afterPath="$PROJECT_DIR$/build/resources/main/static/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/static/js/app.js" afterPath="$PROJECT_DIR$/build/resources/main/static/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/static/js/controllers.js" afterPath="$PROJECT_DIR$/build/resources/main/static/js/controllers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/test-results/TEST-edu.uc.eh.PlnPortalApplicationTests.xml" afterPath="$PROJECT_DIR$/build/test-results/TEST-edu.uc.eh.PlnPortalApplicationTests.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/test-results/TEST-edu.uc.eh.utils.UtilsFormatTest.xml" afterPath="$PROJECT_DIR$/build/test-results/TEST-edu.uc.eh.utils.UtilsFormatTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/data/assay-view.json" afterPath="$PROJECT_DIR$/src/main/resources/static/data/assay-view.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/js/controllers.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/controllers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/partials/assay-view.html" afterPath="$PROJECT_DIR$/src/main/resources/static/partials/assay-view.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/partials/data-view.html" afterPath="$PROJECT_DIR$/src/main/resources/static/partials/data-view.html" />
-    </list>
+    <list default="true" id="0b3aa4bd-8d37-4da9-a995-c9e063d1d309" name="Default" comment="" />
     <ignored path="LINCS-Proteomics-Landing-Page.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -90,12 +34,52 @@
     <favorites_list name="LINCS-Proteomics-Landing-Page" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
+      <file leaf-file-name="about.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/about.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="167">
+              <caret line="318" column="60" selection-start-line="318" selection-start-column="58" selection-end-line="318" selection-end-column="60" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="assay.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/assay.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="298" column="55" selection-start-line="298" selection-start-column="55" selection-end-line="298" selection-end-column="55" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="data.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/data.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="149">
+              <caret line="302" column="55" selection-start-line="302" selection-start-column="36" selection-end-line="302" selection-end-column="55" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="controllers.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3280">
-              <caret line="75" column="36" selection-start-line="75" selection-start-column="36" selection-end-line="75" selection-end-column="36" />
+            <state relative-caret-position="234">
+              <caret line="16" column="48" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="314">
+              <caret line="1638" column="0" selection-start-line="1638" selection-start-column="0" selection-end-line="1638" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -104,61 +88,18 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1658">
-              <caret line="330" column="40" selection-start-line="330" selection-start-column="40" selection-end-line="330" selection-end-column="40" />
-              <folding>
-                <marker date="1490045633960" expanded="false" signature="9095:9121" ph="..." />
-                <marker date="1490045633960" expanded="false" signature="9335:9361" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="content.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/data/content.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="53664" selection-start-line="0" selection-start-column="53659" selection-end-line="0" selection-end-column="53664" />
+            <state relative-caret-position="221">
+              <caret line="304" column="55" selection-start-line="304" selection-start-column="36" selection-end-line="304" selection-end-column="55" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="about.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/partials/about.html">
+      <file leaf-file-name="tools.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/tools.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#p#1;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#p#2;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#p#3;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#p#4;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#a#0;n#p#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#a#0;n#p#2;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="assay-view.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/partials/assay-view.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="83">
-              <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
-              <folding>
-                <element signature="n#style#0;n#h3#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="data-view.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/partials/data-view.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="42" selection-end-column="14" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -166,23 +107,10 @@
       </file>
     </leaf>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-        <option value="HTML File" />
-        <option value="JavaScript File" />
-        <option value="package_json" />
-      </list>
-    </option>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
   <component name="GradleLocalSettings">
     <option name="myGradleHomes">
       <map>
-        <entry key="$PROJECT_DIR$" value="$USER_HOME$/softwares/gradle" />
+        <entry key="$PROJECT_DIR$" value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1" />
       </map>
     </option>
     <option name="availableProjects">
@@ -211,23 +139,62 @@
           <value>
             <list>
               <ExternalTaskPojo>
+                <option name="description" value="Displays the components produced by root project 'LINCS-Proteomics-Landing-Page'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="components" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project and all projects that depend on it." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="buildDependents" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="cleanEclipseClasspath" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="description" value="Displays the sub-projects of root project 'LINCS-Proteomics-Landing-Page'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="projects" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Runs this project as a JVM application" />
+                <option name="description" value="Cleans all Eclipse files." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="run" />
+                <option name="name" value="cleanEclipse" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Assembles main classes." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="classes" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the dependent components of components in root project 'LINCS-Proteomics-Landing-Page'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="dependentComponents" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays all buildscript dependencies declared in root project 'LINCS-Proteomics-Landing-Page'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="buildEnvironment" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="cleanEclipseProject" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Generates Gradle wrapper files. [incubating]" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="wrapper" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Creates OS specific scripts to run the project as a JVM application." />
+                <option name="description" value="Assembles test classes." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="startScripts" />
+                <option name="name" value="testClasses" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Generates Javadoc API documentation for the main source code." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="javadoc" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Generates the Eclipse classpath file." />
@@ -255,9 +222,8 @@
                 <option name="name" value="tasks" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Assembles the main distributions" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="assembleDist" />
+                <option name="name" value="cleanEclipseJdt" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Initializes a new Gradle build. [incubating]" />
@@ -279,121 +245,24 @@
                 <option name="name" value="bootRepackage" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Compiles main Java source." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="compileJava" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Runs all checks." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="check" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Installs the project as a JVM application along with libs and OS specific scripts." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="installApp" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Displays all dependencies declared in root project 'LINCS-Proteomics-Landing-Page'." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="dependencies" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Generates all Eclipse files." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="eclipse" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Processes test resources." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="processTestResources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Generates the Eclipse JDT settings file." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="eclipseJdt" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles and tests this project and all projects it depends on." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="buildNeeded" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Generates the Eclipse project file." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="eclipseProject" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Bundles the project as a distribution." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="distTar" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Bundles the project as a distribution." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="distZip" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Displays the components produced by root project 'LINCS-Proteomics-Landing-Page'. [incubating]" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="components" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles and tests this project and all projects that depend on it." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="buildDependents" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="cleanEclipseClasspath" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Cleans all Eclipse files." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="cleanEclipse" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles main classes." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="classes" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Displays all buildscript dependencies declared in root project 'LINCS-Proteomics-Landing-Page'." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="buildEnvironment" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="cleanEclipseProject" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles test classes." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="testClasses" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Generates Javadoc API documentation for the main source code." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="javadoc" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Installs the project as a distribution as-is." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="installDist" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="cleanEclipseJdt" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
                 <option name="description" value="Run the project with support for auto-detecting main class and reloading static resources" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="bootRun" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Compiles main Java source." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="compileJava" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="description" value="Displays the insight into a specific dependency in root project 'LINCS-Proteomics-Landing-Page'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="dependencyInsight" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs all checks." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="check" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Assembles the outputs of this project." />
@@ -411,9 +280,29 @@
                 <option name="name" value="compileTestJava" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Displays all dependencies declared in root project 'LINCS-Proteomics-Landing-Page'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="dependencies" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Generates all Eclipse files." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="eclipse" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Processes test resources." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="processTestResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="description" value="Displays a help message." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="help" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Generates the Eclipse JDT settings file." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="eclipseJdt" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Assembles and tests this project." />
@@ -423,6 +312,16 @@
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="findMainClass" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project and all projects it depends on." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="buildNeeded" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Generates the Eclipse project file." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="eclipseProject" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Displays the properties of root project 'LINCS-Proteomics-Landing-Page'." />
@@ -437,12 +336,16 @@
     <option name="modificationStamps">
       <map>
         <entry key="$USER_HOME$/Documents/PLNconverter-master" value="1455828801000" />
+        <entry key="$USER_HOME$/Documents/coding/LINCS-Proteomics-Landing-Page" value="1494612929705" />
+        <entry key="$USER_HOME$/Documents/coding/gs-consuming-rest/complete" value="1485879237389" />
+        <entry key="$USER_HOME$/Documents/coding/gs-consuming-rest/initial" value="1485879237397" />
         <entry key="$USER_HOME$/Documents/spring-boot-intro/practice" value="1472244594442" />
         <entry key="$USER_HOME$/Downloads/Pilincs-master" value="1455684640000" />
-        <entry key="$PROJECT_DIR$" value="1481133803454" />
+        <entry key="$PROJECT_DIR$" value="1493842756533" />
+        <entry key="$PROJECT_DIR$/../LINCS-Proteomics-Landing-Page-v2" value="1481133803454" />
         <entry key="$PROJECT_DIR$/../PLNconverter" value="1455828801000" />
         <entry key="$PROJECT_DIR$/../PLNconverter-master" value="1455828801000" />
-        <entry key="$PROJECT_DIR$/../PLNconverter-v2" value="1474641097858" />
+        <entry key="$PROJECT_DIR$/../PLNconverter-v2" value="1478026392054" />
         <entry key="$PROJECT_DIR$/../PLP" value="1481133803454" />
         <entry key="$PROJECT_DIR$/../Pilincs" value="1468593715925" />
         <entry key="$PROJECT_DIR$/../panorama-api/java" value="1468593715925" />
@@ -461,16 +364,14 @@
                       <ExternalModuleBuildClasspathPojo>
                         <option name="entries">
                           <list>
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-gradle-plugin/1.2.7.RELEASE/ee75c8e99b09b50d4eff7d6b943a908e78b80c20/spring-boot-gradle-plugin-1.2.7.RELEASE-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-gradle-plugin/1.2.7.RELEASE/e9fb7696d7c2b29a48718a9cb8da07f55d91444a/spring-boot-gradle-plugin-1.2.7.RELEASE.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.spring.gradle/dependency-management-plugin/0.5.2.RELEASE/a161232eece113ea029a1803a1e7328ce1502e48/dependency-management-plugin-0.5.2.RELEASE-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.spring.gradle/dependency-management-plugin/0.5.2.RELEASE/f90777e7785259bb91811619b2b2b5d9f071ef39/dependency-management-plugin-0.5.2.RELEASE.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-loader-tools/1.2.7.RELEASE/fa92bc7aa927a0a0fc0098fb828b93977e4213d1/spring-boot-loader-tools-1.2.7.RELEASE-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-loader-tools/1.2.7.RELEASE/a589eb4ad719d5bdd0dce494ab84fc93706fe2d7/spring-boot-loader-tools-1.2.7.RELEASE.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-dependency-tools/1.2.7.RELEASE/6a7fe662c5d0376ddc91ab123e893176c7e297a4/spring-boot-dependency-tools-1.2.7.RELEASE-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-dependency-tools/1.2.7.RELEASE/5aaa18e59ac73520e55ad0e20cfa81c42956ea75/spring-boot-dependency-tools-1.2.7.RELEASE.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/4.1.8.RELEASE/8fa5fab28646bfbcab48880ee6eaaa72ba3d4d23/spring-core-4.1.8.RELEASE-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/4.1.8.RELEASE/f1e1d887f325e1fe9005a0c3e4e1b74520f19252/spring-core-4.1.8.RELEASE.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-gradle-plugin/1.5.3.RELEASE/cb640e316ad52be9fceceb1af208c7c83b3060b7/spring-boot-gradle-plugin-1.5.3.RELEASE-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-gradle-plugin/1.5.3.RELEASE/1d9619dce88e2b51b659717df72a26effda23874/spring-boot-gradle-plugin-1.5.3.RELEASE.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-loader-tools/1.5.3.RELEASE/99710cc032b212dd583ad5266879e4531351aa5c/spring-boot-loader-tools-1.5.3.RELEASE-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-loader-tools/1.5.3.RELEASE/c80ed6045c80052c3882bf4994384efe99994c81/spring-boot-loader-tools-1.5.3.RELEASE.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.spring.gradle/dependency-management-plugin/1.0.2.RELEASE/d42003e5360229142b80e484d02b626ff49bf5c4/dependency-management-plugin-1.0.2.RELEASE-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.spring.gradle/dependency-management-plugin/1.0.2.RELEASE/f7694785efdcb2fe67cd67c40b872010a36a9de5/dependency-management-plugin-1.0.2.RELEASE.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/4.3.8.RELEASE/b278822fc694d9b5a943fef1d4c9fd28ad2b92a6/spring-core-4.3.8.RELEASE-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/4.3.8.RELEASE/cce6c251249e48f0a86aa578c2a0e262efa5a1e0/spring-core-4.3.8.RELEASE.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.2/ecf26c7507d67782a3bbd148d170b31dfad001aa/commons-logging-1.2-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.2/4bfc12adfe4842bf07b657f0369c4cb522955686/commons-logging-1.2.jar" />
                           </list>
@@ -484,133 +385,75 @@
               <option name="name" value="LINCS-Proteomics-Landing-Page" />
               <option name="projectBuildClasspath">
                 <list>
-                  <option value="$USER_HOME$/softwares/gradle/src/model-groovy" />
-                  <option value="$USER_HOME$/softwares/gradle/src/plugin-use" />
-                  <option value="$USER_HOME$/softwares/gradle/src/language-java" />
-                  <option value="$USER_HOME$/softwares/gradle/src/resources-s3" />
-                  <option value="$USER_HOME$/softwares/gradle/src/logging" />
-                  <option value="$USER_HOME$/softwares/gradle/src/language-jvm" />
-                  <option value="$USER_HOME$/softwares/gradle/src/jetty" />
-                  <option value="$USER_HOME$/softwares/gradle/src/internal-integ-testing" />
-                  <option value="$USER_HOME$/softwares/gradle/src/base-services" />
-                  <option value="$USER_HOME$/softwares/gradle/src/language-groovy" />
-                  <option value="$USER_HOME$/softwares/gradle/src/wrapper" />
-                  <option value="$USER_HOME$/softwares/gradle/src/installation-beacon" />
-                  <option value="$USER_HOME$/softwares/gradle/src/javascript" />
-                  <option value="$USER_HOME$/softwares/gradle/src/reporting" />
-                  <option value="$USER_HOME$/softwares/gradle/src/launcher" />
-                  <option value="$USER_HOME$/softwares/gradle/src/testing-native" />
-                  <option value="$USER_HOME$/softwares/gradle/src/tooling-api" />
-                  <option value="$USER_HOME$/softwares/gradle/src/testing-jvm" />
-                  <option value="$USER_HOME$/softwares/gradle/src/build-comparison" />
-                  <option value="$USER_HOME$/softwares/gradle/src/language-scala" />
-                  <option value="$USER_HOME$/softwares/gradle/src/announce" />
-                  <option value="$USER_HOME$/softwares/gradle/src/ear" />
-                  <option value="$USER_HOME$/softwares/gradle/src/open-api" />
-                  <option value="$USER_HOME$/softwares/gradle/src/ide-play" />
-                  <option value="$USER_HOME$/softwares/gradle/src/sonar" />
-                  <option value="$USER_HOME$/softwares/gradle/src/resources" />
-                  <option value="$USER_HOME$/softwares/gradle/src/tooling-api-builders" />
-                  <option value="$USER_HOME$/softwares/gradle/src/resources-sftp" />
-                  <option value="$USER_HOME$/softwares/gradle/src/platform-native" />
-                  <option value="$USER_HOME$/softwares/gradle/src/build-init" />
-                  <option value="$USER_HOME$/softwares/gradle/src/testing-base" />
-                  <option value="$USER_HOME$/softwares/gradle/src/process-services" />
-                  <option value="$USER_HOME$/softwares/gradle/src/resources-http" />
-                  <option value="$USER_HOME$/softwares/gradle/src/code-quality" />
-                  <option value="$USER_HOME$/softwares/gradle/src/maven" />
-                  <option value="$USER_HOME$/softwares/gradle/src/diagnostics" />
-                  <option value="$USER_HOME$/softwares/gradle/src/ivy" />
-                  <option value="$USER_HOME$/softwares/gradle/src/plugin-development" />
-                  <option value="$USER_HOME$/softwares/gradle/src/ide" />
-                  <option value="$USER_HOME$/softwares/gradle/src/native" />
-                  <option value="$USER_HOME$/softwares/gradle/src/scala" />
-                  <option value="$USER_HOME$/softwares/gradle/src/core" />
-                  <option value="$USER_HOME$/softwares/gradle/src/osgi" />
-                  <option value="$USER_HOME$/softwares/gradle/src/base-services-groovy" />
-                  <option value="$USER_HOME$/softwares/gradle/src/publish" />
-                  <option value="$USER_HOME$/softwares/gradle/src/model-core" />
-                  <option value="$USER_HOME$/softwares/gradle/src/ide-native" />
-                  <option value="$USER_HOME$/softwares/gradle/src/internal-testing" />
-                  <option value="$USER_HOME$/softwares/gradle/src/platform-play" />
-                  <option value="$USER_HOME$/softwares/gradle/src/cli" />
-                  <option value="$USER_HOME$/softwares/gradle/src/platform-base" />
-                  <option value="$USER_HOME$/softwares/gradle/src/messaging" />
-                  <option value="$USER_HOME$/softwares/gradle/src/dependency-management" />
-                  <option value="$USER_HOME$/softwares/gradle/src/signing" />
-                  <option value="$USER_HOME$/softwares/gradle/src/jacoco" />
-                  <option value="$USER_HOME$/softwares/gradle/src/jvm-services" />
-                  <option value="$USER_HOME$/softwares/gradle/src/plugins" />
-                  <option value="$USER_HOME$/softwares/gradle/src/language-native" />
-                  <option value="$USER_HOME$/softwares/gradle/src/test-kit" />
-                  <option value="$USER_HOME$/softwares/gradle/src/platform-jvm" />
-                  <option value="$USER_HOME$/softwares/gradle/src/antlr" />
-                  <option value="$USER_HOME$/softwares/gradle/src/ui" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/gradle-docs-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/gradle-jvm-services-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/gradle-launcher-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/gradle-core-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/gradle-base-services-groovy-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/gradle-cli-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/gradle-logging-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/groovy-all-2.4.4.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/gradle-tooling-api-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/gradle-base-services-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/gradle-installation-beacon-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/gradle-model-groovy-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/gradle-model-core-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/gradle-process-services-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/gradle-resources-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/ant-1.9.6.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/gradle-native-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/gradle-ui-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/gradle-messaging-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/gradle-open-api-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/ant-launcher-1.9.6.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/gradle-wrapper-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/gradle-build-init-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/gradle-platform-play-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/gradle-announce-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/gradle-diagnostics-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/gradle-resources-s3-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/gradle-language-groovy-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/gradle-testing-base-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/gradle-ide-play-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/gradle-language-jvm-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/gradle-testing-jvm-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/gradle-jacoco-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/gradle-sonar-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/gradle-platform-jvm-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/gradle-jetty-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/ivy-2.2.0.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/gradle-javascript-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/gradle-plugins-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/gradle-scala-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/gradle-testing-native-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/gradle-resources-sftp-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/gradle-plugin-use-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/gradle-ide-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/gradle-resources-http-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/gradle-code-quality-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/gradle-dependency-management-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/gradle-platform-native-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/gradle-language-native-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/gradle-publish-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/gradle-ide-native-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/gradle-language-scala-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/gradle-antlr-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/gradle-osgi-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/gradle-maven-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/gradle-signing-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/gradle-tooling-api-builders-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/gradle-test-kit-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/gradle-ear-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/gradle-reporting-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/gradle-ivy-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/gradle-language-java-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/gradle-plugin-development-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/gradle-platform-base-2.14.jar" />
-                  <option value="$USER_HOME$/softwares/gradle/lib/plugins/gradle-build-comparison-2.14.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/gradle-docs-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/gradle-version-info-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/gradle-core-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/gradle-logging-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/gradle-messaging-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/gradle-base-services-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/gradle-model-core-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/gradle-ui-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/gradle-resources-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/gradle-model-groovy-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/gradle-open-api-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/gradle-native-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/gradle-tooling-api-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/gradle-process-services-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/ant-1.9.6.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/gradle-cli-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/gradle-installation-beacon-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/gradle-wrapper-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/gradle-base-services-groovy-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/groovy-all-2.4.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/gradle-launcher-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/gradle-jvm-services-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/gradle-script-kotlin-0.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/ant-launcher-1.9.6.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-publish-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-resources-s3-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-resources-sftp-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-reporting-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-scala-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-testing-jvm-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-dependency-management-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-signing-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-ivy-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-tooling-api-builders-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-workers-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-diagnostics-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-maven-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-platform-play-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-platform-native-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-ear-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-javascript-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/ivy-2.2.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-testing-native-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-build-cache-http-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-jetty-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-announce-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-code-quality-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-antlr-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-ide-play-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-language-jvm-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-language-groovy-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-plugin-use-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-plugin-development-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-ide-native-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-plugins-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-jacoco-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-build-comparison-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-platform-jvm-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-language-java-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-osgi-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-composite-builds-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-build-init-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-testing-base-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-resources-http-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-platform-base-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-ide-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-language-scala-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-test-kit-3.4.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.4.1-bin/71zneekfcxxu7l9p7nr2sc65s/gradle-3.4.1/lib/plugins/gradle-language-native-3.4.1.jar" />
                   <option value="$PROJECT_DIR$/buildSrc/src/main/java" />
                   <option value="$PROJECT_DIR$/buildSrc/src/main/groovy" />
                 </list>
@@ -627,33 +470,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/static/data/peptide.csv" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/data/content.json" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/partials/dataView.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/css/style.css" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/partials/network-view.html" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/uc/eh/service/PilincsApiGet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/uc/eh/service/PilincsApiPerturbagenService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/uc/eh/service/PilincsApiGetService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/uc/eh/utils/UtilsIO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/uc/eh/controller/RestAPI.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/uc/eh/service/PilincsApiAssayService.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/data/heatmap_data.json" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/bower_components/https/angular-strap.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/bower_components/https/angular-strap.tpl.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/bower_components/https/angular-strap.docs.tpl.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/bower_components/https/angular-filter.min.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/app.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/partials/about.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/css/custom.css" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/partials/tools.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/data/assay-view-content.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/data/package.json" />
         <option value="$PROJECT_DIR$/src/main/resources/static/index.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/partials/data-view.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/about.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/controllers.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/partials/assay-view.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/css/style.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/data.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/assay.html" />
       </list>
     </option>
   </component>
@@ -671,9 +493,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="52" />
-    <option name="width" value="1316" />
-    <option name="height" value="716" />
+    <option name="y" value="54" />
+    <option name="width" value="1356" />
+    <option name="height" value="714" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -731,6 +553,18 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="edu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -777,96 +611,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LINCS-Proteomics-Landing-Page" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LINCS-Proteomics-Landing-Page" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="partials" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LINCS-Proteomics-Landing-Page" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LINCS-Proteomics-Landing-Page" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LINCS-Proteomics-Landing-Page" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LINCS-Proteomics-Landing-Page" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -917,47 +661,27 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="LINCS-Proteomics-Landing-Page" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LINCS-Proteomics-Landing-Page" />
+              <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="libs" />
+              <option name="myItemId" value="edu" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="json-simple-1.1.1.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="nodejs_interpreter_path" value="/usr/bin/node" />
     <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/build.gradle" />
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/static/data" />
-      <recent name="$PROJECT_DIR$/src/main/resources/static/images" />
-      <recent name="$PROJECT_DIR$/src/main/resources/static/partials" />
-      <recent name="$PROJECT_DIR$/src/main/resources/static/bower_components" />
-    </key>
+    <property name="nodejs_interpreter_path" value="/usr/bin/node" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -1193,7 +917,6 @@
       <setting name="cmdLine" value="run-app" />
       <setting name="passParentEnv" value="true" />
       <setting name="launchBrowser" value="true" />
-      <setting name="depsClasspath" value="false" />
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method />
     </configuration>
@@ -1362,12 +1085,6 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -1400,67 +1117,51 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="08e3ec83-a888-4436-962f-df28bfa57941" name="Default" comment="" />
-      <created>1481319000024</created>
+      <changelist id="0b3aa4bd-8d37-4da9-a995-c9e063d1d309" name="Default" comment="" />
+      <created>1494868907119</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1481319000024</updated>
-      <workItem from="1481319019916" duration="2983000" />
-      <workItem from="1481557217257" duration="38096000" />
-      <workItem from="1481829525103" duration="4573000" />
-      <workItem from="1482161583086" duration="47000" />
-      <workItem from="1488907866172" duration="5992000" />
-      <workItem from="1488986744070" duration="13228000" />
-      <workItem from="1489007944008" duration="66647000" />
-      <workItem from="1489334704540" duration="1234000" />
-      <workItem from="1489587185490" duration="2091000" />
-      <workItem from="1489762337873" duration="16755000" />
-      <workItem from="1489858144179" duration="30567000" />
-      <workItem from="1489940689416" duration="30164000" />
-      <workItem from="1490036777504" duration="131000" />
-      <workItem from="1490037115117" duration="12766000" />
+      <updated>1494868907119</updated>
+      <workItem from="1494868921320" duration="7550000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="225274000" />
+    <option name="totallyTimeSpent" value="7550000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="52" width="1316" height="716" extended-state="4" />
+    <frame x="0" y="54" width="1356" height="714" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2527559" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24961832" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881355" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32711864" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1479,379 +1180,59 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/partials/tools.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/app.js">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/tools.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1490045633960" expanded="false" signature="9095:9121" ph="..." />
-            <marker date="1490045633960" expanded="false" signature="9335:9361" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30168">
-          <caret line="1676" column="29" selection-start-line="1676" selection-start-column="29" selection-end-line="1676" selection-end-column="29" />
+        <state relative-caret-position="234">
+          <caret line="16" column="48" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/data/content.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/custom.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5688">
-          <caret line="316" column="16" selection-start-line="316" selection-start-column="16" selection-end-line="316" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1490045633960" expanded="false" signature="9095:9121" ph="..." />
-            <marker date="1490045633960" expanded="false" signature="9335:9361" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/controllers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30168">
-          <caret line="1676" column="29" selection-start-line="1676" selection-start-column="29" selection-end-line="1676" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/data/content.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="74107" selection-start-line="1" selection-start-column="74107" selection-end-line="1" selection-end-column="74107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/custom.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5688">
-          <caret line="316" column="16" selection-start-line="316" selection-start-column="16" selection-end-line="316" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4572">
-          <caret line="254" column="10" selection-start-line="254" selection-start-column="10" selection-end-line="254" selection-end-column="10" />
-          <folding>
-            <marker date="1490045633960" expanded="false" signature="9095:9121" ph="..." />
-            <marker date="1490045633960" expanded="false" signature="9335:9361" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/controllers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/data/content.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="74107" selection-start-line="1" selection-start-column="74107" selection-end-line="1" selection-end-column="74107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/custom.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5688">
-          <caret line="316" column="16" selection-start-line="316" selection-start-column="16" selection-end-line="316" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/data/peptide.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/pathway.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="22" column="60" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/bower_components/angular-route/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/bower_components/angular/angular.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/partials/dataView.html" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/bower_components/angular/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/uc/eh/service/PCGService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/uc/eh/service/UniprotService.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/uc/eh/service/PilincsApiPerturbagenService.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/uc/eh/service/KinaseService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2178">
-          <caret line="38" column="42" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/uc/eh/service/PrositeService.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/uc/eh/utils/UtilsIO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="108" column="0" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/uc/eh/service/PilincsApiGetService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="41" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/util/Comparator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-452">
-          <caret line="108" column="17" selection-start-line="108" selection-start-column="17" selection-end-line="108" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/uc/eh/service/PilincsApiAssayService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1116">
-          <caret line="72" column="44" selection-start-line="72" selection-start-column="42" selection-end-line="72" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/uc/eh/controller/RestAPI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/data/heatmap_data.tsv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/data/heatmap_data.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="62" selection-start-line="0" selection-start-column="62" selection-end-line="0" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/bower_components/https/angular-strap.tpl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="42" column="21" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/bower_components/https/angular-strap.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79902">
-          <caret line="4439" column="21" selection-start-line="4439" selection-start-column="21" selection-end-line="4439" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/bower_components/https/angular-strap.docs.tpl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/bower_components/https/angular-filter.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="5" column="18807" selection-start-line="5" selection-start-column="18807" selection-end-line="5" selection-end-column="18807" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+        <state relative-caret-position="314">
+          <caret line="1638" column="0" selection-start-line="1638" selection-start-column="0" selection-end-line="1638" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/data/P100_processed_perturb.json">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/about.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-13316">
-          <caret line="0" column="78860" selection-start-line="0" selection-start-column="78856" selection-end-line="0" selection-end-column="78860" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/data/content.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="53664" selection-start-line="0" selection-start-column="53659" selection-end-line="0" selection-end-column="53664" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/data/assay-view-content.js" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/partials/about.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#p#1;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#2;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#3;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#4;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#a#0;n#p#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#a#0;n#p#2;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/data/phospho_network_p100.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/data/assay-view.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-243507">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="167">
+          <caret line="318" column="60" selection-start-line="318" selection-start-column="58" selection-end-line="318" selection-end-column="60" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1658">
-          <caret line="330" column="40" selection-start-line="330" selection-start-column="40" selection-end-line="330" selection-end-column="40" />
-          <folding>
-            <marker date="1490045633960" expanded="false" signature="9095:9121" ph="..." />
-            <marker date="1490045633960" expanded="false" signature="9335:9361" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/partials/tools.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="118" column="59" selection-start-line="118" selection-start-column="57" selection-end-line="118" selection-end-column="59" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#a#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#a#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#a#0;n#div#1;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#a#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#a#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#a#0;n#div#1;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#a#0;n#div#1;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#a#0;n#div#1;n#div#1;n#div#2;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/custom.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="360" column="1" selection-start-line="360" selection-start-column="1" selection-end-line="360" selection-end-column="1" />
+        <state relative-caret-position="221">
+          <caret line="304" column="55" selection-start-line="304" selection-start-column="36" selection-end-line="304" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/controllers.js">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/data.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3280">
-          <caret line="75" column="36" selection-start-line="75" selection-start-column="36" selection-end-line="75" selection-end-column="36" />
+        <state relative-caret-position="149">
+          <caret line="302" column="55" selection-start-line="302" selection-start-column="36" selection-end-line="302" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/partials/data-view.html">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/assay.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="42" selection-end-column="14" />
+        <state relative-caret-position="95">
+          <caret line="298" column="55" selection-start-line="298" selection-start-column="55" selection-end-line="298" selection-end-column="55" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/partials/assay-view.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
-          <folding>
-            <element signature="n#style#0;n#h3#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
