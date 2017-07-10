@@ -242,6 +242,8 @@
             text-decoration: none;
             outline: none;
         }
+
+
     </style>
     <!-- End demo purposes only -->
 
@@ -252,6 +254,17 @@
     <!--[if lt IE 9]>
     <script src="js/respond.min.js"></script>
     <![endif]-->
+    <!--This is for the google analytics-->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-101774139-2', 'auto');
+        ga('send', 'pageview');
+
+    </script>
 
 </head>
 
@@ -281,13 +294,41 @@
                     <h1 id="fh5co-logo"><a href="index.html">LINCS PROTEOMICS<span>.</span></a></h1>
                     <ul class="pull-right right-menu">
                         <li><a href="about.html">About</a></li>
-
+                        <li><a href="contact.html">Contact Us</a></li>
                         <li><a href="http://dev3.ccs.miami.edu:8080/dcic-proteomics/" target="_blank">Download</a></li>
 
                     </ul>
                 </nav>
             </div>
         </section>
+        <!--This is for showing header when scroll down-->
+        <div class="topMenu">
+            <section id="fh5co-header2">
+                <div class="container">
+                    <nav role="navigation">
+                        <ul class="pull-left left-menu">
+                            <!--	<li><a href="about.html">About</a></li> -->
+                            <li><a href="assay.html">Assay View</a></li>
+                            <li><a href="data.html">Data View</a></li>
+                            <li><a href="tools.html">Tools</a></li>
+
+
+                        </ul>
+                        <h1 id="fh5co-logo2"><a href="index.html">LINCS PROTEOMICS</a></h1>
+                        <ul class="pull-right right-menu">
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="http://dev3.ccs.miami.edu:8080/dcic-proteomics/" target="_blank">Download</a>
+                            </li>
+
+
+                        </ul>
+                    </nav>
+                </div>
+            </section>
+        </div>
+
+
         <!-- #fh5co-header -->
 
         <section id="fh5co-hero" class="js-fullheight" style="background-image: url(images/lens-final.png);"
@@ -308,7 +349,7 @@
                             <!--<p class="animate-box"><a href="https://vimeo.com/channels/staffpicks/93951774" class="btn btn-outline popup-vimeo btn-video"><i class="icon-play2"></i> Watch video</a> -->
 
                             <!--<a href="http://dev3.ccs.miami.edu:8080/dcic-proteomics/" target="_blank"-->
-                               <!--class="btn btn-info">Download Data</a></p>-->
+                            <!--class="btn btn-info">Download Data</a></p>-->
                         </div>
                     </div>
                 </div>
@@ -439,10 +480,15 @@
             </div>
 
 
-            <hr/>
 
-            <div id="fh5co-about">
-                <div class="container">
+        </section>
+
+
+        <section id="fh5co-features-2">
+            <div class="container">
+
+                <!--<div id="fh5co-about">-->
+                    <!--<div class="container">-->
                     <!--<div class="row row-bottom-padded-lg">-->
                     <!--<div class="col-md-6">-->
                     <!--<figure class="animate-box">-->
@@ -464,652 +510,428 @@
                     <div class="row text-center row-bottom-padded-md">
                         <div class="col-md-8 col-md-offset-2">
 
-                            <h2 class="fh5co-lead animate-box">LINCS Proteomics Assays</h2>
+                            <h2 class="fh5co-lead animate-box">LINCS Proteomics Assays (Data Centers)</h2>
                             <!--<p class="fh5co-sub-lead animate-box">This list includes data generating and data-->
                             <!--processing centers. </p>-->
                         </div>
                     </div>
 
+
                     <div class="row">
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="fh5co-person">
-                                <figure class="animate-box">
-                                    <img src="images/database.png" alt="Free HTML5 Bootstrap Template by FREEHTML5.co"
-                                         class="img-responsive">
-                                </figure>
-                                <h3 class="fh5co-name animate-box">P100</h3>
-                                <h4 class="fh5co-designation animate-box">LINCS PCCSE</h4>
-                                <p class="fh5co-bio animate-box">P100 has been designed to measure the phosphorylation
-                                    state of cellular systems, using
-                                    a set of about hundred pospho-peptide probes whose abundance levels are measured
-                                    using
-                                    mass spectrometry techniques. P100 can be classified as a 'targeted proteomics'
-                                    assay that
-                                    provides a snapshot of cellular signaling cascades that involve phosphorylation of
-                                    the P100
-                                    target sites/peptides.</p>
-                                <!--<ul class="fh5co-social">-->
-                                <!--<li class="animate-box"><a href="#"><i class="icon-twitter"></i></a></li>-->
-                                <!--<li class="animate-box"><a href="#"><i class="icon-dribbble"></i></a></li>-->
-                                <!--<li class="animate-box"><a href="#"><i class="icon-globe"></i></a></li>-->
-                                <!--</ul>-->
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="fh5co-person">
-                                <figure class="animate-box">
-                                    <img src="images/database.png" alt="Free HTML5 Bootstrap Template by FREEHTML5.co"
-                                         class="img-responsive">
-                                </figure>
-                                <h3 class="fh5co-name animate-box">GCP</h3>
-                                <h4 class="fh5co-designation animate-box">LINCS PCCSE</h4>
-                                <p class="fh5co-bio animate-box">GCP has been designed to measure the histone
-                                    modification state, and thus indirectly the chromatin state of cellular
-                                    systems, using a set of about sixty target modified (acetylated, methylated etc.)
-                                    histone peptides whose abundance levels are measured
-                                    using mass spectrometry.</p>
-                                <!--<ul class="fh5co-social">-->
-                                <!--<li class="animate-box"><a href="#"><i class="icon-twitter"></i></a></li>-->
-                                <!--<li class="animate-box"><a href="#"><i class="icon-dribbble"></i></a></li>-->
-                                <!--<li class="animate-box"><a href="#"><i class="icon-globe"></i></a></li>-->
-                                <!--</ul>-->
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="fh5co-person">
-                                <figure class="animate-box">
-                                    <img src="images/database.png" alt="Free HTML5 Bootstrap Template by FREEHTML5.co"
-                                         class="img-responsive">
-                                </figure>
-                                <h3 class="fh5co-name animate-box">MS Protein State assay</h3>
-                                <h4 class="fh5co-designation animate-box">LINCS DToxS</h4>
-                                <p class="fh5co-bio animate-box">Mass spectrometry is a sensitive technique that
-                                    measures the mass-to-charge ratio of ions to
-                                    identify and quantify molecules in simple and
-                                    complex mixtures. Samples are loaded into the mass spectrometer in liquid, gas or
-                                    dried form
-                                    and then vaporized and ionized by the ion source. The charge that these molecules
-                                    receive allows
-                                    the mass spectrometer to accelerate the ions throughout the remainder of the system.
-                                    The ions
-                                    encounter electric and/or magnetic fields from mass analyzers, which deflect the
-                                    paths of individual
-                                    ions based on their mass and charge (m/z). Ions that have successfully been
-                                    deflected by the mass
-                                    analyzers then hit the ion detector that registers the number of ions at each m/z
-                                    value.</p>
-                                <!--<ul class="fh5co-social">-->
-                                <!--<li class="animate-box"><a href="#"><i class="icon-twitter"></i></a></li>-->
-                                <!--<li class="animate-box"><a href="#"><i class="icon-dribbble"></i></a></li>-->
-                                <!--<li class="animate-box"><a href="#"><i class="icon-globe"></i></a></li>-->
-                                <!--</ul>-->
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="fh5co-person">
-                                <figure class="animate-box">
-                                    <img src="images/database.png" alt="Free HTML5 Bootstrap Template by FREEHTML5.co"
-                                         class="img-responsive">
-                                </figure>
-                                <h3 class="fh5co-name animate-box">RPPA protein state assay</h3>
-                                <h4 class="fh5co-designation animate-box">HMS LINCS</h4>
-                                <p class="fh5co-bio animate-box">Reverse phase protein array (RPPA) is a high-throughput
-                                    technology that performs protein assays on
-                                    thousands of samples simultaneously, including tissue and cell lysates, serum,
-                                    plasma or other
-                                    body fluids that measure the levels of protein expression, as well as protein
-                                    modifications such
-                                    as phosphorylation. Protein lysates are arrayed as microspots on nitrocellulized
-                                    coated glass slides
-                                    and probed with highly specific antibodies that have been validated for RPPA. When
-                                    specific antibodies
-                                    are used, RPPA can generate 1,000 times more data points using 10,000 times less
-                                    sample volume than
-                                    an ordinary western blot, enabling researchers to monitor quantitative proteomic
-                                    responses for various
-                                    time-scale and input-dose gradients simultaneously.</p>
-                                <!--<ul class="fh5co-social">-->
-                                <!--<li class="animate-box"><a href="#"><i class="icon-twitter"></i></a></li>-->
-                                <!--<li class="animate-box"><a href="#"><i class="icon-github"></i></a></li>-->
-                                <!--<li class="animate-box"><a href="#"><i class="icon-globe"></i></a></li>-->
-                                <!--</ul>-->
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="fh5co-person">
-                                <figure class="animate-box">
-                                    <img src="images/database.png" alt="Free HTML5 Bootstrap Template by FREEHTML5.co"
-                                         class="img-responsive">
-                                </figure>
-                                <h3 class="fh5co-name animate-box">SWATH-MS protein quantification assay</h3>
-                                <h4 class="fh5co-designation animate-box">NeuroLINCS</h4>
-                                <p class="fh5co-bio animate-box">SWATH (sequential window acquisition of all theoretical
-                                    fragment ion spectra) is a new strategy for high
-                                    throughput, label-free protein quantification. It generates global, quantitative
-                                    protein maps using
-                                    data-independent acquisition of collision-induced dissociation (CID) spectra of all
-                                    precursor ions.
-                                    As a data-independent acquisition (also referred to as MS/MSall) SWATH-MS has a
-                                    greater coverage of
-                                    peptide identification compared to classical discovery approaches.
-                                    Using known fingerprints of target peptides comprising precursor mass,
-                                    chromatographic retention
-                                    time and MRM transitions SWATH protein maps can be interrogated for targeted
-                                    quantification of proteins
-                                    of interest based on high resolution MRM-like signatures. SWATH acquires all MRM
-                                    transitions of all
-                                    precursors and thus does not require tedious assay development and allows for a more
-                                    dynamic data
-                                    interpretation compared to classical MRM experiments.</p>
-                                <!--<ul class="fh5co-social">-->
-                                <!--<li class="animate-box"><a href="#"><i class="icon-twitter"></i></a></li>-->
-                                <!--<li class="animate-box"><a href="#"><i class="icon-dribbble"></i></a></li>-->
-                                <!--<li class="animate-box"><a href="#"><i class="icon-globe"></i></a></li>-->
-                                <!--</ul>-->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                        <div class="col-lg-12">
+                            <div class="panel-group" id="accordion">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" ng-class="{'btn-primary': display.P100}"
+                                         ng-click="showNetwork('P100')">
 
+                                        <h4 class="panel-title">
+                                            <a class="accordion-toggle" data-toggle="collapse"
+                                               data-parent="#accordion"
+                                               href="#collapseOne">P100 (PCCSE)</a>
 
-        <!--<hr/>-->
-        <!--<section id="fh5co-testimonials2" class="boredr-top">-->
+                                        </h4>
 
-        <!--<div class="container">-->
-        <!--<div class="row row-bottom-padded-sm">-->
-        <!--<div class="col-md-6 col-md-offset-3 text-center">-->
-        <!--<div class="fh5co-label animate-box">Testimonials</div>-->
-        <!--<h2 class="fh5co-lead animate-box">Join the 1 Million Users using Our Products </h2>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div class="row">-->
-        <!--<div class="col-md-8 col-md-offset-2 text-center animate-box">-->
-        <!--<div class="flexslider">-->
-        <!--<ul class="slides">-->
-        <!--<li>-->
-        <!--<blockquote>-->
-        <!--<p>&ldquo;Creativity is just connecting things. When you ask creative people how-->
-        <!--they did something, they feel a little guilty because they didn’t really do-->
-        <!--it, they just saw something. It seemed obvious to them after a-->
-        <!--while.&rdquo;</p>-->
-        <!--<p><cite>&mdash; Steve Jobs</cite></p>-->
-        <!--</blockquote>-->
-        <!--</li>-->
-        <!--<li>-->
-        <!--<blockquote>-->
-        <!--<p>&ldquo;I think design would be better if designers were much more skeptical-->
-        <!--about its applications. If you believe in the potency of your craft, where-->
-        <!--you choose to dole it out is not something to take lightly.&rdquo;</p>-->
-        <!--<p><cite>&mdash; Frank Chimero</cite></p>-->
-        <!--</blockquote>-->
-        <!--</li>-->
-        <!--<li>-->
-        <!--<blockquote>-->
-        <!--<p>&ldquo;Design must be functional and functionality must be translated into-->
-        <!--visual aesthetics, without any reliance on gimmicks that have to be-->
-        <!--explained.&rdquo;</p>-->
-        <!--<p><cite>&mdash; Ferdinand A. Porsche</cite></p>-->
-        <!--</blockquote>-->
-        <!--</li>-->
-        <!--<li>-->
-        <!--<blockquote>-->
-        <!--<p>&ldquo;4444Design must be functional and functionality must be translated into-->
-        <!--visual aesthetics, without any reliance on gimmicks that have to be-->
-        <!--explained.&rdquo;</p>-->
-        <!--<p><cite>&mdash; Ferdinand A. Porsche</cite></p>-->
-        <!--</blockquote>-->
-        <!--</li>-->
-        <!--<li>-->
-        <!--<blockquote>-->
-        <!--<p>&ldquo;5555Design must be functional and functionality must be translated into-->
-        <!--visual aesthetics, without any reliance on gimmicks that have to be-->
-        <!--explained.&rdquo;</p>-->
-        <!--<p><cite>&mdash; Ferdinand A. Porsche</cite></p>-->
-        <!--</blockquote>-->
-        <!--</li>-->
-        <!--</ul>-->
-        <!--</div>-->
-        <!--<div class="flexslider-controls">-->
-        <!--<ol class="flex-control-nav">-->
-        <!--<li class="animate-box"><img src="images/database.png"-->
-        <!--alt="Free HTML5 Bootstrap Template by FREEHTML5.co">-->
-        <!--&lt;!&ndash;<h3>P100 assay</h3>&ndash;&gt;-->
-        <!--</li>-->
-        <!--<li class="animate-box"><img src="images/database.png"-->
-        <!--alt="Free HTML5 Bootstrap Template by FREEHTML5.co">-->
-        <!--&lt;!&ndash;<h3>GCP assay</h3>&ndash;&gt;-->
-        <!--</li>-->
-        <!--<li class="animate-box"><img src="images/database.png"-->
-        <!--alt="Free HTML5 Bootstrap Template by FREEHTML5.co">-->
-        <!--&lt;!&ndash;<h3>MS Protein State assay</h3>&ndash;&gt;-->
-        <!--</li>-->
-        <!--<li class="animate-box"><img src="images/database.png"-->
-        <!--alt="Free HTML5 Bootstrap Template by FREEHTML5.co">-->
-        <!--&lt;!&ndash;<h3>RPPA protein state assay</h3>&ndash;&gt;-->
-        <!--</li>-->
-        <!--<li class="animate-box"><img src="images/database.png"-->
-        <!--alt="Free HTML5 Bootstrap Template by FREEHTML5.co">-->
-        <!--&lt;!&ndash;<h3>SWATH-MS protein quantification assay</h3>&ndash;&gt;-->
-        <!--</li>-->
-        <!--</ol>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
+                                    </div>
+                                    <div id="collapseOne" class="panel-collapse collapse" >
+                                        <div class="panel-body">
+                                            P100 has been designed to measure the phosphorylation state of cellular
+                                            systems, using a set
+                                            of about hundred pospho-peptide probes whose abundance levels are
+                                            measured
+                                            using mass spectrometry
+                                            techniques. P100 can be classified as a 'targeted proteomics' assay that
+                                            provides a snapshot of cellular
+                                            signaling cascades that involve phosphorylation of the P100 target
+                                            sites/peptides.
+                                            <a href="https://panoramaweb.org/labkey/project/LINCS/begin.view?" target="_blank">More
+                                                ...</a>
+                                        </div>
+                                        <div>
+                                            <!--<button type="button" class="btn btn-default">-->
+                                            <!--<i class="fa fa-shopping-cart"></i> Buy Now-->
+                                            <!--</button>-->
+                                            <!--<button type="button" class="btn btn-default" style="border: 2px solid #4CAF50;" ng-class="{'btn-primary': display.P100}" ng-click="showNetwork('P100')" >P100 (PCCSE)</button>-->
+                                            <!--<button type="button" class="btn btn-info"-->
+                                                    <!--style="border: 2px solid #4CAF50;"-->
+                                                    <!--ng-class="{'btn-primary': display.P100}"-->
+                                                    <!--ng-click="showNetwork('P100')"> P100 (PCCSE)-->
+                                                <!--&lt;!&ndash;ng-click="showPhosphoNetwork('P100')"> P100 (PCCSE)&ndash;&gt;-->
 
+                                            <!--</button>-->
 
-        <!--</section>-->
+                                            <span>
+                                                <button type="button" class="btn btn-info"
 
-
-        <!--<section id="fh5co-features">-->
-        <!--<div class="container">-->
-        <!--<div class="row text-center row-bottom-padded-md">-->
-        <!--<div class="col-md-8 col-md-offset-2">-->
-        <!--<figure class="fh5co-devices animate-box"><img src="images/centers.jpg"-->
-        <!--alt="Free HTML5 Bootstrap Template"-->
-        <!--class="img-responsive"></figure>-->
-        <!--<h2 class="fh5co-lead animate-box">LINCS Proteomics Data Centers</h2>-->
-        <!--<p class="fh5co-sub-lead animate-box">This list includes data generating and data-->
-        <!--processing centers. </p>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div class="row">-->
-        <!--<div class="col-md-4 col-sm-6 col-xs-12 animate-box">-->
-        <!--<div class="fh5co-feature">-->
-        <!--<div class="fh5co-icon">-->
-        <!--<i class="icon-database"></i>-->
-        <!--</div>-->
-        <!--<h3>LINCS PCCSE</h3>-->
-        <!--<p>The LINCS Proteomic Characterization Center for Signaling and Epigenetics at the-->
-        <!--Broad Institute/MIT/University of Washington utilizes the P100 and GCP assays to-->
-        <!--profile the response of human cell lines to perturbations.</p>-->
-        <!--</div>-->
-        <!--</div>-->
-
-        <!--<div class="col-md-4 col-sm-6 col-xs-12 animate-box">-->
-        <!--<div class="fh5co-feature">-->
-        <!--<div class="fh5co-icon">-->
-        <!--<i class="icon-database"></i>-->
-        <!--</div>-->
-        <!--<h3>LINCS DToxS</h3>-->
-        <!--<p>The Drug Toxicity Signature Generation Center is a Systems Pharmacology research-->
-        <!--center at the Icahn School of Medicine. The proteomics experiments are conducted at-->
-        <!--the Center for Advanced Proteomics, Rutgers-New Jersey Medical School. </p>-->
-        <!--</div>-->
-        <!--</div>-->
-
-        <!--<div class="clearfix visible-sm-block"></div>-->
-        <!--<div class="col-md-4 col-sm-6 col-xs-12 animate-box">-->
-        <!--<div class="fh5co-feature">-->
-        <!--<div class="fh5co-icon">-->
-        <!--<i class="icon-database"></i>-->
-        <!--</div>-->
-        <!--<h3>HMS LINCS</h3>-->
-        <!--<p>The HMS LINCS Center collects multiplex perturbagen-response data across a number of complementary-->
-        <!--experimental platforms including live- and fixed-cell imaging, sandwich immunoassays, protein mass-->
-        <!--spectrometry, and mRNA profiling as a means to measure the levels, localization, and states of modification.</p>-->
-
-        <!--&lt;!&ndash;The Harvard Medical School LINCS Center studies how normal and diseased human cells respond&ndash;&gt;-->
-        <!--&lt;!&ndash;at the molecular level to perturbation by drugs, mutations, and the local environment.</p>&ndash;&gt;-->
-        <!--</div>-->
-        <!--</div>-->
-
-        <!--<div class="col-md-4 col-sm-6 col-xs-12 animate-box">-->
-        <!--<div class="fh5co-feature">-->
-        <!--<div class="fh5co-icon">-->
-        <!--<i class="icon-database"></i>-->
-        <!--</div>-->
-        <!--<h3>NeuroLINCS</h3>-->
-        <!--<p>The NeuroLINCS Center studies ALS and SMA by characterizing the molecular networks within-->
-        <!--patient-derived iPSCs, and their differentiated progeny, across many regulatory layers.</p>-->
-        <!--</div>-->
-        <!--</div>-->
-
-        <!--<div class="clearfix visible-sm-block"></div>-->
-        <!--<div class="col-md-4 col-sm-6 col-xs-12 animate-box">-->
-        <!--<div class="fh5co-feature">-->
-        <!--<div class="fh5co-icon">-->
-        <!--<i class="icon-database"></i>-->
-        <!--</div>-->
-        <!--<h3>BD2K-LINCS DCIC</h3>-->
-        <!--<p>The BD2K-LINCS Data Coordination and Integration Centers at Icahn School of Medicine, university of Miami-->
-        <!--and university of Cincinnati are responsible for harmonizing-->
-        <!--LINCS data with other available resources.</p>-->
-        <!--</div>-->
-        <!--</div>-->
-
-        <!--<div class="clearfix visible-sm-block"></div>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<hr/>-->
-        <!--<div class="container">-->
-        <!--<div class="row text-center row-bottom-padded-md">-->
-        <!--<div class="col-md-8 col-md-offset-2">-->
-
-        <!--<h2 class="fh5co-lead animate-box">LINCS Proteomics Assays</h2>-->
-        <!--&lt;!&ndash;<p class="fh5co-sub-lead animate-box">This list includes data generating and data&ndash;&gt;-->
-        <!--&lt;!&ndash;processing centers. </p>&ndash;&gt;-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div class="row">-->
-
-
-        <!--<div class="clearfix visible-sm-block"></div>-->
-        <!--<div class="col-md-4 col-sm-6 col-xs-12 animate-box">-->
-        <!--<div class="fh5co-feature">-->
-        <!--<div class="fh5co-icon">-->
-        <!--<i class="icon-info"></i>-->
-        <!--</div>-->
-        <!--<h3>MS Protein State assay</h3>-->
-        <!--<p>Mass spectrometry is a sensitive technique that measures the mass-to-charge ratio of ions to-->
-        <!--identify and quantify molecules in simple and-->
-        <!--complex mixtures. Samples are loaded into the mass spectrometer in liquid, gas or dried form-->
-        <!--and then vaporized and ionized by the ion source. The charge that these molecules receive allows-->
-        <!--the mass spectrometer to accelerate the ions throughout the remainder of the system. The ions-->
-        <!--encounter electric and/or magnetic fields from mass analyzers, which deflect the paths of individual-->
-        <!--ions based on their mass and charge (m/z). Ions that have successfully been deflected by the mass-->
-        <!--analyzers then hit the ion detector that registers the number of ions at each m/z value.-->
-        <!--</p>-->
-
-        <!--</div>-->
-        <!--</div>-->
-
-        <!--<div class="col-md-4 col-sm-6 col-xs-12 animate-box">-->
-        <!--<div class="fh5co-feature">-->
-        <!--<div class="fh5co-icon">-->
-        <!--<i class="icon-info"></i>-->
-        <!--</div>-->
-        <!--<h3>RPPA protein state assay</h3>-->
-        <!--<p>Reverse phase protein array (RPPA) is a high-throughput technology that performs protein assays on-->
-        <!--thousands of samples simultaneously, including tissue and cell lysates, serum, plasma or other-->
-        <!--body fluids that measure the levels of protein expression, as well as protein modifications such-->
-        <!--as phosphorylation. Protein lysates are arrayed as microspots on nitrocellulized coated glass slides-->
-        <!--and probed with highly specific antibodies that have been validated for RPPA. When specific antibodies-->
-        <!--are used, RPPA can generate 1,000 times more data points using 10,000 times less sample volume than-->
-        <!--an ordinary western blot, enabling researchers to monitor quantitative proteomic responses for various-->
-        <!--time-scale and input-dose gradients simultaneously.</p>-->
-        <!--</div>-->
-        <!--</div>-->
-
-        <!--<div class="clearfix visible-sm-block"></div>-->
-        <!--<div class="col-md-4 col-sm-6 col-xs-12 animate-box">-->
-        <!--<div class="fh5co-feature">-->
-        <!--<div class="fh5co-icon">-->
-        <!--<i class="icon-info"></i>-->
-        <!--</div>-->
-        <!--<h3>SWATH-MS protein quantification assay</h3>-->
-        <!--<p>SWATH (sequential window acquisition of all theoretical fragment ion spectra) is a new strategy for high-->
-        <!--throughput, label-free protein quantification. It generates global, quantitative protein maps using-->
-        <!--data-independent acquisition of collision-induced dissociation (CID) spectra of all precursor ions.-->
-        <!--As a data-independent acquisition (also referred to as MS/MSall) SWATH-MS has a greater coverage of-->
-        <!--peptide identification compared to classical discovery approaches.-->
-        <!--Using known fingerprints of target peptides comprising precursor mass, chromatographic retention-->
-        <!--time and MRM transitions SWATH protein maps can be interrogated for targeted quantification of proteins-->
-        <!--of interest based on high resolution MRM-like signatures. SWATH acquires all MRM transitions of all-->
-        <!--precursors and thus does not require tedious assay development and allows for a more dynamic data-->
-        <!--interpretation compared to classical MRM experiments. </p>-->
-        <!--</div>-->
-        <!--</div>-->
-
-        <!--<div class="col-md-4 col-sm-6 col-xs-12 animate-box">-->
-        <!--<div class="fh5co-feature">-->
-        <!--<div class="fh5co-icon">-->
-        <!--<i class="icon-info"></i>-->
-        <!--</div>-->
-        <!--<h3>P100 assay</h3>-->
-        <!--<p>P100 has been designed to measure the phosphorylation state of cellular systems, using-->
-        <!--a set of about hundred pospho-peptide probes whose abundance levels are measured using-->
-        <!--mass spectrometry techniques. P100 can be classified as a 'targeted proteomics' assay that-->
-        <!--provides a snapshot of cellular signaling cascades that involve phosphorylation of the P100-->
-        <!--target sites/peptides.<a href="https://panoramaweb.org/labkey/project/LINCS/begin.view?" target="_blank">More ...</a></p>-->
-        <!--</div>-->
-        <!--</div>-->
-
-        <!--<div class="col-md-4 col-sm-6 col-xs-12 animate-box">-->
-        <!--<div class="fh5co-feature">-->
-        <!--<div class="fh5co-icon">-->
-        <!--<i class="icon-info"></i>-->
-        <!--</div>-->
-        <!--<h3>GCP assay</h3>-->
-        <!--<p>GCP has been designed to measure the histone modification state, and thus indirectly the chromatin state of cellular-->
-        <!--systems, using a set of about sixty target modified (acetylated, methylated etc.) histone peptides whose abundance levels are measured-->
-        <!--using mass spectrometry. <a href="https://panoramaweb.org/labkey/project/LINCS/begin.view?" target="_blank">More ... </a></p>-->
-        <!--</div>-->
-        <!--</div>-->
-
-        <!--<div class="clearfix visible-sm-block"></div>-->
-        <!--</div>-->
-        <!--</div>-->
-
-
-        <!--<hr/>-->
-
-
-        <!--</section>-->
-
-
-        <section id="fh5co-features-2">
-            <div class="container">
-
-
-                <!--<div class="container">-->
-                    <div class="row text-center row-bottom-padded-md">
-                        <div class="col-md-8 col-md-offset-2">
-
-
-                            <h2 class="fh5co-lead animate-box"> LINCS Proteomics Assays (Data Generating Centers)</h2>
-                            <!--<hr/>-->
-                            <div class="fh5co-lead animate-box">
-
-
-                                <div >
-                                    <!--<button type="button" class="btn btn-default">-->
-                                    <!--<i class="fa fa-shopping-cart"></i> Buy Now-->
-                                    <!--</button>-->
-                                    <!--<button type="button" class="btn btn-default" style="border: 2px solid #4CAF50;" ng-class="{'btn-primary': display.P100}" ng-click="showNetwork('P100')" >P100 (PCCSE)</button>-->
-                                    <button type="button" class="btn btn-info" style="border: 2px solid #4CAF50;"
-                                            ng-class="{'btn-primary': display.P100}"
-                                            ng-click="showNetwork('P100')"> P100 (PCCSE)
-                                            <!--ng-click="showPhosphoNetwork('P100')"> P100 (PCCSE)-->
-
-                                    </button>
-
-                                    <span>
-                                    <button type="button" class="btn btn-info" style="border: 2px solid #4CAF50;"
-                                            ng-click="customDownloadP100('P100')">Download
-                                    </button>
-                                    </span>
+                                                        ng-click="customDownloadP100('P100')">Download
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div >
-                                    <button type="button" class="btn btn-info" style="border: 2px solid #00FFFF;"
-                                            ng-class="{'btn-primary': display.GCP}" ng-click="showNetwork('GCP')">GCP
-                                        (PCCSE)
-                                    </button>
-                                    <span>
-                                        <button type="button" class="btn btn-info" style="border: 2px solid #00FFFF;"
+                                <!-- /.panel -->
+                                <div class="panel panel-default">
+                                    <div class="panel-heading"
+                                         ng-class="{'btn-primary': display.GCP}"
+                                         ng-click="showNetwork('GCP')" >
+                                        <h4 class="panel-title">
+                                            <a class="accordion-toggle" data-toggle="collapse"
+                                               data-parent="#accordion"
+                                               href="#collapseTwo">
+                                                GCP (PCCSE)
+                                            </a>
+
+                                            <!--<p class="fh5co-bio animate-box"></p>-->
+                                        </h4>
+                                    </div>
+                                    <div id="collapseTwo" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            GCP has been designed to measure the histone
+                                            modification state, and thus indirectly the chromatin state of cellular
+                                            systems, using a set of about sixty target modified (acetylated,
+                                            methylated
+                                            etc.)
+                                            histone peptides whose abundance levels are measured
+                                            using mass spectrometry.
+                                            <a href="https://panoramaweb.org/labkey/project/LINCS/begin.view?" target="_blank">More
+                                                ...</a>
+                                        </div>
+
+                                        <!--<button type="button" class="btn btn-info"-->
+                                                <!--style="border: 2px solid #00FFFF;"-->
+                                                <!--ng-class="{'btn-primary': display.GCP}"-->
+                                                <!--ng-click="showNetwork('GCP')">-->
+                                            <!--GCP-->
+                                            <!--(PCCSE)-->
+                                        <!--</button>-->
+                                        <span>
+                                        <button type="button" class="btn btn-info"
+
                                                 ng-click="customDownloadGCP('GCP')">Download
                                         </button>
                                     </span>
+
+                                    </div>
                                 </div>
-                                <div >
-                                    <button type="button" class="btn btn-info" style="border: 2px solid #A52A2A;"
-                                            ng-class="{'btn-primary': display.DToxS}" ng-click="showNetwork('DToxS')">MS
-                                        Protein State (DToxS)
-                                    </button>
-                                    <span>
-                                        <button type="button" class="btn btn-info" style="border: 2px solid #A52A2A;"
+                                <!-- /.panel -->
+                                <div class="panel panel-default">
+                                    <div class="panel-heading"
+                                         ng-class="{'btn-primary': display.DToxS}"
+                                         ng-click="showNetwork('DToxS')" >
+                                        <h4 class="panel-title">
+                                            <a class="accordion-toggle" data-toggle="collapse"
+                                               data-parent="#accordion"
+                                               href="#collapseThree">MS Protein State assay (LINCS DToxS)</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseThree" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            Mass spectrometry is a sensitive technique that
+                                            measures the mass-to-charge ratio of ions to
+                                            identify and quantify molecules in simple and
+                                            complex mixtures. Samples are loaded into the mass spectrometer in
+                                            liquid,
+                                            gas or
+                                            dried form
+                                            and then vaporized and ionized by the ion source. The charge that these
+                                            molecules
+                                            receive allows
+                                            the mass spectrometer to accelerate the ions throughout the remainder of
+                                            the
+                                            system.
+                                            The ions
+                                            encounter electric and/or magnetic fields from mass analyzers, which
+                                            deflect
+                                            the
+                                            paths of individual
+                                            ions based on their mass and charge (m/z). Ions that have successfully
+                                            been
+                                            deflected by the mass
+                                            analyzers then hit the ion detector that registers the number of ions at
+                                            each m/z
+                                            value.
+                                        </div>
+                                        <!--<button type="button" class="btn btn-info"-->
+                                                <!--style="border: 2px solid #A52A2A;"-->
+                                                <!--ng-class="{'btn-primary': display.DToxS}"-->
+                                                <!--ng-click="showNetwork('DToxS')">MS-->
+                                            <!--Protein State (DToxS)-->
+                                        <!--</button>-->
+                                        <!--<span>-->
+                                        <button type="button" class="btn btn-info"
+
                                                 ng-click="customDownloadDToxS('DToxS')">Download
                                         </button>
-                                    </span>
+                                    <!--</span>-->
+                                    </div>
                                 </div>
-                                <div>
-                                    <button type="button" class="btn btn-info" style="border: 2px solid #7FFF00;"
-                                            ng-class="{'btn-primary': display.SWATH}" ng-click="showNetwork('SWATH')">
-                                        SWATH (Neuro-LINCS)
-                                    </button>
-                                    <span>
-                                        <button type="button" class="btn btn-info" style="border: 2px solid #7FFF00;"
+                                <!-- /.panel -->
+                                <div class="panel panel-default">
+                                    <div class="panel-heading"
+                                         ng-class="{'btn-primary': display.RPPA}"
+                                         ng-click="showNetwork('RPPA')"
+                                    >
+
+                                        <h4 class="panel-title">
+                                            <a class="accordion-toggle" data-toggle="collapse"
+                                               data-parent="#accordion"
+                                               href="#collapseFour">RPPA protein state assay (HMS LINCS)</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseFour" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            Reverse phase protein array (RPPA) is a high-throughput
+                                            technology that performs protein assays on
+                                            thousands of samples simultaneously, including tissue and cell lysates,
+                                            serum,
+                                            plasma or other
+                                            body fluids that measure the levels of protein expression, as well as
+                                            protein
+                                            modifications such
+                                            as phosphorylation. Protein lysates are arrayed as microspots on
+                                            nitrocellulized
+                                            coated glass slides
+                                            and probed with highly specific antibodies that have been validated for
+                                            RPPA. When
+                                            specific antibodies
+                                            are used, RPPA can generate 1,000 times more data points using 10,000
+                                            times
+                                            less
+                                            sample volume than
+                                            an ordinary western blot, enabling researchers to monitor quantitative
+                                            proteomic
+                                            responses for various
+                                            time-scale and input-dose gradients simultaneously.
+                                        </div>
+
+                                        <!--<button type="button" class="btn btn-info"-->
+                                                <!--style="border: 2px solid #7FFF00;"-->
+                                                <!--ng-class="{'btn-primary': display.SWATH}"-->
+                                                <!--ng-click="showNetwork('SWATH')">-->
+                                            <!--SWATH (Neuro-LINCS)-->
+                                        <!--</button>-->
+                                        <!--<span>-->
+                                        <button type="button" class="btn btn-info"
+                                                ng-click="customDownloadRPPA('RPPA')">Download
+                                                <!--class="btn btn-info" -->
+                                                <!--style="border: 2px solid #7FFF00;"-->
+
+                                        </button>
+                                    <!--</span>-->
+                                    </div>
+                                </div>
+                                <!-- /.panel -->
+                                <div class="panel panel-default">
+                                    <div class="panel-heading"
+                                         ng-class="{'btn-primary': display.SWATH}"
+                                         ng-click="showNetwork('SWATH')">
+                                        <h4 class="panel-title">
+                                            <a class="accordion-toggle" data-toggle="collapse"
+                                               data-parent="#accordion"
+                                               href="#collapseFive">SWATH-MS protein quantification assay
+                                                (NeuroLINCS)</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseFive" class="panel-collapse collapse">
+                                        <div class="panel-body">
+
+                                            SWATH (sequential window acquisition of all theoretical
+                                            fragment ion spectra) is a new strategy for high
+                                            throughput, label-free protein quantification. It generates global,
+                                            quantitative
+                                            protein maps using
+                                            data-independent acquisition of collision-induced dissociation (CID)
+                                            spectra
+                                            of all
+                                            precursor ions.
+                                            As a data-independent acquisition (also referred to as MS/MSall)
+                                            SWATH-MS
+                                            has a
+                                            greater coverage of
+                                            peptide identification compared to classical discovery approaches.
+                                            Using known fingerprints of target peptides comprising precursor mass,
+                                            chromatographic retention
+                                            time and MRM transitions SWATH protein maps can be interrogated for
+                                            targeted
+                                            quantification of proteins
+                                            of interest based on high resolution MRM-like signatures. SWATH acquires
+                                            all
+                                            MRM
+                                            transitions of all
+                                            precursors and thus does not require tedious assay development and
+                                            allows
+                                            for a more
+                                            dynamic data
+                                            interpretation compared to classical MRM experiments.
+
+
+                                        </div>
+                                        <!--<button type="button" class="btn btn-info"-->
+                                                <!--style="border: 2px solid #7FFF00;"-->
+                                                <!--ng-class="{'btn-primary': display.SWATH}"-->
+                                                <!--ng-click="showNetwork('SWATH')">-->
+                                            <!--SWATH (Neuro-LINCS)-->
+                                        <!--</button>-->
+                                        <span>
+                                        <button type="button" class="btn btn-info"
                                                 ng-click="customDownloadSWATH('SWATH')">Download
                                         </button>
                                     </span>
+                                    </div>
                                 </div>
-                                <div>
-                                    <button type="button" disabled class="btn btn-info"
-                                            style="border: 2px solid #FF7F50;" ng-class="{'btn-primary': display.RPPA}"
-                                            ng-click="showNetwork('RPPA')">RPPA (HMS-LINCS)
-                                    </button>
-                                    <span>
-                                        <button type="button" class="btn btn-info" style="border: 2px solid #FF7F50;"
-                                                ng-click="customDownloadRPPA('RPPA')">Download
-                                        </button>
-                                    </span>
-                                </div>
-
+                                <!-- /.panel -->
                             </div>
+                            <!-- /.panel-group -->
+                        </div>
+                        <!-- /.col-lg-12 -->
+                    </div>
+                    <!-- /.row -->
+
+                    <!--</div>-->
+
+
+                    <!--<div>-->
+                    <div class="container" style="padding-top: 20px;">
+                        <!--<div class="bs-callout bs-callout-primary" ng-show="ctrl.showDToxSdiv">-->
+                            <!--<p class="lead"> Mass spectrometry is a sensitive technique that measures the-->
+                                <!--mass-to-charge ratio of ions to identify and quantify molecules in simple and-->
+                                <!--complex mixtures. Samples are loaded into the mass spectrometer in liquid, gas or-->
+                                <!--dried form and then vaporized and ionized by the ion source. The charge that these-->
+                                <!--molecules receive allows the mass spectrometer to accelerate the ions throughout the-->
+                                <!--remainder of the system. The ions encounter electric and/or magnetic fields from-->
+                                <!--mass analyzers, which deflect the paths of individual ions based on their mass and-->
+                                <!--charge (m/z). Ions that have successfully been deflected by the mass analyzers then-->
+                                <!--hit the ion detector that registers the number of ions at each m/z value.</p>-->
+                            <!---->
+                        <!--</div>-->
+                        <div class="bs-callout bs-callout-primary" ng-show="ctrl.showDToxSdiv">
+                            <hr/>
+                            <p> Gray nodes represent the query protein set, as captured and/or
+                                quantified by a proteomic assay. Red nodes are kinases that target
+                                (phosphorylate) the query protein set, whereas green nodes represent
+                                downstream targets of kinases among the query protein set.
+                            </p>
                         </div>
                     </div>
 
-
-                    <div>
-                        <div class="container" style="padding-top: 20px;">
-                            <div class="bs-callout bs-callout-primary" ng-show="ctrl.showDToxSdiv">
-                                <p class="lead"> Mass spectrometry is a sensitive technique that measures the
-                                    mass-to-charge ratio of ions to identify and quantify molecules in simple and
-                                    complex mixtures. Samples are loaded into the mass spectrometer in liquid, gas or
-                                    dried form and then vaporized and ionized by the ion source. The charge that these
-                                    molecules receive allows the mass spectrometer to accelerate the ions throughout the
-                                    remainder of the system. The ions encounter electric and/or magnetic fields from
-                                    mass analyzers, which deflect the paths of individual ions based on their mass and
-                                    charge (m/z). Ions that have successfully been deflected by the mass analyzers then
-                                    hit the ion detector that registers the number of ions at each m/z value.</p>
-                                <hr/>
-                            </div>
-                            <div class="bs-callout bs-callout-primary" ng-show="ctrl.showDToxSdiv">
-                                <p> Gray nodes represent the query protein set, as captured and/or
-                                    quantified by  a proteomic assay. Red nodes are kinases that target
-                                    (phosphorylate) the query protein set, whereas green nodes represent
-                                    downstream targets of kinases among the query protein set.
-                                </p>
-                            </div>
+                    <div class="container" style="padding-top: 20px;">
+                        <!--<div class="bs-callout bs-callout-primary" ng-show="ctrl.showSWATHdiv">-->
+                            <!--<p class="lead"> SWATH (sequential window acquisition of all theoretical fragment ion-->
+                                <!--spectra) is a new strategy for high throughput, label-free protein quantification.-->
+                                <!--It generates global, quantitative protein maps using data-independent acquisition of-->
+                                <!--collision-induced dissociation (CID) spectra of all precursor ions. As a-->
+                                <!--data-independent acquisition (also referred to as MS/MSall) SWATH-MS has a greater-->
+                                <!--coverage of peptide identification compared to classical discovery approaches.-->
+                            <!--</p>-->
+                            <!---->
+                        <!--</div>-->
+                        <div class="bs-callout bs-callout-primary" ng-show="ctrl.showSWATHdiv">
+                            <hr/>
+                            <p> Gray nodes represent the query protein set, as captured and/or
+                                quantified by a proteomic assay. Red nodes are kinases that target
+                                (phosphorylate) the query protein set, whereas green nodes represent
+                                downstream targets of kinases among the query protein set.
+                            </p>
                         </div>
+                    </div>
 
-                        <div class="container" style="padding-top: 20px;">
-                            <div class="bs-callout bs-callout-primary" ng-show="ctrl.showSWATHdiv">
-                                <p class="lead"> SWATH (sequential window acquisition of all theoretical fragment ion
-                                    spectra) is a new strategy for high throughput, label-free protein quantification.
-                                    It generates global, quantitative protein maps using data-independent acquisition of
-                                    collision-induced dissociation (CID) spectra of all precursor ions. As a
-                                    data-independent acquisition (also referred to as MS/MSall) SWATH-MS has a greater
-                                    coverage of peptide identification compared to classical discovery approaches.
-                                </p>
-                                <hr/>
-                            </div>
-                            <div class="bs-callout bs-callout-primary" ng-show="ctrl.showSWATHdiv">
-                                <p> Gray nodes represent the query protein set, as captured and/or
-                                    quantified by  a proteomic assay. Red nodes are kinases that target
-                                    (phosphorylate) the query protein set, whereas green nodes represent
-                                    downstream targets of kinases among the query protein set.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="container" style="padding-top: 20px;">
-                            <div class="bs-callout bs-callout-primary" ng-show="ctrl.showRPPAdiv">
-                                <p class="lead"> Reverse phase protein array (RPPA) is a high-throughput technology that
-                                    performs protein assays on thousands of samples simultaneously, including tissue and
-                                    cell lysates, serum, plasma or other body fluids that measure the levels of protein
-                                    expression, as well as protein modifications such as phosphorylation. Protein
-                                    lysates are arrayed as microspots on nitrocellulized coated glass slides and probed
-                                    with highly specific antibodies that have been validated for RPPA. When specific
-                                    antibodies are used, RPPA can generate 1,000 times more data points using 10,000
-                                    times less sample volume than an ordinary western blot, enabling researchers to
-                                    monitor quantitative proteomic responses for various time-scale and input-dose
-                                    gradients simultaneously.</p>
-                                <hr/>
-                            </div>
-
-                            <div class="bs-callout bs-callout-primary" ng-show="ctrl.showRPPAdiv">
-                                <p> Gray nodes represent the query protein set, as captured and/or
-                                    quantified by  a proteomic assay. Red nodes are kinases that target
-                                    (phosphorylate) the query protein set, whereas green nodes represent
-                                    downstream targets of kinases among the query protein set.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="container" style="padding-top: 20px;">
-                            <div class="bs-callout bs-callout-primary" ng-show="ctrl.showP100div">
-                                <p class="lead">P100 has been designed to measure the phosphorylation state of cellular
-                                    systems, using a set of about hundred pospho-peptide probes whose abundance levels
-                                    are measured using mass spectrometry techniques. P100 can be classified as a
-                                    'targeted
-                                    proteomics' assay that provides a snapshot of cellular signaling cascades that
-                                    involve
-                                    phosphorylation of the P100 target sites/peptides.
-
-                                    <a href="https://panoramaweb.org/labkey/project/LINCS/begin.view?" target="_blank">More
-                                        ...</a>
-                                </p>
-                                <hr/>
-                            </div>
-
-                            <div class="bs-callout bs-callout-primary" ng-show="ctrl.showP100div">
-                                <p> Gray nodes represent the query protein set, as captured and/or
-                                    quantified by  a proteomic assay. Red nodes are kinases that target
-                                    (phosphorylate) the query protein set, whereas green nodes represent
-                                    downstream targets of kinases among the query protein set.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="container" style="padding-top: 20px;">
-                            <div class="bs-callout bs-callout-primary" ng-show="ctrl.showGCPdiv">
-                                <p class="lead">GCP has been designed to measure the histone modification state, and
-                                    thus indirectly the chromatin state of cellular
-                                    systems, using a set of about sixty target modified (acetylated, methylated etc.)
-                                    histone peptides whose abundance levels are measured
-                                    using mass spectrometry. <a
-                                            href="https://panoramaweb.org/labkey/project/LINCS/begin.view?"
-                                            target="_blank">More ...</a>
-                                </p>
-                                <hr/>
-                            </div>
-                            <div class="bs-callout bs-callout-primary" ng-show="ctrl.showGCPdiv">
-                                <p> Gray nodes represent the query protein set, as captured and/or
-                                    quantified by  a proteomic assay. Red nodes are kinases that target
-                                    (phosphorylate) the query protein set, whereas green nodes represent
-                                    downstream targets of kinases among the query protein set.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!--<div ng-show = "ctrl.showP100div"  >-->
-
-                        <!--<select-->
-                        <!--ng-model="selectedphosphoPathways"-->
-                        <!--ng-change="changedPhosphoValue(selectedphosphoPathways)"-->
-                        <!--ng-options = "x.value for x in phosphoOptions">-->
-                        <!--</select>-->
-                        <!--<hr/>-->
+                    <div class="container" style="padding-top: 20px;">
+                        <!--<div class="bs-callout bs-callout-primary" ng-show="ctrl.showRPPAdiv">-->
+                            <!--<p class="lead"> Reverse phase protein array (RPPA) is a high-throughput technology that-->
+                                <!--performs protein assays on thousands of samples simultaneously, including tissue and-->
+                                <!--cell lysates, serum, plasma or other body fluids that measure the levels of protein-->
+                                <!--expression, as well as protein modifications such as phosphorylation. Protein-->
+                                <!--lysates are arrayed as microspots on nitrocellulized coated glass slides and probed-->
+                                <!--with highly specific antibodies that have been validated for RPPA. When specific-->
+                                <!--antibodies are used, RPPA can generate 1,000 times more data points using 10,000-->
+                                <!--times less sample volume than an ordinary western blot, enabling researchers to-->
+                                <!--monitor quantitative proteomic responses for various time-scale and input-dose-->
+                                <!--gradients simultaneously.</p>-->
+                            <!--<hr/>-->
                         <!--</div>-->
 
-                        <div class="category-container" ng-show="ctrl.showSVG">
-                            <!--<button>-->
-                            <!--<a id="download2" href="#">Download SVG-->
-                            <!--</a>-->
-                            <!--</button>-->
-
-                            <br/>
-                            <div id="chart"></div>
-
+                        <div class="bs-callout bs-callout-primary" ng-show="ctrl.showRPPAdiv">
+                            <hr/>
+                            <p> Gray nodes represent the query protein set, as captured and/or
+                                quantified by a proteomic assay. Red nodes are kinases that target
+                                (phosphorylate) the query protein set, whereas green nodes represent
+                                downstream targets of kinases among the query protein set.
+                            </p>
                         </div>
                     </div>
+
+                    <div class="container" style="padding-top: 20px;">
+                        <!--<div class="bs-callout bs-callout-primary" ng-show="ctrl.showP100div">-->
+                            <!--<p class="lead">P100 has been designed to measure the phosphorylation state of cellular-->
+                                <!--systems, using a set of about hundred pospho-peptide probes whose abundance levels-->
+                                <!--are measured using mass spectrometry techniques. P100 can be classified as a-->
+                                <!--'targeted-->
+                                <!--proteomics' assay that provides a snapshot of cellular signaling cascades that-->
+                                <!--involve-->
+                                <!--phosphorylation of the P100 target sites/peptides.-->
+
+                                <!--<a href="https://panoramaweb.org/labkey/project/LINCS/begin.view?" target="_blank">More-->
+                                    <!--...</a>-->
+                            <!--</p>-->
+                            <!--<hr/>-->
+                        <!--</div>-->
+
+                        <div class="bs-callout bs-callout-primary" ng-show="ctrl.showP100div">
+                            <hr/>
+                            <p> Gray nodes represent the query protein set, as captured and/or
+                                quantified by a proteomic assay. Red nodes are kinases that target
+                                (phosphorylate) the query protein set, whereas green nodes represent
+                                downstream targets of kinases among the query protein set.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="container" style="padding-top: 20px;">
+                        <!--<div class="bs-callout bs-callout-primary" ng-show="ctrl.showGCPdiv">-->
+                            <!--<p class="lead">GCP has been designed to measure the histone modification state, and-->
+                                <!--thus indirectly the chromatin state of cellular-->
+                                <!--systems, using a set of about sixty target modified (acetylated, methylated etc.)-->
+                                <!--histone peptides whose abundance levels are measured-->
+                                <!--using mass spectrometry. <a-->
+                                        <!--href="https://panoramaweb.org/labkey/project/LINCS/begin.view?"-->
+                                        <!--target="_blank">More ...</a>-->
+                            <!--</p>-->
+                            <!--<hr/>-->
+                        <!--</div>-->
+                        <div class="bs-callout bs-callout-primary" ng-show="ctrl.showGCPdiv">
+                            <hr/>
+                            <p> Gray nodes represent the query protein set, as captured and/or
+                                quantified by a proteomic assay. Red nodes are kinases that target
+                                (phosphorylate) the query protein set, whereas green nodes represent
+                                downstream targets of kinases among the query protein set.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!--<div ng-show = "ctrl.showP100div"  >-->
+
+                    <!--<select-->
+                    <!--ng-model="selectedphosphoPathways"-->
+                    <!--ng-change="changedPhosphoValue(selectedphosphoPathways)"-->
+                    <!--ng-options = "x.value for x in phosphoOptions">-->
+                    <!--</select>-->
+                    <!--<hr/>-->
+                    <!--</div>-->
+
+                    <div class="category-container" ng-show="ctrl.showSVG">
+                        <!--<button>-->
+                        <!--<a id="download2" href="#">Download SVG-->
+                        <!--</a>-->
+                        <!--</button>-->
+
+                        <br/>
+                        <div id="chart"></div>
+
+                    </div>
+                </div>
                 <!--</div>-->
 
 
-            </div>
+            <!--</div>-->
         </section>
         <!-- END #fh5co-features-2 -->
 
@@ -1208,6 +1030,8 @@
                 $('#colour-variations').toggleClass('sleep');
             });
         });
+
+
     </script>
     <!-- End demo purposes only -->
 
@@ -1238,6 +1062,8 @@
             });
         });
 
+
+
     </script>
 
 
@@ -1251,6 +1077,8 @@
         $(document).ready(function () {
             $('[data-toggle="tooltip"]').tooltip();
         });
+
+
     </script>
 
     <!-- AngularJS -->

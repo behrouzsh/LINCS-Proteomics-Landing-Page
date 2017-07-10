@@ -9,16 +9,18 @@ appModule.controller('DataViewCtrl', ['$scope', '$location', '$http', '$timeout'
 
     'use strict';
 
-    $(document).ready(function() {
-        var $header = $("header"),
-            $clone = $header.before($header.clone().addClass("clone"));
+//This is for showing nav-bar header in scroll down
+    $(document).scroll(function () {
+        var y = $(this).scrollTop();
+        if (y > 800) {
+            $('.topMenu').fadeIn();
 
-        $(window).on("scroll", function() {
-            var fromTop = $(window).scrollTop();
-            $("body").toggleClass("down", (fromTop > 400));
-        });
+        } else {
+            $('.topMenu').fadeOut();
+
+        }
+
     });
-
     //Start of script from guide ========================
 
     // iPad and iPod detection
@@ -522,7 +524,18 @@ appModule.controller('DataViewCtrl', ['$scope', '$location', '$http', '$timeout'
 appModule.controller('assayViewCtrl', ['$scope', '$location', '$http', function ($scope, $location, $http) {
 
 
+//This is for showing nav-bar header in scroll down
+    $(document).scroll(function () {
+        var y = $(this).scrollTop();
+        if (y > 800) {
+            $('.topMenu').fadeIn();
 
+        } else {
+            $('.topMenu').fadeOut();
+
+        }
+
+    });
     //Start of script from guide ========================
 
     // iPad and iPod detection
@@ -1937,7 +1950,18 @@ appModule.controller('assayViewCtrl', ['$scope', '$location', '$http', function 
 
 appModule.controller('ToolsCtrl', ['$scope', '$location', '$http', function ($scope, $location, $http) {
     var self = this;
+//This is for showing nav-bar header in scroll down
+    $(document).scroll(function () {
+        var y = $(this).scrollTop();
+        if (y > 800) {
+            $('.topMenu').fadeIn();
 
+        } else {
+            $('.topMenu').fadeOut();
+
+        }
+
+    });
 
     //Start of script from guide ========================
 
@@ -2157,7 +2181,9 @@ appModule.controller('ToolsCtrl', ['$scope', '$location', '$http', function ($sc
 }]);
 
 
-appModule.controller('NavigationCtrl', ['$scope', '$location', '$http', '$window', function ($scope, $location, $http, $window) {
+
+
+appModule.controller('ContactCtrl', ['$scope', '$location', '$http', '$window', function ($scope, $location, $http, $window) {
 
 
 
@@ -2382,6 +2408,310 @@ appModule.controller('NavigationCtrl', ['$scope', '$location', '$http', '$window
     //End of script from guide ========================
     var self = this;
     console.log("here");
+
+
+    $(document).scroll(function () {
+        var y = $(this).scrollTop();
+        //if (y > 0) {
+            $('.topMenu').fadeIn();
+
+        // } else {
+        //     $('.topMenu').fadeOut();
+        //
+        // }
+
+    });
+
+    $scope.customNavigateApi = function(msg){
+        $window.open("/pln/api/pathway/genes/" + msg, '_blank');
+    };
+
+
+    self.onSubmit = function () {
+        var x = document.getElementById("frm");
+        var text = "";
+        var i;
+        for (i = 0; i < x.length ;i++) {
+            text += x.elements[i].value + "<br>";
+        }
+        var url = 'api/sendEmail/';
+        (function (query) {
+
+            $http.get(url + query)
+                .success(function (data) {
+                    console.log("Message sent.");
+                    // setTimeout(function() {
+                    //     document.getElementById('messageSuccess').style.display='none';
+                    //     document.getElementById("messageSuccess").innerHTML = "Your message is sent, somebody from our team " +
+                    //         "will contact you via the provided email address, shortly.";
+                    // }, 10000);
+
+
+                    $("#messageSuccess").fadeIn();
+                    document.getElementById("messageSuccess").innerHTML = "Your message is sent, somebody from our team " +
+                        "will contact you via the provided email address, shortly.";
+                    //$("messageSuccess").fadeIn();
+                    $("#messageSuccess").fadeOut(10000);
+                    // $("#messageSuccess").delay(10000).hide(0);
+                    // $("messageSuccess").replaceWith(function() {
+                    //     return $(txt).hide().fadeIn(1000);});
+
+                })
+                .error(function (data, status) {
+
+                    console.log(data);
+                    console.log(status);
+
+                });
+
+
+        })(text);
+    }
+
+}]);
+
+
+
+
+
+    appModule.controller('NavigationCtrl', ['$scope', '$location', '$http', '$window', function ($scope, $location, $http, $window) {
+
+
+
+
+
+
+
+    //Start of script from guide ========================
+
+    // iPad and iPod detection
+    var isiPad = function () {
+        return (navigator.platform.indexOf("iPad") != -1);
+    };
+
+    var isiPhone = function () {
+        return (
+            (navigator.platform.indexOf("iPhone") != -1) ||
+            (navigator.platform.indexOf("iPod") != -1)
+        );
+    };
+
+    // Go to next section
+    var gotToNextSection = function () {
+        var el = $('.fh5co-learn-more'),
+            w = el.width(),
+            divide = -w / 2;
+        el.css('margin-left', divide);
+    };
+
+    // Loading page
+    var loaderPage = function () {
+        $(".fh5co-loader").fadeOut("slow");
+    };
+
+    // FullHeight
+    var fullHeight = function () {
+        if (!isiPad() && !isiPhone()) {
+            $('.js-fullheight').css('height', $(window).height() - 49);
+            $(window).resize(function () {
+                $('.js-fullheight').css('height', $(window).height() - 49);
+            })
+        }
+    };
+
+    var toggleBtnColor = function () {
+
+
+        if ($('#fh5co-hero').length > 0) {
+            $('#fh5co-hero').waypoint(function (direction) {
+                if (direction === 'down') {
+                    $('.fh5co-nav-toggle').addClass('dark');
+                }
+            }, {offset: -$('#fh5co-hero').height()});
+
+            $('#fh5co-hero').waypoint(function (direction) {
+                if (direction === 'up') {
+                    $('.fh5co-nav-toggle').removeClass('dark');
+                }
+            }, {
+                offset: function () {
+                    return -$(this.element).height() + 0;
+                }
+            });
+        }
+
+
+    };
+
+
+    // Scroll Next
+    var ScrollNext = function () {
+        $('body').on('click', '.scroll-btn', function (e) {
+            e.preventDefault();
+
+            $('html, body').animate({
+                scrollTop: $($(this).closest('[data-next="yes"]').next()).offset().top
+            }, 1000, 'easeInOutExpo');
+            return false;
+        });
+    };
+
+    // Click outside of offcanvass
+    var mobileMenuOutsideClick = function () {
+
+        $(document).click(function (e) {
+            var container = $("#fh5co-offcanvas, .js-fh5co-nav-toggle");
+            if (!container.is(e.target) && container.has(e.target).length === 0) {
+
+                if ($('body').hasClass('offcanvas-visible')) {
+
+                    $('body').removeClass('offcanvas-visible');
+                    $('.js-fh5co-nav-toggle').removeClass('active');
+
+                }
+
+
+            }
+        });
+
+    };
+
+
+    // Offcanvas
+    var offcanvasMenu = function () {
+        $('body').prepend('<div id="fh5co-offcanvas" />');
+        $('#fh5co-offcanvas').prepend('<ul id="fh5co-side-links">');
+        $('body').prepend('<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>');
+
+        $('.left-menu li, .right-menu li').each(function () {
+
+            var $this = $(this);
+
+            $('#fh5co-offcanvas ul').append($this.clone());
+
+        });
+    };
+
+    // Burger Menu
+    var burgerMenu = function () {
+
+        $('body').on('click', '.js-fh5co-nav-toggle', function (event) {
+            var $this = $(this);
+
+            $('body').toggleClass('fh5co-overflow offcanvas-visible');
+            $this.toggleClass('active');
+            event.preventDefault();
+
+        });
+
+        $(window).resize(function () {
+            if ($('body').hasClass('offcanvas-visible')) {
+                $('body').removeClass('offcanvas-visible');
+                $('.js-fh5co-nav-toggle').removeClass('active');
+            }
+        });
+
+        $(window).scroll(function () {
+            if ($('body').hasClass('offcanvas-visible')) {
+                $('body').removeClass('offcanvas-visible');
+                $('.js-fh5co-nav-toggle').removeClass('active');
+            }
+        });
+
+    };
+
+
+    var testimonialFlexslider = function () {
+        var $flexslider = $('.flexslider');
+        $flexslider.flexslider({
+            animation: "fade",
+            manualControls: ".flex-control-nav li",
+            directionNav: false,
+            smoothHeight: true,
+            useCSS: false /* Chrome fix*/
+        });
+    }
+
+
+    var goToTop = function () {
+
+        $('.js-gotop').on('click', function (event) {
+
+            event.preventDefault();
+
+            $('html, body').animate({
+                scrollTop: $('html').offset().top
+            }, 500);
+
+            return false;
+        });
+
+    };
+
+
+    // Animations
+
+    var contentWayPoint = function () {
+        var i = 0;
+        $('.animate-box').waypoint(function (direction) {
+
+            if (direction === 'down' && !$(this.element).hasClass('animated')) {
+
+                i++;
+
+                $(this.element).addClass('item-animate');
+                setTimeout(function () {
+
+                    $('body .animate-box.item-animate').each(function (k) {
+                        var el = $(this);
+                        setTimeout(function () {
+                            el.addClass('fadeInUp animated');
+                            el.removeClass('item-animate');
+                        }, k * 200, 'easeInOutExpo');
+                    });
+
+                }, 100);
+
+            }
+
+        }, {offset: '95%'});
+    };
+
+
+    // Document on load.
+    $(function () {
+        gotToNextSection();
+        loaderPage();
+        fullHeight();
+        toggleBtnColor();
+        ScrollNext();
+        mobileMenuOutsideClick();
+        offcanvasMenu();
+        burgerMenu();
+        testimonialFlexslider();
+        goToTop();
+
+        // Animate
+        contentWayPoint();
+
+    });
+
+    //End of script from guide ========================
+    var self = this;
+    console.log("here");
+
+
+    $(document).scroll(function () {
+        var y = $(this).scrollTop();
+        if (y > 800) {
+            $('.topMenu').fadeIn();
+
+        } else {
+            $('.topMenu').fadeOut();
+
+        }
+
+    });
     // $scope.tabs = [
     //     {link: '#/', label: 'Home'},
     //     {link: '#/assay-view', label: 'Assay View'},
@@ -4224,7 +4554,18 @@ appModule.controller('NavigationCtrl', ['$scope', '$location', '$http', '$window
 appModule.controller('MainCtrl', ['$http', '$scope', '$window', function ($http, $scope, $window) {
 
     var self = this;
+//This is for showing nav-bar header in scroll down
+    $(document).scroll(function () {
+        var y = $(this).scrollTop();
+        if (y > 800) {
+            $('.topMenu').fadeIn();
 
+        } else {
+            $('.topMenu').fadeOut();
+
+        }
+
+    });
 
     self.showSVG = false;
 
