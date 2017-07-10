@@ -18,11 +18,52 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
 repositories {
+	maven { url "https://repo.spring.io/libs-release" }
+	mavenLocal()
 	mavenCentral()
 }
 
 
 dependencies {
+	//compile 'javax.mail:mail:1.4.7'
+	compile 'jaf:activation:1.0.2'
+	compile 'org.springframework.boot:spring-boot-starter:1.2.0.RELEASE'
+	compile 'org.springframework:spring-context-support:4.1.3.RELEASE'
 	compile('org.springframework.boot:spring-boot-starter-web')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+	compile files('libs/json-simple-1.1.1.jar')
+	compile files('libs/spring-context-support-3.2.0.RELEASE.jar')
+	compile files('libs/mail-1.4.jar')
 }
+
+
+
+
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+archivesBaseName = 'Concretepage'
+version = '1.0-SNAPSHOT'
+repositories {
+	maven { url "https://repo.spring.io/libs-release" }
+	mavenLocal()
+	mavenCentral()
+}
+
+dependencies {
+	compile 'javax.mail:mail:1.4.7'
+	compile 'jaf:activation:1.0.2'
+	compile 'org.springframework.boot:spring-boot-starter:1.2.0.RELEASE'
+	compile 'org.springframework:spring-context-support:4.1.3.RELEASE'
+}
+
+
+
+
+
+
+
+
+
+
+
