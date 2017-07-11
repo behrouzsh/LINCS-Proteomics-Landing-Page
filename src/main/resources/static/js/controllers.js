@@ -1105,8 +1105,8 @@ appModule.controller('assayViewCtrl', ['$scope', '$location', '$http', function 
 
         $scope.phosphoOptions = [
         {value: "Known_Kinase_TargetGene"},
-        {value: "Known+Predicted_Blosum50_Kinase_TargetGene"},
-        {value: "Known+Predicted_Probability_Kinase_TargetGene"}
+        {value: "Known+PredictedbyBlosum50_Kinase_TargetGene"},
+        {value: "Known+PredictedbyPWM_Kinase_TargetGene"}
         ];
 
         // $scope.selectedphosphoPathways = $scope.phosphoOptions[2];
@@ -1116,7 +1116,7 @@ appModule.controller('assayViewCtrl', ['$scope', '$location', '$http', function 
         // console.log(network);
 
         $scope.selectedphosphoPathways = $scope.phosphoOptions[2];
-        var pNetwork = self.p100phospho["Known+Predicted_Probability_Kinase_TargetGene"];
+        var pNetwork = self.p100phospho["Known+PredictedbyPWM_Kinase_TargetGene"];
         console.log("here");
         console.log(pNetwork);
         console.log(self.p100phospho);
@@ -2429,14 +2429,28 @@ appModule.controller('ContactCtrl', ['$scope', '$location', '$http', '$window', 
 
     self.onSubmit = function () {
         var x = document.getElementById("frm");
+
+        //var nameValue = document.getElementById("uniqueID").value;
+
+        // function myFunction() {
+        //
+        //     //document.getElementById("demo").innerHTML = y;
+        // }
+
+
         var text = "";
         var i;
         for (i = 0; i < x.length ;i++) {
             text += x.elements[i].value + "<br>";
         }
+        console.log(text);
+        var y = document.getElementById("frm").elements[0].value +" | "+ document.getElementById("frm").elements[1].value +" | " + document.getElementById("frm").elements[2].value + " | " + document.getElementById("frm").elements[3].value + " | ";
+
+        console.log(y);
+
         var url = 'api/sendEmail/';
         (function (query) {
-
+            console.log(query);
             $http.get(url + query)
                 .success(function (data) {
                     console.log("Message sent.");
@@ -2451,7 +2465,7 @@ appModule.controller('ContactCtrl', ['$scope', '$location', '$http', '$window', 
                     document.getElementById("messageSuccess").innerHTML = "Your message is sent, somebody from our team " +
                         "will contact you via the provided email address, shortly.";
                     //$("messageSuccess").fadeIn();
-                    $("#messageSuccess").fadeOut(10000);
+                    $("#messageSuccess").fadeOut(15000);
                     // $("#messageSuccess").delay(10000).hide(0);
                     // $("messageSuccess").replaceWith(function() {
                     //     return $(txt).hide().fadeIn(1000);});
@@ -2465,7 +2479,7 @@ appModule.controller('ContactCtrl', ['$scope', '$location', '$http', '$window', 
                 });
 
 
-        })(text);
+        })(y);
     }
 
 }]);

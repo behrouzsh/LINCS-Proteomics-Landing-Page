@@ -16,7 +16,7 @@ body {
   font-size: 16px;
   line-height: 28px;
   font-weight: 300;
-  color: #85919d;
+  color: #151b20;
   height: 100%;
   position: relative;
 }
@@ -25,13 +25,13 @@ body.fh5co-overflow {
 }
 
 a {
-  color: #8dc63f;
+  color: #3eae40;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
 }
 a:hover, a:active, a:focus {
-  color: #8dc63f;
+  color: #3eae40;
   outline: none;
   text-decoration: none;
 }
@@ -41,7 +41,7 @@ p, figure {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #484c50;
+  color: #2a3036;
   font-family: "Roboto", Arial, sans-serif;
   font-weight: 400;
   margin: 0 0 30px 0;
@@ -88,9 +88,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-  background: #8dc63f;
+  background: #3eae40;
   color: #fff;
-  border: 2px solid #8dc63f;
+  border: 2px solid #3eae40;
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
   background: #99cc53 !important;
@@ -98,11 +98,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 .btn-primary.btn-outline {
   background: transparent;
-  color: #8dc63f;
-  border: 2px solid #8dc63f;
+  color: #3eae40;
+  border: 2px solid #3eae40;
 }
 .btn-primary.btn-outline:hover, .btn-primary.btn-outline:focus, .btn-primary.btn-outline:active {
-  background: #8dc63f;
+  background: #3eae40;
   color: #fff;
 }
 
@@ -209,7 +209,7 @@ h1, h2, h3, h4, h5, h6 {
 .form-control:active, .form-control:focus {
   outline: none;
   box-shadow: none;
-  border-color: #8dc63f;
+  border-color: #3eae40;
 }
 
 body {
@@ -277,7 +277,7 @@ body {
   color: white;
 }
 #fh5co-header #fh5co-logo a span {
-  color: #8dc63f;
+  color: #3eae40;
 }
 #fh5co-header nav {
   position: relative;
@@ -463,7 +463,7 @@ body {
   width: 50px;
   height: 50px;
   margin: 0 auto;
-  background: #8dc63f;
+  background: #3eae40;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
@@ -489,7 +489,7 @@ body {
 .fh5co-lead {
   font-size: 50px;
   font-weight: 300;
-  color: #484c50;
+  color: #2a3036;
   margin-bottom: 10px;
 }
 @media screen and (max-width: 768px) {
@@ -549,13 +549,13 @@ body {
 #fh5co-projects .fh5co-lead {
   font-size: 50px;
   font-weight: 300;
-  color: #484c50;
+  color: #2a3036;
   margin-bottom: 10px;
 }
 #fh5co-projects2 .fh5co-lead {
   font-size: 50px;
   font-weight: 300;
-  color: #484c50;
+  color: #2a3036;
   margin-bottom: 10px;
 }
 @media screen and (max-width: 768px) {
@@ -652,13 +652,13 @@ body {
   font-size: 18px;
   font-weight: bold;
   margin: 0 0 10px 0;
-  color: #484c50;
+  color: #2a3036;
 }
 #fh5co-projects2 .fh5co-project-item .fh5co-text h2 {
   font-size: 18px;
   font-weight: bold;
   margin: 0 0 10px 0;
-  color: #484c50;
+  color: #2a3036;
 }
 #fh5co-projects .fh5co-project-item .fh5co-text span {
   color: #b3b3b3;
@@ -705,7 +705,7 @@ body {
   text-decoration: none !important;
 }
 #fh5co-projects .fh5co-project-item:hover p, #fh5co-projects .fh5co-project-item:focus p {
-  color: #484c50;
+  color: #2a3036;
 }
 
 #fh5co-projects2 .fh5co-project-item:hover img, #fh5co-projects2 .fh5co-project-item:focus img {
@@ -715,7 +715,7 @@ body {
   text-decoration: none !important;
 }
 #fh5co-projects2 .fh5co-project-item:hover p, #fh5co-projects2 .fh5co-project-item:focus p {
-  color: #484c50;
+  color: #2a3036;
 }
 
 #fh5co-features .fh5co-devices {
@@ -727,7 +727,7 @@ body {
 #fh5co-features .fh5co-lead {
   font-size: 50px;
   font-weight: 300;
-  color: #484c50;
+  color: #2a3036;
   margin-bottom: 10px;
 }
 @media screen and (max-width: 768px) {
@@ -770,7 +770,7 @@ body {
   display: table-cell;
   vertical-align: middle;
   font-size: 50px;
-  color: #8dc63f;
+  color: #3eae40;
 }
 #fh5co-features .fh5co-feature h3 {
   font-size: 20px;
@@ -787,7 +787,7 @@ body {
 #fh5co-features-2 .fh5co-lead, #fh5co-features-3 .fh5co-lead, #fh5co-features-4 .fh5co-lead {
   font-size: 50px;
   font-weight: 300;
-  color: #484c50;
+  color: #2a3036;
   margin-bottom: 40px;
 }
 @media screen and (max-width: 768px) {
@@ -807,7 +807,7 @@ body {
 }
 #fh5co-features-2 .fh5co-feature .fh5co-icon i, #fh5co-features-3 .fh5co-feature .fh5co-icon i, #fh5co-features-4 .fh5co-feature .fh5co-icon i {
   font-size: 40px;
-  color: #8dc63f;
+  color: #3eae40;
 }
 @media screen and (max-width: 768px) {
   #fh5co-features-2 .fh5co-feature .fh5co-icon i, #fh5co-features-3 .fh5co-feature .fh5co-icon i, #fh5co-features-4 .fh5co-feature .fh5co-icon i {
@@ -820,7 +820,7 @@ body {
 }
 #fh5co-features-2 .fh5co-feature h3, #fh5co-features-3 .fh5co-feature h3, #fh5co-features-4 .fh5co-feature h3 {
   font-size: 24px;
-  color: #484c50;
+  color: #2a3036;
   margin-bottom: 10px;
   font-weight: 300;
 }
@@ -855,13 +855,13 @@ body {
 #fh5co-testimonials .fh5co-lead {
   font-size: 50px;
   font-weight: 300;
-  color: #484c50;
+  color: #2a3036;
   margin-bottom: 10px;
 }
 #fh5co-testimonials2 .fh5co-lead {
   font-size: 50px;
   font-weight: 300;
-  color: #484c50;
+  color: #2a3036;
   margin-bottom: 10px;
 }
 @media screen and (max-width: 768px) {
@@ -996,7 +996,7 @@ body {
 #fh5co-about .fh5co-lead {
   font-size: 50px;
   font-weight: 300;
-  color: #484c50;
+  color: #2a3036;
   margin-bottom: 30px;
 }
 @media screen and (max-width: 768px) {
@@ -1097,7 +1097,7 @@ body {
 }
 
 #fh5co-info {
-  background: #8dc63f;
+  background: #3eae40;
 }
 #fh5co-info .fh5co-label {
   color: rgba(255, 255, 255, 0.5);
@@ -1125,7 +1125,7 @@ body {
   border-radius: 5px;
 }
 #fh5co-pricing .price-box.popular {
-  border: 2px solid #8dc63f;
+  border: 2px solid #3eae40;
 }
 #fh5co-pricing .price-box.popular .popular-text {
   top: 0;
@@ -1134,7 +1134,7 @@ body {
   margin-top: -2em;
   position: absolute;
   padding: 4px 20px;
-  background: #8dc63f;
+  background: #3eae40;
   color: #fff;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -1148,7 +1148,7 @@ body {
   left: 50%;
   margin-left: -10px;
   border-top: 10px solid black;
-  border-top-color: #8dc63f;
+  border-top-color: #3eae40;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
 }
@@ -1285,7 +1285,7 @@ body {
 }
 .fh5co-social li a:hover {
   text-decoration: none !important;
-  color: #8dc63f !important;
+  color: #3eae40 !important;
 }
 
 .fh5co-person {
@@ -1307,7 +1307,7 @@ body {
 }
 .fh5co-person .fh5co-name {
   margin-bottom: 0;
-  color: #484c50;
+  color: #2a3036;
 }
 .fh5co-person .fh5co-designation {
   color: #85919d;
@@ -1372,7 +1372,7 @@ body {
   color: rgba(255, 255, 255, 0.7);
 }
 #fh5co-offcanvas ul li.active a {
-  color: #8dc63f;
+  color: #3eae40;
 }
 
 .fh5co-nav-toggle {
@@ -1642,10 +1642,10 @@ body {
 #fh5co-header2 #fh5co-logo2 a {
   font-size: 30px;
   font-weight: 500;
-  color: #8dc63f;
+  color: #3eae40;
 }
 #fh5co-header2 #fh5co-logo2 a span {
-  color: #8dc63f;
+  color: #3eae40;
 }
 #fh5co-header2 nav {
   position: relative;
@@ -1666,11 +1666,11 @@ body {
 }
 #fh5co-header2 nav ul li a {
   font-size: 18px;
-  color: #b5e567;
+  color: #4fc53d;
   font-weight: 400;
 }
 #fh5co-header2 nav ul li a:hover {
-  color: #8dc63f;
+  color: #3eae40;
 }
 #fh5co-header2 nav ul li.fh5co-cta-btn a {
   position: relative;
@@ -1686,7 +1686,7 @@ body {
   border: 2px solid white;
 }
 #fh5co-header2 nav ul li.active a {
-  color: #8dc63f;
+  color: #3eae40;
 }
 #fh5co-header2 nav ul.left-menu li {
   margin-right: 30px;
@@ -1706,10 +1706,10 @@ body {
 #fh5co-header #fh5co-logo2 a {
   font-size: 30px;
   font-weight: 500;
-  color: #8dc63f;
+  color: #3eae40;
 }
 #fh5co-header #fh5co-logo2 a span {
-  color: #8dc63f;
+  color: #3eae40;
 }
 /*header {
     position: relative;
