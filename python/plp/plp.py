@@ -19,7 +19,7 @@ from plpSearch.prositeClient import PrositeClient
 from plpSearch.uniprotClient import UniprotClient
 from plpSearch.enrichrClient import EnrichrClient
 from plpSearch.harmonizomeClient import HarmonizomeClient
-from plpFlask.flaskClient import FlaskClient
+#from plpFlask.flaskClient import FlaskClient
 
 import sys
 # reload(sys)
@@ -239,6 +239,83 @@ class Plp(object):
                 output_file.write(self.harmonize_genes[x])
                 output_file.write("\n")
         return
+
+
+    def generate_network_for_gcp(self, gene_list):
+        network = {}
+        nodes = []
+        edges = []
+        nodeIter = 0
+        for item in gene_list:
+            node = {}
+            node['name'] = item
+            node['weight'] = 0
+            node['id'] = ""
+            node['idx'] = nodeIter
+            node['group'] = 0
+            nodes.append(node)
+            nodeIter += 1
+
+        histone = pd.read_csv('resources/histone-ptm-network.csv', sep=',')
+        print histone
+        print histone.shape
+        nptms= histone.shape[0]
+
+        print nptms
+        print histone['source']
+        print histone['source'][0]
+        print histone['source'][40]
+        for iterator in range(0, nptms):
+            node = {}
+            node['name'] = histone['source'][iterator]
+            node['weight'] = 0
+            node['id'] = ""
+            node['idx'] = nodeIter
+            tag = histone['tag'][iterator]
+            node['group'] = tag
+            nodes.append(node)
+            nodeIter += 1
+
+            mod = histone['ptm'][iterator]
+
+            for geneIterator in range(0, len(gene_list)):
+                if mod in gene_list[geneIterator]:
+                    edge = {}
+                    edge['source'] = nodeIter - 1
+                    edge['target'] = geneIterator
+                    edge['tag'] = tag
+                    edge['value'] = 1.0
+
+                    edges.append(edge)
+
+
+
+        # with open('resources/histone-ptm-network.csv') as csvfile:
+        #     reader = csv.reader(csvfile, delimiter=',')
+        #     first_line = True
+        #     print reader
+        #     iter = 0
+        #     for row in reader:
+        #         if first_line:
+        #             first_line = False
+        #             continue
+        #
+        #         print row
+
+                # iter += 1
+                # gene = self.harmonizome_client.search_harmonizome(row[0])
+                # if gene not in self.harmonize_genes:
+                #     self.harmonize_genes.append(gene)
+                # else:
+                #     print iter
+                #     print row
+
+        network['nodes'] = nodes
+        network['edges'] = edges
+        print network
+        return network
+
+
 
     def call_enrichr(self, gene_list):
         self.enrichr_client = EnrichrClient(self._config_data["pathway_library"], "kinase_pertubation_info", "enrichment_results")
