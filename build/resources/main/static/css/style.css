@@ -443,6 +443,23 @@ body {
   color: white;
   background-color: rgba(255, 255, 255, 0.2);
 }
+#fh5co-header .fh5co-learn-more2 {
+  position: absolute;
+  top: 25px;
+  left: 44%;
+
+  z-index: 12;
+  text-align: center;
+}
+#fh5co-header .fh5co-learn-more2 a {
+  display: block;
+}
+#fh5co-header .fh5co-learn-more2 a .text {
+  display: block;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 20px;
+}
+
 #fh5co-hero .fh5co-learn-more {
   position: absolute;
   bottom: -25px;
@@ -458,6 +475,7 @@ body {
   color: rgba(255, 255, 255, 0.5);
   margin-bottom: 20px;
 }
+
 #fh5co-hero .fh5co-learn-more a .arrow {
   display: block;
   width: 50px;
@@ -512,6 +530,7 @@ body {
 #fh5co-projects2,
 #fh5co-testimonials,
 #fh5co-testimonials2,
+#fh5co-testimonials3,
 #fh5co-about,
 #fh5co-subscribe,
 #fh5co-info,
@@ -819,7 +838,7 @@ body {
   width: 85%;
 }
 #fh5co-features-2 .fh5co-feature h3, #fh5co-features-3 .fh5co-feature h3, #fh5co-features-4 .fh5co-feature h3 {
-  font-size: 24px;
+  font-size: 18px;
   color: #2a3036;
   margin-bottom: 10px;
   font-weight: 300;
@@ -1617,8 +1636,8 @@ body {
     z-index: 1;
     text-align: center;
 
-    background-image: url('../images/lens2.jpg');
-  opacity: 0.8;
+    background-image: url('../images/lens-assay.png');
+  /*opacity: 0.8;*/
   /*background-color: */
 }
 
@@ -1628,7 +1647,7 @@ body {
   left: 0;
   padding-top: 10px;
   z-index: 12;
-  background-image: url('../images/lens2.jpg');
+  background-image: url('../images/lens-assay.png');
 
 }
 @media screen and (max-width: 768px) {
@@ -1647,8 +1666,8 @@ body {
 }
 #fh5co-header2 #fh5co-logo2 a {
   font-size: 30px;
-  font-weight: 500;
-  color: gray;
+  font-weight: 550;
+  color: midnightblue;
 }
 #fh5co-header2 #fh5co-logo2 a span {
   color: white;
