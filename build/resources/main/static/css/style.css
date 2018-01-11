@@ -1666,8 +1666,9 @@ body {
 }
 #fh5co-header2 #fh5co-logo2 a {
   font-size: 30px;
-  font-weight: 550;
-  color: midnightblue;
+  font-weight: 600;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: gray;
 }
 #fh5co-header2 #fh5co-logo2 a span {
   color: white;
