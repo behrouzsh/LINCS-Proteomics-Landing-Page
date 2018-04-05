@@ -1438,7 +1438,135 @@ class Plp(object):
 
 
 
+    def process_P100_GCT_file_for_perturbagen_updated_for_lplp(self):
+        """process_P100_GCT_file_for_perturbagen method is for concatenating and averaging duplicates in P100 GCT file
+           and identify unique perturbagens to be used in lincs-proteomics-landing page
+           To generate this file you should first generate the P100_processed.csv file
+        """
+        #First find the corresponding signature id in ilincs
+        ilincs_signature = pd.read_csv('resources/pilincs/ilincs_P100_sig.csv', sep=',', header=None)
 
+        P100_data = pd.read_csv('resources/pilincs/P100_processed.csv', sep=',', header=None)
+        print P100_data.shape
+        #print P100_data[0]
+        print P100_data[0][5]
+        print P100_data[11][5]
+        colIter = 0
+        unique = {}
+        #unique_complete = {}
+        #constituting the unique tuples
+        for column in range (11,P100_data.shape[1]):
+
+            #print (column)
+            pertName = str(P100_data[column][5])
+
+
+
+            if pertName not in unique:
+                unique[pertName] = []
+                unique.get(pertName).append(column)
+            else:
+                unique.get(pertName).append(column)
+
+
+
+
+        total = 0
+        total_complete = 0
+        #print unique.
+        print "size of unique"
+
+        print len(unique)
+
+        for key in unique:
+            val = unique.get(key)
+
+            print key
+            item = list(val)
+            print item
+            total += len(item)
+            #print len(item)
+
+        print "total"
+
+        print total
+
+        pertJson = {}
+        uniquePert = []
+        for key in unique:
+            id = 0
+
+            uniquePert.append(key)
+            pertData = []
+            pertId = []
+            pertAnnotation = []
+            pertPeptide = []
+
+            for pepIter in range(0,96):
+                pertPeptide.append(P100_data[8][11+pepIter] + " / "+P100_data[9][11+pepIter] +" / "+P100_data[2][11+pepIter])
+            val = unique.get(key)
+            for item in val:
+                #print item
+                id += 1
+                sId = "P"+str(id)
+                pertId.append(sId)
+                annotation = {}
+                annotation["id"] = sId
+                #annotation["LINCS_UNIQUE"] = "NA" if str(P100_data[item][1]) == "nan" else P100_data[item][1]
+                annotation["cellId"] = "NA" if str(P100_data[item][2]) == "nan" else P100_data[item][2]
+                annotation["pertDose"] = "NA" if str(P100_data[item][3]) == "nan" else P100_data[item][3]
+                annotation["pertId"] = "NA" if str(P100_data[item][4]) == "nan" else P100_data[item][4]
+                annotation["pertName"] = "NA" if str(P100_data[item][5]) == "nan" else P100_data[item][5]
+                annotation["pertTime"] = "NA" if str(P100_data[item][6]) == "nan" else P100_data[item][6]
+                annotation["pertType"] = "NA" if str(P100_data[item][7]) == "nan" else P100_data[item][7]
+                annotation["pertVehicle"] = "NA" if str(P100_data[item][8]) == "nan" else P100_data[item][8]
+                annotation["pubchemCid"] = "NA" if str(P100_data[item][9]) == "nan" else P100_data[item][9]
+                annotation["lsmId"] = "NA" if str(P100_data[item][10]) == "nan" else P100_data[item][10]
+
+                annotation["LINCS_UNIQUE"] = "********"
+                print ilincs_signature.shape
+                for ilincsRow in range(1, ilincs_signature.shape[0]):
+                    # print ilincsRow
+                    # print ilincs_signature[0][ilincsRow]
+                    # print ilincs_signature[1][ilincsRow]
+                    # print ilincs_signature[2][ilincsRow]
+                    # print ilincs_signature[3][ilincsRow]
+                    # print ilincs_signature[4][ilincsRow]
+                    # print "======================="
+                    if(annotation["pertDose"] == ilincs_signature[2][ilincsRow] and annotation["pertName"] == ilincs_signature[1][ilincsRow] and
+                        annotation["pertTime"]+'h' == ilincs_signature[4][ilincsRow] and annotation["cellId"] == ilincs_signature[3][ilincsRow]):
+
+                            annotation["LINCS_UNIQUE"] = ilincs_signature[0][ilincsRow]
+                            print 'annotation["LINCS_UNIQUE"]'
+                            print annotation["LINCS_UNIQUE"]
+                            break
+                print annotation["LINCS_UNIQUE"]
+
+
+
+
+                pertAnnotation.append(annotation)
+                print annotation["LINCS_UNIQUE"]
+                col = P100_data[item]
+                pertDataJson = {}
+                for pepIter in range(1, 97):
+                    peptideString = str(P100_data[8][10 + pepIter])
+                    pertDataJson[peptideString] = float(P100_data[item][10 + pepIter])
+
+                pertJson[annotation["LINCS_UNIQUE"]] = pertDataJson
+            aggPertJson = {}
+            #aggPertJson["pertData"] = pertData
+            #aggPertJson["pertId"] = pertId
+            aggPertJson["pertAnnotation"] = pertAnnotation
+            #aggPertJson["pertPeptide"] = pertPeptide
+            pertJson[key] = aggPertJson
+
+
+        pertJson["uniquePert"] = uniquePert
+        print len(pertJson)
+
+
+        json.dump(pertJson, open("resources/pilincs/P100_processed_perturb_new.json", 'w'))
 
 
     def process_P100_GCT_file_for_perturbagen(self):

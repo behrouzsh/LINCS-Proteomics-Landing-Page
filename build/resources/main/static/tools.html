@@ -44,7 +44,7 @@
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="shortcut icon"
-          href="http://www.lincs-dcic.org/images/dcic-logo/favicon.png?v=2"/>
+          href="images/lens4.jpg"/>
 
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,600,400italic,700' rel='stylesheet'
           type='text/css'>
@@ -272,59 +272,52 @@
 <body>
 <div ng-controller="ToolsCtrl as ctrl" ng-init="initNetwork()">
     <!-- Loader -->
-    <div class="fh5co-loader"></div>
+
 
     <div id="fh5co-page">
-        <section id="fh5co-header">
+    <section id="fh5co-header">
+        <div class="container">
+            <nav role="navigation">
+                <ul class="pull-left left-menu">
+                    <!--	<li><a href="about.html">About</a></li> -->
+                    <li ><a href="assay.html">Explore</a></li>
+
+                    <li><a href="download.html" >Download</a></li>
+                </ul>
+                <h1 id="fh5co-logo"><a href="index.html">LINCS PROTEOMICS<span>.</span></a></h1>
+
+                <ul class="pull-right right-menu">
+                    <li class="active"><a href="tools.html">Tools</a></li>
+                    <li ><a href="about.html">About</a></li>
+
+                </ul>
+            </nav>
+        </div>
+    </section>
+    <!--This is for showing header when scroll down-->
+    <div class="topMenu">
+        <section id="fh5co-header2">
             <div class="container">
                 <nav role="navigation">
                     <ul class="pull-left left-menu">
                         <!--	<li><a href="about.html">About</a></li> -->
-                        <li><a href="assay.html">Assay View</a></li>
-                        <li><a href="data.html">Data View</a></li>
-                        <li class="active"><a href="tools.html">Tools</a></li>
+                        <li ><a href="assay.html">Explore</a></li>
+                        <li><a href="download.html" >Download</a></li>
                     </ul>
-                    <h1 id="fh5co-logo"><a href="index.html">LINCS PROTEOMICS<span>.</span></a></h1>
-                    <!--<div class="fh5co-learn-more2 ">-->
-                        <!--<a>-->
-                            <!--<span class="text">Under Construction</span>-->
-                        <!--</a>-->
-
-                    <!--</div>-->
+                    <h3 id="fh5co-logo2"><a href="index.html">LINCS PROTEOMICS<span>.</span></a></h3>
                     <ul class="pull-right right-menu">
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="http://dev3.ccs.miami.edu:8080/dcic-proteomics/" target="_blank">Download</a></li>
+                        <li class="active"><a href="tools.html">Tools</a></li>
+                        <li ><a href="about.html">About</a></li>
 
                     </ul>
                 </nav>
             </div>
         </section>
-        <!--This is for showing header when scroll down-->
-        <div class="topMenu">
-            <section id="fh5co-header2">
-                <div class="container">
-                    <nav role="navigation">
-                        <ul class="pull-left left-menu">
-                            <!--	<li><a href="about.html">About</a></li> -->
-                            <li><a href="assay.html">Assay View</a></li>
-                            <li><a href="data.html">Data View</a></li>
-                            <li><a href="tools.html">Tools</a></li>
+    </div>
 
 
-                        </ul>
-                        <h1 id="fh5co-logo2"><a href="index.html">LINCS PROTEOMICS</a></h1>
-                        <ul class="pull-right right-menu">
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="contact.html">Contact Us</a></li>
-                            <li><a href="http://dev3.ccs.miami.edu:8080/dcic-proteomics/" target="_blank">Download</a></li>
 
 
-                        </ul>
-                    </nav>
-                </div>
-            </section>
-        </div>
         <!-- #fh5co-header -->
 
         <section id="fh5co-hero" class="no-js-fullheight" style="background-image: url(images/tools.jpg);"
@@ -340,7 +333,7 @@
                             <div class="fh5co-right-position">
                         -->
                         <div class="fh5co-center-position">
-                            <h2 class="animate-box">LINCS Proteomics Tools</h2>
+                            <h2 class="animate-box" style="font-size: 45px">LINCS & Related Proteomics Tools</h2>
                             <!--<h3 class="animate-box">Far far away, behind the word mountains, far from the countries-->
                                 <!--Vokalia and Consonantia, there.</h3>-->
 
@@ -350,7 +343,7 @@
             </div>
             <div class="fh5co-learn-more animate-box">
                 <a href="#" class="scroll-btn">
-                    <span class="text">See some of tools developed within the LINCS consorsium.</span>
+                    <span class="text">See some of tools developed within the LINCS consortium and partners.</span>
                     <span class="arrow"><i class="icon-chevron-down"></i></span>
                 </a>
             </div>
@@ -359,24 +352,34 @@
 
         <section id="fh5co-pricing">
             <div class="container">
+                <div class="row ">
+                    <div class="col-md-6 col-md-offset-3 text-center">
+
+                        <h2 class="fh5co-sub-lead animate-box">Tools to help you be more productive with
+                            LINCS and Non-LINCS proteomics datasets. For complete list of LINCS Workflows and Tools <a href="http://www.lincsproject.org/LINCS/tools" target="_blank">
+                                click here</a>
+                        </h2>
+
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-md-4 col-sm-6 animate-box">
                         <div class="price-box popular">
                             <div class="column2-left vcenter">
-                                <a ng-href="http://amp.pharm.mssm.edu/Enrichr/" target="_blank">
-                                    <img border="0"  src="images/enrichr.png" width="200" height="120">
+                                <a ng-href="https://pir.georgetown.edu/" target="_blank">
+                                    <img border="0"  src="images/PIR.png" width="200" height="80">
                                 </a>
+
                             </div>
+                            <br/>
                             <div class="column2-right vcenter">
-                                <a href="http://amp.pharm.mssm.edu/Enrichr/" target="_blank">
-                                    <span style="color:blue">&#10004;</span> Enrichr</a> is sn intuitive web-based gene list
-                                enrichment analysis tool with 90 libraries. Enrichment analysis is a computational method
-                                for inferring knowledge about an input gene set by comparing it to annotated gene sets
-                                representing prior biological knowledge.
+                                <a href="https://pir.georgetown.edu/" target="_blank" >
+                                    <!--<span style="color:blue">&#10004;</span> -->
+                                     PIR</a>
+                                (The Protein Information Resource) is an integrated public bioinformatics resource to support genomic,
+                                proteomic and systems biology research and scientific studies.
                             </div>
                         </div>
-
-
                     </div>
 
 
@@ -384,102 +387,20 @@
                         <div class="price-box popular">
                             <div class="column2-left vcenter">
                                 <a ng-href="http://eh3.uc.edu/pinet/" target="_blank">
-                                    <img border="0"  src="images/pinet-logo.png" width="150" height="150">
+                                    <img border="0"  src="images/pinet-logo.png" width="100" height="100">
                                 </a>
                             </div>
                             <div class="column2-right vcenter">
-                                <a href="http://eh3.uc.edu/pinet/" target="_blank">
-                                    <span style="color:blue">&#10004;</span> piNet</a> can be used to annotate, map and analyze a set of peptide moieties
+                                <a href="http://eh3.uc.edu/pinet/" target="_blank" >
+                                    <!--<span style="color:blue">&#10004;</span> -->
+                                    piNet</a> can be used to annotate, map and analyze a set of peptide moieties
                                 (including post-translationally modified peptides) identified by either
                                 targeted (SRM type) or SWATH (discovery) proteomic assays...
                             </div>
                         </div>
-
-
                     </div>
 
                     <div class="col-md-4 col-sm-6 animate-box">
-                        <div class="price-box popular">
-                            <div class="column2-left vcenter">
-                                <a ng-href="http://eh3.uc.edu/pilincs/#/" target="_blank">
-                                    <img border="0"  src="images/pilincs.jpg" width="150" height="150">
-                                </a>
-                            </div>
-                            <div class="column2-right vcenter">
-                                <a href="http://eh3.uc.edu/pilincs/#/" target="_blank">
-                                    <span style="color:blue">&#10004;</span> piLINCS</a> has been developed as part of the BD2K-LINCS Data Coordination
-                                and Integration Center to provide interactive and API access to proteomics
-                                data generated by the Library of Integrated Network-based Signatures (LINCS)
-                                program...
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                    <div class="col-md-4 col-sm-6 animate-box">
-                        <div class="price-box popular">
-                            <div class="column2-left vcenter">
-                                <a ng-href="http://www.phosphosite.org/homeAction.action" target="_blank">
-                                    <img border="0"  src="images/phosphositeplus.jpeg" width="150" height="150">
-                                </a>
-                            </div>
-                            <div class="column2-right vcenter">
-                                <a href="http://www.phosphosite.org/homeAction.action" target="_blank">
-                                    <span style="color:blue">&#10004;</span> PhosphoSitePlus</a> Freely accessible on-line systems
-                                biology resource devoted to commonly studied protein post-translational modifications...
-                            </div>
-                        </div>
-
-
-                    </div>
-
-
-
-                    <div class="col-md-4 col-sm-6 animate-box">
-                        <div class="price-box popular">
-                            <div class="column2-left vcenter">
-                                <a ng-href="http://www.ilincs.org/ilincs/" target="_blank">
-                                    <img border="0"  src="images/DCIC_BD2K.png" width="180" height="100">
-                                </a>
-                            </div>
-                            <div class="column2-right vcenter">
-
-                                <a href="http://www.ilincs.org/ilincs/" target="_blank">
-                                    <span style="color:blue">&#10004;</span>iLINCS</a>  (Integrative LINCS) is an integrative web platform for analysis of LINCS data and
-                                signatures. The portal provides biologists-friendly user interfaces for analyzing
-                                transcriptomics and proteomics LINCS datasets...
-
-                            </div>
-                        </div>
-
-
-                    </div>
-
-
-
-
-
-                    <div class="col-md-4 col-sm-6 animate-box">
-                        <div class="price-box popular">
-                            <div class="column2-left vcenter">
-                                <a ng-href="http://lincs.hms.harvard.edu/db/" target="_blank">
-                                    <img border="0"  src="images/hms-lincs.png" width="200" height="100">
-                                </a>
-                            </div>
-                            <div class="column2-right vcenter">
-                                <a href="http://lincs.hms.harvard.edu/db/" target="_blank">
-                                    <span style="color:blue">&#10004;</span> HMS LINCS Database</a> The Database contains all publicly available
-                                HMS LINCS datasets and information for each dataset about experimental reagents and experimental and data analysis protocols....
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                    <div class="col-md-4 col-sm-6 animate-box">
-
-
 
                         <div class="price-box popular">
                             <div class="column2-left vcenter">
@@ -490,38 +411,179 @@
                             </div>
                             <div class="column2-right vcenter">
                                 <a href="https://panoramaweb.org/labkey/wiki/LINCS/Overview%20Information/page.view?name=LINCS%20PCCSE%20Overview"
-                                   target="_blank">
-                                    <span style="color:blue">&#10004;</span>Panorama</a> Repository Software for
+                                   target="_blank" >
+                                    <!--<span style="color:blue">&#10004;</span>-->
+                                    Panorama</a> Repository Software for
                                 Targeted Proteomics Assays from Skyline.
 
                             </div>
                         </div>
+                    </div>
 
+                    <div class="col-md-4 col-sm-6 animate-box">
+                        <div class="price-box popular">
+                            <div class="column2-left vcenter">
+                                <a ng-href="http://www.ilincs.org/ilincs/" target="_blank">
+                                    <img border="0"  src="images/ilincs.png" width="120" height="100">
+                                </a>
+                            </div>
+                            <div class="column2-right vcenter">
+
+                                <a href="http://www.ilincs.org/ilincs/" target="_blank" >
+                                    <!--<span style="color:blue">&#10004;</span>-->
+                                    iLINCS</a>  (Integrative LINCS) is an integrative web platform for analysis of LINCS data and
+                                signatures. The portal provides biologists-friendly user interfaces for analyzing
+                                transcriptomics and proteomics LINCS datasets...
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 animate-box">
+                        <div class="price-box popular">
+                            <div class="column2-left vcenter">
+                                <a ng-href="http://amp.pharm.mssm.edu/Enrichr/" target="_blank">
+                                    <img border="0"  src="images/2688.png" width="200" height="80">
+                                </a>
+                            </div>
+                            <div class="column2-right vcenter">
+                                <a href="http://amp.pharm.mssm.edu/Enrichr/" target="_blank" >
+                                    <!--<span style="color:blue">&#10004;</span> -->
+                                    Enrichr</a> is sn intuitive web-based gene list
+                                enrichment analysis tool for inferring knowledge about an input gene set by comparing it to annotated gene sets
+                                representing prior biological knowledge with enrichment analysis.
+                            </div>
+                        </div>
                     </div>
                     <div class="col-md-4 col-sm-6 animate-box">
                         <div class="price-box popular">
                             <div class="column2-left vcenter">
-                                <a ng-href="http:http://lincsportal.ccs.miami.edu/dcic-portal/" target="_blank">
-                                    <img border="0"  src="images/lincs-data-portal.png" width="150" height="150">
+                                <a ng-href="http://eh3.uc.edu/pilincs/#/" target="_blank">
+                                    <img border="0"  src="images/pilincs.jpg" width="110" height="100">
                                 </a>
                             </div>
                             <div class="column2-right vcenter">
-                                <a href="http://lincsportal.ccs.miami.edu/dcic-portal/" target="_blank">
-                                    <span style="color:blue">&#10004;</span> LINCS DATA PORTAL</a> Provides unified interface for searching all LINCS dataset packages and entities.
+                                <a href="http://eh3.uc.edu/pilincs/#/" target="_blank" >
+                                    <!--<span style="color:blue">&#10004;</span>-->
+                                    piLINCS</a> has been developed as part of the BD2K-LINCS Data Coordination
+                                and Integration Center to provide interactive and API access to proteomics
+                                data generated by the PCCSE center.
+
                             </div>
                         </div>
 
 
                     </div>
+
                     <div class="col-md-4 col-sm-6 animate-box">
                         <div class="price-box popular">
-                            <p >
-                                For complete list of LINCS Workflows and Tools <a href="http://www.lincsproject.org/LINCS/tools" target="_blank">
-                                click here</a>
-                            </p>
+                            <div class="column2-left vcenter">
+                                <a ng-href="http://www.phosphosite.org/homeAction.action" target="_blank">
+                                    <img border="0"  src="images/phosphositeplus.jpeg" width="150" height="50">
+                                </a>
+                            </div>
+                            <div class="column2-right vcenter">
+                                <a href="http://www.phosphosite.org/homeAction.action" target="_blank" >
+                                    <!--<span style="color:blue">&#10004;</span> -->
+                                    PhosphoSitePlus</a> Freely accessible on-line systems
+                                biology resource devoted to commonly studied protein post-translational modifications...
+                            </div>
                         </div>
+                    </div>
 
 
+
+                    <div class="col-md-4 col-sm-6 animate-box">
+                        <div class="price-box popular">
+                            <div class="column2-left vcenter">
+                                <a ng-href="http://lincs.hms.harvard.edu/db/" target="_blank">
+                                    <img border="0"  src="images/hms-lincs.png" width="150" height="50">
+
+                                </a>
+                            </div>
+                            <br/>
+                            <div class="column2-right vcenter">
+                                <a href="http://lincs.hms.harvard.edu/db/" target="_blank" >
+                                    <!--<span style="color:blue">&#10004;</span> -->
+                                    HMS LINCS Database</a> The Database contains all publicly available
+                                HMS LINCS datasets and information for each dataset about experimental reagents and experimental and data analysis protocols....
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-md-4 col-sm-6 animate-box">
+                        <div class="price-box popular">
+                            <div class="column2-left vcenter">
+                                <a ng-href="http:http://lincsportal.ccs.miami.edu/dcic-portal/" target="_blank">
+                                    <img border="0"  src="images/lincs-data-portal.png" width="120" height="120">
+                                </a>
+                            </div>
+                            <div class="column2-right vcenter">
+                                <a href="http://lincsportal.ccs.miami.edu/dcic-portal/" target="_blank" >
+                                    <!--<span style="color:blue">&#10004;</span> -->
+                                    LINCS DATA PORTAL</a> Provides unified interface for searching all LINCS dataset packages and entities.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 animate-box">
+                        <div class="price-box popular">
+                            <div class="column2-left vcenter">
+                                <a ng-href="https://pir.georgetown.edu/pro/pro.shtml" target="_blank">
+                                    <img border="0"  src="images/PRO.jpeg" width="200" height="80">
+
+                                </a>
+                            </div>
+                            <br/>
+                            <div class="column2-right vcenter">
+                                <a href="https://pir.georgetown.edu/pro/pro.shtml" target="_blank" >
+                                    <!--<span style="color:blue">&#10004;</span> -->
+                                     PRO</a> (PRotein Ontology) provides an ontological representation of
+                                protein-related entities by explicitly defining them and
+                                showing the relationships between them.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 animate-box">
+                        <div class="price-box popular">
+                            <div class="column2-left vcenter">
+                                <a ng-href="https://research.bioinformatics.udel.edu/iptmnet/" target="_blank">
+                                    <img border="0"  src="images/iptmnet.jpeg" width="200" height="80">
+
+                                </a>
+                            </div>
+                            <br/>
+                            <div class="column2-right vcenter">
+                                <a href="https://research.bioinformatics.udel.edu/iptmnet/" target="_blank" >
+                                    <!--<span style="color:blue">&#10004;</span> -->
+                                    iPTMnet</a>  is a bioinformatics resource for integrated understanding of protein
+                                post-translational modifications (PTMs) in systems biology context.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 animate-box">
+                        <div class="price-box popular">
+                            <div class="column2-left vcenter">
+                                <a ng-href="https://research.bioinformatics.udel.edu/iprolink/" target="_blank">
+                                    <img border="0"  src="images/iprolink.png" width="200" height="80">
+
+                                </a>
+                            </div>
+                            <br/>
+                            <div class="column2-right vcenter">
+                                <a href="https://research.bioinformatics.udel.edu/iprolink/" target="_blank" >
+                                    <!--<span style="color:blue">&#10004;</span> -->
+                                    iProLINK </a>
+                                (integrated Protein Literature, INformation and Knowledge) is a resource with access to text mining
+                                tools and annotated corpora developed in house.
+                            </div>
+                        </div>
                     </div>
 
                     <!--<div class="col-md-3 col-sm-6 animate-box">-->
@@ -710,7 +772,7 @@
         <footer id="fh5co-footer">
             <div class="container">
 
-                <div class="row row-bottom-padded-md">
+
 
                     <div class="col-md-5 col-sm-6 col-xs-10 animate-box">
                         <div class="fh5co-footer-widget">
@@ -723,7 +785,7 @@
                     </div>
 
 
-                </div>
+
 
             </div>
 

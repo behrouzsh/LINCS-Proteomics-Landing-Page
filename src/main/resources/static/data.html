@@ -765,9 +765,9 @@
                         <thead>
                         <tr>
                             <th>id</th>
-                            <th>LINCS_UniqueId</th>
+                            <!--<th>LINCS_UniqueId</th>-->
                             <th>pertName</th>
-                            <th>pertId</th>
+                            <th>BroadId</th>
                             <th>pertType</th>
                             <th>pubchemCid</th>
                             <th>lsmId</th>
@@ -780,14 +780,18 @@
                         <tbody>
                         <tr ng-repeat="mapping in ctrl.pertTable">
                             <td>{{mapping.id}}</td>
-                            <td>
-                                <a ng-href="http://dev.ilincs.org/ilincs/signature/{{mapping.LINCS_UNIQUE}}"
-                                   target="_blank">
-                                    {{mapping.LINCS_UNIQUE}}</a>
-                            </td>
+                            <!--<td>-->
+                                <!--<a ng-href="http://dev.ilincs.org/ilincs/signature/{{mapping.LINCS_UNIQUE}}"-->
+                                   <!--target="_blank">-->
+                                    <!--{{mapping.LINCS_UNIQUE}}</a>-->
+                            <!--</td>-->
 
-                            <td>{{mapping.pertName}}</td>
-                            <td>{{mapping.pertId}}</td>
+                            <td><a ng-href="https://clue.io/command?q={{mapping.pertName}}"
+                                   target="_blank">
+                                {{mapping.pertName}}</a></td>
+                            <td><a ng-href="https://clue.io/command?q={{mapping.pertId}}"
+                                   target="_blank">
+                                {{mapping.pertId}}</a></td>
                             <td>{{mapping.pertType}}</td>
                             <td>{{mapping.pubchemCid}}</td>
                             <td>{{mapping.lsmId}}</td>
