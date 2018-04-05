@@ -44,7 +44,7 @@
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="shortcut icon"
-          href="http://www.lincs-dcic.org/images/dcic-logo/favicon.png?v=2"/>
+          href="images/lens4.jpg"/>
 
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,600,400italic,700' rel='stylesheet'
           type='text/css'>
@@ -270,6 +270,8 @@
     <body class="boxed">
 -->
 <body>
+<link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
 <div ng-controller="assayViewCtrl as ctrl" ng-init="initNetworkApi()">
 
     <!-- Loader -->
@@ -281,21 +283,15 @@
             <nav role="navigation">
                 <ul class="pull-left left-menu">
                     <!--	<li><a href="about.html">About</a></li> -->
-                    <li class="active"><a href="assay.html">Assay View</a></li>
-                    <li><a href="data.html">Data View</a></li>
-                    <li><a href="tools.html">Tools</a></li>
+                    <li class="active"><a href="assay.html">Explore</a></li>
+
+                    <li><a href="download.html" >Download</a></li>
                 </ul>
                 <h1 id="fh5co-logo"><a href="index.html">LINCS PROTEOMICS<span>.</span></a></h1>
-                <!--<div class="fh5co-learn-more2 ">-->
-                    <!--<a>-->
-                        <!--<span class="text">Under Construction</span>-->
-                    <!--</a>-->
 
-                <!--</div>-->
                 <ul class="pull-right right-menu">
+                    <li><a href="tools.html">Tools</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="http://dev3.ccs.miami.edu:8080/dcic-proteomics/" target="_blank">Download</a></li>
 
                 </ul>
             </nav>
@@ -308,18 +304,13 @@
                     <nav role="navigation">
                         <ul class="pull-left left-menu">
                             <!--	<li><a href="about.html">About</a></li> -->
-                            <li><a href="assay.html">Assay View</a></li>
-                            <li><a href="data.html">Data View</a></li>
-                            <li><a href="tools.html">Tools</a></li>
-
-
+                            <li class="active"><a href="assay.html">Explore</a></li>
+                            <li><a href="download.html" >Download</a></li>
                         </ul>
-                        <h1 id="fh5co-logo2"><a href="index.html">LINCS PROTEOMICS</a></h1>
+                        <h3 id="fh5co-logo2"><a href="index.html">LINCS PROTEOMICS<span>.</span></a></h3>
                         <ul class="pull-right right-menu">
+                            <li><a href="tools.html">Tools</a></li>
                             <li><a href="about.html">About</a></li>
-                            <li><a href="contact.html">Contact Us</a></li>
-                            <li><a href="http://dev3.ccs.miami.edu:8080/dcic-proteomics/" target="_blank">Download</a></li>
-
 
                         </ul>
                     </nav>
@@ -342,7 +333,7 @@
                             <div class="fh5co-right-position">
                         -->
                         <div class="fh5co-left-position">
-                            <h2 class="animate-box">Explore biological entities captured by an assay</h2>
+                            <h2 class="animate-box" style="font-size: 45px">Explore biological entities captured by LINCS proteomics signatures </h2>
                             <!--<h3 class="animate-box">Far far away, behind the word mountains, far from the countries-->
                             <!--Vokalia and Consonantia, there.</h3>-->
 
@@ -360,25 +351,34 @@
         <!-- END #fh5co-hero -->
 
 
-
-        <section id="fh5co-features-2">
+        <section id="fh5co-features-2" style="padding: 20px 0px 5px 0px">
             <div class="container">
 
 
-
-
                 <div class="container">
-                    <div class="row row-bottom-padded-md">
-                        <div class="col-md-6 col-md-offset-3 text-center">
-                            <h2 class="fh5co-lead animate-box">What is an assay view?</h2>
-                            <p class="fh5co-sub-lead animate-box">The assay view is designed to illustrate the protein
-                                moieties
-                                captured and/or quantified by an assay, as well as their relationships
-                                with relevant biological entities such as pathways. Network based
+                    <div class="row ">
+                        <div class="col-md-12 text-center">
+                            <h2 class="fh5co-lead animate-box">What is a signature view?</h2>
+                            <h3 class="fh5co-sub-lead animate-box">
+                                Network-based representation of proteomics profiles (or signatures),
+                                as shown above, provides a visual representation of relationships between
+                                quantified peptide/PTM/protein moieties, and other relevant biological
+                                entities or processes. In a bipartite view, the moieties that are being
+                                quantified (or identified) in a proteomic assay are shown as nodes in the
+                                right column. Relevant biological entities or processes with known
+                                (or predicted) relationships with peptide/PTM/protein moieties are
+                                shown as nodes in the left column. Solid edges (with thickness to
+                                represent the strength of experimental evidence if available) represent
+                                known, whereas dashed edges represent predicted relationships. Abundance
+                                levels of peptide/PTM/protein moieties is represented by the color of nodes,
+                                with yellow corresponding to high relative abundance and blue to low relative
+                                abundance, respectively.
+                                Network based
                                 visualization and pathway projections are generated using
                             <p class="fh5co-sub-lead animate-box"><a href="http://eh3.uc.edu/pinet/" target="_blank">
                                 piNet</a> server.
                             </p>
+                            </h3>
                         </div>
                     </div>
 
@@ -386,43 +386,41 @@
                 </div>
 
 
-
                 <!--<div class="onerow">-->
-                    <!--<button type="button" class="btn btn-info" style="border: 2px solid #4CAF50;"-->
-                            <!--ng-class="{'btn-primary': display.P100}" ng-click="showPhosphoNetwork('P100')">P100 (PCCSE)-->
-                        <!--&lt;!&ndash;ng-click="showPhosphoNetwork('P100')"> P100 (PCCSE)&ndash;&gt;-->
-                        <!--&lt;!&ndash;ng-class="{'btn-primary': display.P100}" ng-click="showNetwork('P100')">P100 (PCCSE)&ndash;&gt;-->
-                    <!--</button>-->
+                <!--<button type="button" class="btn btn-info" style="border: 2px solid #4CAF50;"-->
+                <!--ng-class="{'btn-primary': display.P100}" ng-click="showPhosphoNetwork('P100')">P100 (PCCSE)-->
+                <!--&lt;!&ndash;ng-click="showPhosphoNetwork('P100')"> P100 (PCCSE)&ndash;&gt;-->
+                <!--&lt;!&ndash;ng-class="{'btn-primary': display.P100}" ng-click="showNetwork('P100')">P100 (PCCSE)&ndash;&gt;-->
+                <!--</button>-->
 
                 <!--</div>-->
                 <!--<div class="onerow">-->
-                    <!--<button type="button" class="btn btn-info" style="border: 2px solid #00FFFF;"-->
-                            <!--ng-class="{'btn-primary': display.GCP}" ng-click="showGCPNetwork('GCP')">GCP (PCCSE)-->
-                    <!--</button>-->
+                <!--<button type="button" class="btn btn-info" style="border: 2px solid #00FFFF;"-->
+                <!--ng-class="{'btn-primary': display.GCP}" ng-click="showGCPNetwork('GCP')">GCP (PCCSE)-->
+                <!--</button>-->
 
                 <!--</div>-->
                 <!--<div class="onerow">-->
-                    <!--<button type="button" class="btn btn-info" style="border: 2px solid #A52A2A;"-->
-                            <!--ng-class="{'btn-primary': display.DToxS}" ng-click="showNetwork('DToxS')">MS Protein State-->
-                        <!--(DToxS)-->
-                    <!--</button>-->
+                <!--<button type="button" class="btn btn-info" style="border: 2px solid #A52A2A;"-->
+                <!--ng-class="{'btn-primary': display.DToxS}" ng-click="showNetwork('DToxS')">MS Protein State-->
+                <!--(DToxS)-->
+                <!--</button>-->
 
                 <!--</div>-->
                 <!--<div class="onerow">-->
-                    <!--<button type="button" class="btn btn-info" style="border: 2px solid #7FFF00;"-->
-                            <!--ng-class="{'btn-primary': display.SWATH}" ng-click="showNetwork('SWATH')">SWATH-->
-                        <!--(Neuro-LINCS)-->
-                    <!--</button>-->
+                <!--<button type="button" class="btn btn-info" style="border: 2px solid #7FFF00;"-->
+                <!--ng-class="{'btn-primary': display.SWATH}" ng-click="showNetwork('SWATH')">SWATH-->
+                <!--(Neuro-LINCS)-->
+                <!--</button>-->
 
                 <!--</div>-->
                 <!--<div class="onerow">-->
-                    <!--<button type="button" disabled class="btn btn-info" style="border: 2px solid #FF7F50;"-->
-                            <!--ng-class="{'btn-primary': display.RPPA}" ng-click="showNetwork('RPPA')">RPPA (HMS-LINCS)-->
-                    <!--</button>-->
+                <!--<button type="button" disabled class="btn btn-info" style="border: 2px solid #FF7F50;"-->
+                <!--ng-class="{'btn-primary': display.RPPA}" ng-click="showNetwork('RPPA')">RPPA (HMS-LINCS)-->
+                <!--</button>-->
 
                 <!--</div>-->
-            <!--</div>-->
-
+                <!--</div>-->
 
 
                 <div class="bs-example" style="padding-bottom: 24px;" append-source>
@@ -446,239 +444,236 @@
                     </form>
                 </div>
 
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="panel-group" id="accordion">
-                        <div class="panel panel-default">
-                            <div class="panel-heading" ng-class="{'btn-primary': display.P100}"
-                                 ng-click="showPhosphoNetwork('P100')">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel-group" id="accordion">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" ng-class="{'btn-primary': display.P100}"
+                                     ng-click="makePhosphoGraph('None')">
 
-                                <h4 class="panel-title onerow" >
-                                    <a class="accordion-toggle" data-toggle="collapse"
-                                       data-parent="#accordion"
-                                       href="#collapseOne">P100 (PCCSE)</a>
+                                    <h4 class="panel-title onerow">
+                                        <a class="accordion-toggle" data-toggle="collapse"
+                                           data-parent="#accordion"
+                                           href="#collapseOne">P100 (PCCSE)</a>
 
-                                </h4>
+                                    </h4>
 
 
+                                </div>
+                                <div id="collapseOne" class="panel-collapse collapse">
+                                    <div class="panel-body">
+
+                                        P100 has been designed to measure the phosphorylation state of cellular
+                                        systems, using a set
+                                        of about hundred pospho-peptide probes whose abundance levels are
+                                        measured
+                                        using mass spectrometry
+                                        techniques. P100 can be classified as a 'targeted proteomics' assay that
+                                        provides a snapshot of cellular
+                                        signaling cascades that involve phosphorylation of the P100 target
+                                        sites/peptides.
+                                        <a href="https://panoramaweb.org/labkey/project/LINCS/begin.view?"
+                                           target="_blank">More
+                                            ...</a>
+                                    </div>
+
+                                </div>
                             </div>
-                            <div id="collapseOne" class="panel-collapse collapse" >
-                                <div class="panel-body">
+                            <!-- /.panel -->
+                            <div class="panel panel-default">
+                                <div class="panel-heading"
+                                     ng-class="{'btn-primary': display.GCP}"
+                                     ng-click="showGCPNetwork('GCP')">
+                                    <h4 class="panel-title onerow">
+                                        <a class="accordion-toggle" data-toggle="collapse"
+                                           data-parent="#accordion"
+                                           href="#collapseTwo">
+                                            GCP (PCCSE)
+                                        </a>
 
-                                    P100 has been designed to measure the phosphorylation state of cellular
-                                    systems, using a set
-                                    of about hundred pospho-peptide probes whose abundance levels are
-                                    measured
-                                    using mass spectrometry
-                                    techniques. P100 can be classified as a 'targeted proteomics' assay that
-                                    provides a snapshot of cellular
-                                    signaling cascades that involve phosphorylation of the P100 target
-                                    sites/peptides.
-                                    <a href="https://panoramaweb.org/labkey/project/LINCS/begin.view?" target="_blank">More
-                                        ...</a>
+                                        <!--<p class="fh5co-bio animate-box"></p>-->
+                                    </h4>
+                                    <!--<span class="onerow" style="position: relative;right: -880px; top: 2px;">-->
+                                    <!--<button type="button" class="btn btn-info"-->
+
+                                    <!--ng-click="customDownloadGCP('P100')">Download-->
+                                    <!--</button>-->
+                                    <!--</span>-->
                                 </div>
 
-                            </div>
-                        </div>
-                        <!-- /.panel -->
-                        <div class="panel panel-default">
-                            <div class="panel-heading"
-                                 ng-class="{'btn-primary': display.GCP}"
-                                 ng-click="showGCPNetwork('GCP')" >
-                                <h4 class="panel-title onerow">
-                                    <a class="accordion-toggle" data-toggle="collapse"
-                                       data-parent="#accordion"
-                                       href="#collapseTwo">
-                                        GCP (PCCSE)
-                                    </a>
 
-                                    <!--<p class="fh5co-bio animate-box"></p>-->
-                                </h4>
-                                <!--<span class="onerow" style="position: relative;right: -880px; top: 2px;">-->
-                                            <!--<button type="button" class="btn btn-info"-->
-
-                                                    <!--ng-click="customDownloadGCP('P100')">Download-->
-                                            <!--</button>-->
-                                        <!--</span>-->
-                            </div>
+                                <div id="collapseTwo" class="panel-collapse collapse">
+                                    <div class="panel-body">
 
 
-
-
-                            <div id="collapseTwo" class="panel-collapse collapse">
-                                <div class="panel-body">
-
-
-                                    GCP has been designed to measure the histone modification state, and thus indirectly
+                                        GCP has been designed to measure the histone modification state, and thus
+                                        indirectly
                                         the
                                         chromatin state of cellular
-                                        systems, using a set of about sixty target modified (acetylated, methylated etc.) histone
+                                        systems, using a set of about sixty target modified (acetylated, methylated
+                                        etc.) histone
                                         peptides whose
                                         abundance levels are measured
-                                        using mass spectrometry. <a href="https://panoramaweb.org/labkey/project/LINCS/begin.view?"
-                                                                    target="_blank">More ...</a>
+                                        using mass spectrometry. <a
+                                            href="https://panoramaweb.org/labkey/project/LINCS/begin.view?"
+                                            target="_blank">More ...</a>
 
 
-                                    <!--range(["grey", blue: acetyltransferases,  red: methyltransferases,  yellow: deacetylases,  green: demethylases,  orange: kinases,  purple : phosphatases]-->
-                                    <!---->
+                                        <!--range(["grey", blue: acetyltransferases,  red: methyltransferases,  yellow: deacetylases,  green: demethylases,  orange: kinases,  purple : phosphatases]-->
+                                        <!---->
 
 
-
-                                </div>
-
-
-
-                            </div>
-                        </div>
-                        <!-- /.panel -->
-                        <div class="panel panel-default">
-                            <div class="panel-heading"
-                                 ng-class="{'btn-primary': display.DToxS}"
-                                 ng-click="showNetwork('DToxS')" >
-                                <h4 class="panel-title onerow">
-                                    <a class="accordion-toggle" data-toggle="collapse"
-                                       data-parent="#accordion"
-                                       href="#collapseThree">MS Protein State assay (LINCS DToxS)</a>
-                                </h4>
-
-                            </div>
-                            <div id="collapseThree" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    Mass spectrometry is a sensitive technique that
-                                    measures the mass-to-charge ratio of ions to
-                                    identify and quantify molecules in simple and
-                                    complex mixtures. Samples are loaded into the mass spectrometer in
-                                    liquid,
-                                    gas or
-                                    dried form
-                                    and then vaporized and ionized by the ion source. The charge that these
-                                    molecules
-                                    receive allows
-                                    the mass spectrometer to accelerate the ions throughout the remainder of
-                                    the
-                                    system.
-                                    The ions
-                                    encounter electric and/or magnetic fields from mass analyzers, which
-                                    deflect
-                                    the
-                                    paths of individual
-                                    ions based on their mass and charge (m/z). Ions that have successfully
-                                    been
-                                    deflected by the mass
-                                    analyzers then hit the ion detector that registers the number of ions at
-                                    each m/z
-                                    value.
-                                </div>
-
-                            </div>
-                        </div>
-                        <!-- /.panel -->
-                        <div class="panel panel-default">
-                            <div class="panel-heading"
-                                 ng-class="{'btn-primary': display.RPPA}">
-                                 <!--ng-click="showNetwork('RPPA')">-->
-
-                                <h4 class="panel-title onerow">
-                                    <a class="accordion-toggle" data-toggle="collapse"
-                                       data-parent="#accordion">
-                                       <!--href="#collapseFour">-->
-                                        RPPA protein state assay (HMS LINCS)</a>
-                                </h4>
-
-                            </div>
-                            <div id="collapseFour" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    Reverse phase protein array (RPPA) is a high-throughput
-                                    technology that performs protein assays on
-                                    thousands of samples simultaneously, including tissue and cell lysates,
-                                    serum,
-                                    plasma or other
-                                    body fluids that measure the levels of protein expression, as well as
-                                    protein
-                                    modifications such
-                                    as phosphorylation. Protein lysates are arrayed as microspots on
-                                    nitrocellulized
-                                    coated glass slides
-                                    and probed with highly specific antibodies that have been validated for
-                                    RPPA. When
-                                    specific antibodies
-                                    are used, RPPA can generate 1,000 times more data points using 10,000
-                                    times
-                                    less
-                                    sample volume than
-                                    an ordinary western blot, enabling researchers to monitor quantitative
-                                    proteomic
-                                    responses for various
-                                    time-scale and input-dose gradients simultaneously.
-                                </div>
-
-
-                            </div>
-                        </div>
-                        <!-- /.panel -->
-                        <div class="panel panel-default">
-                            <div class="panel-heading"
-                                 ng-class="{'btn-primary': display.SWATH}"
-                                 ng-click="showNetwork('SWATH')">
-                                <h4 class="panel-title onerow">
-                                    <a class="accordion-toggle" data-toggle="collapse"
-                                       data-parent="#accordion"
-                                       href="#collapseFive">SWATH-MS protein quantification assay
-                                        (NeuroLINCS)</a>
-                                </h4>
-
-                            </div>
-                            <div id="collapseFive" class="panel-collapse collapse">
-                                <div class="panel-body">
-
-                                    SWATH (Sequential Window Acquisition of all THeoretical
-                                    fragment ion spectra) is a new strategy for high
-                                    throughput, label-free protein quantification. It generates global,
-                                    quantitative
-                                    protein maps using
-                                    data-independent acquisition of collision-induced dissociation (CID)
-                                    spectra
-                                    of all
-                                    precursor ions.
-                                    As a data-independent acquisition (also referred to as MS/MSall)
-                                    SWATH-MS
-                                    has a
-                                    greater coverage of
-                                    peptide identification compared to classical discovery approaches.
-                                    Using known fingerprints of target peptides comprising precursor mass,
-                                    chromatographic retention
-                                    time and MRM transitions SWATH protein maps can be interrogated for
-                                    targeted
-                                    quantification of proteins
-                                    of interest based on high resolution MRM-like signatures. SWATH acquires
-                                    all
-                                    MRM
-                                    transitions of all
-                                    precursors and thus does not require tedious assay development and
-                                    allows
-                                    for a more
-                                    dynamic data
-                                    interpretation compared to classical MRM experiments.
+                                    </div>
 
 
                                 </div>
-
                             </div>
+                            <!-- /.panel -->
+                            <div class="panel panel-default">
+                                <div class="panel-heading"
+                                     ng-class="{'btn-primary': display.DToxS}"
+                                     ng-click="showNetwork('DToxS')">
+                                    <h4 class="panel-title onerow">
+                                        <a class="accordion-toggle" data-toggle="collapse"
+                                           data-parent="#accordion"
+                                           href="#collapseThree">MS Protein State assay (LINCS DToxS)</a>
+                                    </h4>
+
+                                </div>
+                                <div id="collapseThree" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        Mass spectrometry is a sensitive technique that
+                                        measures the mass-to-charge ratio of ions to
+                                        identify and quantify molecules in simple and
+                                        complex mixtures. Samples are loaded into the mass spectrometer in
+                                        liquid,
+                                        gas or
+                                        dried form
+                                        and then vaporized and ionized by the ion source. The charge that these
+                                        molecules
+                                        receive allows
+                                        the mass spectrometer to accelerate the ions throughout the remainder of
+                                        the
+                                        system.
+                                        The ions
+                                        encounter electric and/or magnetic fields from mass analyzers, which
+                                        deflect
+                                        the
+                                        paths of individual
+                                        ions based on their mass and charge (m/z). Ions that have successfully
+                                        been
+                                        deflected by the mass
+                                        analyzers then hit the ion detector that registers the number of ions at
+                                        each m/z
+                                        value.
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- /.panel -->
+                            <div class="panel panel-default">
+                                <div class="panel-heading"
+                                     ng-class="{'btn-primary': display.RPPA}">
+                                    <!--ng-click="showNetwork('RPPA')">-->
+
+                                    <h4 class="panel-title onerow">
+                                        <a class="accordion-toggle" data-toggle="collapse"
+                                           data-parent="#accordion">
+                                            <!--href="#collapseFour">-->
+                                            RPPA protein state assay (HMS LINCS)</a>
+                                    </h4>
+
+                                </div>
+                                <div id="collapseFour" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        Reverse phase protein array (RPPA) is a high-throughput
+                                        technology that performs protein assays on
+                                        thousands of samples simultaneously, including tissue and cell lysates,
+                                        serum,
+                                        plasma or other
+                                        body fluids that measure the levels of protein expression, as well as
+                                        protein
+                                        modifications such
+                                        as phosphorylation. Protein lysates are arrayed as microspots on
+                                        nitrocellulized
+                                        coated glass slides
+                                        and probed with highly specific antibodies that have been validated for
+                                        RPPA. When
+                                        specific antibodies
+                                        are used, RPPA can generate 1,000 times more data points using 10,000
+                                        times
+                                        less
+                                        sample volume than
+                                        an ordinary western blot, enabling researchers to monitor quantitative
+                                        proteomic
+                                        responses for various
+                                        time-scale and input-dose gradients simultaneously.
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <!-- /.panel -->
+                            <div class="panel panel-default">
+                                <div class="panel-heading"
+                                     ng-class="{'btn-primary': display.SWATH}"
+                                     ng-click="showNetwork('SWATH')">
+                                    <h4 class="panel-title onerow">
+                                        <a class="accordion-toggle" data-toggle="collapse"
+                                           data-parent="#accordion"
+                                           href="#collapseFive">SWATH-MS protein quantification assay
+                                            (NeuroLINCS)</a>
+                                    </h4>
+
+                                </div>
+                                <div id="collapseFive" class="panel-collapse collapse">
+                                    <div class="panel-body">
+
+                                        SWATH (Sequential Window Acquisition of all THeoretical
+                                        fragment ion spectra) is a new strategy for high
+                                        throughput, label-free protein quantification. It generates global,
+                                        quantitative
+                                        protein maps using
+                                        data-independent acquisition of collision-induced dissociation (CID)
+                                        spectra
+                                        of all
+                                        precursor ions.
+                                        As a data-independent acquisition (also referred to as MS/MSall)
+                                        SWATH-MS
+                                        has a
+                                        greater coverage of
+                                        peptide identification compared to classical discovery approaches.
+                                        Using known fingerprints of target peptides comprising precursor mass,
+                                        chromatographic retention
+                                        time and MRM transitions SWATH protein maps can be interrogated for
+                                        targeted
+                                        quantification of proteins
+                                        of interest based on high resolution MRM-like signatures. SWATH acquires
+                                        all
+                                        MRM
+                                        transitions of all
+                                        precursors and thus does not require tedious assay development and
+                                        allows
+                                        for a more
+                                        dynamic data
+                                        interpretation compared to classical MRM experiments.
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- /.panel -->
                         </div>
-                        <!-- /.panel -->
+                        <!-- /.panel-group -->
                     </div>
-                    <!-- /.panel-group -->
+                    <!-- /.col-lg-12 -->
                 </div>
-                <!-- /.col-lg-12 -->
-            </div>
-
-
-
 
 
             </div>
         </section>
-        <section id="fh5co-pricing">
+        <section id="fh5co-pricing" style="padding: 10px 0px 10px 0px">
 
 
             <div class="container" ng-init="initNetworkApi()">
@@ -754,34 +749,49 @@
                 <!--</div>-->
             <!--</div>-->
 
-            <div class="container" >
+            <div class="container" style="padding: 5px 0px 5px 0px">
                 <div class="bs-callout bs-callout-primary" ng-show="ctrl.showP100div">
 
-
+                    <h3 >P100 (PCCSE)    </h3>
+                    <hr/>
                     <div class="bs-callout bs-callout-primary" ng-show="ctrl.showP100div">
-                        <p> In the figure, grey nodes represent P100 peptide probes mapped into
-                            proteins, with both the protein and the phosphorylation site indicated,
-                            e.g., JUN[pS@73] for a P100 probe that includes Ser73 residue of the JUN
-                            kinase as target site. Red nodes represent kinases that are known to
-                            specifically target P100 peptide probes based on PhosphoSitePlus, with
-                            solid edges connecting (kinase,known target) pairs.
+                        <p>
 
-                            Dashed lines connect kinases with their putative targets predicted by
-                            using motif similarity. The similarity between known and putative target
-                            motifs is assessed either using the target motif PWM models extracted
-                            from PhosphositePlus (and denoted as 'PredictedbyPWM"), or using a
-                            simple motif similarity assessment using Blosum50 substitution (denoted
-                            as 'PredictedbyBlosum50') to account for potential target motifs that
-                            are represented by only few known examples in PhosphositePlus scores and
-                            thus not lending themselves to a PWM model at this point.
+                            For P100, which quantifies the abundance of about 100 representative
+                            phosphor-peptides using targeted proteomics approach, this view represents
+                            an attempt to capture the underlying phosphor-state of a cell by connecting
+                            the peptide/protein moieties with kinases known (based on PhosphoSitePlus or
+                            iPTMnet), or predicted using sequence similarity, to target the specific PTM
+                            sites within the P100 peptides.
+
+
+
+
+                            <!--In the figure, grey nodes represent P100 peptide probes mapped into-->
+                            <!--proteins, with both the protein and the phosphorylation site indicated,-->
+                            <!--e.g., JUN[pS@73] for a P100 probe that includes Ser73 residue of the JUN-->
+                            <!--kinase as target site. Red nodes represent kinases that are known to-->
+                            <!--specifically target P100 peptide probes based on PhosphoSitePlus, with-->
+                            <!--solid edges connecting (kinase,known target) pairs.-->
+
+                            <!--Dashed lines connect kinases with their putative targets predicted by-->
+                            <!--using motif similarity. The similarity between known and putative target-->
+                            <!--motifs is assessed either using the target motif PWM models extracted-->
+                            <!--from PhosphositePlus (and denoted as 'PredictedbyPWM"), or using a-->
+                            <!--simple motif similarity assessment using Blosum50 substitution (denoted-->
+                            <!--as 'PredictedbyBlosum50') to account for potential target motifs that-->
+                            <!--are represented by only few known examples in PhosphositePlus scores and-->
+                            <!--thus not lending themselves to a PWM model at this point.-->
                         </p>
                     </div>
                 </div>
             </div>
 
-            <div class="container" >
-                <div class="bs-callout bs-callout-primary" ng-show="ctrl.showGCPdiv">
+            <div class="container" style="padding: 5px 0px 5px 0px">
+
                     <div class="bs-callout bs-callout-primary" ng-show="ctrl.showGCPdiv">
+                        <h3 >GCP (PCCSE)    </h3>
+                        <hr/>
                         <p> In the figure, grey nodes represent GCP peptide probes mapped into
                             proteins, with both the protein and the phosphorylation / acetillation site indicated,
                             e.g., JUN[pS@73] for a GCP probe that includes Ser73 residue of the JUN
@@ -789,15 +799,114 @@
 
                         </p>
                     </div>
-                </div>
+
             </div>
 
 
 
-            <div class="container" ng-show="ctrl.showSVG">
-                <br/>
+            <div class="container" ng-show="ctrl.showP100div" >
+
+                <div class="animate-box">
+                    <div class="bs-example" style="padding-bottom: 24px;" append-source>
+                        <form class="form-inline" role="form">
+                            <div class="form-group">
+                                <hr/>
+                                <h3>Explore Signatures</h3>
+                                <label><i class="animate-box onerow"></i> Enter perturbagen name </label>
+                                <input type="text" class="form-control onerow" ng-model="ctrl.selectedPerturbation"
+                                       bs-options="perturb for perturb in perturbation" placeholder="Trametinib"
+                                       bs-typeahead>
+                                <button ng-click="updatePerturbagen(ctrl.selectedPerturbation)" class="button-submit">Submit</button>
+                            </div>
+
+
+
+
+                            <!--<button type="button" class="btn btn-default" style="border: 2px solid #00FFFF;" ng-class="{'btn-primary': display.GCP}" ng-click="showNetwork(ctrl.selectedPerturbation)" >Show New Heatmap</button>-->
+
+
+                        </form>
+                    </div>
+
+                </div>
+                <div ng-show="ctrl.showP100Table">
+                    Sample annotation for the selected perturbagen:
+                    <strong>{{ctrl.selectedPerturbation}}</strong>
+
+                </div>
                 <br/>
 
+
+
+
+
+                <!--{"LINCS_UNIQUE": "LINCSTP_0246", "pertVehicle": "DMSO",-->
+                <!--"pubchemCid": "11707110", "pertTime": "48", "pertId": "BRD-K12343256",-->
+                <!--"pertType": "trt_cp", "pertiname": "Trametinib", "pertDose": "0.001", "cellId": "MCF10A",-->
+                <!--"lsmId": "LSM-1143"},-->
+
+                <div class="well" ng-show="ctrl.showP100Table">
+
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                        <tr>
+                            <th>Update Network</th>
+                            <!--<th>LINCS_UniqueId</th>-->
+                            <th>pertName</th>
+                            <th>BroadId</th>
+                            <th>pertType</th>
+                            <th>pubchemCid</th>
+                            <th>lsmId</th>
+                            <th>pertDose</th>
+                            <th>pertTime</th>
+                            <th>cellId</th>
+                            <th>pertVehicle</th>
+                            <th>Go To iLINCS</th>
+                        </tr>
+                        </thead>
+                        <tbody pagination-id="metaData221">
+                        <tr ng-repeat="mapping in ctrl.pertTable" >
+                            <td><button ng-click="makePhosphoGraph(mapping.LINCS_UNIQUE)" class="button-submit2">Update</button></td>
+                            <!--<td>-->
+                            <!--<a ng-href="http://dev.ilincs.org/ilincs/signature/{{mapping.LINCS_UNIQUE}}"-->
+                            <!--target="_blank">-->
+                            <!--{{mapping.LINCS_UNIQUE}}</a>-->
+                            <!--</td>-->
+
+                            <td><a ng-href="https://clue.io/command?q={{mapping.pertName}}"
+                                   target="_blank">
+                                {{mapping.pertName}}</a></td>
+                            <td><a ng-href="https://clue.io/command?q={{mapping.pertId}}"
+                                   target="_blank">
+                                {{mapping.pertId}}</a></td>
+                            <td>{{mapping.pertType}}</td>
+                            <td>{{mapping.pubchemCid}}</td>
+                            <td>{{mapping.lsmId}}</td>
+                            <td>{{mapping.pertDose}}</td>
+                            <td>{{mapping.pertTime}}</td>
+                            <td>{{mapping.cellId}}</td>
+                            <td>{{mapping.pertVehicle}}</td>
+                            <td>
+                            <a ng-href="http://dev.ilincs.org/ilincs/signature/{{mapping.LINCS_UNIQUE}}"
+                            target="_blank">
+                            {{mapping.LINCS_UNIQUE}}</a>
+                            </td>
+                            <!--<td>-->
+                            <!--<a ng-href="http://www.ebi.ac.uk/ols/ontologies/mod/terms?obo_id={{mapping.identifier}}"-->
+                            <!--target="_blank">-->
+                            <!--{{mapping.identifier}}</a>-->
+                            <!--</td>-->
+
+                        </tr>
+                        </tbody>
+                    </table>
+                    <dir-pagination-controls
+                            pagination-id="metaData221"
+                            max-size="5"
+                            direction-links="true"
+                            boundary-links="true">
+                    </dir-pagination-controls>
+                </div>
 
                 <select ng-show="ctrl.showP100div"
                         ng-model="selectedphosphoPathways"
@@ -812,6 +921,12 @@
                 <!--ng-options="x.value for x in pathways">-->
                 <!--</select>-->
 
+                <div ng-show="ctrl.showP100Table">
+                    Signature ID:
+                    <strong>{{signatureIdView}}</strong>
+
+                </div>
+                <br/>
                 <select ng-show=" ctrl.showRPPAdiv || ctrl.showSWATHdiv || ctrl.showDToxSdiv"
                         ng-model="selectedPathways"
                         ng-change="changedValue(selectedPathways)"
@@ -823,7 +938,41 @@
                 <!--</button>-->
                 <!--<br/>-->
                 <!--<br/>-->
-                <div id="chart5"></div>
+                <div id="chart5">
+
+                    <div>
+                        <button class="btn1" id='force5' title='Implement force layout'>
+                            <i class='fa fa-random'></i>
+                        </button>
+                        <button class="btn2" id='circularView5' title='Implement circular layout'>
+                            <i class='fa fa-circle-o'></i>
+                        </button>
+                        <button class="btn3" id='parallelView5' title='Rearrange nodes in columns'>
+                            <i class='fa fa-align-justify'></i>
+                        </button>
+                        <!--<button class="btn4" id='customizedParallelView1' title='Implement parallel layout'>-->
+                        <!--<i class='fa fa-map-o'></i>-->
+                        <!--</button>-->
+                        <!--<button class="btn5" id='customizedCircularView1' title='Implement customized circular layout'>-->
+                        <!--<i class='fa fa-dot-circle-o'></i>-->
+                        <!--</button>-->
+                        <button class="btn6" id='download-png5' title='download as PNG'>
+                            <i class='fa fa-download'></i>
+                        </button>
+                        <!--<button class="btn7" id='question3'-->
+                                <!--title='grey or colored nodes based on abundance: Query Gene Set, Red nodes: Kinases Perturbation'>-->
+                            <!--<i class='fa fa-question-circle'></i>-->
+                        <!--</button>-->
+                        <!--<button class="btn8" id='drug1'-->
+                        <!--title='grey nodes: Query Gene Set, Red nodes: Pathways / Kinases Perturbation'>-->
+                        <!--<i class='fa fa-eyedropper'></i>-->
+                        <!--</button>-->
+
+
+                    </div>
+
+                </div>
+                <!--<div id="chart5"></div>-->
 
             </div>
 
@@ -1033,7 +1182,7 @@
         <footer id="fh5co-footer">
             <div class="container">
 
-                <div class="row row-bottom-padded-md">
+
 
                     <div class="col-md-5 col-sm-6 col-xs-10 animate-box">
                         <div class="fh5co-footer-widget">
@@ -1046,7 +1195,7 @@
                     </div>
 
 
-                </div>
+
 
             </div>
 
@@ -1111,6 +1260,12 @@
 
     <!-- For demo purposes only styleswitcher ( You may delete this anytime ) -->
     <script src="js/jquery.style.switcher.js"></script>
+
+    <script type="text/javascript" src="bower_components/canvg/rgbcolor.js"></script>
+    <script type="text/javascript" src="bower_components/canvg/StackBlur.js"></script>
+    <script type="text/javascript" src="bower_components/canvg/canvg.js"></script>
+    <script src="bower_components/canvg/canvas-toBlob.js"></script>
+    <script src="bower_components/canvg/FileSaver.min.js"></script>
     <script>
         $(function () {
             $('#colour-variations ul').styleSwitcher({

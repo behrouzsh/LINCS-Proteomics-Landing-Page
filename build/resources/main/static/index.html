@@ -44,7 +44,7 @@
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="shortcut icon"
-          href="http://www.lincs-dcic.org/images/dcic-logo/favicon.png?v=2"/>
+          href="images/lens4.jpg"/>
     <!--<link rel="shortcut icon" href="favicon.ico">-->
 
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,600,400italic,700' rel='stylesheet'
@@ -282,26 +282,21 @@
     <div class="fh5co-loader"></div>
 
     <div id="fh5co-page">
+
         <section id="fh5co-header">
             <div class="container">
                 <nav role="navigation">
                     <ul class="pull-left left-menu">
                         <!--	<li><a href="about.html">About</a></li> -->
-                        <li><a href="assay.html">Assay View</a></li>
-                        <li><a href="data.html">Data View</a></li>
-                        <li><a href="tools.html">Tools</a></li>
+                        <li ><a href="assay.html">Explore</a></li>
+
+                        <li><a href="download.html" >Download</a></li>
                     </ul>
                     <h1 id="fh5co-logo"><a href="index.html">LINCS PROTEOMICS<span>.</span></a></h1>
-                    <!--<div class="fh5co-learn-more2 ">-->
-                        <!--<a>-->
-                            <!--<span class="text">Under Construction</span>-->
-                        <!--</a>-->
 
-                    <!--</div>-->
                     <ul class="pull-right right-menu">
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="http://dev3.ccs.miami.edu:8080/dcic-proteomics/" target="_blank">Download</a></li>
+                        <li><a href="tools.html">Tools</a></li>
+                        <li ><a href="about.html">About</a></li>
 
                     </ul>
                 </nav>
@@ -314,25 +309,25 @@
                     <nav role="navigation">
                         <ul class="pull-left left-menu">
                             <!--	<li><a href="about.html">About</a></li> -->
-                            <li><a href="assay.html">Assay View</a></li>
-                            <li><a href="data.html">Data View</a></li>
-                            <li><a href="tools.html">Tools</a></li>
-
-
+                            <li ><a href="assay.html">Explore</a></li>
+                            <li><a href="download.html" >Download</a></li>
                         </ul>
-                        <h1 id="fh5co-logo2"><a href="index.html">LINCS PROTEOMICS</a></h1>
+                        <h3 id="fh5co-logo2"><a href="index.html">LINCS PROTEOMICS<span>.</span></a></h3>
                         <ul class="pull-right right-menu">
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="contact.html">Contact Us</a></li>
-                            <li><a href="http://dev3.ccs.miami.edu:8080/dcic-proteomics/" target="_blank">Download</a>
-                            </li>
-
+                            <li><a href="tools.html">Tools</a></li>
+                            <li ><a href="about.html">About</a></li>
 
                         </ul>
                     </nav>
                 </div>
             </section>
         </div>
+
+
+
+
+
+
 
 
         <!-- #fh5co-header -->
@@ -350,7 +345,7 @@
                             <div class="fh5co-right-position">
                         -->
                         <div class="fh5co-left-position">
-                            <h2 class="animate-box">Explore LINCS Proteomics Data </h2>
+                            <h2 class="animate-box" style="font-size: 45px">Explore LINCS Proteomics Data </h2>
                             <h3 class="animate-box">with Different Lenses. </h3>
                             <!--<p class="animate-box"><a href="https://vimeo.com/channels/staffpicks/93951774" class="btn btn-outline popup-vimeo btn-video"><i class="icon-play2"></i> Watch video</a> -->
 
@@ -372,10 +367,181 @@
 
 
 
+        <!--<section id="fh5co-projects" style="padding: 40px 5px 5px 5px">-->
+            <!--<div class="container" >-->
+            <!---->
+            <!--</div>-->
 
 
+        <!--</section>-->
 
-        <section id="fh5co-features-2">
+        <div id="fh5co-about">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-md-6">
+                        <figure class="animate-box">
+                            <img src="images/LINCS.png" alt="Free HTML5 Bootstrap Template by FREEHTML5.co"
+                                 class="img-responsive">
+                        </figure>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="fh5co-label animate-box">Who We Are:</div>
+                        <h2 class="fh5co-lead animate-box">The Library of Integrated Network-Based Cellular Signatures
+                            (LINCS) </h2>
+
+                        <p class="fh5co-sub-lead animate-box">LINCS program aims to create a network-based understanding
+                            of biology by cataloging changes in gene expression and other cellular processes that occur
+                            when cells are exposed to a variety of perturbing agents.</p>
+                        <ul class="fh5co-social">
+                            <li class="animate-box"><a href="https://twitter.com/LINCSProgram" target="_blank"><i class="icon-twitter"></i></a></li>
+
+                            <li class="animate-box"><a href="http://www.lincsproject.org/" target="_blank"><i class="icon-globe"></i></a></li>
+
+                        </ul>
+                        <div class="onerow">
+                            <a ng-click="showCenterInfo = !showCenterInfo" class="green onerow">More Information About LINCS
+                                Proteomics Centers</a>
+                            <div ng-show="!showCenterInfo" class=" onerow">
+                                <span class="arrow" style="size: 10px; color: forestgreen"><i class="icon-chevron-down"></i></span>
+                            </div>
+                            <div ng-show="showCenterInfo" class=" onerow">
+                                <span class="arrow" style="size: 10px; color: forestgreen"><i class="icon-chevron-up"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div ng-show="showCenterInfo">
+                    <hr/>
+                    <div class="col-md-6 col-md-offset-3 text-center">
+
+                        <h2 class="fh5co-lead animate-box" style="font-size: 30px">LINCS Proteomics Data Centers </h2>
+                        <div class="fh5co-label animate-box">This list includes data generating and data
+                            processing centers
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="fh5co-person">
+                                <figure class="animate-box">
+                                    <img src="images/hms-lincs2.png" alt="Free HTML5 Bootstrap Template by FREEHTML5.co"
+                                         class="img-responsive" width="200px" height="100px">
+                                </figure>
+                                <h3 class="fh5co-name animate-box">HMS LINCS</h3>
+                                <h4 class="fh5co-designation animate-box">Harvard Medical School</h4>
+                                <p class="fh5co-bio animate-box">The HMS LINCS Center collects multiplex
+                                    perturbagen-response data across a
+                                    number of complementary
+                                    experimental platforms including live- and fixed-cell imaging, sandwich
+                                    immunoassays, protein mass
+                                    spectrometry, and mRNA profiling as a means to measure the levels.</p>
+                                <ul class="fh5co-social">
+                                    <!--<li class="animate-box"><a href="#"><i class="icon-twitter"></i></a></li>-->
+                                    <!--<li class="animate-box"><a href="#"><i class="icon-dribbble"></i></a></li>-->
+                                    <li class="animate-box"><a href="http://lincs.hms.harvard.edu/" target="_blank"><i class="icon-globe"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="fh5co-person">
+                                <figure class="animate-box">
+                                    <img src="images/dtoxs2.png" alt="Free HTML5 Bootstrap Template by FREEHTML5.co"
+                                         class="img-responsive" width="200px" height="100px">
+                                </figure>
+                                <h3 class="fh5co-name animate-box">LINCS DToxS</h3>
+                                <h4 class="fh5co-designation animate-box">Icahn School of Medicine</h4>
+                                <p class="fh5co-bio animate-box"> The Drug Toxicity Signature Generation Center is a
+                                    Systems Pharmacology
+                                    research
+                                    center at the Icahn School of Medicine. The proteomics experiments are
+                                    conducted at
+                                    the Center for Advanced Proteomics, Rutgers-New Jersey Medical School.</p>
+                                <ul class="fh5co-social">
+                                    <!--<li class="animate-box"><a href="#"><i class="icon-twitter"></i></a></li>-->
+                                    <!--<li class="animate-box"><a href="#"><i class="icon-github"></i></a></li>-->
+                                    <li class="animate-box"><a href="https://martip03.u.hpc.mssm.edu/" target="_blank"><i class="icon-globe"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="fh5co-person">
+                                <figure class="animate-box">
+                                    <img src="images/neurolincs2.jpeg"
+                                         alt="Free HTML5 Bootstrap Template by FREEHTML5.co" class="img-responsive"
+                                         width="200px" height="100px">
+                                </figure>
+                                <h3 class="fh5co-name animate-box">NeuroLINCS</h3>
+                                <h4 class="fh5co-designation animate-box">University of California- Irvine, Cedars
+                                    Sinai, the Gladstone Institute, MIT, and Johns Hopkins University</h4>
+                                <p class="fh5co-bio animate-box">The NeuroLINCS Center studies ALS and SMA by
+                                    characterizing the molecular
+                                    networks within
+                                    patient-derived iPSCs, and their differentiated progeny, across many
+                                    regulatory layers.</p>
+                                <ul class="fh5co-social">
+                                    <li class="animate-box"><a href="https://twitter.com/neurolincs" target="_blank"><i class="icon-twitter"></i></a></li>
+                                    <li class="animate-box"><a href="https://github.com/neurolincs" target="_blank"><i class="icon-github"></i></a></li>
+                                    <li class="animate-box"><a href="http://neurolincs.org/technologies/" target="_blank"><i class="icon-globe"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="row">
+                        <div class="col-md-6 ">
+                            <div class="fh5co-person">
+                                <figure class="animate-box">
+                                    <img src="images/panorama-logo.png"
+                                         alt="Free HTML5 Bootstrap Template by FREEHTML5.co" class="img-responsive"
+                                         width="300px" height="150px">
+                                </figure>
+                                <h3 class="fh5co-name animate-box">LINCS PCCSE</h3>
+                                <h4 class="fh5co-designation animate-box">Broad Institute</h4>
+                                <p class="fh5co-bio animate-box">The LINCS Proteomic Characterization Center for
+                                    Signaling and Epigenetics at
+                                    the
+                                    Broad Institute/MIT/University of Washington utilizes the P100 and GCP
+                                    assays to
+                                    profile the response of human cell lines to perturbations.</p>
+                                <ul class="fh5co-social">
+                                    <!--<li class="animate-box"><a href="#"><i class="icon-twitter"></i></a></li>-->
+                                    <!--<li class="animate-box"><a href="#"><i class="icon-dribbble"></i></a></li>-->
+                                    <li class="animate-box"><a href="https://panoramaweb.org/project/LINCS/begin.view" target="_blank"><i class="icon-globe"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6 ">
+                            <div class="fh5co-person">
+                                <figure class="animate-box">
+                                    <img src="images/DCIC_BD2K.png" alt="Free HTML5 Bootstrap Template by FREEHTML5.co"
+                                         class="img-responsive" width="200px" height="200px">
+                                </figure>
+                                <h3 class="fh5co-name animate-box">BD2K-LINCS DCIC</h3>
+                                <h4 class="fh5co-designation animate-box">Icahn School of Medicine at Mount Sinai,
+                                    University of Cincinnati and University of Miami</h4>
+                                <p class="fh5co-bio animate-box">The BD2K-LINCS Data Coordination and Integration
+                                    Centers at Icahn School of
+                                    Medicine, university of Miami
+                                    and university of Cincinnati are responsible for harmonizing
+                                    LINCS data with other available resources.</p>
+                                <ul class="fh5co-social">
+                                    <li class="animate-box"><a href="https://twitter.com/BD2KLINCSDCIC" target="_blank"><i class="icon-twitter"></i></a></li>
+
+                                    <li class="animate-box"><a href="http://lincs-dcic.org/" target="_blank"><i class="icon-globe"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- END #fh5co-about -->
+
+
+        <section id="fh5co-features-2" style="padding: 20px 0px 10px 0px">
             <div class="container">
 
                 <!--<div id="fh5co-about">-->
@@ -398,15 +564,25 @@
                     <!--</div>-->
                     <!--</div>-->
 
-                    <div class="row text-center row-bottom-padded-md">
-                        <div class="col-md-8 col-md-offset-2">
+                    <!--<div class="row  ">-->
 
-                            <h3 class=" animate-box">Access and Download Data Sets</h3>
-                            <!--<p class="fh5co-sub-lead animate-box">This list includes data generating and data-->
-                            <!--processing centers. </p>-->
+
+                            <!--<h3 >Access and Download Data Sets</h3>-->
+                            <!--&lt;!&ndash;<p class="fh5co-sub-lead animate-box">This list includes data generating and data&ndash;&gt;-->
+                            <!--&lt;!&ndash;processing centers. </p>&ndash;&gt;-->
+
+                    <!--</div>-->
+                <div class="bs-example" style="padding-bottom: 24px;" append-source>
+                    <form class="form-inline" role="form">
+                        <div class="form-group">
+                            <h3 >Access and Download Data Sets</h3>
+
                         </div>
-                    </div>
 
+
+
+                    </form>
+                </div>
 
                     <div class="row">
                         <div class="col-lg-12">
@@ -700,13 +876,35 @@
                         </div>
                         <!-- /.col-lg-12 -->
                     </div>
+
+                <div class="bs-example" style="padding-bottom: 24px;" append-source>
+                    <form class="form-inline" role="form">
+
+                        <h3 >Or Explore  <a href="http://lincsportal.ccs.miami.edu/dcic-portal/" target="_blank" style="color: forestgreen">LINCS Data Portal</a> <a ng-href="http://lincsportal.ccs.miami.edu/dcic-portal/" target="_blank">
+                            <img border="0"  src="images/ldp_logo.png" width="5%" height="5%" style="align-content: center; ">
+                        </a></h3>
+
+
+                    </form>
+                    <hr style="height:1px;border:none;color:#333;background-color:#333;" />
+                </div>
+                <!--<div class="row  ">-->
+
+
+                        <!--<h3 >Or Explore  <a href="http://lincsportal.ccs.miami.edu/dcic-portal/" target="_blank" style="color: forestgreen">LINCS Data Portal</a> <a ng-href="http://lincsportal.ccs.miami.edu/dcic-portal/" target="_blank">-->
+                            <!--<img border="0"  src="images/ldp_logo.png" width="5%" height="5%" style="align-content: center; ">-->
+                        <!--</a></h3>-->
+                        <!--&lt;!&ndash;<p class="fh5co-sub-lead animate-box">This list includes data generating and data&ndash;&gt;-->
+                        <!--&lt;!&ndash;processing centers. </p>&ndash;&gt;-->
+
+                <!--</div>-->
                     <!-- /.row -->
 
                     <!--</div>-->
 
 
                     <!--<div>-->
-                    <div class="container" style="padding-top: 20px;">
+                    <div class="container" style="padding-top: 5px;">
                         <!--<div class="bs-callout bs-callout-primary" ng-show="ctrl.showDToxSdiv">-->
                             <!--<p class="lead"> Mass spectrometry is a sensitive technique that measures the-->
                                 <!--mass-to-charge ratio of ions to identify and quantify molecules in simple and-->
@@ -720,6 +918,7 @@
                             <!---->
                         <!--</div>-->
                         <div class="bs-callout bs-callout-primary" ng-show="ctrl.showDToxSdiv">
+                            <h3 >MS Protein State assay (LINCS DToxS)    </h3>
                             <hr/>
                             <p> Gray nodes represent the query protein set, as captured and/or
                                 quantified by a proteomic assay. Red nodes are kinases that target
@@ -729,7 +928,7 @@
                         </div>
                     </div>
 
-                    <div class="container" style="padding-top: 20px;">
+                    <div class="container" style="padding-top: 5px;">
                         <!--<div class="bs-callout bs-callout-primary" ng-show="ctrl.showSWATHdiv">-->
                             <!--<p class="lead"> SWATH (sequential window acquisition of all theoretical fragment ion-->
                                 <!--spectra) is a new strategy for high throughput, label-free protein quantification.-->
@@ -741,6 +940,7 @@
                             <!---->
                         <!--</div>-->
                         <div class="bs-callout bs-callout-primary" ng-show="ctrl.showSWATHdiv">
+                            <h3 >SWATH-MS protein quantification assay (NeuroLINCS)    </h3>
                             <hr/>
                             <p> Gray nodes represent the query protein set, as captured and/or
                                 quantified by a proteomic assay. Red nodes are kinases that target
@@ -750,7 +950,7 @@
                         </div>
                     </div>
 
-                    <div class="container" style="padding-top: 20px;">
+                    <div class="container" style="padding-top: 5px;">
                         <!--<div class="bs-callout bs-callout-primary" ng-show="ctrl.showRPPAdiv">-->
                             <!--<p class="lead"> Reverse phase protein array (RPPA) is a high-throughput technology that-->
                                 <!--performs protein assays on thousands of samples simultaneously, including tissue and-->
@@ -766,6 +966,7 @@
                         <!--</div>-->
 
                         <div class="bs-callout bs-callout-primary" ng-show="ctrl.showRPPAdiv">
+                            <h3 >RPPA protein state assay (HMS LINCS)  </h3>
                             <hr/>
                             <p> Gray nodes represent the query protein set, as captured and/or
                                 quantified by a proteomic assay. Red nodes are kinases that target
@@ -775,7 +976,7 @@
                         </div>
                     </div>
 
-                    <div class="container" style="padding-top: 20px;">
+                    <div class="container" style="padding-top: 5px;">
                         <!--<div class="bs-callout bs-callout-primary" ng-show="ctrl.showP100div">-->
                             <!--<p class="lead">P100 has been designed to measure the phosphorylation state of cellular-->
                                 <!--systems, using a set of about hundred pospho-peptide probes whose abundance levels-->
@@ -792,6 +993,7 @@
                         <!--</div>-->
 
                         <div class="bs-callout bs-callout-primary" ng-show="ctrl.showP100div">
+                            <h3 >P100 (PCCSE)  </h3>
                             <hr/>
                             <p> Gray nodes represent the query protein set, as captured and/or
                                 quantified by a proteomic assay. Red nodes are kinases that target
@@ -801,7 +1003,7 @@
                         </div>
                     </div>
 
-                    <div class="container" style="padding-top: 20px;">
+                    <div class="container" style="padding-top: 5px;">
                         <!--<div class="bs-callout bs-callout-primary" ng-show="ctrl.showGCPdiv">-->
                             <!--<p class="lead">GCP has been designed to measure the histone modification state, and-->
                                 <!--thus indirectly the chromatin state of cellular-->
@@ -814,6 +1016,7 @@
                             <!--<hr/>-->
                         <!--</div>-->
                         <div class="bs-callout bs-callout-primary" ng-show="ctrl.showGCPdiv">
+                            <h3 >P100 (PCCSE)  </h3>
                             <hr/>
                             <p> Gray nodes represent the query protein set, as captured and/or
                                 quantified by a proteomic assay. Red nodes are kinases that target
@@ -833,7 +1036,7 @@
                     <!--<hr/>-->
                     <!--</div>-->
 
-                    <div class="category-container" ng-show="ctrl.showSVG">
+                    <div class="category-container" ng-show="ctrl.showSVG" style="padding: 5px 0px 5px 0px">
                         <!--<button>-->
                         <!--<a id="download2" href="#">Download SVG-->
                         <!--</a>-->
@@ -854,7 +1057,7 @@
         <footer id="fh5co-footer">
             <div class="container">
 
-                <div class="row row-bottom-padded-md">
+
 
                     <div class="col-md-5 col-sm-6 col-xs-10 animate-box">
                         <div class="fh5co-footer-widget">
@@ -867,7 +1070,7 @@
                     </div>
 
 
-                </div>
+
 
             </div>
 
