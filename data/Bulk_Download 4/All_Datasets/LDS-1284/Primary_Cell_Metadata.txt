@@ -1,0 +1,1 @@
+pc_name	pc_lincs_id	pc_center_specific_id	pc_provider_name	pc_provider_catalog_id	pc_donor_sex	pc_donor_age	pc_donor_ethnicityPromoCell cardiomyocytes Line E	LPC-1004	E	PromoCell	2120301.2	Male	56	Caucasian

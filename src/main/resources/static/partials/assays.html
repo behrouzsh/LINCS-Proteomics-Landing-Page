@@ -1,0 +1,745 @@
+<div id="fh5co-page" ng-init="initNetwork()">
+
+
+    <section id="fh5co-header">
+        <div class="container">
+            <nav role="navigation">
+                <!--<ul class="pull-left left-menu">-->
+                <!--&lt;!&ndash;	<li><a href="about.html">About</a></li> &ndash;&gt;-->
+                <!--<li>-->
+                <!--<a clahref="/lincsproteomics/lincsproteomics">LINCS PROTEOMICS<span>.</span></a>-->
+                <!--</li>-->
+                <!--</ul>-->
+                <h1 id="fh5co-logo"><a href="/lincsproteomics/lincsproteomics">LINCS PROTEOMICS<span>.</span></a></h1>
+                <ul class="pull-right right-menu">
+                    <li><a href="/lincsproteomics/explore">Explore</a></li>
+
+                    <li><a href="/lincsproteomics/download">Download</a></li>
+                    <li class="active"><a href="/lincsproteomics/assays">Assays </a></li>
+                    <li><a href="/lincsproteomics/glossary">Proteomics Glossary</a></li>
+                    <li><a href="/lincsproteomics/about">About</a></li>
+
+                </ul>
+            </nav>
+        </div>
+    </section>
+    <!--This is for showing header when scroll down-->
+    <div class="topMenu">
+        <section id="fh5co-header2">
+            <div class="container">
+                <nav role="navigation">
+                    <!--<ul class="pull-left left-menu">-->
+                    <!--<li>-->
+                    <!---->
+                    <!--</li>-->
+                    <!--</ul>-->
+                    <h3 id="fh5co-logo2"><a href="/lincsproteomics/lincsproteomics">LINCS PROTEOMICS<span>.</span></a>
+                    </h3>
+                    <ul class="pull-right right-menu">
+                        <li><a href="/lincsproteomics/explore">Explore</a></li>
+                        <li><a href="/lincsproteomics/download">Download</a></li>
+                        <li class="active"><a href="/lincsproteomics/assays">Assays </a></li>
+                        <li><a href="/lincsproteomics/glossary">Proteomics Glossary</a></li>
+                        <li><a href="/lincsproteomics/about">About</a></li>
+
+                    </ul>
+                </nav>
+            </div>
+        </section>
+    </div>
+
+
+    <!--
+            <section id="fh5co-header">
+                <div class="container">
+                    <nav role="navigation">
+                        <ul class="pull-left left-menu">
+                            <li class="active"><a href="about.html">About</a></li>
+                            <li><a href="tour.html">Tour</a></li>
+                            <li><a href="pricing.html">Pricing</a></li>
+                        </ul>
+                        <h1 id="fh5co-logo"><a hrindex3.htmlhtml">guide<span>.</span></a></h1>
+                        <ul class="pull-right right-menu">
+                            <li><a href="#">Login</a></li>
+                            <li class="fh5co-cta-btn"><a href="#">Sign up</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </section>-->
+    <!-- #fh5co-header -->
+
+
+    <section id="fh5co-hero" class="no-js-fullheight"
+             style="background-image: url(/lincsproteomics/images/lens-data.png);" data-next="yes">
+        <div class="fh5co-overlay"></div>
+        <div class="container">
+            <div class="fh5co-intro no-js-fullheight">
+                <div class="fh5co-intro-text">
+                    <!--
+                        INFO:
+                        Change the class to 'fh5co-right-position' or 'fh5co-center-position' to change the layout position
+                        Example:
+                        <div class="fh5co-right-position">
+                    -->
+                    <div class="fh5co-center-position">
+                        <!--<h2 class="animate-box" style="font-size: 45px">About Us</h2>-->
+                        <h3 class="animate-box">
+                            LINCS Proteomics Data Portal enables exploration of LINCS proteomic
+                            data and related resources. The portal provides tailored “data-centric”
+                            and “assay (or annotation)-centric” views to facilitate navigation, search,
+                            and interpretation of LINCS proteomics data.
+
+                        </h3>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fh5co-learn-more animate-box">
+            <a href="#" class="scroll-btn">
+                <span class="text">Explore more about LINCS</span>
+                <span class="arrow"><i class="icon-chevron-down"></i></span>
+            </a>
+        </div>
+    </section>
+    <!-- END #fh5co-hero -->
+
+    <!--<section id="fh5co-features-3" class="boredr-top" style="padding: 60px 5px 5px 5px">-->
+    <!--&lt;!&ndash;<div class="container" >&ndash;&gt;-->
+    <!--<div class="row " style="padding: 5px 5px 5px 5px">-->
+    <!--<div class="col-md-6 col-md-offset-3 text-center">-->
+    <!--<h2 class="fh5co-lead animate-box">What is LINCS?</h2>-->
+    <!--<p class="fh5co-sub-lead animate-box">The Library of Network-Based Cellular Signatures-->
+    <!--(<a href="http://www.lincsproject.org/" target="_blank">LINCS</a>)-->
+    <!--Program aims to create a network-based understanding of biology by cataloging changes in-->
+    <!--gene-->
+    <!--expression and other cellular processes that occur when cells are exposed to a variety of-->
+    <!--perturbing agents. </p>-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <!---->
+    <!--</section>-->
+
+    <div class="container-fluid">
+        <div class="biggerTab container-french-stucco splash shadowed">
+
+            <h1 class="page-header" style="margin-top: 35px;margin-bottom: 25px; font-size:22px;">LINCS Proteomics Assays and Analyzed Perturbations</h1>
+
+            <h4 style="align-content: center">Access and
+                <a href="download.html" class="a green">Download</a> Data Sets, Or Explore <a
+                        href="http://lincsportal.ccs.miami.edu/dcic-portal/"
+                        target="_blank"
+                        class="a green">LINCS Data Portal</a> <a
+                        ng-href="http://lincsportal.ccs.miami.edu/dcic-portal/"
+                        target="_blank">
+                    <img border="0" src="/lincsproteomics/images/ldp_logo.png" width="4%" height="4%"
+                         style="align-content: center; ">
+                </a>
+            </h4>
+
+
+            <div style="padding-top: 5px;margin-bottom: 20px;">
+
+
+                <div id="assayViewTab">
+
+                    <ul class="nav nav-tabs nav-tabs3">
+                        <!--<ul class="nav nav-pills nav-stacked col-md-4">-->
+                        <!--<li class="active" style="width:25%;">-->
+                        <!--<a data-toggle="tab" data-target="#about"-->
+                        <!--style="font-size: 14px; font-weight: 500" ng-click="showAboutSubTab()">About</a>-->
+                        <!--</li>-->
+                        <li class="active" style="width:16.6666667%;"><a data-toggle="tab" href="#P100"
+                                                                         ng-click="showNetwork('P100')">P100
+                            (PCCSE)</a>
+                        </li>
+                        <li style="width:16.6666667%;"><a data-toggle="tab" href="#GCP"
+                                                          ng-click="showNetwork('GCP')">GCP
+                            (PCCSE)</a></li>
+                        <li style="width:16.6666667%;"><a data-toggle="tab" href="#DToxS"
+                                                          ng-click="showNetwork('DToxS')">MS
+                            Protein State (DToxS)</a></li>
+
+                        <li style="width:16.6666667%;"><a data-toggle="tab" href="#SWATH"
+                                                          ng-click="showNetwork('SWATH')">SWATH-MS (NeuroLINCS)</a>
+
+                        <li style="width:16.6666667%;"><a data-toggle="tab" href="#Micro"
+                                                          ng-click="showNetwork('Micro')">Microwestern (DToxS)</a></li>
+                        <li style="width:16.3%;"><a data-toggle="tab" href="#RPPA"
+                                                     ng-click="showNetwork('RPPA')">RPPA (HMS
+                            LINCS)</a></li>
+
+                    </ul>
+
+                    <div class="tab-content " style="padding-top: 20px">
+                        <!--<div class="tab-content col-md-8 text-left" style="padding-top: 20px">-->
+                        <!--<div class=tab-content>-->
+                        <!--<div class=tab-pane active id=start>1</div>-->
+                        <div class="tab-pane fade in active" id="P100">
+                            <p class="fh5co-sub-lead "><a href="" ng-click="scrollTo('P100Info')">P100</a>
+                                has been designed to measure the phosphorylation state of
+                                cellular
+                                systems, using a set
+                                of about hundred phospho-peptide probes whose abundance levels
+                                are
+                                measured
+                                using <a href="/lincsproteomics/glossary#Mass-spectrometry" target="_blank">mass spectrometry</a>
+                                techniques. <a href="/lincsproteomics/glossary#P100Info" target="_blank">P100</a> can be classified as a <a
+                                        href="/lincsproteomics/glossary#Targeted-proteomics" target="_blank">'targeted proteomics'</a>
+                                assay that
+                                provides a snapshot of cellular
+                                signaling cascades that involve phosphorylation of the <a
+                                        href="/lincsproteomics/glossary#P100Info" target="_blank">P100</a>
+                                target
+                                sites/peptides.
+                                <a href="https://panoramaweb.org/labkey/project/LINCS/begin.view?"
+                                   target="_blank">More
+                                    ...</a>
+                            </p>
+
+
+                            <div ng-show="ctrl.data_sets_2_compounds_info_show" style="margin-bottom: 40px;padding-bottom: 40px;">
+                                <h1 class="page-header" style="margin-top: 35px;margin-bottom: 25px; font-size:18px;">Analyzed Perturbations</h1>
+
+                                <table ng-table="ctrl.tableP100Compounds" class="table table-bordered table-striped"
+                                   show-filter="true">
+
+                                    <!--<tr ng-repeat="mapping in $data">-->
+
+                                        <!--<td style="font-weight: 400" title="'Perturbations'"-->
+                                            <!--filter="{ Perturbations: 'text'}"-->
+                                            <!--sortable="'Perturbations'">-->
+                                            <!--{{mapping.Perturbations}}-->
+                                        <!--</td>-->
+
+
+
+
+                                <tr ng-repeat="mapping in $data">
+
+                                    <td style="font-weight: 400" title="'Name'" filter="{ Name: 'text'}"
+                                        sortable="'Name'" ng-if="mapping.Name != 'NA' ">
+                                        <a >{{mapping.Name}}</a>
+                                    </td>
+
+                                    <td style="font-weight: 400" title="'Type'" filter="{ Type: 'text'}"
+                                        sortable="'Type'" ng-if="mapping.Type != 'na' ">
+                                        <a >{{mapping.Type.toLowerCase()}}</a>
+                                    </td>
+
+                                    <td style="font-weight: 400" title="'LINCS_ID'" filter="{ SM_LINCS_ID: 'text'}"
+                                        sortable="'SM_LINCS_ID'" ng-if="mapping.SM_LINCS_ID != 'NA' ">
+                                        <a class="tabled"
+                                           ng-href="http://lincsportal.ccs.miami.edu/SmallMolecules/view/{{mapping.SM_LINCS_ID}}"
+                                           target="_blank">
+
+                                            {{mapping.SM_LINCS_ID}}
+                                        </a>
+                                    </td>
+
+
+                                    <!--<td style="font-weight: 400" title="'LINCS_SM'" filter="{ SM_LINCS_ID: 'text'}"-->
+                                        <!--sortable="'SM_LINCS_ID'">-->
+                                        <!--<a class="tabled" href ng-click="showDataForPerturbationGenes(mapping.SM_LINCS_ID)">{{mapping.lincs_cp}}</a>-->
+                                    <!--</td>-->
+
+                          <!---->
+                                    <!--<td style="font-weight: 400" title="'description'" filter="{ symbol: 'text'}"-->
+                                        <!--sortable="'description'">-->
+                                        <!--<a >{{mapping.description}}</a>-->
+                                    <!--</td>-->
+                                    <!--<td style="font-weight: 400" title="'synonyms'" filter="{ symbol: 'text'}"-->
+                                        <!--sortable="'synonyms'">-->
+                                        <!--<a >{{mapping.synonyms}}</a>-->
+                                    <!--</td>-->
+
+
+                                </tr>
+                            </table>
+                        </div>
+
+                        </div>
+                        <div id="GCP" class="tab-pane fade">
+                            <!--<h3>Menu 1</h3>-->
+                            <p class="fh5co-sub-lead ">
+                                <a href="/lincsproteomics/glossary#GCPInfo" target="_blank" >GCP</a> has been designed to measure the histone
+                                modification state, and thus indirectly the chromatin state of
+                                cellular
+                                systems, using a set of about sixty target modified (acetylated,
+                                methylated
+                                etc.)
+                                histone peptides whose abundance levels are measured
+                                using <a href="/lincsproteomics/glossary#Mass-spectrometry" target="_blank" >mass spectrometry</a>.
+                                <a href="https://panoramaweb.org/labkey/project/LINCS/begin.view?"
+                                   target="_blank">More
+                                    ...</a>
+                            </p>
+
+                            <div ng-show="ctrl.data_sets_2_compounds_info_show" style="margin-bottom: 40px;padding-bottom: 40px;">
+                                <h1 class="page-header" style="margin-top: 35px;margin-bottom: 25px; font-size:18px;">Analyzed Perturbations</h1>
+
+                                <table ng-table="ctrl.tableGCPCompounds" class="table table-bordered table-striped"
+                                       show-filter="true">
+                                    <tr ng-repeat="mapping in $data">
+
+                                        <td style="font-weight: 400" title="'Name'" filter="{ Name: 'text'}"
+                                            sortable="'Name'" ng-if="mapping.Name != 'NA' ">
+                                            <a >{{mapping.Name}}</a>
+                                        </td>
+
+                                        <td style="font-weight: 400" title="'Type'" filter="{ Type: 'text'}"
+                                            sortable="'Type'" ng-if="mapping.Type != 'na' ">
+                                            <a >{{mapping.Type.toLowerCase()}}</a>
+                                        </td>
+
+                                        <td style="font-weight: 400" title="'LINCS_ID'" filter="{ SM_LINCS_ID: 'text'}"
+                                            sortable="'SM_LINCS_ID'" ng-if="mapping.SM_LINCS_ID != 'NA' ">
+                                            <a class="tabled"
+                                               ng-href="http://lincsportal.ccs.miami.edu/SmallMolecules/view/{{mapping.SM_LINCS_ID}}"
+                                               target="_blank">
+
+                                                {{mapping.SM_LINCS_ID}}
+                                            </a>
+                                        </td>
+
+
+                                        <!--<td style="font-weight: 400" title="'LINCS_SM'" filter="{ SM_LINCS_ID: 'text'}"-->
+                                        <!--sortable="'SM_LINCS_ID'">-->
+                                        <!--<a class="tabled" href ng-click="showDataForPerturbationGenes(mapping.SM_LINCS_ID)">{{mapping.lincs_cp}}</a>-->
+                                        <!--</td>-->
+
+                                        <!---->
+                                        <!--<td style="font-weight: 400" title="'description'" filter="{ symbol: 'text'}"-->
+                                        <!--sortable="'description'">-->
+                                        <!--<a >{{mapping.description}}</a>-->
+                                        <!--</td>-->
+                                        <!--<td style="font-weight: 400" title="'synonyms'" filter="{ symbol: 'text'}"-->
+                                        <!--sortable="'synonyms'">-->
+                                        <!--<a >{{mapping.synonyms}}</a>-->
+                                        <!--</td>-->
+
+
+                                    </tr>
+                                </table>
+                            </div>
+
+                        </div>
+                        <div id="DToxS" class="tab-pane fade">
+                            <!--<h3>Menu 2</h3>-->
+                            <p class="fh5co-sub-lead ">
+                                <a href="/lincsproteomics/glossary#spectrometry" target="_blank">mass spectrometry</a> is a sensitive technique
+                                that
+                                measures the mass-to-charge ratio of ions to
+                                identify and quantify molecules in simple and
+                                complex mixtures. Samples are loaded into the mass spectrometer
+                                in
+                                liquid,
+                                gas or
+                                dried form
+                                and then vaporized and ionized by the ion source. The charge
+                                that these
+                                molecules
+                                receive allows
+                                the mass spectrometer to accelerate the ions throughout the
+                                remainder of
+                                the
+                                system.
+                                The ions
+                                encounter electric and/or magnetic fields from mass analyzers,
+                                which
+                                deflect
+                                the
+                                paths of individual
+                                ions based on their mass and charge (m/z). Ions that have
+                                successfully
+                                been
+                                deflected by the mass
+                                analyzers then hit the ion detector that registers the number of
+                                ions at
+                                each m/z
+                                value.
+                            </p>
+                            <div ng-show="ctrl.data_sets_2_compounds_info_show" style="margin-bottom: 40px;padding-bottom: 40px;">
+                                <h1 class="page-header" style="margin-top: 35px;margin-bottom: 25px; font-size:18px;">Analyzed Perturbations</h1>
+
+                                <table ng-table="ctrl.tableDToxSCompounds" class="table table-bordered table-striped"
+                                       show-filter="true">
+                                    <tr ng-repeat="mapping in $data">
+
+                                        <td style="font-weight: 400" title="'name'" filter="{ Name: 'text'}"
+                                            sortable="'Name'" ng-if="mapping.Name != 'NA' ">
+                                            <a >{{mapping.Name}}</a>
+                                        </td>
+
+                                        <td style="font-weight: 400" title="'Type'" filter="{ Type: 'text'}"
+                                            sortable="'Type'" ng-if="mapping.Type != 'na' ">
+                                            <a >{{mapping.Type.toLowerCase()}}</a>
+                                        </td>
+
+                                        <td style="font-weight: 400" title="'LINCS_ID'" filter="{ SM_LINCS_ID: 'text'}"
+                                            sortable="'SM_LINCS_ID'" ng-if="mapping.SM_LINCS_ID != 'NA' ">
+                                            <a class="tabled"
+                                               ng-href="http://lincsportal.ccs.miami.edu/SmallMolecules/view/{{mapping.SM_LINCS_ID}}"
+                                               target="_blank">
+
+                                                {{mapping.SM_LINCS_ID}}
+                                            </a>
+                                        </td>
+
+
+                                        <!--<td style="font-weight: 400" title="'LINCS_SM'" filter="{ SM_LINCS_ID: 'text'}"-->
+                                        <!--sortable="'SM_LINCS_ID'">-->
+                                        <!--<a class="tabled" href ng-click="showDataForPerturbationGenes(mapping.SM_LINCS_ID)">{{mapping.lincs_cp}}</a>-->
+                                        <!--</td>-->
+
+                                        <!---->
+                                        <!--<td style="font-weight: 400" title="'description'" filter="{ symbol: 'text'}"-->
+                                        <!--sortable="'description'">-->
+                                        <!--<a >{{mapping.description}}</a>-->
+                                        <!--</td>-->
+                                        <!--<td style="font-weight: 400" title="'synonyms'" filter="{ symbol: 'text'}"-->
+                                        <!--sortable="'synonyms'">-->
+                                        <!--<a >{{mapping.synonyms}}</a>-->
+                                        <!--</td>-->
+
+
+                                    </tr>
+                                </table>
+                            </div>
+
+                        </div>
+                        <div id="Micro" class="tab-pane fade">
+                            <!--<h3>Menu 2</h3>-->
+                            <p class="fh5co-sub-lead ">
+                                The microwestern is a meso-scale quantitative western blotting assay using infrared
+                                fluorescence. Level 1 data are raw signal (background subtracted) from a single "spot"
+                                (band). Level 2 data are Level 1 data divided by a loading control signal (e.g. tubulin).
+                                Level 3 data are Level 2 data divided by a biological internal control (e.g. Level 2 data
+                                corresponding to serum-starved conditions). Level 4 data are averages across Level 3
+                                replicates.
+
+                            </p>
+                            <div ng-show="ctrl.data_sets_2_compounds_info_show" style="margin-bottom: 40px;padding-bottom: 40px;">
+                                <h1 class="page-header" style="margin-top: 35px;margin-bottom: 25px; font-size:18px;">Analyzed Perturbations</h1>
+
+                                <table ng-table="ctrl.tableMicroCompounds" class="table table-bordered table-striped"
+                                       show-filter="true">
+                                    <tr ng-repeat="mapping in $data">
+
+                                        <td style="font-weight: 400" title="'name'" filter="{ Name: 'text'}"
+                                            sortable="'Name'" ng-if="mapping.Name != 'NA' ">
+                                            <a >{{mapping.Name}}</a>
+                                        </td>
+
+                                        <td style="font-weight: 400" title="'Type'" filter="{ Type: 'text'}"
+                                            sortable="'Type'" ng-if="mapping.Type != 'na' ">
+                                            <a >{{mapping.Type.toLowerCase()}}</a>
+                                        </td>
+
+                                        <td style="font-weight: 400" title="'LINCS_ID'" filter="{ SM_LINCS_ID: 'text'}"
+                                            sortable="'SM_LINCS_ID'" ng-if="mapping.SM_LINCS_ID != 'NA' ">
+                                            <a class="tabled"
+                                               ng-href="http://lincsportal.ccs.miami.edu/SmallMolecules/view/{{mapping.SM_LINCS_ID}}"
+                                               target="_blank">
+
+                                                {{mapping.SM_LINCS_ID}}
+                                            </a>
+                                        </td>
+
+
+                                        <!--<td style="font-weight: 400" title="'LINCS_SM'" filter="{ SM_LINCS_ID: 'text'}"-->
+                                        <!--sortable="'SM_LINCS_ID'">-->
+                                        <!--<a class="tabled" href ng-click="showDataForPerturbationGenes(mapping.SM_LINCS_ID)">{{mapping.lincs_cp}}</a>-->
+                                        <!--</td>-->
+
+                                        <!---->
+                                        <!--<td style="font-weight: 400" title="'description'" filter="{ symbol: 'text'}"-->
+                                        <!--sortable="'description'">-->
+                                        <!--<a >{{mapping.description}}</a>-->
+                                        <!--</td>-->
+                                        <!--<td style="font-weight: 400" title="'synonyms'" filter="{ symbol: 'text'}"-->
+                                        <!--sortable="'synonyms'">-->
+                                        <!--<a >{{mapping.synonyms}}</a>-->
+                                        <!--</td>-->
+
+
+                                    </tr>
+                                </table>
+                            </div>
+
+                        </div>
+                        <div id="SWATH" class="tab-pane fade">
+                            <!--<h3>Menu 3</h3>-->
+                            <p class="fh5co-sub-lead ">
+                                SWATH (Sequential Window Acquisition of all THeoretical
+                                fragment ion spectra) is a new strategy for high
+                                throughput, label-free protein quantification. It generates
+                                global,
+                                quantitative
+                                protein maps using
+                                data-independent acquisition of <a
+                                    href="/lincsproteomics/glossary#Collision-induced-dissociation-(CID)" target="_blank" >collision-induced
+                                dissociation
+                                (CID)</a>
+                                spectra
+                                of all
+                                precursor ions.
+                                As a data-independent acquisition (also referred to as MS/MSall)
+                                <a href="/lincsproteomics/glossary#SWATH-MS" target="_blank" >SWATH-MS</a>
+                                has a
+                                greater coverage of
+                                peptide identification compared to classical discovery
+                                approaches.
+                                Using known fingerprints of target peptides comprising precursor
+                                mass,
+                                chromatographic retention
+                                time and <a href="/lincsproteomics/glossary#Multiple-Reaction-Monitoring-(MRM)" target="_blank" >MRM</a> <a
+                                    href="/lincsproteomics/glossary#Transitions" target="_blank" >transitions</a> SWATH protein maps can be
+                                interrogated
+                                for
+                                targeted
+                                quantification of proteins
+                                of interest based on high resolution MRM-like signatures.
+                                SWATH
+                                acquires
+                                all
+                                MRM
+                                transitions of all
+                                precursors and thus does not require tedious assay development
+                                and
+                                allows
+                                for a more
+                                dynamic data
+                                interpretation compared to classical MRM experiments.
+                            </p>
+
+                            <div ng-show="ctrl.data_sets_2_compounds_info_show" style="margin-bottom: 40px;padding-bottom: 40px;">
+                                <h1 class="page-header" style="margin-top: 35px;margin-bottom: 25px; font-size:18px;">Analyzed Perturbations</h1>
+
+                                <table ng-table="ctrl.tableSWATHCompounds" class="table table-bordered table-striped"
+                                       show-filter="true">
+                                    <tr ng-repeat="mapping in $data">
+
+                                        <td style="font-weight: 400" title="'Name'" filter="{ Name: 'text'}"
+                                            sortable="'Name'" ng-if="mapping.Name != 'NA' ">
+                                            <a >{{mapping.Name}}</a>
+                                        </td>
+
+                                        <td style="font-weight: 400" title="'Type'" filter="{ Type: 'text'}"
+                                            sortable="'Type'" ng-if="mapping.Type != 'na' ">
+                                            <a >{{mapping.Type.toLowerCase()}}</a>
+                                        </td>
+
+                                        <td style="font-weight: 400" title="'LINCS_ID'" filter="{ SM_LINCS_ID: 'text'}"
+                                            sortable="'SM_LINCS_ID'" ng-if="mapping.SM_LINCS_ID != 'NA' ">
+                                            <a class="tabled"
+                                               ng-href="http://lincsportal.ccs.miami.edu/SmallMolecules/view/{{mapping.SM_LINCS_ID}}"
+                                               target="_blank">
+
+                                                {{mapping.SM_LINCS_ID}}
+                                            </a>
+                                        </td>
+
+
+                                        <!--<td style="font-weight: 400" title="'LINCS_SM'" filter="{ SM_LINCS_ID: 'text'}"-->
+                                        <!--sortable="'SM_LINCS_ID'">-->
+                                        <!--<a class="tabled" href ng-click="showDataForPerturbationGenes(mapping.SM_LINCS_ID)">{{mapping.lincs_cp}}</a>-->
+                                        <!--</td>-->
+
+                                        <!---->
+                                        <!--<td style="font-weight: 400" title="'description'" filter="{ symbol: 'text'}"-->
+                                        <!--sortable="'description'">-->
+                                        <!--<a >{{mapping.description}}</a>-->
+                                        <!--</td>-->
+                                        <!--<td style="font-weight: 400" title="'synonyms'" filter="{ symbol: 'text'}"-->
+                                        <!--sortable="'synonyms'">-->
+                                        <!--<a >{{mapping.synonyms}}</a>-->
+                                        <!--</td>-->
+
+
+                                    </tr>
+                                </table>
+                            </div>
+
+                        </div>
+                        <div id="RPPA" class="tab-pane fade">
+                            <!--<h3>Menu 3</h3>-->
+
+                            <p class="fh5co-sub-lead ">
+                                Reverse phase protein array (RPPA) is a high-throughput
+                                technology that performs protein assays on
+                                thousands of samples simultaneously, including tissue and cell
+                                lysates,
+                                serum,
+                                plasma or other
+                                body fluids that measure the levels of protein expression, as
+                                well as
+                                protein
+                                modifications such
+                                as phosphorylation. Protein lysates are arrayed as microspots on
+                                nitrocellulized
+                                coated glass slides
+                                and probed with highly specific antibodies that have been
+                                validated for
+                                RPPA. When
+                                specific antibodies
+                                are used, RPPA can generate 1,000 times more data points using
+                                10,000
+                                times
+                                less
+                                sample volume than
+                                an ordinary western blot, enabling researchers to monitor
+                                quantitative
+                                proteomic
+                                responses for various
+                                time-scale and input-dose gradients simultaneously.
+                            </p>
+
+                            <div ng-show="ctrl.data_sets_2_compounds_info_show" style="margin-bottom: 40px;padding-bottom: 40px;">
+                                <h1 class="page-header" style="margin-top: 35px;margin-bottom: 25px; font-size:18px;">Analyzed Perturbations</h1>
+
+                                <table ng-table="ctrl.tableRPPACompounds" class="table table-bordered table-striped"
+                                       show-filter="true">
+                                    <tr ng-repeat="mapping in $data">
+
+                                        <td style="font-weight: 400" title="'Name'" filter="{ Name: 'text'}"
+                                            sortable="'Name'" ng-if="mapping.Name != 'NA' ">
+                                            <a >{{mapping.Name}}</a>
+                                        </td>
+
+                                        <td style="font-weight: 400" title="'Type'" filter="{ Type: 'text'}"
+                                            sortable="'Type'" ng-if="mapping.Type != 'na' ">
+                                            <a >{{mapping.Type.toLowerCase()}}</a>
+                                        </td>
+
+                                        <td style="font-weight: 400" title="'LINCS_ID'" filter="{ SM_LINCS_ID: 'text'}"
+                                            sortable="'SM_LINCS_ID'" ng-if="mapping.SM_LINCS_ID != 'NA' ">
+                                            <a class="tabled"
+                                               ng-href="http://lincsportal.ccs.miami.edu/SmallMolecules/view/{{mapping.SM_LINCS_ID}}"
+                                               target="_blank">
+
+                                                {{mapping.SM_LINCS_ID}}
+                                            </a>
+                                        </td>
+
+
+                                        <!--<td style="font-weight: 400" title="'LINCS_SM'" filter="{ SM_LINCS_ID: 'text'}"-->
+                                        <!--sortable="'SM_LINCS_ID'">-->
+                                        <!--<a class="tabled" href ng-click="showDataForPerturbationGenes(mapping.SM_LINCS_ID)">{{mapping.lincs_cp}}</a>-->
+                                        <!--</td>-->
+
+                                        <!---->
+                                        <!--<td style="font-weight: 400" title="'description'" filter="{ symbol: 'text'}"-->
+                                        <!--sortable="'description'">-->
+                                        <!--<a >{{mapping.description}}</a>-->
+                                        <!--</td>-->
+                                        <!--<td style="font-weight: 400" title="'synonyms'" filter="{ symbol: 'text'}"-->
+                                        <!--sortable="'synonyms'">-->
+                                        <!--<a >{{mapping.synonyms}}</a>-->
+                                        <!--</td>-->
+
+
+                                    </tr>
+                                </table>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </div>
+
+
+        <div style="padding-top: 15px;" ng-show="false">
+            <br/>
+            <hr/>
+
+            <div class="bs-callout bs-callout-primary" ng-show="ctrl.showDToxSdiv">
+                <!--<h3 >MS Protein State assay (LINCS DToxS)    </h3>-->
+
+                <p class="fh5co-sub-lead "> Grey nodes represent the query protein set, as captured
+                    and/or
+                    quantified by a proteomic assay. Red nodes are kinases that target
+                    (phosphorylate) the query protein set, whereas green nodes represent
+                    downstream targets of kinases among the query protein set.
+                </p>
+            </div>
+
+
+            <div class="bs-callout bs-callout-primary" ng-show="ctrl.showSWATHdiv">
+
+
+                <p class="fh5co-sub-lead "> Grey nodes represent the query protein set, as captured
+                    and/or
+                    quantified by a proteomic assay. Red nodes are kinases that target
+                    (phosphorylate) the query protein set, whereas green nodes represent
+                    downstream targets of kinases among the query protein set.
+                </p>
+            </div>
+
+
+            <div class="bs-callout bs-callout-primary" ng-show="ctrl.showRPPAdiv && false">
+
+                <p class="fh5co-sub-lead "> Grey nodes represent the query protein set, as captured
+                    and/or
+                    quantified by a proteomic assay. Red nodes are kinases that target
+                    (phosphorylate) the query protein set, whereas green nodes represent
+                    downstream targets of kinases among the query protein set.
+                </p>
+            </div>
+
+            <div class="bs-callout bs-callout-primary" ng-show="ctrl.showMicrodiv">
+
+
+                <!--<p class="fh5co-sub-lead "> Grey nodes represent the query protein set, as captured-->
+                <!--and/or-->
+                <!--quantified by a proteomic assay. Red nodes are kinases that target-->
+                <!--(phosphorylate) the query protein set, whereas green nodes represent-->
+                <!--downstream targets of kinases among the query protein set.-->
+                <!--</p>-->
+            </div>
+
+            <div class="bs-callout bs-callout-primary" ng-show="ctrl.showP100div">
+
+
+                <p class="fh5co-sub-lead "> Grey nodes represent the query protein set, as captured
+                    and/or
+                    quantified by a proteomic assay. Red nodes are kinases that target
+                    (phosphorylate) the query protein set, whereas green nodes represent
+                    downstream targets of kinases among the query protein set.
+                </p>
+            </div>
+
+
+            <div class="bs-callout bs-callout-primary" ng-show="ctrl.showGCPdiv">
+
+
+                <p class="fh5co-sub-lead "> Grey nodes represent the query protein set, as captured
+                    and/or
+                    quantified by a proteomic assay. Red nodes are kinases that target
+                    (phosphorylate) the query protein set, whereas green nodes represent
+                    downstream targets of kinases among the query protein set.
+                </p>
+            </div>
+
+            <div class="category-container" style="padding: 5px 0px 5px 0px">
+
+
+                <br/>
+                <div ng-show="ctrl.showGCPdiv || ctrl.showP100div|| ctrl.showDToxSdiv|| ctrl.showSWATHdiv"
+                     id="chart"></div>
+
+            </div>
+        </div>
+
+        <div style="padding-top: 15px;"></div>
+        <!--</div>-->
+        <!--<div class=tab-content>-->
+
+
+    </div>
+
+</div>
+

@@ -1,0 +1,17 @@
+Reagent type	LINCS property	DToxS property
+Cell line	CL_LINCS_ID	CL_LINCS_ID	
+Cell line	CL_Center_Batch_ID	CL_DToxS_Batch_ID
+Cell line	CL_Cell_Name
+Small molecule	SM_LINCS_ID	SM_LINCS_ID
+Small molecule	SM_Center_Batch_ID	SM_DToxS_Batch_ID
+Small molecule	SM_Name	SM_Name
+Small molecule	SM_Concentration	concentration_(uM)
+Small molecule	SM_Time_point	Time_point_(hr)
+Antibody	AR_LINCS_ID	Primary_AR_LINCS_ID_1
+Antibody	AR_Center_Batch_ID	Primary_AR_DToxS_Batch_ID_1
+Antibody	AR_LINCS_ID	Primary_AR_LINCS_ID_2
+Antibody	AR_Center_Batch_ID	Primary_AR_DToxS_Batch_ID_2
+Antibody	AR_LINCS_ID	Secondary_AR_LINCS_ID_1
+Antibody	AR_Center_Batch_ID	Secondary_AR_DToxS_Batch_ID_1
+Antibody	AR_LINCS_ID	Secondary_AR_LINCS_ID_2	
+Antibody	AR_Center_Batch_ID	Secondary_AR_DToxS_Batch_ID_2

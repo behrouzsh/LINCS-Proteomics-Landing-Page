@@ -1,0 +1,1560 @@
+<div id="fh5co-page" ng-init="initNetworkApi()">
+
+
+    <section id="fh5co-header">
+        <div class="container">
+            <nav role="navigation">
+                <!--<ul class="pull-left left-menu">-->
+                <!--&lt;!&ndash;	<li><a href="about.html">About</a></li> &ndash;&gt;-->
+                <!--<li>-->
+                <!--<a clahref="/lincsproteomics/lincsproteomics">LINCS PROTEOMICS<span>.</span></a>-->
+                <!--</li>-->
+                <!--</ul>-->
+                <h1 id="fh5co-logo"><a href="/lincsproteomics/lincsproteomics">LINCS PROTEOMICS<span>.</span></a></h1>
+                <ul class="pull-right right-menu">
+                    <li class="active"><a href="/lincsproteomics/explore">Explore</a></li>
+
+                    <li><a href="/lincsproteomics/download">Download</a></li>
+                    <li><a href="/lincsproteomics/assays">Assays </a></li>
+                    <li><a href="/lincsproteomics/glossary">Proteomics Glossary</a></li>
+                    <li><a href="/lincsproteomics/about">About</a></li>
+
+                </ul>
+            </nav>
+        </div>
+    </section>
+    <!--This is for showing header when scroll down-->
+    <div class="topMenu">
+        <section id="fh5co-header2">
+            <div class="container">
+                <nav role="navigation">
+                    <!--<ul class="pull-left left-menu">-->
+                    <!--<li>-->
+                    <!---->
+                    <!--</li>-->
+                    <!--</ul>-->
+                    <h3 id="fh5co-logo2"><a href="/lincsproteomics/lincsproteomics">LINCS PROTEOMICS<span>.</span></a>
+                    </h3>
+                    <ul class="pull-right right-menu">
+                        <li class="active"><a href="/lincsproteomics/explore">Explore</a></li>
+                        <li><a href="/lincsproteomics/download">Download</a></li>
+                        <li><a href="/lincsproteomics/assays">Assays </a></li>
+                        <li><a href="/lincsproteomics/glossary">Proteomics Glossary</a></li>
+                        <li><a href="/lincsproteomics/about">About</a></li>
+
+                    </ul>
+                </nav>
+            </div>
+        </section>
+    </div>
+
+    <!-- #fh5co-header -->
+
+    <section id="fh5co-hero" class="no-js-fullheight"
+             style="background-image: url(/lincsproteomics/images/lens-explore.png);"
+             data-next="yes">
+        <div class="fh5co-overlay"></div>
+        <div class="container">
+            <div class="fh5co-intro no-js-fullheight">
+                <div class="fh5co-intro-text">
+                    <!--
+                        INFO:
+                        Change the class to 'fh5co-right-position' or 'fh5co-center-position' to change the layout position
+                        Example:
+                        <div class="fh5co-right-position">
+                    -->
+                    <div class="fh5co-left-position">
+                        <h2 class="animate-box" style="font-size: 45px">Explore biological entities captured by
+                            LINCS proteomics signatures </h2>
+                        <!--<h3 class="animate-box">Far far away, behind the word mountains, far from the countries-->
+                        <!--Vokalia and Consonantia, there.</h3>-->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fh5co-learn-more animate-box">
+            <a href="#" class="scroll-btn">
+                    <span class="text"
+                          ng-click="ctrl.showSignature = !ctrl.showSignature">What is a Signature View?</span>
+                <span class="arrow"><i class="icon-chevron-down"></i></span>
+            </a>
+        </div>
+    </section>
+    <!-- END #fh5co-hero -->
+
+
+    <!--<section id="fh5co-features-2" style="padding: 5px 0px 5px 0px">-->
+
+    <div class="container-fluid biggestTab" style="padding-bottom: 30px;">
+
+
+        <div class="container">
+
+
+            <!--<div class="container">-->
+            <div class="row ">
+                <div class="col-md-12 text-center">
+                    <!--<h2 class="fh5co-lead animate-box">What is a signature view <a ng-click="ctrl.showSignature = !ctrl.showSignature">?</a></h2>-->
+                    <!---->
+                    <h3 class="fh5co-sub-lead " ng-show="ctrl.showSignature">
+                        Network-based representation of proteomics profiles (or signatures),
+                        as shown above, provides a visual representation of relationships between
+                        quantified peptide/PTM/protein moieties, and other relevant biological
+                        entities or processes. In a bipartite view, the moieties that are being
+                        quantified (or identified) in a proteomic assay are shown as nodes in the
+                        right column. Relevant biological entities or processes with known
+                        (or predicted) relationships with peptide/PTM/protein moieties are
+                        shown as nodes in the left column. Solid edges (with thickness to
+                        represent the strength of experimental evidence if available) represent
+                        known, whereas dashed edges represent predicted relationships. Abundance
+                        levels of peptide/PTM/protein moieties is represented by the color of nodes,
+                        with yellow corresponding to high relative abundance and blue to low relative
+                        abundance, respectively.
+                        Network based
+                        visualization and pathway projections are generated using
+                        <p class="fh5co-sub-lead "><a href="http://eh3.uc.edu/pinet/" target="_blank">
+                            piNet</a> server.
+                        </p>
+                    </h3>
+                </div>
+            </div>
+
+
+        </div>
+
+        <h1 class="page-header" style="margin-top: 35px;margin-bottom: 25px; font-size:22px;">LINCS Proteomics
+            Assays (Data Generating Centers)</h1>
+
+        <h3 style="align-content: center">Explore Signatures More in <a
+                href="http://pinet-server.org"
+                target="_blank"
+                class="a ">PiNET</a> <a
+                ng-href="http://pinet-server.org"
+                target="_blank">
+            <img border="0" src="/lincsproteomics/images/pinet-logo2.png" width="5%" height="5%"
+                 style="align-content: center; ">
+        </a>
+        </h3>
+
+
+        <div id="exploreViewTab">
+
+            <ul class="nav nav-tabs nav-tabs3">
+                <!--<ul class="nav nav-pills nav-stacked col-md-3">-->
+                <li class="active" style="width:16.667%;"><a data-toggle="tab" data-target="#P100"
+                                                             >P100
+                    (PCCSE)</a>
+                </li>
+                <li style="width:16.667%; "><a data-toggle="tab" data-target="#GCP"
+                                               >GCP
+                    (PCCSE)</a></li>
+                <li style="width:16.667%;"><a data-toggle="tab" data-target="#DToxS"
+                                              >MS Protein
+                    (LINCS
+                    DToxS)</a></li>
+                <li style="width:16.667%;"><a data-toggle="tab" data-target="#SWATH"
+                                              >SWATH-MS
+                    (NeuroLINCS)</a>
+                <li style="width:16.667%;"><a data-toggle="tab" data-target="#RPPA" >RPPA
+                    (HMS
+                    LINCS)</a></li>
+                <li style="width:16.3%;"><a data-toggle="tab" data-target="#Micro" >Microwestern
+                    (DToxS)</a></li>
+            </ul>
+
+            <div class="tab-content  tab-content text-left" style="padding-top: 20px">
+                <!--<div class="tab-content col-md-9 text-left" style="padding-top: 20px">-->
+                <!--<div class=tab-content>-->
+                <!--<div class=tab-pane active id=start>1</div>-->
+                <div class="tab-pane fade in active" id="P100">
+                    <!--<h3>HOME</h3>-->
+                    <p style="font-weight: 300">P100 has been designed to measure the phosphorylation state of
+                        cellular
+                        systems, using a set
+                        of about hundred phospho-peptide probes whose abundance levels are
+                        measured
+                        using mass spectrometry
+                        techniques. P100 can be classified as a 'targeted proteomics' assay that
+                        provides a snapshot of cellular
+                        signaling cascades that involve phosphorylation of the P100 target
+                        sites/peptides.
+                        <a href="https://panoramaweb.org/labkey/project/LINCS/begin.view?" target="_blank">More
+                            ...</a>
+                    <hr/>
+                    </p>
+                    <p>
+                        For P100, which quantifies the abundance of about 100 representative
+                        phosphor-peptides using targeted proteomics approach, this view represents
+                        an attempt to capture the underlying phosphor-state of a cell by connecting
+                        the peptide/protein moieties with kinases known (based on PhosphoSitePlus or
+                        iPTMnet), or predicted using sequence similarity, to target the specific PTM
+                        sites within the P100 peptides.
+                    </p>
+
+
+                    <div id="P100ExploreTabs">
+                        <ul class="nav nav-tabs nav-tabs2">
+                            <!--<ul class="nav nav-pills nav-stacked col-md-3">-->
+                            <li class="active" style="width:50%;">
+                                <a data-toggle="tab" data-target="#P100DataView"
+                                   style="font-size: 14px; font-weight: 500" ng-click="selectExploreFirstTab('P100')">Data
+                                    View</a>
+                            </li>
+
+                            <li style="width:50%; ">
+                                <a data-toggle="tab" data-target="#P100AssayView"
+                                   style="font-size: 14px; font-weight: 500" ng-click="selectExploreSecondTab('P100');makePhosphoGraph('None');">Assay
+                                    View </a>
+                            </li>
+
+
+                        </ul>
+
+
+                        <div class="tab-content tab-content2  text-left"
+                             style="padding-top: 20px; padding-bottom:20px; background-color: white;">
+                            <!--<div class="tab-content col-md-9 text-left" style="padding-top: 20px">-->
+                            <!--<div class="tab-content tab-content2" style="background-color: white; ">-->
+                            <div class="tab-pane fade " id="P100AssayView" style="padding-bottom: 30px;">
+                                <div class="container container-lightGrey text-center">
+
+
+                                    <div class="col-md-12" style="padding-top: 20px; padding-bottom: 20px;">
+                                        <div class="row">
+                                            <div class="col-md-10 col-md-offset-1">
+                                                <div class="input-group " style="margin: auto;width:100%">
+
+                                                    <div class="input-group-prepend" style="width: 20%;">
+                                                        <label class="input-group-text"
+                                                               style="height: 40px;width: 100%;">Select
+                                                            Compound</label>
+                                                    </div>
+                                                    <input type="text" style="height: 40px;  width: 60%;"
+                                                           ng-model="ctrl.P100ExploreCompoundInput"
+                                                           bs-options="perturb for perturb in ctrl.data_sets_2_compounds['P100']"
+                                                           placeholder="Trametinib"
+                                                           bs-typeahead>
+                                                    <span class="input-group-btn" style="width: auto">
+                                                        <button class="btn button-submit" style="" type="button"
+                                                                ng-click="updateP100Perturbagen(ctrl.P100ExploreCompoundInput)">Submit
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div ng-if="ctrl.showExploreP100Table">
+
+                                    <h1 class="page-header"
+                                        style="margin-top: 35px;margin-bottom: 25px; font-size:18px;">Selected
+                                        Perturbation: <span
+                                                style="font-weight: bold">{{ctrl.P100ExploreCompoundInput}}</span></h1>
+
+
+                                    <!--<div class="container" ng-show="ctrl.showP100Table">-->
+                                    <table ng-table="ctrl.P100TableParams" class="table table-bordered table-striped"
+                                           show-filter="true" >
+                                        <tr ng-repeat="mapping in $data">
+
+                                            <td style="font-weight: 400" title="'Perturbations'"
+                                                filter="{ Perturbations: 'text'}"
+                                                sortable="'Perturbations'">
+                                                {{mapping.Perturbations}}
+                                            </td>
+                                            <td style="font-weight: 400" title="'Sig_id'" filter="{ Sig_id: 'text'}"
+                                                sortable="'Sig_id'">
+                                                {{mapping.Sig_id}}
+                                            </td>
+                                            <td style="font-weight: 400" title="'Dose'" filter="{ Dose: 'text'}"
+                                                sortable="'Dose'">
+                                                {{mapping.Dose}}
+                                            </td>
+                                            <td style="font-weight: 400" title="'Time'" filter="{ Time: 'text'}"
+                                                sortable="'Time'">
+                                                {{mapping.Time}}
+                                            </td>
+
+                                            <td style="font-weight: 400" title="'Cell_line'"
+                                                filter="{ Cell_line: 'text'}"
+                                                sortable="'Cell_line'">
+                                                {{mapping.Cell_line}}
+                                            </td>
+                                            <td style="font-weight: 400" title="'Type'" filter="{ Type: 'text'}"
+                                                sortable="'Type'">
+                                                {{mapping.Type}}
+                                            </td>
+
+
+                                            <td style="font-weight: 400" title="'Visualize Network'">
+                                                <button ng-click="makePhosphoGraph(mapping.Sig_id)"
+                                                        class="btn button-submit2">
+                                                    Update View
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!--</div>-->
+
+                                </div>
+
+
+                            </div>
+
+                            <div class="tab-pane fade in active" id="P100DataView">
+                                <div class="container splash2" style="width: 100%;">
+
+                                    <div class=" col-sm-12 col-md-12  col-lg-12">
+                                        <div class="row " style="width: 100%;">
+
+                                            <div class=" col-sm-5 col-md-5  col-lg-5">
+                                                <div class=" splash ">
+
+                                                    <div style="float:left;">
+
+                                                        <a href="#" ng-click="showPart(1)"
+                                                           ng-class="{'green':showPartFlag == 1}">
+                                                            Select Perturbation</a>
+                                                    </div>
+
+                                                    <div style="float:right;">
+                                                        <span ng-class="{'green':showPartFlag == 1}" style="size: 80px; font-weight: 800">
+
+                                                            <i class="fa fa-angle-right"
+                                                               style="font-size:16px"></i>
+
+                                                            <!--<i class="icon-angle-right"></i>-->
+                                                        </span>
+
+                                                    </div>
+                                                    <br/>
+                                                    <hr />
+
+                                                    <div style="float:left;">
+
+                                                        <a href="#" ng-click="showPart(2)"
+                                                           ng-class="{'green':showPartFlag == 2}">
+                                                            Compare Perturbations</a>
+                                                    </div>
+
+                                                    <div style="float:right;">
+                                                        <span ng-class="{'green':showPartFlag == 2}">
+                                                            <i class="icon-angle-right "></i>
+                                                        </span>
+                                                    </div>
+
+                                                    <br/>
+                                                    <hr />
+
+                                                    <div style="float:left;">
+
+                                                        <a href="#" ng-click="showPart(3)"
+                                                           ng-class="{'green':showPartFlag == 3}">
+                                                            All Perturbations</a>
+                                                    </div>
+
+                                                    <div style="float:right;">
+                                                        <span ng-class="{'green':showPartFlag == 3}">
+                                                            <i class="icon-angle-right "></i>
+                                                        </span>
+                                                    </div>
+
+                                                    <!--<br/>-->
+                                                    <!--<hr/>-->
+
+                                                    <!--<div style="float:left;">-->
+
+                                                    <!--<a href="#" ng-click="showPart(4)" ng-class="{'green':showPartFlag == 4}">Information About LINCS-->
+                                                    <!--Proteomics</a>-->
+                                                    <!--</div>-->
+
+                                                    <!--<div style="float:right;">-->
+                                                    <!--<span ng-class="{'green':showPartFlag == 4}">-->
+                                                    <!--<i class="icon-angle-right "></i>-->
+                                                    <!--</span>-->
+                                                    <!--</div>-->
+
+
+                                                </div>
+                                            </div>
+                                            <!--Chemical Perturbations by SMILES-->
+                                            <!--Genetic Perturbations by Gene Names-->
+                                            <!--LINCS and LINCS Proteomics-->
+
+                                            <div class="col-sm-7 col-md-7 col-lg-7 ">
+                                                <div class="vcenter">
+
+                                                    <!--<div class="col-sm-9 col-md-9 col-lg-9" style="margin-top: 10px; margin-bottom: 10px;">-->
+                                                    <!--<div class="row vertical-align-class">-->
+                                                    <!--<div class="col-md-1 col-md-offset-2">-->
+
+                                                    <div ng-if="showPartFlag == 1">
+
+
+                                                        <!--<form>-->
+                                                        <!--<div class="form-group">-->
+
+                                                        <!--<input type="text" style="height: 40px; width: 100%"-->
+                                                        <!--ng-model="ctrl.selectedPerturbation"-->
+                                                        <!--bs-options="perturb for perturb in all_perturbations" placeholder="TRAMETINIB"-->
+                                                        <!--bs-typeahead>-->
+                                                        <!--</div>-->
+
+                                                        <!--</form>-->
+                                                        <div style="float:left;">
+
+                                                            <a >
+                                                                Selected
+                                                                Perturbation: <span
+                                                                    style="font-weight: bold">{{ctrl.P100ExploreCompoundInput}}</span></a>
+                                                        </div>
+
+                                                        <div class="input-group " style="margin: auto;width:100%">
+
+                                                            <!--<div class="input-group-prepend" style="width: 20%;">-->
+                                                            <!--<label class="input-group-text"-->
+                                                            <!--style="height: 40px;width: 100%;">Select-->
+                                                            <!--Perturbation</label>-->
+                                                            <!--</div>-->
+                                                            <input type="text" style="height: 40px;  width: 50%;"
+                                                                   ng-model="ctrl.P100ExploreCompoundInput"
+                                                                   bs-options="perturb for perturb in ctrl.data_sets_2_compounds['P100']"
+                                                                   placeholder="Trametinib"
+                                                                   bs-typeahead>
+                                                            <span class="input-group-btn" style="width: auto">
+                                                                    <button class="btn button-submit" style="" type="button"
+                                                                            ng-click="updateP100Perturbagen(ctrl.P100ExploreCompoundInput)">Change Perturbation
+                                                                    </button>
+                                                                </span>
+                                                        </div>
+
+
+
+                                                        <button class="btn button-submit2"
+                                                                style="width: 100%;  margin-top: 20px;" type="button"
+                                                                ng-click="ctrl.runClusterGramSliced('P100',ctrl.P100ExploreCompoundInput)">Generate Heatmap
+                                                            <i ng-show="ctrl.clusterWait" class="fa fa-refresh fa-spin"
+                                                               style="font-size:14px"></i>
+                                                        </button>
+
+
+                                                        <!--<div class="input-group">-->
+                                                        <!--<input type="text" class="form-control"  style="height: 40px;" ng-model="ctrl.selectedPerturbation"-->
+                                                        <!--bs-options="perturb for perturb in perturbation" placeholder="Trametinib"-->
+                                                        <!--bs-typeahead>-->
+                                                        <!--<div class="input-group-append">-->
+                                                        <!--<button class="btn button-submit" ng-click="showDataForPerturbation(ctrl.selectedPerturbation)" type="button">Submit</button>-->
+                                                        <!---->
+                                                        <!--</div>-->
+                                                        <!--</div>-->
+
+
+                                                        <!--<div class="input-group ">-->
+                                                        <!--<input type="text" style="height: 40px;  "-->
+                                                        <!--ng-model="ctrl.selectedPerturbation"-->
+                                                        <!--bs-options="perturb for perturb in perturbation" placeholder="Trametinib"-->
+                                                        <!--bs-typeahead>-->
+                                                        <!--<div class="input-group-append">-->
+                                                        <!---->
+                                                        <!--<button class="btn button-submit" style="" type="button"-->
+                                                        <!--ng-click="showDataForPerturbation(ctrl.selectedPerturbation)">Submit-->
+                                                        <!--</button>-->
+
+                                                        <!--</div>-->
+                                                        <!--</div>-->
+                                                    </div>
+
+                                                    <!--<div class=" text-center">-->
+                                                    <!--<h3 style="font-weight: 600; font-size: 1.1em;  padding-top: 20px;padding-bottom: 20px;margin:0px;">-->
+                                                    <!--Or Input The Smile of a Component to Retrieve Similar LINCS Compounds</h3>-->
+                                                    <!--</div>-->
+
+
+                                                    <div class="vcenter input-group " ng-if="showPartFlag == 2">
+                                                        <div style="float:left;">
+
+                                                            <a >
+                                                                Selected
+                                                                Perturbations for Comparison </a>
+                                                        </div>
+
+
+
+                                                        <div class="input-group " style="margin: auto;width:100%">
+
+                                                            <!--<div class="input-group-prepend" style="width: 20%;">-->
+                                                            <!--<label class="input-group-text"-->
+                                                            <!--style="height: 40px;width: 100%;">Select-->
+                                                            <!--Perturbation</label>-->
+                                                            <!--</div>-->
+                                                            <input type="text" style="height: 40px;  width: 50%;"
+                                                                   ng-model="ctrl.P100ExploreCompoundInput"
+                                                                   bs-options="perturb for perturb in ctrl.data_sets_2_compounds['P100']"
+                                                                   placeholder="Trametinib"
+                                                                   bs-typeahead>
+                                                            <span class="input-group-btn" style="width: auto">
+                                                                    <button class="btn button-submit" style="" type="button"
+                                                                            ng-click="addToP100Cps(ctrl.P100ExploreCompoundInput)">Add Perturbation
+                                                                    </button>
+                                                                </span>
+                                                        </div>
+                                                        <div ng-repeat="x in ctrl.P100ExploreCompounds">
+                                                            <div class="onerow">
+                                                                <button class="btn button-cp2"  ng-click="removeFromP100Cps(x)" style="float: left;">{{x}}</button>
+
+                                                                <!--<h4 class="onerow" ng-if="compound_info[x]['SM_PubChem_CID']">PubChem_ID: <a-->
+                                                                <!--ng-href="https://pubchem.ncbi.nlm.nih.gov/compound/{{compound_info[x]['SM_PubChem_CID']}}"-->
+                                                                <!--target="_blank" class="clickable">{{compound_info[x]['SM_PubChem_CID']}}</a>-->
+                                                                <!--&nbsp;|&nbsp;-->
+                                                                <!--</h4>-->
+                                                                <!--<h4 class="onerow" ng-if="ctrl.selectedCpInfo['MOLECULAR_FORMULA']">Weight: <a-->
+                                                                <!--&gt;{{ctrl.selectedCpInfo['MOLECULAR_FORMULA']}} </a>-->
+                                                                <!--&nbsp;|&nbsp;-->
+                                                                <!--</h4>-->
+
+                                                                <h5 class="onerow" ng-if="compound_info[x]['SM_LINCS_ID']">SM_LINCS_ID: <a
+                                                                        ng-href="http://lincsportal.ccs.miami.edu/SmallMolecules/view/{{compound_info[x]['SM_LINCS_ID']}}"
+                                                                        target="_blank" class="clickable">{{compound_info[x]['SM_LINCS_ID']}}</a>
+                                                                    &nbsp;|&nbsp;
+                                                                </h5>
+                                                                <h5 class="onerow" ng-if="compound_info[x]['Type']">Type: <a
+                                                                >{{compound_info[x]['Type']}}</a>
+
+                                                                </h5>
+                                                            </div>
+                                                        </div>
+
+
+
+                                                        <!--<button class="btn button-cp2" ng-repeat="x in ctrl.GCPExploreCompounds" ng-click="removeFromGCPCps(x)" style="float: left;">{{x}}</button>-->
+
+
+                                                        <button class="btn button-submit2"
+                                                                style="width: 100%;  margin-top: 20px;" type="button"
+                                                                ng-click="ctrl.runClusterGramSliced('P100',ctrl.P100ExploreCompounds)">Generate Heatmap
+                                                            <i ng-show="ctrl.clusterWait" class="fa fa-refresh fa-spin"
+                                                               style="font-size:14px"></i>
+                                                        </button>
+                                                        <!--<button class="btn button-submit" style="width: 100%; border-radius: 0;"-->
+                                                        <!--ng-click="reportSimilarLINCSCompounds(ctrl.selectedSmile)" type="button">Submit-->
+                                                        <!--<i ng-show="ctrl.showSmileSvgSpinner" class="fa fa-refresh fa-spin"-->
+                                                        <!--style="font-size:14px"></i></button>-->
+
+                                                        <!--<div style="margin-top: 10px; border-color: #9d9d9d; box-shadow: 0px 0px 5px  #888888;" ng-bind-html="cpSvg4"></div>-->
+
+
+                                                        <!--<input type="text" style="height: 40px;  width: 80%;"-->
+                                                        <!--ng-model="ctrl.selectedSmile">-->
+                                                        <!--&lt;!&ndash;placeholder="CCCCC1C(=O)N(N(C1=O)C1=CC=CC=C1)C1=CC=CC=C1"&ndash;&gt;-->
+
+                                                        <!--<span class="input-group-btn" style="width: auto;">-->
+                                                        <!--<button class="btn button-submit" style="" type="button"-->
+                                                        <!--ng-click="reportSimilarLINCSCompounds(ctrl.selectedSmile)">Submit-->
+                                                        <!--<i ng-show="ctrl.showSmileSvgSpinner" class="fa fa-refresh fa-spin"-->
+                                                        <!--style="font-size:14px"></i>-->
+                                                        <!--</button>-->
+                                                        <!---->
+                                                        <!--</span>-->
+                                                    </div>
+
+                                                    <div class="vcenter input-group " ng-if="showPartFlag == 3">
+
+
+                                                        <!--<form>-->
+                                                        <!--<div class="form-group">-->
+
+                                                        <!--<input type="text" style="height: 40px; width: 100%"-->
+                                                        <!--ng-model="ctrl.selectedGeneAsInput">-->
+                                                        <!--</div>-->
+
+                                                        <!--</form>-->
+                                                        <div style="float:left;">
+
+                                                            <a >
+                                                                Generate Heatmap for All Perturbations </a>
+                                                        </div>
+
+                                                        <button class="btn button-submit2" style="width: 100%; margin-top: 20px;" type="button"
+                                                                ng-click="ctrl.runClusterGram('P100')">Generate Assay Heatmap
+                                                            <i ng-show="ctrl.clusterWait" class="fa fa-refresh fa-spin"
+                                                               style="font-size:14px"></i>
+                                                        </button>
+
+
+                                                        <!--<button class="btn button-submit" style="width: 100%; border-radius: 0;"-->
+                                                        <!--ng-click="reportSimilarLINCSGenes(ctrl.selectedGeneAsInput)" type="button">-->
+                                                        <!--Submit-->
+                                                        <!--<i ng-show="ctrl.showGeneSpinner" class="fa fa-refresh fa-spin"-->
+                                                        <!--style="font-size:14px"></i></button>-->
+
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div id="GCP" class="tab-pane fade">
+                    <!--<h3>Menu 1</h3>-->
+                    <p style="font-weight: 300">
+                        GCP has been designed to measure the histone
+                        modification state, and thus indirectly the chromatin state of cellular
+                        systems, using a set of about sixty target modified (acetylated,
+                        methylated
+                        etc.)
+                        histone peptides whose abundance levels are measured
+                        using mass spectrometry.
+                        <a href="https://panoramaweb.org/labkey/project/LINCS/begin.view?" target="_blank">More
+                            ...</a>
+                    <hr/>
+                    </p>
+                    <p>
+                        In the figure, grey nodes represent GCP peptide probes mapped into
+                        proteins, with both the protein and the phosphorylation / acetillation site indicated,
+                        e.g., JUN[pS@73] for a GCP probe that includes Ser73 residue of the JUN
+                        kinase as target site. The following nodes are associated with these effects, blue:
+                        acetyltransferases, red: methyltransferases, yellow: deacetylases, green: demethylases,
+                        orange: kinases, purple : phosphatases.
+                    </p>
+
+
+                    <div id="GCPExploreTabs">
+                        <ul class="nav nav-tabs nav-tabs2">
+                            <!--<ul class="nav nav-pills nav-stacked col-md-3">-->
+                            <li class="active" style="width:50%;">
+                                <a data-toggle="tab" data-target="#GCPDataView"
+                                   style="font-size: 14px; font-weight: 500" ng-click="selectExploreFirstTab('GCP')">Data
+                                    View</a>
+                            </li>
+                            <li style="width:50%; ">
+                                <a data-toggle="tab" data-target="#GCPAssayView"
+                                   style="font-size: 14px; font-weight: 500" ng-click="selectExploreSecondTab('GCP');makeGCPGraph('None');">Assay
+                                    View </a>
+                            </li>
+
+
+                        </ul>
+
+
+                        <div class="tab-content tab-content2  text-left"
+                             style="padding-top: 20px; padding-bottom:20px; background-color: white;">
+                            <!--<div class="tab-content col-md-9 text-left" style="padding-top: 20px">-->
+                            <!--<div class="tab-content tab-content2" style="background-color: white; ">-->
+                            <div class="tab-pane fade " id="GCPAssayView" style="padding-bottom: 30px;">
+                                <div class="container container-lightGrey text-center">
+
+
+                                    <div class="" style="padding-top: 20px; padding-bottom: 20px;">
+                                        <div class="row">
+                                            <div class="col-md-10 col-md-offset-1">
+                                                <div class="input-group " style="margin: auto;width:100%">
+
+                                                    <div class="input-group-prepend" style="width: 20%;">
+                                                        <label class="input-group-text"
+                                                               style="height: 40px;width: 100%;">Select
+                                                            Compound</label>
+                                                    </div>
+                                                    <input type="text" style="height: 40px;  width: 60%;"
+                                                           ng-model="ctrl.GCPExploreCompoundInput"
+                                                           bs-options="perturb for perturb in ctrl.data_sets_2_compounds['GCP']"
+                                                           placeholder="Trametinib"
+                                                           bs-typeahead>
+                                                    <span class="input-group-btn" style="width: auto">
+                                                        <button class="btn button-submit" style="" type="button"
+                                                                ng-click="updateGCPPerturbagen(ctrl.GCPExploreCompoundInput)">Submit
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div ng-if="ctrl.showExploreGCPTable">
+
+                                    <h1 class="page-header"
+                                        style="margin-top: 35px;margin-bottom: 25px; font-size:18px;">Selected
+                                        Perturbation: <span
+                                                style="font-weight: bold">{{ctrl.GCPExploreCompoundInput}}</span></h1>
+
+
+                                    <!--<div class="container" ng-show="ctrl.showP100Table">-->
+                                    <table ng-table="ctrl.GCPTableParams" class="table table-bordered table-striped"
+                                           show-filter="true" >
+                                        <tr ng-repeat="mapping in $data">
+
+                                            <td style="font-weight: 400" title="'Perturbations'"
+                                                filter="{ Perturbations: 'text'}"
+                                                sortable="'Perturbations'">
+                                                {{mapping.Perturbations}}
+                                            </td>
+                                            <td style="font-weight: 400" title="'Sig_id'" filter="{ Sig_id: 'text'}"
+                                                sortable="'Sig_id'">
+                                                {{mapping.Sig_id}}
+                                            </td>
+                                            <td style="font-weight: 400" title="'Dose'" filter="{ Dose: 'text'}"
+                                                sortable="'Dose'">
+                                                {{mapping.Dose}}
+                                            </td>
+                                            <td style="font-weight: 400" title="'Time'" filter="{ Time: 'text'}"
+                                                sortable="'Time'">
+                                                {{mapping.Time}}
+                                            </td>
+
+                                            <td style="font-weight: 400" title="'Cell_line'"
+                                                filter="{ Cell_line: 'text'}"
+                                                sortable="'Cell_line'">
+                                                {{mapping.Cell_line}}
+                                            </td>
+                                            <td style="font-weight: 400" title="'Type'" filter="{ Type: 'text'}"
+                                                sortable="'Type'">
+                                                {{mapping.Type}}
+                                            </td>
+
+
+                                            <td style="font-weight: 400" title="'Visualize Network'">
+                                                <button ng-click="makeGCPGraph(mapping.Sig_id)"
+                                                        class="btn button-submit2">
+                                                    Update View
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!--</div>-->
+
+                                </div>
+
+
+
+
+
+
+
+
+
+
+                            </div>
+
+                            <div class="tab-pane fade in active" id="GCPDataView">
+                                <div class="container splash2" style="width: 100%;">
+
+                                    <div class=" col-sm-12 col-md-12  col-lg-12">
+                                        <div class="row " style="width: 100%;">
+
+                                            <div class=" col-sm-5 col-md-5  col-lg-5">
+                                                <div class=" splash ">
+
+                                                    <div style="float:left;">
+
+                                                        <a href="#" ng-click="showPart(1)"
+                                                           ng-class="{'green':showPartFlag == 1}">
+                                                            Select Perturbation</a>
+                                                    </div>
+
+                                                    <div style="float:right;">
+                                                        <span ng-class="{'green':showPartFlag == 1}" style="size: 80px; font-weight: 800">
+
+                                                            <i class="fa fa-angle-right"
+                                                               style="font-size:16px"></i>
+
+                                                            <!--<i class="icon-angle-right"></i>-->
+                                                        </span>
+
+                                                    </div>
+                                                    <br/>
+                                                    <hr />
+
+                                                    <div style="float:left;">
+
+                                                        <a href="#" ng-click="showPart(2)"
+                                                           ng-class="{'green':showPartFlag == 2}">
+                                                            Compare Perturbations</a>
+                                                    </div>
+
+                                                    <div style="float:right;">
+                                                        <span ng-class="{'green':showPartFlag == 2}">
+                                                            <i class="icon-angle-right "></i>
+                                                        </span>
+                                                    </div>
+
+                                                    <br/>
+                                                    <hr />
+
+                                                    <div style="float:left;">
+
+                                                        <a href="#" ng-click="showPart(3)"
+                                                           ng-class="{'green':showPartFlag == 3}">
+                                                            All Perturbations</a>
+                                                    </div>
+
+                                                    <div style="float:right;">
+                                                        <span ng-class="{'green':showPartFlag == 3}">
+                                                            <i class="icon-angle-right "></i>
+                                                        </span>
+                                                    </div>
+
+                                                    <!--<br/>-->
+                                                    <!--<hr/>-->
+
+                                                    <!--<div style="float:left;">-->
+
+                                                    <!--<a href="#" ng-click="showPart(4)" ng-class="{'green':showPartFlag == 4}">Information About LINCS-->
+                                                    <!--Proteomics</a>-->
+                                                    <!--</div>-->
+
+                                                    <!--<div style="float:right;">-->
+                                                    <!--<span ng-class="{'green':showPartFlag == 4}">-->
+                                                    <!--<i class="icon-angle-right "></i>-->
+                                                    <!--</span>-->
+                                                    <!--</div>-->
+
+
+                                                </div>
+                                            </div>
+                                            <!--Chemical Perturbations by SMILES-->
+                                            <!--Genetic Perturbations by Gene Names-->
+                                            <!--LINCS and LINCS Proteomics-->
+
+                                            <div class="col-sm-7 col-md-7 col-lg-7 ">
+                                                <div class="vcenter">
+
+                                                    <!--<div class="col-sm-9 col-md-9 col-lg-9" style="margin-top: 10px; margin-bottom: 10px;">-->
+                                                    <!--<div class="row vertical-align-class">-->
+                                                    <!--<div class="col-md-1 col-md-offset-2">-->
+
+                                                    <div ng-if="showPartFlag == 1">
+
+
+                                                        <!--<form>-->
+                                                        <!--<div class="form-group">-->
+
+                                                        <!--<input type="text" style="height: 40px; width: 100%"-->
+                                                        <!--ng-model="ctrl.selectedPerturbation"-->
+                                                        <!--bs-options="perturb for perturb in all_perturbations" placeholder="TRAMETINIB"-->
+                                                        <!--bs-typeahead>-->
+                                                        <!--</div>-->
+
+                                                        <!--</form>-->
+                                                        <div style="float:left;">
+
+                                                            <a >
+                                                                Selected
+                                                                Perturbation: <span
+                                                                    style="font-weight: bold">{{ctrl.GCPExploreCompoundInput}}</span></a>
+                                                        </div>
+
+                                                            <div class="input-group " style="margin: auto;width:100%">
+
+                                                                <!--<div class="input-group-prepend" style="width: 20%;">-->
+                                                                    <!--<label class="input-group-text"-->
+                                                                           <!--style="height: 40px;width: 100%;">Select-->
+                                                                        <!--Perturbation</label>-->
+                                                                <!--</div>-->
+                                                                <input type="text" style="height: 40px;  width: 50%;"
+                                                                       ng-model="ctrl.GCPExploreCompoundInput"
+                                                                       bs-options="perturb for perturb in ctrl.data_sets_2_compounds['GCP']"
+                                                                       placeholder="Trametinib"
+                                                                       bs-typeahead>
+                                                                <span class="input-group-btn" style="width: auto">
+                                                                    <button class="btn button-submit" style="" type="button"
+                                                                            ng-click="updateGCPPerturbagen(ctrl.GCPExploreCompoundInput)">Change Perturbation
+                                                                    </button>
+                                                                </span>
+                                                            </div>
+
+
+
+                                                        <button class="btn button-submit2"
+                                                                style="width: 100%;  margin-top: 20px;" type="button"
+                                                                ng-click="ctrl.runClusterGramSliced('GCP',ctrl.GCPExploreCompoundInput)">Generate Heatmap
+                                                            <i ng-show="ctrl.clusterWait" class="fa fa-refresh fa-spin"
+                                                               style="font-size:14px"></i>
+                                                        </button>
+
+
+                                                        <!--<div class="input-group">-->
+                                                        <!--<input type="text" class="form-control"  style="height: 40px;" ng-model="ctrl.selectedPerturbation"-->
+                                                        <!--bs-options="perturb for perturb in perturbation" placeholder="Trametinib"-->
+                                                        <!--bs-typeahead>-->
+                                                        <!--<div class="input-group-append">-->
+                                                        <!--<button class="btn button-submit" ng-click="showDataForPerturbation(ctrl.selectedPerturbation)" type="button">Submit</button>-->
+                                                        <!---->
+                                                        <!--</div>-->
+                                                        <!--</div>-->
+
+
+                                                        <!--<div class="input-group ">-->
+                                                        <!--<input type="text" style="height: 40px;  "-->
+                                                        <!--ng-model="ctrl.selectedPerturbation"-->
+                                                        <!--bs-options="perturb for perturb in perturbation" placeholder="Trametinib"-->
+                                                        <!--bs-typeahead>-->
+                                                        <!--<div class="input-group-append">-->
+                                                        <!---->
+                                                        <!--<button class="btn button-submit" style="" type="button"-->
+                                                        <!--ng-click="showDataForPerturbation(ctrl.selectedPerturbation)">Submit-->
+                                                        <!--</button>-->
+
+                                                        <!--</div>-->
+                                                        <!--</div>-->
+                                                    </div>
+
+                                                    <!--<div class=" text-center">-->
+                                                    <!--<h3 style="font-weight: 600; font-size: 1.1em;  padding-top: 20px;padding-bottom: 20px;margin:0px;">-->
+                                                    <!--Or Input The Smile of a Component to Retrieve Similar LINCS Compounds</h3>-->
+                                                    <!--</div>-->
+
+
+                                                    <div class="vcenter input-group " ng-if="showPartFlag == 2">
+                                                        <div style="float:left;">
+
+                                                            <a >
+                                                                Selected
+                                                                Perturbations for Comparison </a>
+                                                        </div>
+
+
+
+                                                        <div class="input-group " style="margin: auto;width:100%">
+
+                                                            <!--<div class="input-group-prepend" style="width: 20%;">-->
+                                                                <!--<label class="input-group-text"-->
+                                                                       <!--style="height: 40px;width: 100%;">Select-->
+                                                                    <!--Perturbation</label>-->
+                                                            <!--</div>-->
+                                                            <input type="text" style="height: 40px;  width: 50%;"
+                                                                   ng-model="ctrl.GCPExploreCompoundInput"
+                                                                   bs-options="perturb for perturb in ctrl.data_sets_2_compounds['GCP']"
+                                                                   placeholder="Trametinib"
+                                                                   bs-typeahead>
+                                                            <span class="input-group-btn" style="width: auto">
+                                                                    <button class="btn button-submit" style="" type="button"
+                                                                            ng-click="addToGCPCps(ctrl.GCPExploreCompoundInput)">Add Perturbation
+                                                                    </button>
+                                                                </span>
+                                                        </div>
+                                                        <div ng-repeat="x in ctrl.GCPExploreCompounds">
+                                                            <div class="onerow">
+                                                                <button class="btn button-cp2"  ng-click="removeFromGCPCps(x)" style="float: left;">{{x}}</button>
+
+                                                                <!--<h4 class="onerow" ng-if="compound_info[x]['SM_PubChem_CID']">PubChem_ID: <a-->
+                                                                        <!--ng-href="https://pubchem.ncbi.nlm.nih.gov/compound/{{compound_info[x]['SM_PubChem_CID']}}"-->
+                                                                        <!--target="_blank" class="clickable">{{compound_info[x]['SM_PubChem_CID']}}</a>-->
+                                                                    <!--&nbsp;|&nbsp;-->
+                                                                <!--</h4>-->
+                                                                <!--<h4 class="onerow" ng-if="ctrl.selectedCpInfo['MOLECULAR_FORMULA']">Weight: <a-->
+                                                                <!--&gt;{{ctrl.selectedCpInfo['MOLECULAR_FORMULA']}} </a>-->
+                                                                    <!--&nbsp;|&nbsp;-->
+                                                                <!--</h4>-->
+
+                                                                <h5 class="onerow" ng-if="compound_info[x]['SM_LINCS_ID']">SM_LINCS_ID: <a
+                                                                        ng-href="http://lincsportal.ccs.miami.edu/SmallMolecules/view/{{compound_info[x]['SM_LINCS_ID']}}"
+                                                                        target="_blank" class="clickable">{{compound_info[x]['SM_LINCS_ID']}}</a>
+                                                                    &nbsp;|&nbsp;
+                                                                </h5>
+                                                                <h5 class="onerow" ng-if="compound_info[x]['Type']">Type: <a
+                                                                >{{compound_info[x]['Type']}}</a>
+
+                                                                </h5>
+                                                            </div>
+                                                        </div>
+
+
+
+                                                        <!--<button class="btn button-cp2" ng-repeat="x in ctrl.GCPExploreCompounds" ng-click="removeFromGCPCps(x)" style="float: left;">{{x}}</button>-->
+
+
+                                                        <button class="btn button-submit2"
+                                                                style="width: 100%;  margin-top: 20px;" type="button"
+                                                                ng-click="ctrl.runClusterGramSliced('GCP',ctrl.GCPExploreCompounds)">Generate Heatmap
+                                                            <i ng-show="ctrl.clusterWait" class="fa fa-refresh fa-spin"
+                                                               style="font-size:14px"></i>
+                                                        </button>
+                                                        <!--<button class="btn button-submit" style="width: 100%; border-radius: 0;"-->
+                                                        <!--ng-click="reportSimilarLINCSCompounds(ctrl.selectedSmile)" type="button">Submit-->
+                                                        <!--<i ng-show="ctrl.showSmileSvgSpinner" class="fa fa-refresh fa-spin"-->
+                                                        <!--style="font-size:14px"></i></button>-->
+
+                                                        <!--<div style="margin-top: 10px; border-color: #9d9d9d; box-shadow: 0px 0px 5px  #888888;" ng-bind-html="cpSvg4"></div>-->
+
+
+                                                        <!--<input type="text" style="height: 40px;  width: 80%;"-->
+                                                        <!--ng-model="ctrl.selectedSmile">-->
+                                                        <!--&lt;!&ndash;placeholder="CCCCC1C(=O)N(N(C1=O)C1=CC=CC=C1)C1=CC=CC=C1"&ndash;&gt;-->
+
+                                                        <!--<span class="input-group-btn" style="width: auto;">-->
+                                                        <!--<button class="btn button-submit" style="" type="button"-->
+                                                        <!--ng-click="reportSimilarLINCSCompounds(ctrl.selectedSmile)">Submit-->
+                                                        <!--<i ng-show="ctrl.showSmileSvgSpinner" class="fa fa-refresh fa-spin"-->
+                                                        <!--style="font-size:14px"></i>-->
+                                                        <!--</button>-->
+                                                        <!---->
+                                                        <!--</span>-->
+                                                    </div>
+
+                                                    <div class="vcenter input-group " ng-if="showPartFlag == 3">
+
+
+                                                        <!--<form>-->
+                                                        <!--<div class="form-group">-->
+
+                                                        <!--<input type="text" style="height: 40px; width: 100%"-->
+                                                        <!--ng-model="ctrl.selectedGeneAsInput">-->
+                                                        <!--</div>-->
+
+                                                        <!--</form>-->
+                                                        <div style="float:left;">
+
+                                                        <a >
+                                                            Generate Heatmap for All Perturbations </a>
+                                                    </div>
+
+                                                        <button class="btn button-submit2" style="width: 100%; margin-top: 20px;" type="button"
+                                                                ng-click="ctrl.runClusterGram('GCP')">Generate Assay Heatmap
+                                                            <i ng-show="ctrl.clusterWait" class="fa fa-refresh fa-spin"
+                                                               style="font-size:14px"></i>
+                                                        </button>
+
+
+                                                        <!--<button class="btn button-submit" style="width: 100%; border-radius: 0;"-->
+                                                        <!--ng-click="reportSimilarLINCSGenes(ctrl.selectedGeneAsInput)" type="button">-->
+                                                        <!--Submit-->
+                                                        <!--<i ng-show="ctrl.showGeneSpinner" class="fa fa-refresh fa-spin"-->
+                                                        <!--style="font-size:14px"></i></button>-->
+
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div id="DToxS" class="tab-pane fade">
+                    <!--<h3>Menu 2</h3>-->
+                    <p style="font-weight: 300">
+                        Mass spectrometry is a sensitive technique that
+                        measures the mass-to-charge ratio of ions to
+                        identify and quantify molecules in simple and
+                        complex mixtures. Samples are loaded into the mass spectrometer in
+                        liquid,
+                        gas or
+                        dried form
+                        and then vaporized and ionized by the ion source. The charge that these
+                        molecules
+                        receive allows
+                        the mass spectrometer to accelerate the ions throughout the remainder of
+                        the
+                        system.
+                        The ions
+                        encounter electric and/or magnetic fields from mass analyzers, which
+                        deflect
+                        the
+                        paths of individual
+                        ions based on their mass and charge (m/z). Ions that have successfully
+                        been
+                        deflected by the mass
+                        analyzers then hit the ion detector that registers the number of ions at
+                        each m/z
+                        value.
+                    </p>
+                </div>
+                <div id="SWATH" class="tab-pane fade">
+                    <!--<h3>Menu 3</h3>-->
+                    <p style="font-weight: 300">
+                        SWATH (Sequential Window Acquisition of all THeoretical
+                        fragment ion spectra) is a new strategy for high
+                        throughput, label-free protein quantification. It generates global,
+                        quantitative
+                        protein maps using
+                        data-independent acquisition of collision-induced dissociation (CID)
+                        spectra
+                        of all
+                        precursor ions.
+                        As a data-independent acquisition (also referred to as MS/MSall)
+                        SWATH-MS
+                        has a
+                        greater coverage of
+                        peptide identification compared to classical discovery approaches.
+                        Using known fingerprints of target peptides comprising precursor mass,
+                        chromatographic retention
+                        time and MRM transitions SWATH protein maps can be interrogated for
+                        targeted
+                        quantification of proteins
+                        of interest based on high resolution MRM-like signatures. SWATH acquires
+                        all
+                        MRM
+                        transitions of all
+                        precursors and thus does not require tedious assay development and
+                        allows
+                        for a more
+                        dynamic data
+                        interpretation compared to classical MRM experiments.
+                    </p>
+                </div>
+                <div id="RPPA" class="tab-pane fade">
+                    <!--<h3>Menu 3</h3>-->
+
+                    <p style="font-weight: 300">
+                        Reverse phase protein array (RPPA) is a high-throughput
+                        technology that performs protein assays on
+                        thousands of samples simultaneously, including tissue and cell lysates,
+                        serum,
+                        plasma or other
+                        body fluids that measure the levels of protein expression, as well as
+                        protein
+                        modifications such
+                        as phosphorylation. Protein lysates are arrayed as microspots on
+                        nitrocellulized
+                        coated glass slides
+                        and probed with highly specific antibodies that have been validated for
+                        RPPA. When
+                        specific antibodies
+                        are used, RPPA can generate 1,000 times more data points using 10,000
+                        times
+                        less
+                        sample volume than
+                        an ordinary western blot, enabling researchers to monitor quantitative
+                        proteomic
+                        responses for various
+                        time-scale and input-dose gradients simultaneously.
+                    </p>
+                </div>
+                <div id="Micro" class="tab-pane fade">
+                    <!--<h3>Menu 3</h3>-->
+
+                    <p style="font-weight: 300">
+                        The microwestern is a meso-scale quantitative western blotting assay
+                        using infrared fluorescence. Level 1 data are raw signal (background
+                        subtracted) from a single "spot" (band). Level 2 data are Level 1 data
+                        divided by a loading control signal (e.g. tubulin). Level 3 data are
+                        Level 2 data divided by a biological internal control (e.g. Level 2
+                        data corresponding to serum-starved conditions). Level 4 data are
+                        averages across Level 3 replicates.
+                    </p>
+                </div>
+                <!--</div>-->
+            </div>
+        </div>
+
+        <!--{{ctrl.showP100div}}-->
+        <!--{{ctrl.P100SecondTab}}-->
+        <!--{{ctrl.assayHeatmap}}-->
+        <!--{{ctrl.showGCPdiv}}-->
+        <!--{{ctrl.GCPSecondTab}}-->
+        <!--{{ctrl.assayHeatmap}}-->
+        <div ng-show="(ctrl.showP100div && ctrl.P100SecondTab ) ||
+                        (ctrl.showGCPdiv && ctrl.GCPSecondTab ) ||
+                        (ctrl.showSWATHdiv && ctrl.SWATHSecondTab ) ||
+                        (ctrl.showRPPAdiv && ctrl.RPPASecondTab ) ||
+                        (ctrl.showDToxSdiv && ctrl.DToxSSecondTab ) ||
+                        (ctrl.showMicrodiv && ctrl.MicroSecondTab )" style="padding-top: 20px;">
+
+            <select class="soflow-color" style="margin-bottom: 10px;" ng-show="ctrl.showP100div"
+                    ng-model="selectedphosphoPathways"
+                    ng-change="changedPhosphoValue(selectedphosphoPathways)"
+                    ng-options="x.value for x in phosphoOptions" style="padding-bottom: 20px;">
+            </select>
+
+
+            <select class="soflow-color" style="margin-bottom: 10px;" ng-show=" ctrl.showSWATHdiv || ctrl.showDToxSdiv"
+                    ng-model="selectedPathways"
+                    ng-change="changedValue(selectedPathways)"
+                    ng-options="x.value for x in pathways">
+            </select>
+
+
+            <div id="chart5">
+
+                <div ng-show="ctrl.showP100div || ctrl.showGCPdiv">
+                    <button class="btn1" id='force5' title='Implement force layout'>
+                        <i class='fa fa-random'></i>
+                    </button>
+                    <button class="btn2" id='circularView5' title='Implement circular layout'>
+                        <i class='fa fa-circle-o'></i>
+                    </button>
+                    <button class="btn3" id='parallelView5' title='Rearrange nodes in columns'>
+                        <i class='fa fa-align-justify'></i>
+                    </button>
+                    <!--<button class="btn4" id='customizedParallelView1' title='Implement parallel layout'>-->
+                    <!--<i class='fa fa-map-o'></i>-->
+                    <!--</button>-->
+                    <!--<button class="btn5" id='customizedCircularView1' title='Implement customized circular layout'>-->
+                    <!--<i class='fa fa-dot-circle-o'></i>-->
+                    <!--</button>-->
+                    <button class="btn6" id='download-png5' title='download as PNG'>
+                        <i class='fa fa-download'></i>
+                    </button>
+                    <!--<button class="btn7" id='question3'-->
+                    <!--title='grey or colored nodes based on abundance: Query Gene Set, Red nodes: Kinases Perturbation'>-->
+                    <!--<i class='fa fa-question-circle'></i>-->
+                    <!--</button>-->
+                    <!--<button class="btn8" id='drug1'-->
+                    <!--title='grey nodes: Query Gene Set, Red nodes: Pathways / Kinases Perturbation'>-->
+                    <!--<i class='fa fa-eyedropper'></i>-->
+                    <!--</button>-->
+
+
+                </div>
+
+
+
+
+            </div>
+            <!--<h1 ng-show="">Please wait ...</h1>-->
+            <!--<span>-->
+            <!--<button class="btn btn-default" type="submit" ng-click="ctrl.runP100ClusterGram('mult_view_sim_col.json')">Submit</button>-->
+            <!--</span>-->
+        </div>
+    </div>
+
+
+    <div ng-show="(ctrl.showP100div && ctrl.P100FirstTab && ctrl.assayHeatmap == 'P100') ||
+                        (ctrl.showGCPdiv && ctrl.GCPFirstTab && ctrl.assayHeatmap == 'GCP') ||
+                        (ctrl.showSWATHdiv && ctrl.SWATHFirstTab && ctrl.assayHeatmap == 'SWATH') ||
+                        (ctrl.showRPPAdiv && ctrl.RPPAFirstTab && ctrl.assayHeatmap == 'RPPA') ||
+                        (ctrl.showDToxSdiv && ctrl.DToxSFirstTab && ctrl.assayHeatmap == 'DToxS') ||
+                        (ctrl.showMicrodiv && ctrl.MicroFirstTab && ctrl.assayHeatmap == 'Micro')"
+         style="padding-top: 20px;">
+
+        <div id='container-id-1'>
+            <!--<h1 ng-show="">Please wait ...</h1>-->
+            <!--<span>-->
+            <!--<button class="btn btn-default" type="submit" ng-click="ctrl.runP100ClusterGram('mult_view_sim_col.json')">Submit</button>-->
+            <!--</span>-->
+        </div>
+    </div>
+
+
+</div>
+
+
+<!--</section>-->
+<section ng-show="false" id="fh5co-pricing" style="padding: 10px 0px 10px 0px">
+
+
+    <div class="container " ng-show="ctrl.showP100div">
+
+
+        <div>
+            <h1>The Clustergram Page</h1>
+        </div>
+
+        <!--<div id='container-id-1'>-->
+        <!--<h1 class='wait_message'>Please wait ...</h1>-->
+        <!--<span>-->
+        <!--<button class="btn btn-default" type="submit" ng-click="ctrl.runP100ClusterGram('mult_view_sim_col.json')">Submit</button>-->
+        <!--</span>-->
+        <!--</div>-->
+
+
+        <form class="form-inline" role="form">
+            <div class="form-group">
+
+                <h3 style="font-weight: 400;font-size: 1.0em;">Explore Signatures</h3>
+
+
+                <label><i class=" onerow"></i> Enter perturbagen name </label>
+                <input type="text" class="form-control onerow" ng-model="ctrl.selectedPerturbation"
+                       bs-options="perturb for perturb in perturbation" placeholder="Trametinib"
+                       bs-typeahead>
+                <button ng-click="updatePerturbagen(ctrl.selectedPerturbation)" class="button-submit">Submit
+                </button>
+            </div>
+
+        </form>
+        <br/>
+
+        <div ng-show="ctrl.showP100Table" style="font-weight: 400">
+            Sample annotation for the selected perturbagen:
+            <strong>{{ctrl.selectedPerturbation}}</strong>
+
+        </div>
+
+
+        <!--{"LINCS_UNIQUE": "LINCSTP_0246", "pertVehicle": "DMSO",-->
+        <!--"pubchemCid": "11707110", "pertTime": "48", "pertId": "BRD-K12343256",-->
+        <!--"pertType": "trt_cp", "pertiname": "Trametinib", "pertDose": "0.001", "cellId": "MCF10A",-->
+        <!--"lsmId": "LSM-1143"},-->
+        <div class="container" ng-show="ctrl.showP100Table">
+            <table ng-table="ctrl.tableParams" class="table table-bordered table-striped" show-filter="true">
+                <tr ng-repeat="mapping in $data">
+                    <!--<td>{{mapping.pertDose}}</td>-->
+                    <!--<td>{{mapping.pertTime}}</td>-->
+                    <!--<td>{{mapping.cellId}}</td>-->
+
+
+                    <td style="font-weight: 400" title="'PertTime'" filter="{ pertTime: 'number'}"
+                        sortable="'pertTime'">
+                        {{mapping.pertTime}}
+                    </td>
+
+                    <td style="font-weight: 400" title="'PertDose'" filter="{ pertDose: 'number'}"
+                        sortable="'pertDose'">
+                        {{mapping.pertDose}}
+                    </td>
+                    <td style="font-weight: 400" title="'CellId'" filter="{ cellId: 'text'}"
+                        sortable="'cellId'">
+                        {{mapping.cellId}}
+                    </td>
+                    <td style="font-weight: 400" title="'Pert. Name'">
+                        {{mapping.pertName}}
+                    </td>
+                    <td style="font-weight: 400" title="'pubchem Id'">
+                        {{mapping.pubchemCid}}
+                    </td>
+                    <td style="font-weight: 400" title="'Visualize Network'">
+                        <button ng-click="makePhosphoGraph(mapping.LINCS_UNIQUE)" class="btn button-submit2">
+                            Update View
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="well" ng-show="ctrl.showP100Table">
+
+
+            <table class="table table-striped table-bordered">
+                <thead>
+                <tr>
+
+                    <th>Update Network</th>
+                    <!--<th>LINCS_UniqueId</th>-->
+                    <th>pertName</th>
+                    <th>BroadId</th>
+                    <th>pertType</th>
+                    <th>pubchemCid</th>
+                    <th>lsmId</th>
+                    <th>pertDose</th>
+                    <th>pertTime</th>
+                    <th>cellId</th>
+                    <th>pertVehicle</th>
+                    <th>Go To iLINCS</th>
+                </tr>
+                </thead>
+                <tbody dir-paginate="mapping in ctrl.pertTable | itemsPerPage:5 "
+                       pagination-id="metaData221">
+
+                <td>
+                    <button ng-click="makePhosphoGraph(mapping.LINCS_UNIQUE)" class="btn button-submit">
+                        Update
+                    </button>
+                </td>
+
+
+                <td><a ng-href="https://clue.io/command?q={{mapping.pertName}}"
+                       target="_blank">
+                    {{mapping.pertName}}</a></td>
+                <td><a ng-href="https://clue.io/command?q={{mapping.pertId}}"
+                       target="_blank">
+                    {{mapping.pertId}}</a></td>
+                <td>{{mapping.pertType}}</td>
+                <td>{{mapping.pubchemCid}}</td>
+                <td>{{mapping.lsmId}}</td>
+                <td>{{mapping.pertDose}}</td>
+                <td>{{mapping.pertTime}}</td>
+                <td>{{mapping.cellId}}</td>
+                <td>{{mapping.pertVehicle}}</td>
+                <td>
+                    <a ng-href="www.ilincs.org/ilincs/signature/{{mapping.LINCS_UNIQUE}}"
+                       target="_blank">
+                        {{mapping.LINCS_UNIQUE}}</a>
+                </td>
+
+
+                <!--</tr>-->
+                </tbody>
+            </table>
+            <dir-pagination-controls
+                    pagination-id="metaData221"
+                    max-size="5"
+                    direction-links="true"
+                    boundary-links="true">
+            </dir-pagination-controls>
+
+
+            <!--<table class="table table-striped table-bordered">-->
+            <!--<thead>-->
+            <!--<tr>-->
+            <!--<th>Update Network</th>-->
+            <!--&lt;!&ndash;<th>LINCS_UniqueId</th>&ndash;&gt;-->
+            <!--<th>pertName</th>-->
+            <!--<th>BroadId</th>-->
+            <!--<th>pertType</th>-->
+            <!--<th>pubchemCid</th>-->
+            <!--<th>lsmId</th>-->
+            <!--<th>pertDose</th>-->
+            <!--<th>pertTime</th>-->
+            <!--<th>cellId</th>-->
+            <!--<th>pertVehicle</th>-->
+            <!--<th>Go To iLINCS</th>-->
+            <!--</tr>-->
+            <!--</thead>-->
+            <!--<tbody pagination-id="metaData221">-->
+            <!--<tr ng-repeat="mapping in ctrl.pertTable">-->
+            <!--<td>-->
+            <!--<button ng-click="makePhosphoGraph(mapping.LINCS_UNIQUE)" class="button-submit2">-->
+            <!--Update-->
+            <!--</button>-->
+            <!--</td>-->
+            <!---->
+
+            <!--<td><a ng-href="https://clue.io/command?q={{mapping.pertName}}"-->
+            <!--target="_blank">-->
+            <!--{{mapping.pertName}}</a></td>-->
+            <!--<td><a ng-href="https://clue.io/command?q={{mapping.pertId}}"-->
+            <!--target="_blank">-->
+            <!--{{mapping.pertId}}</a></td>-->
+            <!--<td>{{mapping.pertType}}</td>-->
+            <!--<td>{{mapping.pubchemCid}}</td>-->
+            <!--<td>{{mapping.lsmId}}</td>-->
+            <!--<td>{{mapping.pertDose}}</td>-->
+            <!--<td>{{mapping.pertTime}}</td>-->
+            <!--<td>{{mapping.cellId}}</td>-->
+            <!--<td>{{mapping.pertVehicle}}</td>-->
+            <!--<td>-->
+            <!--<a ng-href="http://dev.ilincs.org/ilincs/signature/{{mapping.LINCS_UNIQUE}}"-->
+            <!--target="_blank">-->
+            <!--{{mapping.LINCS_UNIQUE}}</a>-->
+            <!--</td>-->
+
+            <!--</tr>-->
+            <!--</tbody>-->
+            <!--</table>-->
+            <!--<dir-pagination-controls-->
+            <!--pagination-id="metaData221"-->
+            <!--max-size="5"-->
+            <!--direction-links="true"-->
+            <!--boundary-links="true">-->
+            <!--</dir-pagination-controls>-->
+        </div>
+
+        <select ng-show="ctrl.showP100div"
+                ng-model="selectedphosphoPathways"
+                ng-change="changedPhosphoValue(selectedphosphoPathways)"
+                ng-options="x.value for x in phosphoOptions" style="padding-bottom: 20px;">
+        </select>
+
+
+        <!--<select ng-show="ctrl.showP100div"-->
+        <!--ng-model="phosphoOptions"-->
+        <!--ng-change="changedValue(selectedPathways)"-->
+        <!--ng-options="x.value for x in pathways">-->
+        <!--</select>-->
+
+        <div ng-show="ctrl.showP100Table">
+            Signature ID:
+            <strong>{{signatureIdView}}</strong>
+
+        </div>
+        <br/>
+    </div>
+    <div ng-show=" ctrl.showRPPAdiv || ctrl.showSWATHdiv || ctrl.showDToxSdiv || ctrl.showP100div || ctrl.showGCPdiv">
+
+
+        <!--<div id="chart5"></div>-->
+
+    </div>
+
+
+    <!--<div class="container">-->
+    <!--<div class="row">-->
+    <!--<div class="col-md-3 col-sm-6 animate-box">-->
+    <!--<div class="price-box">-->
+    <!--<h2 class="pricing-plan">Starter</h2>-->
+    <!--<div class="price"><sup class="currency">$</sup>7-->
+    <!--<small>/mo</small>-->
+    <!--</div>-->
+    <!--<p>Basic customer support for small business</p>-->
+    <!--<hr>-->
+    <!--<ul class="pricing-info">-->
+    <!--<li>10 projects</li>-->
+    <!--<li>20 Pages</li>-->
+    <!--<li>20 Emails</li>-->
+    <!--<li>100 Images</li>-->
+    <!--</ul>-->
+    <!--<a href="#" class="btn btn-default btn-sm">Get started</a>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="col-md-3 col-sm-6 animate-box">-->
+    <!--<div class="price-box">-->
+    <!--<h2 class="pricing-plan">Regular</h2>-->
+    <!--<div class="price"><sup class="currency">$</sup>19-->
+    <!--<small>/mo</small>-->
+    <!--</div>-->
+    <!--<p>Basic customer support for small business</p>-->
+    <!--<hr>-->
+    <!--<ul class="pricing-info">-->
+    <!--<li>15 projects</li>-->
+    <!--<li>40 Pages</li>-->
+    <!--<li>40 Emails</li>-->
+    <!--<li>200 Images</li>-->
+    <!--</ul>-->
+    <!--<a href="#" class="btn btn-default btn-sm">Get started</a>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="clearfix visible-sm-block"></div>-->
+    <!--<div class="col-md-3 col-sm-6 animate-box">-->
+    <!--<div class="price-box popular">-->
+    <!--<div class="popular-text">Best value</div>-->
+    <!--<h2 class="pricing-plan">Plus</h2>-->
+    <!--<div class="price"><sup class="currency">$</sup>79-->
+    <!--<small>/mo</small>-->
+    <!--</div>-->
+    <!--<p>Basic customer support for small business</p>-->
+    <!--<hr>-->
+    <!--<ul class="pricing-info">-->
+    <!--<li>Unlimitted projects</li>-->
+    <!--<li>100 Pages</li>-->
+    <!--<li>100 Emails</li>-->
+    <!--<li>700 Images</li>-->
+    <!--</ul>-->
+    <!--<a href="#" class="btn btn-primary btn-sm">Get started</a>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="col-md-3 col-sm-6 animate-box">-->
+    <!--<div class="price-box">-->
+    <!--<h2 class="pricing-plan">Enterprise</h2>-->
+    <!--<div class="price"><sup class="currency">$</sup>125-->
+    <!--<small>/mo</small>-->
+    <!--</div>-->
+    <!--<p>Basic customer support for small business</p>-->
+    <!--<hr>-->
+    <!--<ul class="pricing-info">-->
+    <!--<li>Unlimitted projects</li>-->
+    <!--<li>Unlimitted Pages</li>-->
+    <!--<li>Unlimitted Emails</li>-->
+    <!--<li>Unlimitted Images</li>-->
+    <!--</ul>-->
+    <!--<a href="#" class="btn btn-default btn-sm">Get started</a>-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <!--</div>-->
+    <!--</div>-->
+</section>
+
+</div>
+
+

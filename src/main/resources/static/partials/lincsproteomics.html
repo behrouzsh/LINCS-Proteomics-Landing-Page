@@ -1,0 +1,1468 @@
+<div id="fh5co-page" ng-init="initNetwork()">
+    <section id="fh5co-header">
+        <div class="container">
+            <nav role="navigation">
+                <!--<ul class="pull-left left-menu">-->
+                <!--&lt;!&ndash;	<li><a href="about.html">About</a></li> &ndash;&gt;-->
+                <!--<li>-->
+                <!--<a clahref="/lincsproteomics/lincsproteomics">LINCS PROTEOMICS<span>.</span></a>-->
+                <!--</li>-->
+                <!--</ul>-->
+                <h1 id="fh5co-logo" class="active"><a href="/lincsproteomics/lincsproteomics">LINCS
+                    PROTEOMICS<span>.</span></a></h1>
+                <ul class="pull-right right-menu">
+                    <li><a href="/lincsproteomics/explore">Explore</a></li>
+
+                    <li><a href="/lincsproteomics/download">Download</a></li>
+                    <li><a href="/lincsproteomics/assays">Assays </a></li>
+                    <li><a href="/lincsproteomics/glossary">Proteomics Glossary</a></li>
+                    <li><a href="/lincsproteomics/about">About</a></li>
+
+                </ul>
+            </nav>
+        </div>
+    </section>
+    <!--This is for showing header when scroll down-->
+    <div class="topMenu">
+        <section id="fh5co-header2">
+            <div class="container">
+                <nav role="navigation">
+                    <!--<ul class="pull-left left-menu">-->
+                    <!--<li>-->
+                    <!---->
+                    <!--</li>-->
+                    <!--</ul>-->
+                    <h3 id="fh5co-logo2" class="active"><a href="/lincsproteomics/lincsproteomics">LINCS
+                        PROTEOMICS<span>.</span></a>
+                    </h3>
+                    <ul class="pull-right right-menu">
+                        <li><a href="/lincsproteomics/explore">Explore</a></li>
+                        <li><a href="/lincsproteomics/download">Download</a></li>
+                        <li><a href="/lincsproteomics/assays">Assays </a></li>
+                        <li><a href="/lincsproteomics/glossary">Proteomics Glossary</a></li>
+                        <li><a href="/lincsproteomics/about">About</a></li>
+
+                    </ul>
+                </nav>
+            </div>
+        </section>
+    </div>
+
+
+    <!-- #fh5co-header -->
+
+    <section id="fh5co-hero" class="no-js-fullheight2"
+             style="background-image: url(/lincsproteomics/images/lens-final.png);"
+             data-next="yes">
+        <div class="fh5co-overlay"></div>
+        <div class="container">
+            <div class="fh5co-intro no-js-fullheight2">
+                <div class="fh5co-intro-text">
+                    <!--
+                        INFO:
+                        Change the class to 'fh5co-right-position' or 'fh5co-center-position' to change the layout position
+                        Example:
+                        <div class="fh5co-right-position">
+                    -->
+                    <div class="fh5co-left-position">
+                        <h2 class="animate-box" style="font-size: 45px">Explore LINCS Proteomics Data </h2>
+                        <h3 class="animate-box">with Different Lenses. </h3>
+                        <!--<p class="animate-box"><a href="https://vimeo.com/channels/staffpicks/93951774" class="btn btn-outline popup-vimeo btn-video"><i class="icon-play2"></i> Watch video</a> -->
+
+                        <!--<a href="http://dev3.ccs.miami.edu:8080/dcic-proteomics/" target="_blank"-->
+                        <!--class="btn btn-info">Download Data</a></p>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fh5co-learn-more animate-box">
+            <a href="#" class="scroll-btn">
+                <!--<li><a href="about.html">About</a></li>-->
+                <span class="text">Learn more about LINCS Proteomics data</span>
+                <span class="arrow"><i class="icon-chevron-down"></i></span>
+            </a>
+        </div>
+    </section>
+    <!-- END #fh5co-hero -->
+
+
+    <!--<section id="fh5co-projects" style="padding: 40px 5px 5px 5px">-->
+    <!--<div class="container" >-->
+    <!---->
+    <!--</div>-->
+
+
+    <!--</section>-->
+    <div class="container-fluid  ">
+        <!--<div class="container-fluid container-lightBlue ">-->
+
+
+        <div class="container  container-lightGrey shadowed"
+             style="width: 100%;margin-top: 10px; margin-bottom: 10px;  padding-top: 20px; padding-bottom: 10px;margin-right: auto; margin-left: auto; ">
+
+
+            <div class=" col-sm-12 col-md-12  col-lg-12">
+                <div class="splash" style="width: 100%;">
+                    <h1>Search for</h1>
+                    <hr/>
+                </div>
+            </div>
+            <div class=" col-sm-12 col-md-12  col-lg-12">
+                <div class="row " style="width: 100%;">
+
+                    <div class=" col-sm-5 col-md-5  col-lg-5">
+                        <div class=" splash ">
+
+                            <div style="float:left;">
+
+                                <a href="#" ng-click="showPart(1)" ng-class="{'green':showPartFlag == 1}" style="padding-left: 20px;">
+                                    Any Perturbation by Name</a>
+                            </div>
+
+                            <div style="float:right;">
+                                <span ng-class="{'green':showPartFlag == 1}" style="size: 80px; font-weight: 800">
+
+                                    <i class="fa fa-angle-right"
+                                       style="font-size:16px"></i>
+
+                                    <!--<i class="icon-angle-right"></i>-->
+                                </span>
+
+                            </div>
+                            <br/>
+                            <hr/>
+
+                            <div style="float:left;">
+
+                                <a href="#" ng-click="showPart(2)" ng-class="{'green':showPartFlag == 2}" style="padding-left: 20px;">Chemical
+                                    Perturbations by SMILES</a>
+                            </div>
+
+                            <div style="float:right;">
+                                <span ng-class="{'green':showPartFlag == 2}">
+                                    <i class="icon-angle-right "></i>
+                                </span>
+                            </div>
+
+                            <br/>
+                            <hr/>
+
+                            <div style="float:left;">
+
+                                <a href="#" ng-click="showPart(3)" ng-class="{'green':showPartFlag == 3} "style="padding-left: 20px;">Genetic
+                                    Perturbations by Gene Names</a>
+                            </div>
+
+                            <div style="float:right;">
+                                <span ng-class="{'green':showPartFlag == 3}">
+                                    <i class="icon-angle-right "></i>
+                                </span>
+                            </div>
+
+                            <br/>
+                            <hr/>
+
+                            <div style="float:left;">
+
+                            <a href="#" ng-click="showPart(4)" ng-class="{'green':showPartFlag == 4}"style="  text-align: left;
+  font-size: 20px;
+  font-weight: 400;
+  font-family: Arial;">
+                                or Navigate to</a>
+                            </div>
+
+                            <div style="float:right;">
+                            <span ng-class="{'green':showPartFlag == 4}">
+                            <i class="icon-angle-right "></i>
+                            </span>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <!--Chemical Perturbations by SMILES-->
+                    <!--Genetic Perturbations by Gene Names-->
+                    <!--LINCS and LINCS Proteomics-->
+
+                    <div class="col-sm-7 col-md-7 col-lg-7 ">
+                        <div class="vcenter">
+
+                            <!--<div class="col-sm-9 col-md-9 col-lg-9" style="margin-top: 10px; margin-bottom: 10px;">-->
+                            <!--<div class="row vertical-align-class">-->
+                            <!--<div class="col-md-1 col-md-offset-2">-->
+
+                            <div ng-if="showPartFlag == 1">
+
+
+                                <form>
+                                    <div class="form-group">
+
+                                        <input type="text" style="height: 40px; width: 100%"
+                                               ng-model="ctrl.selectedPerturbation"
+                                               bs-options="perturb for perturb in all_perturbations"
+                                               select-mode="true"
+                                               watch-options="true"
+                                               bs-typeahead>
+                                    </div>
+
+                                </form>
+                                <button class="btn button-submit" style="width: 100%; border-radius: 0;"
+                                        ng-click="showDataForPerturbation(ctrl.selectedPerturbation)" type="button">
+                                    Submit
+                                </button>
+
+
+                                <!--<div class="input-group">-->
+                                <!--<input type="text" class="form-control"  style="height: 40px;" ng-model="ctrl.selectedPerturbation"-->
+                                <!--bs-options="perturb for perturb in perturbation" placeholder="Trametinib"-->
+                                <!--bs-typeahead>-->
+                                <!--<div class="input-group-append">-->
+                                <!--<button class="btn button-submit" ng-click="showDataForPerturbation(ctrl.selectedPerturbation)" type="button">Submit</button>-->
+                                <!---->
+                                <!--</div>-->
+                                <!--</div>-->
+
+
+                                <!--<div class="input-group ">-->
+                                <!--<input type="text" style="height: 40px;  "-->
+                                <!--ng-model="ctrl.selectedPerturbation"-->
+                                <!--bs-options="perturb for perturb in perturbation" placeholder="Trametinib"-->
+                                <!--bs-typeahead>-->
+                                <!--<div class="input-group-append">-->
+                                <!---->
+                                <!--<button class="btn button-submit" style="" type="button"-->
+                                <!--ng-click="showDataForPerturbation(ctrl.selectedPerturbation)">Submit-->
+                                <!--</button>-->
+
+                                <!--</div>-->
+                                <!--</div>-->
+                            </div>
+
+                            <!--<div class=" text-center">-->
+                            <!--<h3 style="font-weight: 600; font-size: 1.1em;  padding-top: 20px;padding-bottom: 20px;margin:0px;">-->
+                            <!--Or Input The Smile of a Component to Retrieve Similar LINCS Compounds</h3>-->
+                            <!--</div>-->
+
+
+                            <div class="vcenter input-group " ng-if="showPartFlag == 2">
+
+
+                                <form>
+                                    <div class="form-group">
+
+                                        <input type="text" style="height: 40px; width: 100%"
+                                               ng-model="ctrl.selectedSmile">
+                                    </div>
+
+                                </form>
+                                <button class="btn button-submit" style="width: 100%; border-radius: 0;"
+                                        ng-click="reportSimilarLINCSCompounds(ctrl.selectedSmile)" type="button">Submit
+                                    <i ng-show="ctrl.showSmileSvgSpinner" class="fa fa-refresh fa-spin"
+                                       style="font-size:14px"></i></button>
+
+                                <!--<div style="margin-top: 10px; border-color: #9d9d9d; box-shadow: 0px 0px 5px  #888888;" ng-bind-html="cpSvg4"></div>-->
+
+
+                                <!--<input type="text" style="height: 40px;  width: 80%;"-->
+                                <!--ng-model="ctrl.selectedSmile">-->
+                                <!--&lt;!&ndash;placeholder="CCCCC1C(=O)N(N(C1=O)C1=CC=CC=C1)C1=CC=CC=C1"&ndash;&gt;-->
+
+                                <!--<span class="input-group-btn" style="width: auto;">-->
+                                <!--<button class="btn button-submit" style="" type="button"-->
+                                <!--ng-click="reportSimilarLINCSCompounds(ctrl.selectedSmile)">Submit-->
+                                <!--<i ng-show="ctrl.showSmileSvgSpinner" class="fa fa-refresh fa-spin"-->
+                                <!--style="font-size:14px"></i>-->
+                                <!--</button>-->
+                                <!---->
+                                <!--</span>-->
+                            </div>
+
+                            <div class="vcenter input-group " ng-if="showPartFlag == 3">
+
+
+                                <form>
+                                    <div class="form-group">
+
+                                        <input type="text" style="height: 40px; width: 100%"
+                                               ng-model="ctrl.selectedGeneAsInput">
+                                    </div>
+
+                                </form>
+                                <button class="btn button-submit" style="width: 100%; border-radius: 0;"
+                                        ng-click="reportSimilarLINCSGenes(ctrl.selectedGeneAsInput)" type="button">
+                                    Submit
+                                    <i ng-show="ctrl.showGeneSpinner" class="fa fa-refresh fa-spin"
+                                       style="font-size:14px"></i></button>
+
+
+                            </div>
+
+                            <div class=" vcenter" ng-if="showPartFlag == 4">
+
+
+                                <div class=" splash2 ">
+
+                                    <div style="float:left;">
+
+                                        <a style="color: black; font-weight: bold">...</a>&nbsp;<a
+                                            href="/lincsproteomics/explore">Explore
+                                        LINCS Proteomics Assays</a>
+                                    </div>
+
+
+                                    <br/>
+                                    <hr style="  color: white;border-color : white;background-color: white;"/>
+
+                                    <div style="float:left;">
+
+                                        <a style="color: black; font-weight: bold">...</a>&nbsp;<a
+                                            href="/lincsproteomics/download">Download
+                                        LINCS Proteomics Data</a>
+                                    </div>
+
+
+                                    <br/>
+                                    <hr style="  color: white;border-color : white;background-color: white;"/>
+
+
+                                    <div style="float:left;">
+
+                                        <a
+                                                style="color: black; font-weight: bold">...</a>&nbsp;<a
+                                            href="/lincsproteomics/assays">LINCS Proteomics Assays and Centers</a>
+                                    </div>
+
+                                    <br/>
+                                    <hr style="  color: white;border-color : white;background-color: white;"/>
+
+                                    <div style="float:left;">
+
+                                        <a style="color: black; font-weight: bold">...</a>&nbsp;<a
+                                            href="/lincsproteomics/glossary">
+                                        Proteomics Glossary </a>
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!--<div class="container shadowed"style="width: 100%;margin-top: 10px; margin-bottom: 10px;  padding-top: 20px; padding-bottom: 10px;margin-right: auto; margin-left: auto; ">-->
+        <!---->
+
+        <div class="container container-french-stucco splash shadowed" ng-show="ctrl.showGeneSvg && showPartFlag == 3"
+             style="width: 100%;margin-top: 10px; margin-bottom: 20px;  padding-top: 20px; padding-bottom: 20px;border-radius: 5px;">
+
+            <div class="container" style="width: 100%">
+
+                <div class="splash shadowed "
+                     style="background-color:#e9efcb;padding-top: 10px;padding-bottom: 10px;margin-bottom: 10px;">
+
+                    <h3>
+                        Input Gene Connectivity base on <a ng-href="https://string-db.org/">STRING</a>
+                    </h3>
+
+                </div>
+
+
+                <div ng-show="ctrl.showGeneSvg">
+                    <img ng-src="{{stringUrlPng}}" style=" max-width:100%; "/>
+                </div>
+                <!--<div class="container" style="width: 100%">-->
+
+                <!--{{stringGenes}}-->
+                <!--{{ctrl.cpGeneSimilar}}-->
+
+
+                <div ng-if="ctrl.tableGeneSimilar.total() > 0">
+                    <h3 style="padding-top: 10px;padding-bottom: 10px;">
+                        Gene knock-downs of the selected gene <a style="color: darkolivegreen"
+                                                                 disabled="">({{ctrl.selectedGeneAsInput}})</a>
+                        and connected genes are found in these data sets:
+                    </h3>
+
+
+                    <table ng-table="ctrl.tableGeneSimilar" class="table table-bordered table-striped"
+                           show-filter="true">
+                        <tr ng-repeat="mapping in $data">
+
+
+                            <td style="font-weight: 400" title="'lincs_cp'" filter="{ lincs_cp: 'text'}"
+                                sortable="'lincs_cp'">
+                                <a class="tabled" href ng-click="showDataForPerturbationGenes(mapping.lincs_cp)">{{mapping.lincs_cp}}</a>
+                            </td>
+
+                            <td style="font-weight: 400" title="'name'" filter="{ name: 'text'}"
+                                sortable="'name'">
+                                <a>{{mapping.name}}</a>
+                            </td>
+
+                            <td style="font-weight: 400" title="'symbol'" filter="{ symbol: 'text'}"
+                                sortable="'symbol'">
+                                <a>{{mapping.symbol}}</a>
+                            </td>
+                            <td style="font-weight: 400" title="'description'" filter="{ symbol: 'text'}"
+                                sortable="'description'">
+                                <a>{{mapping.description}}</a>
+                            </td>
+                            <td style="font-weight: 400" title="'synonyms'" filter="{ symbol: 'text'}"
+                                sortable="'synonyms'">
+                                <a>{{mapping.synonyms}}</a>
+                            </td>
+
+
+                        </tr>
+                    </table>
+                </div>
+                <div ng-if="!(ctrl.tableGeneSimilar.total() > 0)">
+
+
+
+
+
+                    <div class="container   shadowed"
+                         style="width: 100%;background-color:#eaedde;margin-top: 10px; margin-bottom: 10px;  padding-top: 20px; padding-bottom: 10px;margin-right: auto; margin-left: auto; ">
+
+                        <div class=" col-sm-12 col-md-12  col-lg-12">
+                            <div class="row " style="width: 100%;">
+
+                                <div class=" col-sm-10 col-md-10  col-lg-10">
+                                    <div class=" splash ">
+                                        <h3>The selected gene not found in the knock down signatures of LINCS proteomics
+                                            database.
+                                        </h3>
+
+                                        <h3>Search within other LINCS data in <a
+                                                ng-href="http://www.ilincs.org/ilincs/searchFor/{{ctrl.selectedGeneAsInput}}"
+                                                target="_blank" class="clickable">iLINCS</a>
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div class=" col-sm-2 col-md-2  col-lg-2">
+                                    <div class=" splash ">
+                                        <a ng-href="http://www.ilincs.org/ilincs/searchFor/{{ctrl.selectedGeneAsInput}}"
+                                           target="_blank" target="_blank">
+
+                                            <!--<img style="border:1px solid grey;" onmouseover="this.style.backgroundColor=black;" onmouseout="this.style.backgroundColor='';this.style.opacity=1;"  src="../images/PIR.png" width="120" height="120">-->
+                                            <!---->
+                                            <img src="/lincsproteomics/images/iLINCSnewLogo2.png" width="90" height="90">
+
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+
+                <!--<div  -->
+                <!--style="width: 100%;margin-top: 10px; margin-bottom: 20px;  padding-top: 20px; padding-bottom: 20px;background: #fff;border-radius: 5px;">-->
+                <!--<hr class="blacked"/>-->
+                <div ng-show="ctrl.showCompoundToDSTableGenes "
+                     style="padding-top: 10px;padding-bottom: 10px;margin-bottom: 10px;margin-top: 40px;">
+
+
+                    <!--<div  class="container-fluid" style="width: 100%">-->
+                    <div class="splash shadowed "
+                         style="background-color:#e9efcb;padding-top: 10px;padding-bottom: 10px;margin-bottom: 10px;">
+
+                        <h3>The selected perturbation <a style="color: darkolivegreen"
+                                                         disabled="">({{ctrl.selectedPerturbationGenes}})</a>
+                            is found in these data sets:
+                        </h3>
+                        <div class="onerow">
+                            <h4 class="onerow" ng-if="ctrl.selectedCpInfoGenes['SM_PubChem_CID']">PubChem_ID: <a
+                                    ng-href="https://pubchem.ncbi.nlm.nih.gov/compound/{{ctrl.selectedCpInfoGenes['SM_PubChem_CID']}}"
+                                    target="_blank"
+                                    class="clickable">{{ctrl.selectedCpInfoGenes['SM_PubChem_CID']}}</a>
+                                &nbsp;|&nbsp;
+                            </h4>
+                            <h4 class="onerow" ng-if="ctrl.selectedCpInfoGenes['MOLECULAR_FORMULA']">Weight: <a
+                            >{{ctrl.selectedCpInfoGenes['MOLECULAR_FORMULA']}} </a>
+                                &nbsp;|&nbsp;
+                            </h4>
+
+                            <h4 class="onerow" ng-if="ctrl.selectedCpInfoGenes['SM_LINCS_ID']">SM_LINCS_ID: <a
+                                    ng-href="http://lincsportal.ccs.miami.edu/SmallMolecules/view/{{ctrl.selectedCpInfoGenes['SM_LINCS_ID']}}"
+                                    target="_blank" class="clickable">{{ctrl.selectedCpInfoGenes['SM_LINCS_ID']}}</a>
+                                &nbsp;|&nbsp;
+                            </h4>
+
+                            <h4 class="onerow" ng-if="ctrl.selectedCpInfoGenes['Type']">Type: <a
+                            >{{ctrl.selectedCpInfoGenes['Type']}}</a>
+
+                            </h4>
+                        </div>
+
+                    </div>
+
+
+                    <!--</div>-->
+                    <!--<div class="container" style="width: 100%">-->
+
+                    <div class=" splash shadowed" ng-if="ctrl.compoundAndDSGenes | contains:'P100'"
+                         style="padding-top: 10px; padding-bottom: 10px; padding-right: 20px">
+
+
+                        <h3>
+                            P100 Phosphoprotein Quantification Assay</h3>
+
+
+                        <div class="col-md-12 " style="background-color:#eef2d7;">
+                            <h4 style="padding-top: 10px;padding-bottom: 10px;">The
+                                P100
+                                assay is a mass spectrometry-based targeted phosphoproteomic assay that detects
+                                and
+                                quantifies a representative set of 96 phosphopeptide probes that are present in
+                                a wide
+                                range
+                                of cell types and have been demonstrated to be modulated via perturbations.
+                            </h4>
+                        </div>
+
+
+                        <div class="onerow" style="margin-top: 10px;">
+                            <button class="button-about" ng-click="goToAssays('P100')">Assay Info</button>
+                            <button class="button-download" ng-click="scrollToDownloadId('p100-sec')">Download Data Package
+                            </button>
+                            <a href="http://eh3.uc.edu/pilincs/api-assays-paged/?order=asc&limit=100000&offset=0&tags=[{%22name%22:%22{{data_sets_2_compounds_orig['P100'][ctrl.selectedPerturbationGenes]}}%22,%22flag%22:%22Perturbation%22,%22annotation%22:%22Pertiname%22},{%22p100%22:true}]" target="_blank">
+                                <button class="button-download-piece"
+                                >Download Selected Data
+                                </button>
+                            </a>
+
+
+
+                            <button class="button-explore"
+                                    ng-click="goToExplore('P100', ctrl.selectedPerturbationGenes)">Explore
+                            </button>
+                        </div>
+                        <br/>
+
+                    </div>
+                    <!--=======================================-->
+                    <!--=======================================-->
+                    <!--=======================================-->
+                    <div class=" splash shadowed" ng-if="ctrl.compoundAndDSGenes | contains:'Micro'"
+                         style="padding-top: 10px; padding-bottom: 10px; padding-right: 20px">
+
+
+                        <h3>
+                            Microwestern Meso-Scale Quantitative Western Blotting Assay</h3>
+
+
+                        <div class="col-md-12 " style="background-color:#eef2d7;">
+                            <h4 style="padding-top: 10px;padding-bottom: 10px;">The
+                                microwestern is a meso-scale quantitative western blotting assay using infrared
+                                fluorescence. Level 1 data are raw signal (background subtracted) from a single
+                                "spot"
+                                (band). Level 2 data are Level 1 data divided by a loading control signal (e.g.
+                                tubulin).
+                                Level 3 data are Level 2 data divided by a biological internal control (e.g.
+                                Level 2
+                                data
+                                corresponding to serum-starved conditions). Level 4 data are averages across
+                                Level 3
+                                replicates.
+                            </h4>
+                        </div>
+
+
+                        <div class="onerow" style="margin-top: 10px;">
+                            <button class="button-about" ng-click="goToAssays('Micro')">Assay Info</button>
+                            <button class="button-download" ng-click="scrollToDownloadId('micro-sec')">
+                                Download
+                            </button>
+
+                            <!--<button class="button-explore" ng-click="goToExplore('Micro', ctrl.selectedPerturbationGenes)">Explore</button>-->
+                        </div>
+                        <br/>
+
+                    </div>
+                    <!--=======================================-->
+                    <!--=======================================-->
+                    <!--=======================================-->
+                    <div class=" splash shadowed" ng-if="ctrl.compoundAndDSGenes | contains:'DToxS'"
+                         style="padding-top: 10px; padding-bottom: 10px; padding-right: 20px">
+
+
+                        <h3>
+                            MS Protein State Assay</h3>
+
+
+                        <div class="col-md-12 " style="background-color:#eef2d7;">
+                            <h4 style="padding-top: 10px;padding-bottom: 10px;">
+                                Protein
+                                expression signatures of a PromoCell cardiomyocyte with drug-induced toxicity
+                                and
+                                toxicity
+                                mitigation by multiple drugs.
+                            </h4>
+                        </div>
+
+
+                        <div class="onerow" style="margin-top: 10px;">
+                            <button class="button-about" ng-click="goToAssays('DToxS')">Assay Info</button>
+                            <button class="button-download" ng-click="scrollToDownloadId('dtoxs-sec')">
+                                Download
+                            </button>
+
+                            <!--<button class="button-explore" ng-click="goToExplore('DToxS', ctrl.selectedPerturbationGenes)">Explore</button>-->
+                        </div>
+                        <br/>
+
+                    </div>
+                    <!--=======================================-->
+                    <!--=======================================-->
+                    <!--=======================================-->
+                    <div class=" splash shadowed" ng-if="ctrl.compoundAndDSGenes | contains:'SWATH'"
+                         style="padding-top: 10px; padding-bottom: 10px; padding-right: 20px">
+
+
+                        <h3>
+                            SWATH-MS Protein Quantification Assay</h3>
+
+
+                        <div class="col-md-12 " style="background-color:#eef2d7;">
+                            <h4 style="padding-top: 10px;padding-bottom: 10px;">
+                                Proteomic peptide profiles using protein isolated from iPCS cell lines derived
+                                from
+                                amyotrophic lateral sclerosis (ALS), spinal muscular atrophy (SMA), and control
+                                (unaffected)
+                                subjects.
+                                And iMN (Exp 2) - ALS, SMA and Control (unaffected) iMN cell lines
+                                differentiated from
+                                iPS
+                                cell lines using a long differentiation protocol.
+                            </h4>
+                        </div>
+
+
+                        <div class="onerow" style="margin-top: 10px;">
+                            <button class="button-about" ng-click="goToAssays('SWATH')">Assay Info</button>
+                            <button class="button-download" ng-click="scrollToDownloadId('swath-sec')">
+                                Download
+                            </button>
+
+                            <!--<button class="button-explore" ng-click="goToExplore('SWATH', ctrl.selectedPerturbationGenes)">Explore</button>-->
+                        </div>
+                        <br/>
+
+                    </div>
+                    <!--=======================================-->
+                    <!--=======================================-->
+                    <!--=======================================-->
+                    <div class=" splash shadowed" ng-if="ctrl.compoundAndDSGenes | contains:'RPPA'"
+                         style="padding-top: 10px; padding-bottom: 10px; padding-right: 20px">
+
+
+                        <h3>
+                            Reverse Phase Protein Array (RPPA)</h3>
+
+
+                        <div class="col-md-12 " style="background-color:#eef2d7;">
+                            <h4 style="padding-top: 10px;padding-bottom: 10px;">
+                                Reverse
+                                phase protein array (RPPA) is a high-throughput technology that performs protein
+                                assays
+                                on
+                                thousands of samples simultaneously, including tissue and cell lysates, serum,
+                                plasma or
+                                other body fluids that measure the levels of protein expression, as well as
+                                protein
+                                modifications such as phosphorylation. Protein lysates are arrayed as microspots
+                                on
+                                nitrocellulized coated glass slides and probed with highly specific antibodies
+                                that have
+                                been validated for RPPA. When specific antibodies are used, RPPA can generate
+                                1,000
+                                times
+                                more data points using 10,000 times less sample volume than an ordinary western
+                                blot,
+                                enabling researchers to monitor quantitative proteomic responses for various
+                                time-scale
+                                and
+                                input-dose gradients simultaneously.
+                            </h4>
+                        </div>
+
+
+                        <div class="onerow" style="margin-top: 10px;">
+                            <button class="button-about" ng-click="goToAssays('RPPA')">Assay Info</button>
+                            <button class="button-download" ng-click="scrollToDownloadId('rppa-sec')">Download
+                            </button>
+
+                            <!--<button class="button-explore" ng-click="goToExplore('RPPA', ctrl.selectedPerturbationGenes)">Explore</button>-->
+                        </div>
+                        <br/>
+
+                    </div>
+                    <!--=======================================-->
+                    <!--=======================================-->
+                    <!--=======================================-->
+
+                    <div class=" splash shadowed" ng-if="ctrl.compoundAndDSGenes | contains:'GCP'"
+                         style="padding-top: 10px; padding-bottom: 10px; padding-right: 20px">
+
+
+                        <h3>
+                            Global Chromatin Profiling (GCP)</h3>
+
+
+                        <div class="col-md-12 " style="background-color:#eef2d7;">
+                            <h4 style="padding-top: 10px;padding-bottom: 10px;">
+                                Global
+                                Chromatin Profiling (GCP) technology is a mass spectrometry-based assay to
+                                identify and
+                                quantify post-translational modifications on histone proteins from bulk
+                                chromatin. The
+                                assay
+                                quantifies around 60 different combinations of histone modifications on H3, with
+                                even
+                                more
+                                possible combinations on H4, H2A (including isoforms), and H2B. GCP can be
+                                considered as
+                                orthogonal to ChIP-Seq. Instead of characterizing one histone mark at a time
+                                with locus
+                                resolution across the genome, one can profile almost all combinations of histone
+                                marks
+                                together in bulk chromatin with no genomic resolution. The technique is
+                                particularly
+                                useful
+                                in assessing the functional consequences of genetic mutations to the epigenetic
+                                machinery
+                                and can be employed to make connections among biological conditions and
+                                perturbations</h4>
+
+                        </div>
+
+
+                        <div class="onerow" style="margin-top: 10px;">
+                            <button class="button-about" ng-click="goToAssays('GCP')">Assay Info</button>
+                            <button class="button-download" ng-click="scrollToDownloadId('gcp-sec')">Download
+                            </button>
+                            <!--This is for changing the uppercase cp name to original cp name-->
+                            <a href="http://eh3.uc.edu/pilincs/api-assays-paged/?order=asc&limit=100000&offset=0&tags=[{%22name%22:%22{{data_sets_2_compounds_orig['GCP'][ctrl.selectedPerturbationGenes]}}%22,%22flag%22:%22Perturbation%22,%22annotation%22:%22Pertiname%22},{%22gcp%22:true}]" target="_blank">
+                                <button class="button-download-piece"
+                                >Download Selected Data
+                                </button>
+                            </a>
+                            <button class="button-explore"
+                                    ng-click="goToExplore('GCP', ctrl.selectedPerturbationGenes)">Explore
+                            </button>
+                        </div>
+                        <br/>
+
+                    </div>
+                    <!--</div>-->
+                </div>
+
+
+            </div>
+
+
+            <!--</div>-->
+        </div>
+
+        <div class="container container-french-stucco splash shadowed" ng-show="ctrl.showSmileSvg && showPartFlag == 2"
+             style="width: 100%;margin-top: 10px; margin-bottom: 20px;  padding-top: 20px; padding-bottom: 20px;border-radius: 5px;">
+
+            <div class="container" style="width: 100%">
+
+                <div class="splash shadowed "
+                     style="background-color:#e9efcb;padding-top: 10px;padding-bottom: 10px;margin-bottom: 10px;">
+
+                    <h3>
+                        Similar LINCS compounds to:
+                    </h3>
+                    <hr class="blacked"/>
+                    <a style="color: darkolivegreen;word-wrap:break-word" ;
+                       disabled="">{{ctrl.selectedSmile}}</a>
+
+                </div>
+
+
+                <div style="margin-top: 10px;margin-bottom: 10px" ng-bind-html="cpSvg4"></div>
+                <!--<div class="container" style="width: 100%">-->
+                <div ng-show="!(ctrl.tableSmileSimilar.total() > 0)">
+                    <div class="splash shadowed "
+                         style="background-color:#e9efcb;padding-top: 10px;padding-bottom: 10px;margin-bottom: 10px;">
+
+                        <h3>No similar compound with similarity score > 80% found in database.
+                        </h3>
+
+                    </div>
+                </div>
+                <div ng-show="ctrl.tableSmileSimilar.total() > 0">
+                    <table ng-table="ctrl.tableSmileSimilar" class="table table-bordered table-striped"
+                           show-filter="true">
+                        <tr ng-repeat="mapping in $data">
+                            <!--<td>{{mapping.pertDose}}</td>-->
+                            <!--<td>{{mapping.pertTime}}</td>-->
+                            <!--<td>{{mapping.cellId}}</td>-->
+
+
+                            <td style="font-weight: 400" title="'Name'" filter="{ Name: 'number'}"
+                                sortable="'Name'">
+                                <a class="tabled" href ng-click="showDataForPerturbationSmiles(mapping.Name)">{{mapping.Name}}</a>
+                            </td>
+
+                            <td style="font-weight: 400" title="'Similarity'"
+                                filter="{ Similarity: 'number'}" sortable="'Similarity'">
+                                {{mapping.Similarity | limitTo:5}}
+                            </td>
+
+                            <td style="font-weight: 400" title="'SMILES'" filter="{ SMILES: 'text'}"
+                                sortable="'SMILES'">
+                                <a class="tabled2">
+                                    {{mapping.Smile}}
+                                </a>
+                            </td>
+
+                            <td style="font-weight: 400" title="'LINCS_ID'" filter="{ LSM_ID: 'text'}"
+                                sortable="'LSM_ID'">
+                                <a class="tabled"
+                                   ng-href="http://lincsportal.ccs.miami.edu/SmallMolecules/view/{{mapping.LSM_ID}}"
+                                   target="_blank">
+
+                                    {{mapping.LSM_ID}}
+                                </a>
+                            </td>
+
+
+                        </tr>
+                    </table>
+                </div>
+
+
+                <!--<div  -->
+                <!--style="width: 100%;margin-top: 10px; margin-bottom: 20px;  padding-top: 20px; padding-bottom: 20px;background: #fff;border-radius: 5px;">-->
+                <!--<hr class="blacked"/>-->
+                <div ng-show="ctrl.showCompoundToDSTableSmiles "
+                     style="padding-top: 10px;padding-bottom: 10px;margin-bottom: 10px;margin-top: 40px;">
+
+
+                    <!--<div  class="container-fluid" style="width: 100%">-->
+                    <div class="splash shadowed "
+                         style="background-color:#e9efcb;padding-top: 10px;padding-bottom: 10px;margin-bottom: 10px;">
+
+                        <h3>The selected perturbation <a style="color: darkolivegreen"
+                                                         disabled="">({{ctrl.selectedPerturbationSmiles}})</a>
+                            is found in these data sets:
+                        </h3>
+                        <div class="onerow">
+                            <h4 class="onerow" ng-if="ctrl.selectedCpInfoSmiles['SM_PubChem_CID']">PubChem_ID: <a
+                                    ng-href="https://pubchem.ncbi.nlm.nih.gov/compound/{{ctrl.selectedCpInfoSmiles['SM_PubChem_CID']}}"
+                                    target="_blank"
+                                    class="clickable">{{ctrl.selectedCpInfoSmiles['SM_PubChem_CID']}}</a>
+                                &nbsp;|&nbsp;
+                            </h4>
+                            <h4 class="onerow" ng-if="ctrl.selectedCpInfoSmiles['MOLECULAR_FORMULA']">Weight: <a
+                            >{{ctrl.selectedCpInfoSmiles['MOLECULAR_FORMULA']}} </a>
+                                &nbsp;|&nbsp;
+                            </h4>
+
+                            <h4 class="onerow" ng-if="ctrl.selectedCpInfoSmiles['SM_LINCS_ID']">SM_LINCS_ID: <a
+                                    ng-href="http://lincsportal.ccs.miami.edu/SmallMolecules/view/{{ctrl.selectedCpInfoSmiles['SM_LINCS_ID']}}"
+                                    target="_blank" class="clickable">{{ctrl.selectedCpInfoSmiles['SM_LINCS_ID']}}</a>
+                                &nbsp;|&nbsp;
+                            </h4>
+                            <h4 class="onerow" ng-if="ctrl.selectedCpInfoSmiles['Type']">Type: <a
+                            >{{ctrl.selectedCpInfoSmiles['Type']}}</a>
+
+                            </h4>
+
+                        </div>
+
+                    </div>
+
+
+                    <!--</div>-->
+                    <!--<div class="container" style="width: 100%">-->
+
+                    <div class=" splash shadowed" ng-if="ctrl.compoundAndDSSmiles | contains:'P100'"
+                         style="padding-top: 10px; padding-bottom: 10px; padding-right: 20px">
+
+
+                        <h3>
+                            P100 Phosphoprotein Quantification Assay</h3>
+
+
+                        <div class="col-md-12 " style="background-color:#eef2d7;">
+                            <h4 style="padding-top: 10px;padding-bottom: 10px;">The
+                                P100
+                                assay is a mass spectrometry-based targeted phosphoproteomic assay that detects
+                                and
+                                quantifies a representative set of 96 phosphopeptide probes that are present in
+                                a wide
+                                range
+                                of cell types and have been demonstrated to be modulated via perturbations.
+                            </h4>
+                        </div>
+
+
+                        <div class="onerow" style="margin-top: 10px;">
+                            <button class="button-about" ng-click="goToAssays('P100')">Assay Info</button>
+                            <button class="button-download" ng-click="scrollToDownloadId('p100-sec')">Download
+                            </button>
+                            <a href="http://eh3.uc.edu/pilincs/api-assays-paged/?order=asc&limit=100000&offset=0&tags=[{%22name%22:%22{{data_sets_2_compounds_orig['P100'][ctrl.selectedPerturbationSmiles]}}%22,%22flag%22:%22Perturbation%22,%22annotation%22:%22Pertiname%22},{%22p100%22:true}]" target="_blank">
+                                <button class="button-download-piece"
+                                >Download Selected Data
+                                </button>
+                            </a>
+                            <button class="button-explore"
+                                    ng-click="goToExplore('P100', ctrl.selectedPerturbationSmiles)">Explore
+                            </button>
+                        </div>
+                        <br/>
+
+                    </div>
+                    <!--=======================================-->
+                    <!--=======================================-->
+                    <!--=======================================-->
+                    <div class=" splash shadowed" ng-if="ctrl.compoundAndDSSmiles | contains:'Micro'"
+                         style="padding-top: 10px; padding-bottom: 10px; padding-right: 20px">
+
+
+                        <h3>
+                            Microwestern Meso-Scale Quantitative Western Blotting Assay</h3>
+
+
+                        <div class="col-md-12 " style="background-color:#eef2d7;">
+                            <h4 style="padding-top: 10px;padding-bottom: 10px;">The
+                                microwestern is a meso-scale quantitative western blotting assay using infrared
+                                fluorescence. Level 1 data are raw signal (background subtracted) from a single
+                                "spot"
+                                (band). Level 2 data are Level 1 data divided by a loading control signal (e.g.
+                                tubulin).
+                                Level 3 data are Level 2 data divided by a biological internal control (e.g.
+                                Level 2
+                                data
+                                corresponding to serum-starved conditions). Level 4 data are averages across
+                                Level 3
+                                replicates.
+                            </h4>
+                        </div>
+
+
+                        <div class="onerow" style="margin-top: 10px;">
+                            <button class="button-about" ng-click="goToAssays('Micro')">Assay Info</button>
+                            <button class="button-download" ng-click="scrollToDownloadId('micro-sec')">
+                                Download
+                            </button>
+
+                            <!--<button class="button-explore" ng-click="goToExplore('Micro', ctrl.selectedPerturbationSmiles)">Explore</button>-->
+                        </div>
+                        <br/>
+
+                    </div>
+                    <!--=======================================-->
+                    <!--=======================================-->
+                    <!--=======================================-->
+                    <div class=" splash shadowed" ng-if="ctrl.compoundAndDSSmiles | contains:'DToxS'"
+                         style="padding-top: 10px; padding-bottom: 10px; padding-right: 20px">
+
+
+                        <h3>
+                            MS Protein State Assay</h3>
+
+
+                        <div class="col-md-12 " style="background-color:#eef2d7;">
+                            <h4 style="padding-top: 10px;padding-bottom: 10px;">
+                                Protein
+                                expression signatures of a PromoCell cardiomyocyte with drug-induced toxicity
+                                and
+                                toxicity
+                                mitigation by multiple drugs.
+                            </h4>
+                        </div>
+
+
+                        <div class="onerow" style="margin-top: 10px;">
+                            <button class="button-about" ng-click="goToAssays('DToxS')">Assay Info</button>
+                            <button class="button-download" ng-click="scrollToDownloadId('dtoxs-sec')">
+                                Download
+                            </button>
+
+                            <!--<button class="button-explore" ng-click="goToExplore('DToxS', ctrl.selectedPerturbationSmiles)">Explore</button>-->
+                        </div>
+                        <br/>
+
+                    </div>
+                    <!--=======================================-->
+                    <!--=======================================-->
+                    <!--=======================================-->
+                    <div class=" splash shadowed" ng-if="ctrl.compoundAndDSSmiles | contains:'SWATH'"
+                         style="padding-top: 10px; padding-bottom: 10px; padding-right: 20px">
+
+
+                        <h3>
+                            SWATH-MS Protein Quantification Assay</h3>
+
+
+                        <div class="col-md-12 " style="background-color:#eef2d7;">
+                            <h4 style="padding-top: 10px;padding-bottom: 10px;">
+                                Proteomic peptide profiles using protein isolated from iPCS cell lines derived
+                                from
+                                amyotrophic lateral sclerosis (ALS), spinal muscular atrophy (SMA), and control
+                                (unaffected)
+                                subjects.
+                                And iMN (Exp 2) - ALS, SMA and Control (unaffected) iMN cell lines
+                                differentiated from
+                                iPS
+                                cell lines using a long differentiation protocol.
+                            </h4>
+                        </div>
+
+
+                        <div class="onerow" style="margin-top: 10px;">
+                            <button class="button-about" ng-click="goToAssays('SWATH')">Assay Info</button>
+                            <button class="button-download" ng-click="scrollToDownloadId('swath-sec')">
+                                Download
+                            </button>
+
+                            <!--<button class="button-explore" ng-click="goToExplore('SWATH', ctrl.selectedPerturbationSmiles)">Explore</button>-->
+                        </div>
+                        <br/>
+
+                    </div>
+                    <!--=======================================-->
+                    <!--=======================================-->
+                    <!--=======================================-->
+                    <div class=" splash shadowed" ng-if="ctrl.compoundAndDSSmiles | contains:'RPPA'"
+                         style="padding-top: 10px; padding-bottom: 10px; padding-right: 20px">
+
+
+                        <h3>
+                            Reverse Phase Protein Array (RPPA)</h3>
+
+
+                        <div class="col-md-12 " style="background-color:#eef2d7;">
+                            <h4 style="padding-top: 10px;padding-bottom: 10px;">
+                                Reverse
+                                phase protein array (RPPA) is a high-throughput technology that performs protein
+                                assays
+                                on
+                                thousands of samples simultaneously, including tissue and cell lysates, serum,
+                                plasma or
+                                other body fluids that measure the levels of protein expression, as well as
+                                protein
+                                modifications such as phosphorylation. Protein lysates are arrayed as microspots
+                                on
+                                nitrocellulized coated glass slides and probed with highly specific antibodies
+                                that have
+                                been validated for RPPA. When specific antibodies are used, RPPA can generate
+                                1,000
+                                times
+                                more data points using 10,000 times less sample volume than an ordinary western
+                                blot,
+                                enabling researchers to monitor quantitative proteomic responses for various
+                                time-scale
+                                and
+                                input-dose gradients simultaneously.
+                            </h4>
+                        </div>
+
+
+                        <div class="onerow" style="margin-top: 10px;">
+                            <button class="button-about" ng-click="goToAssays('RPPA')">Assay Info</button>
+                            <button class="button-download" ng-click="scrollToDownloadId('rppa-sec')">Download
+                            </button>
+
+                            <!--<button class="button-explore" ng-click="goToExplore('RPPA', ctrl.selectedPerturbationSmiles)">Explore</button>-->
+                        </div>
+                        <br/>
+
+                    </div>
+                    <!--=======================================-->
+                    <!--=======================================-->
+                    <!--=======================================-->
+
+                    <div class=" splash shadowed" ng-if="ctrl.compoundAndDSSmiles | contains:'GCP'"
+                         style="padding-top: 10px; padding-bottom: 10px; padding-right: 20px">
+
+
+                        <h3>
+                            Global Chromatin Profiling (GCP)</h3>
+
+
+                        <div class="col-md-12 " style="background-color:#eef2d7;">
+                            <h4 style="padding-top: 10px;padding-bottom: 10px;">
+                                Global
+                                Chromatin Profiling (GCP) technology is a mass spectrometry-based assay to
+                                identify and
+                                quantify post-translational modifications on histone proteins from bulk
+                                chromatin. The
+                                assay
+                                quantifies around 60 different combinations of histone modifications on H3, with
+                                even
+                                more
+                                possible combinations on H4, H2A (including isoforms), and H2B. GCP can be
+                                considered as
+                                orthogonal to ChIP-Seq. Instead of characterizing one histone mark at a time
+                                with locus
+                                resolution across the genome, one can profile almost all combinations of histone
+                                marks
+                                together in bulk chromatin with no genomic resolution. The technique is
+                                particularly
+                                useful
+                                in assessing the functional consequences of genetic mutations to the epigenetic
+                                machinery
+                                and can be employed to make connections among biological conditions and
+                                perturbations</h4>
+
+                        </div>
+
+
+                        <div class="onerow" style="margin-top: 10px;">
+                            <button class="button-about" ng-click="goToAssays('GCP')">Assay Info</button>
+                            <button class="button-download" ng-click="scrollToDownloadId('gcp-sec')">Download
+                            </button>
+                            <a href="http://eh3.uc.edu/pilincs/api-assays-paged/?order=asc&limit=100000&offset=0&tags=[{%22name%22:%22{{data_sets_2_compounds_orig['GCP'][ctrl.selectedPerturbationSmiles]}}%22,%22flag%22:%22Perturbation%22,%22annotation%22:%22Pertiname%22},{%gcp%22:true}]" target="_blank">
+                                <button class="button-download-piece"
+                                >Download Selected Data
+                                </button>
+                            </a>
+                            <button class="button-explore"
+                                    ng-click="goToExplore('GCP', ctrl.selectedPerturbationSmiles)">Explore
+                            </button>
+                        </div>
+                        <br/>
+
+                    </div>
+                    <!--</div>-->
+                </div>
+
+
+            </div>
+
+
+            <!--</div>-->
+        </div>
+
+
+        <div class="container container-french-stucco splash shadowed"
+             ng-show="ctrl.showCompoundToDSTable && showPartFlag == 1"
+             style="width: 100%;margin-top: 10px; margin-bottom: 20px;  padding-top: 20px; padding-bottom: 20px;border-radius: 5px;">
+
+            <div class="container" style="width: 100%">
+
+                <div ng-if="ctrl.compoundAndDS.length > 0">
+                    <div class="splash shadowed "
+                         style="background-color:#e9efcb;padding-top: 10px;padding-bottom: 10px;margin-bottom: 10px;">
+
+
+                        <h3 style="padding-top: 10px;padding-bottom: 10px;">
+                            The selected perturbation <a style="color: darkolivegreen"
+                                                         disabled="">({{ctrl.selectedPerturbation}})</a>
+                            is found in these data sets:
+                        </h3>
+
+                        <div class="onerow">
+                            <h4 class="onerow" ng-if="ctrl.selectedCpInfo['SM_PubChem_CID']">PubChem_ID: <a
+                                    ng-href="https://pubchem.ncbi.nlm.nih.gov/compound/{{ctrl.selectedCpInfo['SM_PubChem_CID']}}"
+                                    target="_blank" class="clickable">{{ctrl.selectedCpInfo['SM_PubChem_CID']}}</a>
+                                &nbsp;|&nbsp;
+                            </h4>
+                            <h4 class="onerow" ng-if="ctrl.selectedCpInfo['MOLECULAR_FORMULA']">Weight: <a
+                            >{{ctrl.selectedCpInfo['MOLECULAR_FORMULA']}} </a>
+                                &nbsp;|&nbsp;
+                            </h4>
+
+                            <h4 class="onerow" ng-if="ctrl.selectedCpInfo['SM_LINCS_ID']">SM_LINCS_ID: <a
+                                    ng-href="http://lincsportal.ccs.miami.edu/SmallMolecules/view/{{ctrl.selectedCpInfo['SM_LINCS_ID']}}"
+                                    target="_blank" class="clickable">{{ctrl.selectedCpInfo['SM_LINCS_ID']}}</a>
+                                &nbsp;|&nbsp;
+                            </h4>
+                            <h4 class="onerow" ng-if="ctrl.selectedCpInfo['Type']">Type: <a
+                            >{{ctrl.selectedCpInfo['Type']}}</a>
+
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+                <div ng-if="!(ctrl.compoundAndDS.length > 0)">
+
+                    <div class="container   shadowed"
+                         style="width: 100%;background-color:#eaedde;margin-top: 10px; margin-bottom: 10px;  padding-top: 20px; padding-bottom: 10px;margin-right: auto; margin-left: auto; ">
+
+                        <div class=" col-sm-12 col-md-12  col-lg-12">
+                            <div class="row " style="width: 100%;">
+
+                                <div class=" col-sm-10 col-md-10  col-lg-10">
+                                    <div class=" splash ">
+                                        <h3>The selected perturbation not found in the LINCS proteomics database.
+                                        </h3>
+
+                                        <h3>Search within other LINCS data in <a
+                                                ng-href="http://www.ilincs.org/ilincs/searchFor/{{ctrl.selectedPerturbation}}"
+                                                target="_blank" class="clickable">iLINCS</a>
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div class=" col-sm-2 col-md-2  col-lg-2">
+                                    <div class=" splash ">
+                                        <a ng-href="http://www.ilincs.org/ilincs/searchFor/{{ctrl.selectedPerturbation}}"
+                                           target="_blank" target="_blank">
+
+                                            <!--<img style="border:1px solid grey;" onmouseover="this.style.backgroundColor=black;" onmouseout="this.style.backgroundColor='';this.style.opacity=1;"  src="../images/PIR.png" width="120" height="120">-->
+                                            <!---->
+                                            <img src="/lincsproteomics/images/iLINCSnewLogo2.png" width="90" height="90">
+
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <!--<h2>-->
+                <!--</h2>-->
+                <!--</div>-->
+
+                <!---->
+
+
+                <div class=" splash shadowed" ng-if="ctrl.compoundAndDS | contains:'P100'"
+                     style="padding-top: 10px; padding-bottom: 10px; padding-right: 20px">
+
+
+                    <h3>
+                        P100 Phosphoprotein Quantification Assay</h3>
+
+
+                    <div class="col-md-12 " style="background-color:#eef2d7;">
+                        <h4 style="padding-top: 10px;padding-bottom: 10px;">The
+                            P100
+                            assay is a mass spectrometry-based targeted phosphoproteomic assay that detects and
+                            quantifies a representative set of 96 phosphopeptide probes that are present in a wide
+                            range
+                            of cell types and have been demonstrated to be modulated via perturbations.
+                        </h4>
+                    </div>
+
+
+                    <div class="onerow" style="margin-top: 10px;">
+                        <button class="button-about" ng-click="goToAssays('P100')">Assay Info</button>
+                        <button class="button-download" ng-click="scrollToDownloadId('p100-sec')">Download</button>
+                        <a href="http://eh3.uc.edu/pilincs/api-assays-paged/?order=asc&limit=100000&offset=0&tags=[{%22name%22:%22{{data_sets_2_compounds_orig['P100'][ctrl.selectedPerturbation]}}%22,%22flag%22:%22Perturbation%22,%22annotation%22:%22Pertiname%22},{%p100%22:true}]" target="_blank">
+                            <button class="button-download-piece"
+                            >Download Selected Data
+                            </button>
+                        </a>
+                        <button class="button-explore" ng-click="goToExplore('P100',ctrl.selectedPerturbation)">
+                            Explore
+                        </button>
+                    </div>
+                    <br/>
+
+                </div>
+                <!--=======================================-->
+                <!--=======================================-->
+                <!--=======================================-->
+                <div class=" splash shadowed" ng-if="ctrl.compoundAndDS | contains:'Micro'"
+                     style="padding-top: 10px; padding-bottom: 10px; padding-right: 20px">
+
+
+                    <h3>
+                        Microwestern Meso-Scale Quantitative Western Blotting Assay</h3>
+
+
+                    <div class="col-md-12 " style="background-color:#eef2d7;">
+                        <h4 style="padding-top: 10px;padding-bottom: 10px;">The
+                            microwestern is a meso-scale quantitative western blotting assay using infrared
+                            fluorescence. Level 1 data are raw signal (background subtracted) from a single "spot"
+                            (band). Level 2 data are Level 1 data divided by a loading control signal (e.g.
+                            tubulin).
+                            Level 3 data are Level 2 data divided by a biological internal control (e.g. Level 2
+                            data
+                            corresponding to serum-starved conditions). Level 4 data are averages across Level 3
+                            replicates.
+                        </h4>
+                    </div>
+
+
+                    <div class="onerow" style="margin-top: 10px;">
+                        <button class="button-about" ng-click="goToAssays('Micro')">Assay Info</button>
+                        <button class="button-download" ng-click="scrollToDownloadId('micro-sec')">Download</button>
+
+                        <!--<button class="button-explore" ng-click="goToExplore('Micro',ctrl.selectedPerturbation)">Explore</button>-->
+                    </div>
+                    <br/>
+
+                </div>
+                <!--=======================================-->
+                <!--=======================================-->
+                <!--=======================================-->
+                <div class=" splash shadowed" ng-if="ctrl.compoundAndDS | contains:'DToxS'"
+                     style="padding-top: 10px; padding-bottom: 10px; padding-right: 20px">
+
+
+                    <h3>
+                        MS Protein State Assay</h3>
+
+
+                    <div class="col-md-12 " style="background-color:#eef2d7;">
+                        <h4 style="padding-top: 10px;padding-bottom: 10px;">
+                            Protein
+                            expression signatures of a PromoCell cardiomyocyte with drug-induced toxicity and
+                            toxicity
+                            mitigation by multiple drugs.
+                        </h4>
+                    </div>
+
+
+                    <div class="onerow" style="margin-top: 10px;">
+                        <button class="button-about" ng-click="goToAssays('DToxS')">Assay Info</button>
+                        <button class="button-download" ng-click="scrollToDownloadId('dtoxs-sec')">Download</button>
+
+                        <!--<button class="button-explore" ng-click="goToExplore('DToxS',ctrl.selectedPerturbation)">Explore</button>-->
+                    </div>
+                    <br/>
+
+                </div>
+                <!--=======================================-->
+                <!--=======================================-->
+                <!--=======================================-->
+                <div class=" splash shadowed" ng-if="ctrl.compoundAndDS | contains:'SWATH'"
+                     style="padding-top: 10px; padding-bottom: 10px; padding-right: 20px">
+
+
+                    <h3>
+                        SWATH-MS Protein Quantification Assay</h3>
+
+
+                    <div class="col-md-12 " style="background-color:#eef2d7;">
+                        <h4 style="padding-top: 10px;padding-bottom: 10px;">
+                            Proteomic peptide profiles using protein isolated from iPCS cell lines derived from
+                            amyotrophic lateral sclerosis (ALS), spinal muscular atrophy (SMA), and control
+                            (unaffected)
+                            subjects.
+                            And iMN (Exp 2) - ALS, SMA and Control (unaffected) iMN cell lines differentiated from
+                            iPS
+                            cell lines using a long differentiation protocol.
+                        </h4>
+                    </div>
+
+
+                    <div class="onerow" style="margin-top: 10px;">
+                        <button class="button-about" ng-click="goToAssays('SWATH')">Assay Info</button>
+                        <button class="button-download" ng-click="scrollToDownloadId('swath-sec')">Download</button>
+
+                        <!--<button class="button-explore" ng-click="goToExplore('SWATH',ctrl.selectedPerturbation)">Explore</button>-->
+                    </div>
+                    <br/>
+
+                </div>
+                <!--=======================================-->
+                <!--=======================================-->
+                <!--=======================================-->
+                <div class=" splash shadowed" ng-if="ctrl.compoundAndDS | contains:'RPPA'"
+                     style="padding-top: 10px; padding-bottom: 10px; padding-right: 20px">
+
+
+                    <h3>
+                        Reverse Phase Protein Array (RPPA)</h3>
+
+
+                    <div class="col-md-12 " style="background-color:#eef2d7;">
+                        <h4 style="padding-top: 10px;padding-bottom: 10px;">
+                            Reverse
+                            phase protein array (RPPA) is a high-throughput technology that performs protein assays
+                            on
+                            thousands of samples simultaneously, including tissue and cell lysates, serum, plasma or
+                            other body fluids that measure the levels of protein expression, as well as protein
+                            modifications such as phosphorylation. Protein lysates are arrayed as microspots on
+                            nitrocellulized coated glass slides and probed with highly specific antibodies that have
+                            been validated for RPPA. When specific antibodies are used, RPPA can generate 1,000
+                            times
+                            more data points using 10,000 times less sample volume than an ordinary western blot,
+                            enabling researchers to monitor quantitative proteomic responses for various time-scale
+                            and
+                            input-dose gradients simultaneously.
+                        </h4>
+                    </div>
+
+
+                    <div class="onerow" style="margin-top: 10px;">
+                        <button class="button-about" ng-click="goToAssays('RPPA')">Assay Info</button>
+                        <button class="button-download" ng-click="scrollToDownloadId('rppa-sec')">Download</button>
+
+                        <!--<button class="button-explore" ng-click="goToExplore('RPPA',ctrl.selectedPerturbation)">Explore</button>-->
+                    </div>
+                    <br/>
+
+                </div>
+                <!--=======================================-->
+                <!--=======================================-->
+                <!--=======================================-->
+
+                <div class=" splash shadowed" ng-if="ctrl.compoundAndDS | contains:'GCP'"
+                     style="padding-top: 10px; padding-bottom: 10px; padding-right: 20px">
+
+
+                    <h3>
+                        Global Chromatin Profiling (GCP)</h3>
+
+
+                    <div class="col-md-12 " style="background-color:#eef2d7;">
+                        <h4 style="padding-top: 10px;padding-bottom: 10px;">
+                            Global
+                            Chromatin Profiling (GCP) technology is a mass spectrometry-based assay to identify and
+                            quantify post-translational modifications on histone proteins from bulk chromatin. The
+                            assay
+                            quantifies around 60 different combinations of histone modifications on H3, with even
+                            more
+                            possible combinations on H4, H2A (including isoforms), and H2B. GCP can be considered as
+                            orthogonal to ChIP-Seq. Instead of characterizing one histone mark at a time with locus
+                            resolution across the genome, one can profile almost all combinations of histone marks
+                            together in bulk chromatin with no genomic resolution. The technique is particularly
+                            useful
+                            in assessing the functional consequences of genetic mutations to the epigenetic
+                            machinery
+                            and can be employed to make connections among biological conditions and
+                            perturbations</h4>
+
+                    </div>
+
+
+                    <div class="onerow" style="margin-top: 10px;">
+                        <button class="button-about" ng-click="goToAssays('GCP')">Assay Info</button>
+                        <button class="button-download" ng-click="scrollToDownloadId('gcp-sec')">Download</button>
+                        <a href="http://eh3.uc.edu/pilincs/api-assays-paged/?order=asc&limit=100000&offset=0&tags=[{%22name%22:%22{{data_sets_2_compounds_orig['GCP'][ctrl.selectedPerturbation]}}%22,%22flag%22:%22Perturbation%22,%22annotation%22:%22Pertiname%22},{%gcp%22:true}]" target="_blank">
+                            <button class="button-download-piece"
+                            >Download Selected Data
+                            </button>
+                        </a>
+                        <button class="button-explore" ng-click="goToExplore('GCP',ctrl.selectedPerturbation)">
+                            Explore
+                        </button>
+                    </div>
+                    <br/>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!--</section>-->
+
+    </div>
+
+</div>

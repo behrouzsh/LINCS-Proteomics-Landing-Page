@@ -8,7 +8,11 @@ server:
 urls:
   pilincsApiTags: http://eh3.uc.edu/pilincs/api-tags
   pilincsP100Api: http://eh3.uc.edu/pilincs/api-assays-paged/?order=asc&limit=100000&offset=0&tags=[{"name":"%s","flag":"Perturbation","annotation":"Pertiname"},{"p100":true}]
-
+  stringNetworkJSON: https://string-db.org/api/json/network?identifiers=%s
+  stringNetworkSVG: https://string-db.org/api/image/network?identifiers=%s
+  harmonizomeGene: http://amp.pharm.mssm.edu/Harmonizome/api/1.0/gene/%s
+  pythonP100Api: http://127.0.0.1:5000/api/clust/P100/aggregatedforSlicing/%s
+  pythonGCPApi: http://127.0.0.1:5000/api/clust/GCP/aggregatedforSlicing/%s
 
 resources:
   mapping: /psi-mod/mapping.csv
@@ -16,6 +20,10 @@ resources:
   kinase2GeneHuman: /kinase/kinase2Gene_human.json
   gene2KinaseHuman: /kinase/gene2Kinase_human.json
   geneName2KinaseName: /kinase/geneName2KinaseName_human.json
+  compoundInfo: /static/data/proteomics_compound_info.json
+  representativeCompoundInfo: /static/data/phiQlust_representative_info.json
+  proteomicsLSMWithFingerprint: /static/data/proteomicsLSMWithFingerprint.json
+  LSMCSVFile: src/main/resources/static/data/SmallMolecule2.csv
 
 
 ---

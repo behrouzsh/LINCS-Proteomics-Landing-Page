@@ -1,0 +1,2 @@
+AR_Name	AR_Center_Specific_ID	AR_LINCS_ID	AR_Alternative_Name	AR_Provider_Name	AR_Provider_Catalog_ID	AR_Provider_Batch_ID_ID
+Trastuzumab	TRS	LAR-1001	Herceptin	Genetech	NDC50242-134-68	615010

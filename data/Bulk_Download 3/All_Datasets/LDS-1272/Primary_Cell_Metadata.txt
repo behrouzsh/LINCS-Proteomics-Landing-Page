@@ -1,0 +1,1 @@
+pc_name	pc_lincs_id	pc_center_specific_id	pc_provider_name	pc_provider_catalog_id	pc_donor_sex	pc_donor_age	pc_donor_ethnicityPromoCell cardiomyocytes Line D	LPC-1003	D	PromoCell	2082801.2	Female	61	Caucasian
