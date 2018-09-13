@@ -13,6 +13,8 @@ urls:
   harmonizomeGene: http://amp.pharm.mssm.edu/Harmonizome/api/1.0/gene/%s
   pythonP100Api: http://127.0.0.1:5000/api/clust/P100/aggregatedforSlicing/%s
   pythonGCPApi: http://127.0.0.1:5000/api/clust/GCP/aggregatedforSlicing/%s
+  downloadP100Api: http://127.0.0.1:5000/api/P100/downlowdslice/%s
+  downloadGCPApi: http://127.0.0.1:5000/api/GCP/downlowdslice/%s
 
 resources:
   mapping: /psi-mod/mapping.csv

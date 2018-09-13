@@ -129,25 +129,28 @@
             <div id="aboutTab">
                 <ul class="nav nav-tabs nav-tabs3">
                     <!--<ul class="nav nav-pills nav-stacked col-md-3">-->
-                    <li  class="active" style="width:25%;">
+                    <li  class="active" style="width:20%;">
                         <a data-toggle="tab" data-target="#about"
                            style="font-size: 14px; font-weight: 500" ng-click="showAboutSubTab()">About</a>
                     </li>
 
-                    <li style="width:25%;">
+                    <li style="width:20%;">
                         <a data-toggle="tab" data-target="#centers"
                            style="font-size: 14px; font-weight: 500" ng-click="showCentersSubTab()">Centers</a>
                     </li>
-                    <li  style="width:25%; ">
+                    <li  style="width:20%; ">
                         <a data-toggle="tab" data-target="#tools"
                            style="font-size: 14px; font-weight: 500" ng-click="showToolssSubTab()">Tools</a>
                     </li>
 
-                    <li style="width:25%;">
+                    <li style="width:20%;">
                         <a data-toggle="tab" data-target="#publication"
                            style="font-size: 14px; font-weight: 500" ng-click="showPublicationSubTab()">Publications</a>
                     </li>
-
+                    <li style="width:19%;">
+                        <a data-toggle="tab" data-target="#api"
+                           style="font-size: 14px; font-weight: 500" ng-click="showAPISubTab()">APIs</a>
+                    </li>
 
 
                 </ul>
@@ -1527,6 +1530,76 @@
                                 <hr/>
                             </div>
                         </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="api">
+                        <h3 class="fh5co-lead " style="background-color:#929971">Selected APIs:</h3>
+
+
+
+                        <h2 class="fh5co-lead " style="background-color:#d1d8ab">Download Sliced GCP for a Perturbation</h2>
+
+                        <div class="fh5co-sub-lead ">
+                            <br/>
+                            <a href="http://www.lincsproteomics.org/api/GCP/downlowdslice/SIROLIMUS" target="_blank">
+                                http://www.lincsproteomics.org/api/GCP/downlowdslice/SIROLIMUS</a>
+                            <br/>
+                            <hr/>
+                        </div>
+
+                        <h2 class="fh5co-lead " style="background-color:#d1d8ab">Download Sliced P100 for a Perturbation</h2>
+
+                        <div class="fh5co-sub-lead ">
+                            <br/>
+                            <a href="http://www.lincsproteomics.org/api/P100/downlowdslice/SIROLIMUS" target="_blank">
+                                http://www.lincsproteomics.org/api/P100/downlowdslice/SIROLIMUS</a>
+                            <br/>
+                            <hr/>
+                        </div>
+
+
+
+
+
+
+
+
+
+                        <h2 class="fh5co-lead " style="background-color:#d1d8ab">Convert SMILES To Fingerprints example</h2>
+
+                        <div class="fh5co-sub-lead ">
+                            <br/>
+                            <a href="http://www.lincsproteomics.org/api/convertSmilesToFigerPrint/COC1CC(CC(C)C2CC(=O)C(C)C=C(C)C(O)C(OC)C(=O)C(C)CC(C)C=CC=CC=C(C)C(CC3CCC(C)C(O)(O3)C(=O)C(=O)N4CCCCC4C(=O)O2)OC)CCC1O" target="_blank">
+                                http://www.lincsproteomics.org/api/convertSmilesToFigerPrint/COC1CC(CC(C)C2CC(=O)C(C)C=C(C)C(O)C(OC)C(=O)C(C)CC(C)C=CC=CC=C(C)C(CC3CCC(C)C(O)(O3)C(=O)C(=O)N4CCCCC4C(=O)O2)OC)CCC1O</a>
+                            <br/>
+                            <hr/>
+                        </div>
+
+                        <h2 class="fh5co-lead " style="background-color:#d1d8ab">Convert SMILES To SVG</h2>
+
+                        <div class="fh5co-sub-lead ">
+                            <br/>
+                            <a href="http://www.lincsproteomics.org/api/depictSmiles/COC1CC(CC(C)C2CC(=O)C(C)C=C(C)C(O)C(OC)C(=O)C(C)CC(C)C=CC=CC=C(C)C(CC3CCC(C)C(O)(O3)C(=O)C(=O)N4CCCCC4C(=O)O2)OC)CCC1O" target="_blank">
+                                http://www.lincsproteomics.org/api/depictSmiles/COC1CC(CC(C)C2CC(=O)C(C)C=C(C)C(O)C(OC)C(=O)C(C)CC(C)C=CC=CC=C(C)C(CC3CCC(C)C(O)(O3)C(=O)C(=O)N4CCCCC4C(=O)O2)OC)CCC1O</a>
+                            <br/>
+                            <hr/>
+                        </div>
+
+
+                        <h2 class="fh5co-lead " style="background-color:#d1d8ab">Find Similar Compounds to LINCS Proteomics by SMILES</h2>
+
+                        <div class="fh5co-sub-lead ">
+                            <br/>
+                            <a href="http://www.lincsproteomics.org/api/findSimilarCompounds/COC1CC(CC(C)C2CC(=O)C(C)C=C(C)C(O)C(OC)C(=O)C(C)CC(C)C=CC=CC=C(C)C(CC3CCC(C)C(O)(O3)C(=O)C(=O)N4CCCCC4C(=O)O2)OC)CCC1O" target="_blank">
+                                http://www.lincsproteomics.org/api/findSimilarCompounds/COC1CC(CC(C)C2CC(=O)C(C)C=C(C)C(O)C(OC)C(=O)C(C)CC(C)C=CC=CC=C(C)C(CC3CCC(C)C(O)(O3)C(=O)C(=O)N4CCCCC4C(=O)O2)OC)CCC1O</a>
+                            <br/>
+                            <hr/>
+                        </div>
+
+
+
+
+
                     </div>
                     <!--</div>-->
                 </div>

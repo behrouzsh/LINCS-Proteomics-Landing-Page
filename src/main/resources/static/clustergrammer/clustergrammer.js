@@ -13019,8 +13019,9 @@ var Clustergrammer =
 	var get_available_filters = __webpack_require__(5);
 	var make_cat_params = __webpack_require__(84);
 
-	module.exports = function calc_viz_params(params, predefined_cat_colors = true) {
+	module.exports = function calc_viz_params(params, predefined_cat_colors ) {
 
+        predefined_cat_colors = typeof predefined_cat_colors !== 'undefined' ? predefined_cat_colors : true;
 	  params.labels = ini_label_params(params);
 	  params.viz = ini_viz_params(params, predefined_cat_colors);
 
@@ -13044,8 +13045,8 @@ var Clustergrammer =
 	  params = set_zoom_params(params);
 	  params = calc_default_fs(params);
 
-	  function ini_viz_params(params, predefined_cat_colors = true) {
-
+	  function ini_viz_params(params, predefined_cat_colors ) {
+          predefined_cat_colors = typeof predefined_cat_colors !== 'undefined' ? predefined_cat_colors : true;
 	    var viz = {};
 
 	    viz.root = params.root;
@@ -13927,8 +13928,8 @@ var Clustergrammer =
 	var check_if_value_cats = __webpack_require__(87);
 	var underscore = __webpack_require__(3);
 
-	module.exports = function make_cat_params(params, viz, predefined_cat_colors = true) {
-
+	module.exports = function make_cat_params(params, viz, predefined_cat_colors ) {
+        predefined_cat_colors = typeof predefined_cat_colors !== 'undefined' ? predefined_cat_colors : true;
 	  var super_string = ': ';
 	  var tmp_super;
 	  var inst_info;
@@ -14575,8 +14576,9 @@ var Clustergrammer =
 	var underscore = __webpack_require__(3);
 
 	// current matrix can change with downsampling
-	module.exports = function make_matrix_rows(params, current_matrix, row_names = 'all', ds_level = -1) {
-
+	module.exports = function make_matrix_rows(params, current_matrix, row_names, ds_level ) {
+        row_names = typeof row_names !== 'undefined' ? row_names : 'all';
+        ds_level = typeof ds_level !== 'undefined' ? ds_level : -1;
 	  // defaults
 	  var y_scale = params.viz.y_scale;
 	  var make_tip = true;
@@ -14657,8 +14659,8 @@ var Clustergrammer =
 	var fine_position_tile = __webpack_require__(99);
 	var underscore = __webpack_require__(3);
 
-	module.exports = function make_simple_rows(params, inst_data, tip, row_selection, ds_level = -1) {
-
+	module.exports = function make_simple_rows(params, inst_data, tip, row_selection, ds_level ) {
+        ds_level = typeof ds_level !== 'undefined' ? ds_level : -1;
 	  var inp_row_data = inst_data.row_data;
 
 	  var make_tip = true;
@@ -15366,7 +15368,9 @@ var Clustergrammer =
 	var make_row_tooltips = __webpack_require__(132);
 	var underscore = __webpack_require__(3);
 
-	module.exports = function make_row_labels(cgm, row_names = 'all', text_delay = 0) {
+	module.exports = function make_row_labels(cgm, row_names, text_delay ) {
+        row_names = typeof row_names !== 'undefined' ? row_names : 'all';
+        text_delay = typeof text_delay !== 'undefined' ? text_delay : 0;
 
 	  // console.log('make_row_labels')
 	  // console.log(row_names)
@@ -15678,7 +15682,8 @@ var Clustergrammer =
 
 	var make_dendro_triangles = __webpack_require__(107);
 
-	module.exports = function toggle_dendro_view(cgm, inst_rc, wait_time = 1500) {
+	module.exports = function toggle_dendro_view(cgm, inst_rc, wait_time ) {
+        wait_time = typeof wait_time !== 'undefined' ? wait_time : 1500;
 
 	  var params = cgm.params;
 
@@ -15728,8 +15733,8 @@ var Clustergrammer =
 	var make_dendro_crop_buttons = __webpack_require__(112);
 	var make_cat_breakdown_graph = __webpack_require__(115);
 
-	module.exports = function make_dendro_triangles(cgm, inst_rc, is_change_group = false) {
-
+	module.exports = function make_dendro_triangles(cgm, inst_rc, is_change_group ) {
+        is_change_group = typeof is_change_group !== 'undefined' ? is_change_group : false;
 	  var params = cgm.params;
 
 	  // in case sim_mat
@@ -16526,8 +16531,8 @@ var Clustergrammer =
 	var cat_breakdown_bars = __webpack_require__(129);
 	var cat_breakdown_values = __webpack_require__(130);
 
-	module.exports = function make_cat_breakdown_graph(params, inst_rc, inst_data, dendro_info, selector, tooltip = false) {
-
+	module.exports = function make_cat_breakdown_graph(params, inst_rc, inst_data, dendro_info, selector, tooltip ) {
+        tooltip = typeof tooltip !== 'undefined' ? tooltip : false;
 	  /*
 	  This function is used to make the category breakdown graphs for tooltips on
 	  dendrogram mousover and on dendrogram click modal popup.
@@ -19174,8 +19179,8 @@ var Clustergrammer =
 	var make_col_tooltips = __webpack_require__(139);
 	var col_viz_aid_triangle = __webpack_require__(140);
 
-	module.exports = function make_col_label_container(cgm, text_delay = 0) {
-
+	module.exports = function make_col_label_container(cgm, text_delay) {
+        text_delay = typeof text_delay !== 'undefined' ? text_delay : 0;
 	  var params = cgm.params;
 	  var col_container;
 

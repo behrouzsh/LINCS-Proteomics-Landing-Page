@@ -243,6 +243,28 @@ public class RestAPI implements ErrorController {
         return jsonFile;
     }
 
+    @RequestMapping(value = "api/download/P100/{compounds}", method = RequestMethod.GET)
+    public
+    @ResponseBody
+    String downloadFromPythonP100(@PathVariable("compounds") String compounds) throws Exception {
+        //String smiles = "CCCCC1C(=O)N(N(C1=O)C1=CC=CC=C1)C1=CC=CC=C1";
+        //JSONArray fp =new JSONArray();
+        String fp = clusterFromPython.getDownloadP100(compounds);
+
+        return fp;
+    }
+
+    @RequestMapping(value = "api/download/GCP/{compounds}", method = RequestMethod.GET)
+    public
+    @ResponseBody
+    String downloadFromPythonGCP(@PathVariable("compounds") String compounds) throws Exception {
+        //String smiles = "CCCCC1C(=O)N(N(C1=O)C1=CC=CC=C1)C1=CC=CC=C1";
+        //JSONArray fp =new JSONArray();
+        String fp = clusterFromPython.getDownloadGCP(compounds);
+
+        return fp;
+    }
+
     @RequestMapping(value = "api/clustFromPython/P100/{compounds}", method = RequestMethod.GET)
     public
     @ResponseBody

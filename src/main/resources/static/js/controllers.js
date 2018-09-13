@@ -997,9 +997,6 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
         }
     };
 
-
-
-
     $(document).ready(function(){
 
 
@@ -1231,7 +1228,85 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
 
     }
 
+    $scope.selectExploreDiv = function(input) {
 
+        self.P100SecondTab = false;
+        self.GCPSecondTab = false;
+        self.RPPASecondTab = false;
+        self.DToxSSecondTab = false;
+        self.SWATHSecondTab = false;
+        self.MicroSecondTab = false;
+
+        $("#GCPExploreTabs li:eq(0) a").tab('show');
+        $("#P100ExploreTabs li:eq(0) a").tab('show');
+
+        if(input === "DToxS"){
+            self.showP100div = false;
+            self.showGCPdiv = false;
+            self.showSWATHdiv = false;
+            self.showRPPAdiv = false;
+            self.showDToxSdiv = true;
+            self.showMicrodiv = false;
+
+
+        }
+        if(input === "SWATH"){
+
+            self.showP100div = false;
+            self.showGCPdiv = false;
+            self.showSWATHdiv = true;
+            self.showRPPAdiv = false;
+            self.showDToxSdiv = false;
+            self.showMicrodiv = false;
+        }
+        if(input === "RPPA"){
+            self.showP100div = false;
+            self.showGCPdiv = false;
+            self.showSWATHdiv = false;
+            self.showRPPAdiv = true;
+            self.showDToxSdiv = false;
+            self.showMicrodiv = false;
+        }
+        if(input === "Micro"){
+            self.showP100div = false;
+            self.showGCPdiv = false;
+            self.showSWATHdiv = false;
+            self.showRPPAdiv = false;
+            self.showDToxSdiv = false;
+            self.showMicrodiv = true;
+        }
+        if(input === "GCP"){
+            self.showP100div = false;
+            self.showGCPdiv = true;
+            self.showSWATHdiv = false;
+            self.showRPPAdiv = false;
+            self.showDToxSdiv = false;
+            self.showMicrodiv = false;
+
+            self.P100FirstTab = false;
+            self.GCPFirstTab = true;
+            self.RPPAFirstTab = false;
+            self.DToxSFirstTab = false;
+            self.SWATHFirstTab = false;
+            self.MicroFirstTab = false;
+        }
+        if(input === "P100"){
+            self.showP100div = true;
+            self.showGCPdiv = false;
+            self.showSWATHdiv = false;
+            self.showRPPAdiv = false;
+            self.showDToxSdiv = false;
+            self.showMicrodiv = false;
+
+            self.P100FirstTab = true;
+            self.GCPFirstTab = false;
+            self.RPPAFirstTab = false;
+            self.DToxSFirstTab = false;
+            self.SWATHFirstTab = false;
+            self.MicroFirstTab = false;
+        }
+
+    }
     $scope.selectExploreSecondTab = function(input){
 
         if(input === "None"){
@@ -8421,7 +8496,64 @@ appModule.controller('NavigationCtrl', ['$scope', '$sce', '$location', '$anchorS
     console.log(self.gotSVGForSmile);
 
 
+    // $(document).ready(function() {
+    //     $(".left").addClass("active");
+    //
+    // });
+    self.showPartLeft = true;
+    self.showPartRight = false;
 
+    $(document).ready(function() {
+        $(".left").click(function () {
+            $(".left").removeClass("active");
+            console.log("left");
+            $(".right").removeClass("active");
+            // $(".tab").addClass("active"); // instead of this do the below
+            $(".left").addClass("active");
+            self.showPartLeft = true;
+            self.showPartRight = false;
+        });
+    });
+    $(document).ready(function() {
+        $(".right").click(function () {
+            $(".left").removeClass("active");
+            $(".right").removeClass("active");
+            console.log("right");
+            // $(".tab").addClass("active"); // instead of this do the below
+            $(".right").addClass("active");
+            self.showPartLeft = false;
+            self.showPartRight = true;
+        });
+    });
+    // $scope.rightActive = function () {
+    //     $(".left").removeClass("active");
+    //     $(".right").removeClass("active");
+    //     console.log("right");
+    //     // $(".tab").addClass("active"); // instead of this do the below
+    //     $(".right").addClass("active");
+    // }
+    // $scope.leftActive = function () {
+    //     $(".left").removeClass("active");
+    //     $(".right").removeClass("active");
+    //     console.log("right");
+    //     // $(".tab").addClass("active"); // instead of this do the below
+    //     $(".left").addClass("active");
+    // }
+
+    // var leftDiv = document.getElementsByClassName("left");
+    // leftDiv.addEventListener("click", function() {
+    //     $(".left").removeClass("active");
+    //     $(".right").removeClass("active");
+    //     console.log("right");
+    //     // $(".tab").addClass("active"); // instead of this do the below
+    //     $(".left").addClass("active");
+    // });
+    // $(".left").on("mousedown mouseup mouseleave", function(e){
+    //     $(this).toggleClass( "active", e.type === "mousedown" );
+    // });
+    // $(".right").on("mousedown mouseup mouseleave", function(e){
+    //     $(this).toggleClass( "active", e.type === "mousedown" );
+    // });
 
 
 
@@ -8885,29 +9017,43 @@ appModule.controller('NavigationCtrl', ['$scope', '$sce', '$location', '$anchorS
                     listOfGenesIter += 1;
                     console.log(localGeneInfo);
                     all_gene_names = [];
+                    if("symbol" in localGeneInfo){
                     all_gene_names.push(localGeneInfo["symbol"]);
-                    localGeneInfo["synonyms"].forEach(function (l, k) {
-                        all_gene_names.push(localGeneInfo["synonyms"][k]);
-                    });
+                    }
+                    if("synonyms" in localGeneInfo) {
+                        if (!(localGeneInfo["synonyms"] === undefined || localGeneInfo["synonyms"].length == 0)) {
+                            localGeneInfo["synonyms"].forEach(function (l, k) {
+                                all_gene_names.push(localGeneInfo["synonyms"][k]);
+                            });
+                        }
+                    }
+
                     localGeneInfo["all_names"] = all_gene_names;
 
 
                     $scope.all_perturbations.forEach(function (m, j) {
                         var item = $scope.all_perturbations[j];
                         if (item.includes("SG01") || item.includes("SG02")) {
-                            var itemName = item.split("_")[0]
-                            all_gene_names.forEach(function (k, l) {
-                                if (itemName === all_gene_names[l].toUpperCase() && self.cpGeneSimilar.indexOf(all_gene_names[l]) == -1) {
-                                    var cp_entry = {}
-                                    cp_entry["symbol"] = localGeneInfo["symbol"];
-                                    cp_entry["synonyms"] = localGeneInfo["synonyms"];
-                                    cp_entry["description"] = localGeneInfo["description"];
-                                    cp_entry["name"] = localGeneInfo["name"];
-                                    cp_entry["lincs_cp"] = item;
-                                    cp_entry["target_gene"] = all_gene_names[l].toUpperCase();
-                                    self.cpGeneSimilar.push(cp_entry)
+                            var itemName = item.split("_")[0];
+                            console.log(all_gene_names);
+                            if (all_gene_names !== undefined ) {
+                                if (all_gene_names.length > 0 ) {
+                                    console.log(all_gene_names.length);
+                                    all_gene_names.forEach(function (k, l) {
+                                        console.log(all_gene_names[l]);
+                                        if (itemName === all_gene_names[l].toUpperCase() && self.cpGeneSimilar.indexOf(all_gene_names[l]) == -1) {
+                                            var cp_entry = {}
+                                            cp_entry["symbol"] = localGeneInfo["symbol"];
+                                            cp_entry["synonyms"] = localGeneInfo["synonyms"];
+                                            cp_entry["description"] = localGeneInfo["description"];
+                                            cp_entry["name"] = localGeneInfo["name"];
+                                            cp_entry["lincs_cp"] = item;
+                                            cp_entry["target_gene"] = all_gene_names[l].toUpperCase();
+                                            self.cpGeneSimilar.push(cp_entry)
+                                        }
+                                    })
                                 }
-                            })
+                            }
                         }
 
                     })

@@ -143,23 +143,23 @@
             <ul class="nav nav-tabs nav-tabs3">
                 <!--<ul class="nav nav-pills nav-stacked col-md-3">-->
                 <li class="active" style="width:16.667%;"><a data-toggle="tab" data-target="#P100"
-                                                             >P100
+                                                             ng-click="selectExploreDiv('P100');">P100
                     (PCCSE)</a>
                 </li>
                 <li style="width:16.667%; "><a data-toggle="tab" data-target="#GCP"
-                                               >GCP
+                                               ng-click="selectExploreDiv('GCP');">GCP
                     (PCCSE)</a></li>
                 <li style="width:16.667%;"><a data-toggle="tab" data-target="#DToxS"
-                                              >MS Protein
+                                              ng-click="selectExploreDiv('DToxS');">MS Protein
                     (LINCS
                     DToxS)</a></li>
                 <li style="width:16.667%;"><a data-toggle="tab" data-target="#SWATH"
-                                              >SWATH-MS
+                                              ng-click="selectExploreDiv('SWATH');">SWATH-MS
                     (NeuroLINCS)</a>
-                <li style="width:16.667%;"><a data-toggle="tab" data-target="#RPPA" >RPPA
+                <li style="width:16.667%;"><a data-toggle="tab" data-target="#RPPA" ng-click="selectExploreDiv('RPPA');">RPPA
                     (HMS
                     LINCS)</a></li>
-                <li style="width:16.3%;"><a data-toggle="tab" data-target="#Micro" >Microwestern
+                <li style="width:16.3%;"><a data-toggle="tab" data-target="#Micro" ng-click="selectExploreDiv('Micro');">Microwestern
                     (DToxS)</a></li>
             </ul>
 
@@ -202,7 +202,7 @@
                                     View</a>
                             </li>
 
-                            <li style="width:50%; ">
+                            <li style="width:49%; ">
                                 <a data-toggle="tab" data-target="#P100AssayView"
                                    style="font-size: 14px; font-weight: 500" ng-click="selectExploreSecondTab('P100');makePhosphoGraph('None');">Assay
                                     View </a>
@@ -216,7 +216,7 @@
                              style="padding-top: 20px; padding-bottom:20px; background-color: white;">
                             <!--<div class="tab-content col-md-9 text-left" style="padding-top: 20px">-->
                             <!--<div class="tab-content tab-content2" style="background-color: white; ">-->
-                            <div class="tab-pane fade " id="P100AssayView" style="padding-bottom: 30px;">
+                            <div class="tab-pane fade " id="P100AssayView" style="padding-bottom: 30px;" ng-if="ctrl.P100SecondTab">
                                 <div class="container container-lightGrey text-center">
 
 
@@ -302,7 +302,7 @@
 
                             </div>
 
-                            <div class="tab-pane fade in active" id="P100DataView">
+                            <div class="tab-pane fade in active" id="P100DataView" ng-if="ctrl.P100FirstTab">
                                 <div class="container splash2" style="width: 100%;">
 
                                     <div class=" col-sm-12 col-md-12  col-lg-12">
@@ -382,7 +382,7 @@
                                             <!--Genetic Perturbations by Gene Names-->
                                             <!--LINCS and LINCS Proteomics-->
 
-                                            <div class="col-sm-7 col-md-7 col-lg-7 ">
+                                            <div class="col-sm-6 col-md-6 col-lg-6 ">
                                                 <div class="vcenter">
 
                                                     <!--<div class="col-sm-9 col-md-9 col-lg-9" style="margin-top: 10px; margin-bottom: 10px;">-->
@@ -624,8 +624,7 @@
                         proteins, with both the protein and the phosphorylation / acetillation site indicated,
                         e.g., JUN[pS@73] for a GCP probe that includes Ser73 residue of the JUN
                         kinase as target site. The following nodes are associated with these effects, blue:
-                        acetyltransferases, red: methyltransferases, yellow: deacetylases, green: demethylases,
-                        orange: kinases, purple : phosphatases.
+                        acetyltransferases, pink: methyltransferases and red: kinases.
                     </p>
 
 
@@ -637,7 +636,7 @@
                                    style="font-size: 14px; font-weight: 500" ng-click="selectExploreFirstTab('GCP')">Data
                                     View</a>
                             </li>
-                            <li style="width:50%; ">
+                            <li style="width:49%; ">
                                 <a data-toggle="tab" data-target="#GCPAssayView"
                                    style="font-size: 14px; font-weight: 500" ng-click="selectExploreSecondTab('GCP');makeGCPGraph('None');">Assay
                                     View </a>
@@ -648,10 +647,10 @@
 
 
                         <div class="tab-content tab-content2  text-left"
-                             style="padding-top: 20px; padding-bottom:20px; background-color: white;">
+                             style="padding-top: 20px; padding-bottom:20px; background-color: white;" >
                             <!--<div class="tab-content col-md-9 text-left" style="padding-top: 20px">-->
                             <!--<div class="tab-content tab-content2" style="background-color: white; ">-->
-                            <div class="tab-pane fade " id="GCPAssayView" style="padding-bottom: 30px;">
+                            <div class="tab-pane fade " id="GCPAssayView" style="padding-bottom: 30px;" ng-if="ctrl.GCPSecondTab">
                                 <div class="container container-lightGrey text-center">
 
 
@@ -748,7 +747,7 @@
 
                             </div>
 
-                            <div class="tab-pane fade in active" id="GCPDataView">
+                            <div class="tab-pane fade in active" id="GCPDataView" ng-if="ctrl.GCPFirstTab">
                                 <div class="container splash2" style="width: 100%;">
 
                                     <div class=" col-sm-12 col-md-12  col-lg-12">
@@ -828,7 +827,7 @@
                                             <!--Genetic Perturbations by Gene Names-->
                                             <!--LINCS and LINCS Proteomics-->
 
-                                            <div class="col-sm-7 col-md-7 col-lg-7 ">
+                                            <div class="col-sm-6 col-md-6 col-lg-6 ">
                                                 <div class="vcenter">
 
                                                     <!--<div class="col-sm-9 col-md-9 col-lg-9" style="margin-top: 10px; margin-bottom: 10px;">-->

@@ -3429,3 +3429,45 @@ select.soflow-color{
   background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAfUlEQVRIie2U0QnAIAxEH52gMzqI4HROVexPAkVs0Nr8tB7kR8/cJWpg4dfYgdDBC8IdTp6BAiSDl4STR0WCHNSIDU6sOD3VNt0V4KhEoqzpvlWliVYiS/ixSLmJ6eSKq+uhtmxvOZiBa4tcL9n1mbp/NPdRoSJuw27hQzgBNcxNVUV7m8IAAAAASUVORK5CYII=") no-repeat left center transparent;
   background-size: 100% 100%;
 }
+
+.left {
+  /*margin-left: auto;*/
+  /*margin-right: auto;*/
+
+  background: #efefef url(../images/bright-squares.png) repeat;
+  height:50px;
+  width:250px;
+  margin-bottom: 0px;
+  display:inline-block;
+  border-top-right-radius: 15px;
+  background-color: dimgray;
+  vertical-align: middle;
+
+}
+
+.right{
+  /*margin-left: auto;*/
+  /*margin-right: auto;*/
+  display:inline-block;
+  background: #efefef url(../images/bright-squares.png) repeat;
+  height:50px;
+  width:250px;
+  margin-bottom: 0px;
+  background-color: dimgray;
+
+  border-top-right-radius: 15px;
+  vertical-align: middle;
+
+}
+.right.active{
+  background-color: #efefef;
+
+}
+.left.active{
+  background-color: #efefef;
+
+}
+.left:hover, .left:focus,.right:hover, .right:focus{
+  background-color: #efefef;
+
+}

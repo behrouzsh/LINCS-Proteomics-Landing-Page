@@ -94,28 +94,48 @@
 
     <!--</section>-->
     <div class="container-fluid  ">
-        <!--<div class="container-fluid container-lightBlue ">-->
+        <!--<div class="container  container-french-stucco shadowed"-->
+             <!--style="width: 100%;margin-top: 20px; margin-bottom: 10px;  padding-top: 20px; padding-bottom: 10px;margin-right: auto; margin-left: auto; ">-->
 
+        <div class=" container" style="margin-top: 20px;  margin-left: auto;
+  margin-right: auto;width: 100%;">
+            <!--<div class="row " style="width: 100%;">-->
+            <div class=" col-sm-12 col-md-12  col-lg-12"style="width: 100%;" >
+                <div class="left active" ng-click="leftActive()">
+                    <!--<div class="  container-lightGrey splash" >-->
+                    <h1 style="  display: flex;
+  align-items: center;
+  justify-content: center;padding-top: 10px;">Search for</h1>
 
-        <div class="container  container-lightGrey shadowed"
-             style="width: 100%;margin-top: 10px; margin-bottom: 10px;  padding-top: 20px; padding-bottom: 10px;margin-right: auto; margin-left: auto; ">
+                    <!--</div>-->
+                </div>
+                <div class="right" ng-click="rightActive()">
+                    <!--<div class="  container-lightGrey splash" >-->
+                        <h1 style="  display: flex;
+  align-items: center;
+  justify-content: center;padding-top: 10px;">Navigate to</h1>
 
-
-            <div class=" col-sm-12 col-md-12  col-lg-12">
-                <div class="splash" style="width: 100%;">
-                    <h1>Search for</h1>
-                    <hr/>
+                    <!--</div>-->
                 </div>
             </div>
+
+
+        </div>
+
+        <div class="container  container-lightGrey shadowed"
+             style="width: 100%;margin-top: 0px; margin-bottom: 10px;  padding-top: 40px; padding-bottom: 10px;margin-right: auto; margin-left: auto; ">
+
+
+
             <div class=" col-sm-12 col-md-12  col-lg-12">
-                <div class="row " style="width: 100%;">
+                <div class="row " style="width: 100%;" ng-if="ctrl.showPartLeft">
 
                     <div class=" col-sm-5 col-md-5  col-lg-5">
                         <div class=" splash ">
 
                             <div style="float:left;">
 
-                                <a href="#" ng-click="showPart(1)" ng-class="{'green':showPartFlag == 1}" style="padding-left: 20px;">
+                                <a href="#" ng-click="showPart(1)" ng-class="{'green':showPartFlag == 1}" >
                                     Any Perturbation by Name</a>
                             </div>
 
@@ -134,7 +154,7 @@
 
                             <div style="float:left;">
 
-                                <a href="#" ng-click="showPart(2)" ng-class="{'green':showPartFlag == 2}" style="padding-left: 20px;">Chemical
+                                <a href="#" ng-click="showPart(2)" ng-class="{'green':showPartFlag == 2}" >Chemical
                                     Perturbations by SMILES</a>
                             </div>
 
@@ -149,7 +169,7 @@
 
                             <div style="float:left;">
 
-                                <a href="#" ng-click="showPart(3)" ng-class="{'green':showPartFlag == 3} "style="padding-left: 20px;">Genetic
+                                <a href="#" ng-click="showPart(3)" ng-class="{'green':showPartFlag == 3} ">Genetic
                                     Perturbations by Gene Names</a>
                             </div>
 
@@ -159,23 +179,23 @@
                                 </span>
                             </div>
 
-                            <br/>
-                            <hr/>
+                            <!--<br/>-->
+                            <!--<hr/>-->
 
-                            <div style="float:left;">
+                            <!--<div style="float:left;">-->
 
-                            <a href="#" ng-click="showPart(4)" ng-class="{'green':showPartFlag == 4}"style="  text-align: left;
-  font-size: 20px;
-  font-weight: 400;
-  font-family: Arial;">
-                                or Navigate to</a>
-                            </div>
+                            <!--<a href="#" ng-click="showPart(4)" ng-class="{'green':showPartFlag == 4}"style="  text-align: left;-->
+  <!--font-size: 20px;-->
+  <!--font-weight: 400;-->
+  <!--font-family: Arial;">-->
+                                <!--or Navigate to</a>-->
+                            <!--</div>-->
 
-                            <div style="float:right;">
-                            <span ng-class="{'green':showPartFlag == 4}">
-                            <i class="icon-angle-right "></i>
-                            </span>
-                            </div>
+                            <!--<div style="float:right;">-->
+                            <!--<span ng-class="{'green':showPartFlag == 4}">-->
+                            <!--<i class="icon-angle-right "></i>-->
+                            <!--</span>-->
+                            <!--</div>-->
 
 
                         </div>
@@ -184,7 +204,7 @@
                     <!--Genetic Perturbations by Gene Names-->
                     <!--LINCS and LINCS Proteomics-->
 
-                    <div class="col-sm-7 col-md-7 col-lg-7 ">
+                    <div class="col-sm-6 col-md-6 col-lg-6 ">
                         <div class="vcenter">
 
                             <!--<div class="col-sm-9 col-md-9 col-lg-9" style="margin-top: 10px; margin-bottom: 10px;">-->
@@ -297,63 +317,69 @@
 
                             </div>
 
-                            <div class=" vcenter" ng-if="showPartFlag == 4">
 
-
-                                <div class=" splash2 ">
-
-                                    <div style="float:left;">
-
-                                        <a style="color: black; font-weight: bold">...</a>&nbsp;<a
-                                            href="/lincsproteomics/explore">Explore
-                                        LINCS Proteomics Assays</a>
-                                    </div>
-
-
-                                    <br/>
-                                    <hr style="  color: white;border-color : white;background-color: white;"/>
-
-                                    <div style="float:left;">
-
-                                        <a style="color: black; font-weight: bold">...</a>&nbsp;<a
-                                            href="/lincsproteomics/download">Download
-                                        LINCS Proteomics Data</a>
-                                    </div>
-
-
-                                    <br/>
-                                    <hr style="  color: white;border-color : white;background-color: white;"/>
-
-
-                                    <div style="float:left;">
-
-                                        <a
-                                                style="color: black; font-weight: bold">...</a>&nbsp;<a
-                                            href="/lincsproteomics/assays">LINCS Proteomics Assays and Centers</a>
-                                    </div>
-
-                                    <br/>
-                                    <hr style="  color: white;border-color : white;background-color: white;"/>
-
-                                    <div style="float:left;">
-
-                                        <a style="color: black; font-weight: bold">...</a>&nbsp;<a
-                                            href="/lincsproteomics/glossary">
-                                        Proteomics Glossary </a>
-                                    </div>
-
-
-                                </div>
-
-
-                            </div>
                         </div>
                     </div>
+
+                </div>
+
+
+
+                <div class=" vcenter" ng-if="ctrl.showPartRight">
+
+
+                    <div class=" splash2 ">
+
+                        <div style="float:left;">
+
+                            <a style="color: black; font-weight: bold">...</a>&nbsp;<a
+                                href="/lincsproteomics/explore">Explore
+                            LINCS Proteomics Assays</a>
+                        </div>
+
+
+                        <br/>
+                        <hr style="  color: white;border-color : white;background-color: white;"/>
+
+                        <div style="float:left;">
+
+                            <a style="color: black; font-weight: bold">...</a>&nbsp;<a
+                                href="/lincsproteomics/download">Download
+                            LINCS Proteomics Data</a>
+                        </div>
+
+
+                        <br/>
+                        <hr style="  color: white;border-color : white;background-color: white;"/>
+
+
+                        <div style="float:left;">
+
+                            <a
+                                    style="color: black; font-weight: bold">...</a>&nbsp;<a
+                                href="/lincsproteomics/assays">LINCS Proteomics Assays and Centers</a>
+                        </div>
+
+                        <br/>
+                        <hr style="  color: white;border-color : white;background-color: white;"/>
+
+                        <div style="float:left;">
+
+                            <a style="color: black; font-weight: bold">...</a>&nbsp;<a
+                                href="/lincsproteomics/glossary">
+                            Proteomics Glossary </a>
+                        </div>
+
+
+                    </div>
+
 
                 </div>
             </div>
 
         </div>
+        <hr/>
+        <!--</div>-->
 
         <!--<div class="container shadowed"style="width: 100%;margin-top: 10px; margin-bottom: 10px;  padding-top: 20px; padding-bottom: 10px;margin-right: auto; margin-left: auto; ">-->
         <!---->
@@ -534,12 +560,14 @@
 
 
                         <div class="onerow" style="margin-top: 10px;">
-                            <button class="button-about" ng-click="goToAssays('P100')">Assay Info</button>
-                            <button class="button-download" ng-click="scrollToDownloadId('p100-sec')">Download Data Package
+
+                            <button class="button-download" ng-click="scrollToDownloadId('p100-sec')">Download All
                             </button>
-                            <a href="http://eh3.uc.edu/pilincs/api-assays-paged/?order=asc&limit=100000&offset=0&tags=[{%22name%22:%22{{data_sets_2_compounds_orig['P100'][ctrl.selectedPerturbationGenes]}}%22,%22flag%22:%22Perturbation%22,%22annotation%22:%22Pertiname%22},{%22p100%22:true}]" target="_blank">
+                            <!--<a href="http://eh3.uc.edu/pilincs/api-assays-paged/?order=asc&limit=100000&offset=0&tags=[{%22name%22:%22{{data_sets_2_compounds_orig['P100'][ctrl.selectedPerturbationGenes]}}%22,%22flag%22:%22Perturbation%22,%22annotation%22:%22Pertiname%22},{%22p100%22:true}]" target="_blank">-->
+                                <!---->
+                                <a href="http://www.lincsproteomics.org/api/P100/downlowdslice/{{data_sets_2_compounds_orig['P100'][ctrl.selectedPerturbationGenes]}}" target="_blank">
                                 <button class="button-download-piece"
-                                >Download Selected Data
+                                >Download Selected Perturbation
                                 </button>
                             </a>
 
@@ -548,6 +576,7 @@
                             <button class="button-explore"
                                     ng-click="goToExplore('P100', ctrl.selectedPerturbationGenes)">Explore
                             </button>
+                            <button class="button-about" ng-click="goToAssays('P100')">Assay Info</button>
                         </div>
                         <br/>
 
@@ -581,11 +610,11 @@
 
 
                         <div class="onerow" style="margin-top: 10px;">
-                            <button class="button-about" ng-click="goToAssays('Micro')">Assay Info</button>
-                            <button class="button-download" ng-click="scrollToDownloadId('micro-sec')">
-                                Download
-                            </button>
 
+                            <button class="button-download" ng-click="scrollToDownloadId('micro-sec')">
+                                Download All
+                            </button>
+                            <button class="button-about" ng-click="goToAssays('Micro')">Assay Info</button>
                             <!--<button class="button-explore" ng-click="goToExplore('Micro', ctrl.selectedPerturbationGenes)">Explore</button>-->
                         </div>
                         <br/>
@@ -614,11 +643,11 @@
 
 
                         <div class="onerow" style="margin-top: 10px;">
-                            <button class="button-about" ng-click="goToAssays('DToxS')">Assay Info</button>
-                            <button class="button-download" ng-click="scrollToDownloadId('dtoxs-sec')">
-                                Download
-                            </button>
 
+                            <button class="button-download" ng-click="scrollToDownloadId('dtoxs-sec')">
+                                Download All
+                            </button>
+                            <button class="button-about" ng-click="goToAssays('DToxS')">Assay Info</button>
                             <!--<button class="button-explore" ng-click="goToExplore('DToxS', ctrl.selectedPerturbationGenes)">Explore</button>-->
                         </div>
                         <br/>
@@ -651,10 +680,11 @@
 
 
                         <div class="onerow" style="margin-top: 10px;">
-                            <button class="button-about" ng-click="goToAssays('SWATH')">Assay Info</button>
+
                             <button class="button-download" ng-click="scrollToDownloadId('swath-sec')">
-                                Download
+                                Download All
                             </button>
+                            <button class="button-about" ng-click="goToAssays('SWATH')">Assay Info</button>
 
                             <!--<button class="button-explore" ng-click="goToExplore('SWATH', ctrl.selectedPerturbationGenes)">Explore</button>-->
                         </div>
@@ -700,10 +730,10 @@
 
 
                         <div class="onerow" style="margin-top: 10px;">
-                            <button class="button-about" ng-click="goToAssays('RPPA')">Assay Info</button>
-                            <button class="button-download" ng-click="scrollToDownloadId('rppa-sec')">Download
-                            </button>
 
+                            <button class="button-download" ng-click="scrollToDownloadId('rppa-sec')">Download All
+                            </button>
+                            <button class="button-about" ng-click="goToAssays('RPPA')">Assay Info</button>
                             <!--<button class="button-explore" ng-click="goToExplore('RPPA', ctrl.selectedPerturbationGenes)">Explore</button>-->
                         </div>
                         <br/>
@@ -750,18 +780,22 @@
 
 
                         <div class="onerow" style="margin-top: 10px;">
-                            <button class="button-about" ng-click="goToAssays('GCP')">Assay Info</button>
-                            <button class="button-download" ng-click="scrollToDownloadId('gcp-sec')">Download
+
+                            <button class="button-download" ng-click="scrollToDownloadId('gcp-sec')">Download All
                             </button>
                             <!--This is for changing the uppercase cp name to original cp name-->
-                            <a href="http://eh3.uc.edu/pilincs/api-assays-paged/?order=asc&limit=100000&offset=0&tags=[{%22name%22:%22{{data_sets_2_compounds_orig['GCP'][ctrl.selectedPerturbationGenes]}}%22,%22flag%22:%22Perturbation%22,%22annotation%22:%22Pertiname%22},{%22gcp%22:true}]" target="_blank">
+                            <!--<a href="http://eh3.uc.edu/pilincs/api-assays-paged/?order=asc&limit=100000&offset=0&tags=[{%22name%22:%22{{data_sets_2_compounds_orig['GCP'][ctrl.selectedPerturbationGenes]}}%22,%22flag%22:%22Perturbation%22,%22annotation%22:%22Pertiname%22},{%22gcp%22:true}]" target="_blank">-->
+
+                                <a href="http://www.lincsproteomics.org/api/GCP/downlowdslice/{{data_sets_2_compounds_orig['GCP'][ctrl.selectedPerturbationGenes]}}" target="_blank">
+
                                 <button class="button-download-piece"
-                                >Download Selected Data
+                                >Download Selected Perturbation
                                 </button>
                             </a>
                             <button class="button-explore"
                                     ng-click="goToExplore('GCP', ctrl.selectedPerturbationGenes)">Explore
                             </button>
+                            <button class="button-about" ng-click="goToAssays('GCP')">Assay Info</button>
                         </div>
                         <br/>
 
@@ -914,17 +948,21 @@
 
 
                         <div class="onerow" style="margin-top: 10px;">
-                            <button class="button-about" ng-click="goToAssays('P100')">Assay Info</button>
-                            <button class="button-download" ng-click="scrollToDownloadId('p100-sec')">Download
+
+                            <button class="button-download" ng-click="scrollToDownloadId('p100-sec')">Download All
                             </button>
-                            <a href="http://eh3.uc.edu/pilincs/api-assays-paged/?order=asc&limit=100000&offset=0&tags=[{%22name%22:%22{{data_sets_2_compounds_orig['P100'][ctrl.selectedPerturbationSmiles]}}%22,%22flag%22:%22Perturbation%22,%22annotation%22:%22Pertiname%22},{%22p100%22:true}]" target="_blank">
+                            <!--<a href="http://eh3.uc.edu/pilincs/api-assays-paged/?order=asc&limit=100000&offset=0&tags=[{%22name%22:%22{{data_sets_2_compounds_orig['P100'][ctrl.selectedPerturbationSmiles]}}%22,%22flag%22:%22Perturbation%22,%22annotation%22:%22Pertiname%22},{%22p100%22:true}]" target="_blank">-->
+                                <!---->
+                                <a href="http://www.lincsproteomics.org/api/P100/downlowdslice/{{data_sets_2_compounds_orig['P100'][ctrl.selectedPerturbationSmiles]}}" target="_blank">
+
                                 <button class="button-download-piece"
-                                >Download Selected Data
+                                >Download Selected Perturbation
                                 </button>
                             </a>
                             <button class="button-explore"
                                     ng-click="goToExplore('P100', ctrl.selectedPerturbationSmiles)">Explore
                             </button>
+                            <button class="button-about" ng-click="goToAssays('P100')">Assay Info</button>
                         </div>
                         <br/>
 
@@ -958,11 +996,11 @@
 
 
                         <div class="onerow" style="margin-top: 10px;">
-                            <button class="button-about" ng-click="goToAssays('Micro')">Assay Info</button>
-                            <button class="button-download" ng-click="scrollToDownloadId('micro-sec')">
-                                Download
-                            </button>
 
+                            <button class="button-download" ng-click="scrollToDownloadId('micro-sec')">
+                                Download All
+                            </button>
+                            <button class="button-about" ng-click="goToAssays('Micro')">Assay Info</button>
                             <!--<button class="button-explore" ng-click="goToExplore('Micro', ctrl.selectedPerturbationSmiles)">Explore</button>-->
                         </div>
                         <br/>
@@ -991,11 +1029,11 @@
 
 
                         <div class="onerow" style="margin-top: 10px;">
-                            <button class="button-about" ng-click="goToAssays('DToxS')">Assay Info</button>
-                            <button class="button-download" ng-click="scrollToDownloadId('dtoxs-sec')">
-                                Download
-                            </button>
 
+                            <button class="button-download" ng-click="scrollToDownloadId('dtoxs-sec')">
+                                Download All
+                            </button>
+                            <button class="button-about" ng-click="goToAssays('DToxS')">Assay Info</button>
                             <!--<button class="button-explore" ng-click="goToExplore('DToxS', ctrl.selectedPerturbationSmiles)">Explore</button>-->
                         </div>
                         <br/>
@@ -1028,11 +1066,11 @@
 
 
                         <div class="onerow" style="margin-top: 10px;">
-                            <button class="button-about" ng-click="goToAssays('SWATH')">Assay Info</button>
-                            <button class="button-download" ng-click="scrollToDownloadId('swath-sec')">
-                                Download
-                            </button>
 
+                            <button class="button-download" ng-click="scrollToDownloadId('swath-sec')">
+                                Download All
+                            </button>
+                            <button class="button-about" ng-click="goToAssays('SWATH')">Assay Info</button>
                             <!--<button class="button-explore" ng-click="goToExplore('SWATH', ctrl.selectedPerturbationSmiles)">Explore</button>-->
                         </div>
                         <br/>
@@ -1077,10 +1115,10 @@
 
 
                         <div class="onerow" style="margin-top: 10px;">
-                            <button class="button-about" ng-click="goToAssays('RPPA')">Assay Info</button>
-                            <button class="button-download" ng-click="scrollToDownloadId('rppa-sec')">Download
-                            </button>
 
+                            <button class="button-download" ng-click="scrollToDownloadId('rppa-sec')">Download All
+                            </button>
+                            <button class="button-about" ng-click="goToAssays('RPPA')">Assay Info</button>
                             <!--<button class="button-explore" ng-click="goToExplore('RPPA', ctrl.selectedPerturbationSmiles)">Explore</button>-->
                         </div>
                         <br/>
@@ -1127,17 +1165,21 @@
 
 
                         <div class="onerow" style="margin-top: 10px;">
-                            <button class="button-about" ng-click="goToAssays('GCP')">Assay Info</button>
-                            <button class="button-download" ng-click="scrollToDownloadId('gcp-sec')">Download
+
+                            <button class="button-download" ng-click="scrollToDownloadId('gcp-sec')">Download All
                             </button>
-                            <a href="http://eh3.uc.edu/pilincs/api-assays-paged/?order=asc&limit=100000&offset=0&tags=[{%22name%22:%22{{data_sets_2_compounds_orig['GCP'][ctrl.selectedPerturbationSmiles]}}%22,%22flag%22:%22Perturbation%22,%22annotation%22:%22Pertiname%22},{%gcp%22:true}]" target="_blank">
+                            <!--<a href="http://eh3.uc.edu/pilincs/api-assays-paged/?order=asc&limit=100000&offset=0&tags=[{%22name%22:%22{{data_sets_2_compounds_orig['GCP'][ctrl.selectedPerturbationSmiles]}}%22,%22flag%22:%22Perturbation%22,%22annotation%22:%22Pertiname%22},{%gcp%22:true}]" target="_blank">-->
+
+                                <a href="http://www.lincsproteomics.org/api/GCP/downlowdslice/{{data_sets_2_compounds_orig['GCP'][ctrl.selectedPerturbationSmiles]}}" target="_blank">
+
                                 <button class="button-download-piece"
-                                >Download Selected Data
+                                >Download Selected Perturbation
                                 </button>
                             </a>
                             <button class="button-explore"
                                     ng-click="goToExplore('GCP', ctrl.selectedPerturbationSmiles)">Explore
                             </button>
+                            <button class="button-about" ng-click="goToAssays('GCP')">Assay Info</button>
                         </div>
                         <br/>
 
@@ -1259,16 +1301,17 @@
 
 
                     <div class="onerow" style="margin-top: 10px;">
-                        <button class="button-about" ng-click="goToAssays('P100')">Assay Info</button>
-                        <button class="button-download" ng-click="scrollToDownloadId('p100-sec')">Download</button>
-                        <a href="http://eh3.uc.edu/pilincs/api-assays-paged/?order=asc&limit=100000&offset=0&tags=[{%22name%22:%22{{data_sets_2_compounds_orig['P100'][ctrl.selectedPerturbation]}}%22,%22flag%22:%22Perturbation%22,%22annotation%22:%22Pertiname%22},{%p100%22:true}]" target="_blank">
+
+                        <button class="button-download" ng-click="scrollToDownloadId('p100-sec')">Download All</button>
+                        <a href="http://www.lincsproteomics.org/api/P100/downlowdslice/{{data_sets_2_compounds_orig['P100'][ctrl.selectedPerturbation]}}" target="_blank">
                             <button class="button-download-piece"
-                            >Download Selected Data
+                            >Download Selected Perturbation
                             </button>
                         </a>
                         <button class="button-explore" ng-click="goToExplore('P100',ctrl.selectedPerturbation)">
                             Explore
                         </button>
+                        <button class="button-about" ng-click="goToAssays('P100')">Assay Info</button>
                     </div>
                     <br/>
 
@@ -1299,9 +1342,9 @@
 
 
                     <div class="onerow" style="margin-top: 10px;">
-                        <button class="button-about" ng-click="goToAssays('Micro')">Assay Info</button>
-                        <button class="button-download" ng-click="scrollToDownloadId('micro-sec')">Download</button>
 
+                        <button class="button-download" ng-click="scrollToDownloadId('micro-sec')">Download All</button>
+                        <button class="button-about" ng-click="goToAssays('Micro')">Assay Info</button>
                         <!--<button class="button-explore" ng-click="goToExplore('Micro',ctrl.selectedPerturbation)">Explore</button>-->
                     </div>
                     <br/>
@@ -1329,9 +1372,9 @@
 
 
                     <div class="onerow" style="margin-top: 10px;">
-                        <button class="button-about" ng-click="goToAssays('DToxS')">Assay Info</button>
-                        <button class="button-download" ng-click="scrollToDownloadId('dtoxs-sec')">Download</button>
 
+                        <button class="button-download" ng-click="scrollToDownloadId('dtoxs-sec')">Download All</button>
+                        <button class="button-about" ng-click="goToAssays('DToxS')">Assay Info</button>
                         <!--<button class="button-explore" ng-click="goToExplore('DToxS',ctrl.selectedPerturbation)">Explore</button>-->
                     </div>
                     <br/>
@@ -1362,9 +1405,9 @@
 
 
                     <div class="onerow" style="margin-top: 10px;">
-                        <button class="button-about" ng-click="goToAssays('SWATH')">Assay Info</button>
-                        <button class="button-download" ng-click="scrollToDownloadId('swath-sec')">Download</button>
 
+                        <button class="button-download" ng-click="scrollToDownloadId('swath-sec')">Download All</button>
+                        <button class="button-about" ng-click="goToAssays('SWATH')">Assay Info</button>
                         <!--<button class="button-explore" ng-click="goToExplore('SWATH',ctrl.selectedPerturbation)">Explore</button>-->
                     </div>
                     <br/>
@@ -1401,9 +1444,9 @@
 
 
                     <div class="onerow" style="margin-top: 10px;">
-                        <button class="button-about" ng-click="goToAssays('RPPA')">Assay Info</button>
-                        <button class="button-download" ng-click="scrollToDownloadId('rppa-sec')">Download</button>
 
+                        <button class="button-download" ng-click="scrollToDownloadId('rppa-sec')">Download All</button>
+                        <button class="button-about" ng-click="goToAssays('RPPA')">Assay Info</button>
                         <!--<button class="button-explore" ng-click="goToExplore('RPPA',ctrl.selectedPerturbation)">Explore</button>-->
                     </div>
                     <br/>
@@ -1443,16 +1486,18 @@
 
 
                     <div class="onerow" style="margin-top: 10px;">
-                        <button class="button-about" ng-click="goToAssays('GCP')">Assay Info</button>
-                        <button class="button-download" ng-click="scrollToDownloadId('gcp-sec')">Download</button>
-                        <a href="http://eh3.uc.edu/pilincs/api-assays-paged/?order=asc&limit=100000&offset=0&tags=[{%22name%22:%22{{data_sets_2_compounds_orig['GCP'][ctrl.selectedPerturbation]}}%22,%22flag%22:%22Perturbation%22,%22annotation%22:%22Pertiname%22},{%gcp%22:true}]" target="_blank">
+
+                        <button class="button-download" ng-click="scrollToDownloadId('gcp-sec')">Download All</button>
+                        <a href="http://www.lincsproteomics.org/api/GCP/downlowdslice/{{data_sets_2_compounds_orig['GCP'][ctrl.selectedPerturbation]}}" target="_blank">
+
                             <button class="button-download-piece"
-                            >Download Selected Data
+                            >Download Selected Perturbation
                             </button>
                         </a>
                         <button class="button-explore" ng-click="goToExplore('GCP',ctrl.selectedPerturbation)">
                             Explore
                         </button>
+                        <button class="button-about" ng-click="goToAssays('GCP')">Assay Info</button>
                     </div>
                     <br/>
 
