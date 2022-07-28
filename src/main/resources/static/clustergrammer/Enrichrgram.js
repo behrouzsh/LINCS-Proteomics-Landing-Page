@@ -2,6 +2,9 @@ var genes_were_found = {};
 enr_obj = {};
 
 function check_setup_enrichr(inst_cgm){
+    console.log("In check_setup_enrichr");
+    console.log(inst_cgm);
+
 
   var has_enrichrgram = _.has(inst_cgm.params.network_data, 'enrichrgram');
 

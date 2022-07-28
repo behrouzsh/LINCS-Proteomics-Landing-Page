@@ -34,7 +34,7 @@ dependencies {
 	compile files('libs/json-simple-1.1.1.jar')
 	compile files('libs/spring-context-support-3.2.0.RELEASE.jar')
 	compile files('libs/mail-1.4.jar')
-//	compile files('libs/cdk-2.1.1.jar')
+    compile files('libs/cdk-2.1.1.jar')
 	compile group: 'org.openscience.cdk', name: 'cdk-bundle', version: '2.1.1'
 
 }

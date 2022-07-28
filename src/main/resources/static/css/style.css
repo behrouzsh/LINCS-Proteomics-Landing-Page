@@ -72,6 +72,10 @@ a.green {
     transition: 0.2s;
   cursor: pointer;
 }
+.pointer {
+  cursor: pointer;
+}
+
 a.green:hover, a.green:active, a.green:focus {
     color: darkgreen;
 
@@ -2419,6 +2423,7 @@ table, th, td {
 .button-swath-m,
 .button-rppa-m,
 .button-micro-m,
+.button-tmt-m,
 .button-pccse-c,
 .button-dtoxs-c,
 .button-neuro-c,
@@ -2429,12 +2434,14 @@ table, th, td {
 .button-swath-a,
 .button-rppa-a,
 .button-micro-a,
+.button-tmt-a,
 .button-p100-m-active,
 .button-gcp-m-active,
 .button-mass-m-active,
 .button-swath-m-active,
 .button-rppa-m-active,
 .button-micro-m-active,
+.button-tmt-m-active,
 .button-pccse-c-active,
 .button-dtoxs-c-active,
 .button-neuro-c-active,
@@ -2445,6 +2452,7 @@ table, th, td {
 .button-swath-a-active,
 .button-micro-a-active,
 .button-rppa-a-active,
+.button-tmt-a-active,
 .heatmap{
     -moz-box-shadow: 0px 10px 14px -7px #276873;
     -webkit-box-shadow: 0px 10px 14px -7px #276873;
@@ -2556,7 +2564,8 @@ table, th, td {
 .button-mass-m-active,
 .button-swath-m-active,
 .button-micro-m-active,
-.button-rppa-m-active
+.button-rppa-m-active,
+.button-tmt-m-active
 {
   background: deepskyblue;
   border: solid blue 1px;
@@ -2581,7 +2590,9 @@ table, th, td {
 .button-micro-m{
   background: #aedbfe; /* this is a maroon */
 }
-
+.button-tmt-m{
+  background: LightBlue; /* this is a maroon */
+}
 .heatmap{
   background: #aedbfe; /* this is a maroon */
 }
@@ -2614,6 +2625,7 @@ table, th, td {
 .button-mass-a-active,
 .button-swath-a-active,
 .button-micro-a-active,
+.button-tmt-a-active,
 .button-rppa-a-active
 {
   background: Yellow; /* this is a maroon */
@@ -2637,6 +2649,9 @@ table, th, td {
 }
 .button-micro-a{
   background: MistyRose; /* this is an orange */
+}
+.button-tmt-a{
+  background: Ivory; /* this is an orange */
 }
 .btn1 {
     /*color:black;*/
@@ -3008,7 +3023,7 @@ table, th, td {
 }
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus {
   color: #03036d;
-  #fff
+  /*#fff*/
 }
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus {
   color: #03036d;
@@ -3033,7 +3048,7 @@ table, th, td {
 
 .nav-tabs3{
   background-color:#cfebf7;
-  border-color:#1A3E5E;
+  /*border-color:lightgrey;*/
   border-bottom: transparent;
 
   /*width:60%;*/
@@ -3065,7 +3080,7 @@ table, th, td {
   font-weight: 500;
   text-align: center;
   color: black;
-  border: 1px solid #1A3E5E;
+  /*border: 1px solid #1A3E5E;*/
   border-bottom: transparent;
 
 }
@@ -3434,14 +3449,18 @@ select.soflow-color{
   /*margin-left: auto;*/
   /*margin-right: auto;*/
 
-  background: #efefef url(../images/bright-squares.png) repeat;
-  height:50px;
+  background: #e5e5e5 url(../images/bright-squares.png) repeat;
+  height:40px;
   width:250px;
+  /*left : 0px;*/
   margin-bottom: 0px;
   display:inline-block;
   border-top-right-radius: 15px;
-  background-color: dimgray;
+  background-color: #d2d2d2;
   vertical-align: middle;
+  /*z-index: 2;*/
+  /*position:absolute;*/
+
 
 }
 
@@ -3449,14 +3468,55 @@ select.soflow-color{
   /*margin-left: auto;*/
   /*margin-right: auto;*/
   display:inline-block;
-  background: #efefef url(../images/bright-squares.png) repeat;
-  height:50px;
+  background: #d8d8d8 url(../images/bright-squares.png) repeat;
+  height:40px;
   width:250px;
+  /*left:235px;*/
   margin-bottom: 0px;
-  background-color: dimgray;
+  margin-left: 0px;
+  background-color: #a5a5a5;
 
   border-top-right-radius: 15px;
   vertical-align: middle;
+  /*z-index: 2;*/
+  /*position:absolute;*/
+
+}
+.righter{
+  /*margin-left: auto;*/
+  /*margin-right: auto;*/
+  display:inline-block;
+  background: #cecece url(../images/bright-squares.png) repeat;
+  height:40px;
+  width:250px;
+  /*left:235px;*/
+  margin-bottom: 0px;
+  margin-left: 0px;
+  background-color: #787878;
+
+  border-top-right-radius: 15px;
+  vertical-align: middle;
+  /*z-index: 2;*/
+  /*position:absolute;*/
+
+
+}
+
+.left:hover, .left:focus{
+  background-color: #efefef;
+
+
+}
+.right:hover, .right:focus{
+  background-color: #efefef;
+
+}
+.righter:hover, .righter:focus{
+  background-color: #efefef;
+
+}
+.righter.active{
+  background-color: #efefef;
 
 }
 .right.active{
@@ -3464,10 +3524,6 @@ select.soflow-color{
 
 }
 .left.active{
-  background-color: #efefef;
-
-}
-.left:hover, .left:focus,.right:hover, .right:focus{
   background-color: #efefef;
 
 }

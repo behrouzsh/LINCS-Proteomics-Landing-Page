@@ -183,24 +183,25 @@
                         <div class="col-sm-4 ">
                             <h4 class="fh5co-lead ">Methods</h4>
 
-                            <button ng-class="button_p100_m && 'button-p100-m-active' || !button_p100_m && 'button-p100-m'" ng-click="button_p100_m = !button_p100_m; button_m_all = !(button_p100_m ||button_gcp_m ||button_swath_m ||button_mass_m ||button_rppa_m||button_micro_m)">P100</button>
-                            <button ng-class="button_gcp_m && 'button-gcp-m-active' || !button_gcp_m && 'button-gcp-m'" ng-click="button_gcp_m = !button_gcp_m; button_m_all = !(button_p100_m ||button_gcp_m ||button_swath_m ||button_mass_m ||button_rppa_m||button_micro_m)">GCP</button>
-                            <button ng-class="button_swath_m && 'button-swath-m-active' || !button_swath_m && 'button-swath-m'" ng-click="button_swath_m = !button_swath_m; button_m_all = !(button_p100_m ||button_gcp_m ||button_swath_m ||button_mass_m ||button_rppa_m||button_micro_m)">SWATH-MS</button>
-                            <button ng-class="button_mass_m && 'button-mass-m-active' || !button_mass_m && 'button-mass-m'" ng-click="button_mass_m = !button_mass_m; button_m_all = !(button_p100_m ||button_gcp_m ||button_swath_m ||button_mass_m ||button_rppa_m||button_micro_m)">Mass spectrometry
+                            <button ng-class="button_p100_m && 'button-p100-m-active' || !button_p100_m && 'button-p100-m'" ng-click="button_p100_m = !button_p100_m; button_m_all = !(button_p100_m ||button_gcp_m ||button_swath_m ||button_mass_m ||button_rppa_m||button_micro_m ||button_tmt_m)">P100</button>
+                            <button ng-class="button_gcp_m && 'button-gcp-m-active' || !button_gcp_m && 'button-gcp-m'" ng-click="button_gcp_m = !button_gcp_m; button_m_all = !(button_p100_m ||button_gcp_m ||button_swath_m ||button_mass_m ||button_rppa_m||button_micro_m ||button_tmt_m)">GCP</button>
+                            <button ng-class="button_swath_m && 'button-swath-m-active' || !button_swath_m && 'button-swath-m'" ng-click="button_swath_m = !button_swath_m; button_m_all = !(button_p100_m ||button_gcp_m ||button_swath_m ||button_mass_m ||button_rppa_m||button_micro_m ||button_tmt_m)">SWATH-MS</button>
+                            <button ng-class="button_mass_m && 'button-mass-m-active' || !button_mass_m && 'button-mass-m'" ng-click="button_mass_m = !button_mass_m; button_m_all = !(button_p100_m ||button_gcp_m ||button_swath_m ||button_mass_m ||button_rppa_m||button_micro_m ||button_tmt_m)">Mass spectrometry
                                 Shotgun-MS </button>
-                            <button ng-class="button_rppa_m && 'button-rppa-m-active' || !button_rppa_m && 'button-rppa-m'" ng-click="button_rppa_m = !button_rppa_m; button_m_all = !(button_p100_m ||button_gcp_m ||button_swath_m ||button_mass_m ||button_rppa_m||button_micro_m)">RPPA</button>
-                            <button ng-class="button_micro_m && 'button-micro-m-active' || !button_micro_m && 'button-micro-m'" ng-click="button_micro_m = !button_micro_m; button_m_all = !(button_p100_m ||button_gcp_m ||button_swath_m ||button_mass_m ||button_rppa_m ||button_micro_m)">Microwestern</button>
-
+                            <button ng-class="button_rppa_m && 'button-rppa-m-active' || !button_rppa_m && 'button-rppa-m'" ng-click="button_rppa_m = !button_rppa_m; button_m_all = !(button_p100_m ||button_gcp_m ||button_swath_m ||button_mass_m ||button_rppa_m||button_micro_m ||button_tmt_m)">RPPA</button>
+                            <button ng-class="button_micro_m && 'button-micro-m-active' || !button_micro_m && 'button-micro-m'" ng-click="button_micro_m = !button_micro_m; button_m_all = !(button_p100_m ||button_gcp_m ||button_swath_m ||button_mass_m ||button_rppa_m ||button_micro_m ||button_tmt_m)">Microwestern</button>
+                            <button ng-class="button_tmt_m && 'button-tmt-m-active' || !button_micro_m && 'button-tmt-m'" ng-click="button_tmt_m = !button_tmt_m; button_m_all = !(button_p100_m ||button_gcp_m ||button_swath_m ||button_mass_m ||button_rppa_m ||button_micro_m ||button_tmt_m)">Tandem Mass Tag (TMT) </button>
                         </div>
                         <div class="col-sm-4 ">
                             <h4 class="fh5co-lead ">Assays</h4>
 
-                            <button ng-class="button_p100_a && 'button-p100-a-active' || !button_p100_a && 'button-p100-a'" ng-click="button_p100_a = !button_p100_a; button_a_all = !(button_p100_a ||button_gcp_a ||button_swath_a ||button_mass_a ||button_rppa_a ||button_micro_a)">P100 phosphoprotein quantification assay</button>
-                            <button ng-class="button_gcp_a && 'button-gcp-a-active' || !button_gcp_a && 'button-gcp-a'" ng-click="button_gcp_a = !button_gcp_a; button_a_all = !(button_p100_a ||button_gcp_a ||button_swath_a ||button_mass_a ||button_rppa_a ||button_micro_a)">Global chromatin epigenetic profiling assay</button>
-                            <button ng-class="button_swath_a && 'button-swath-a-active' || !button_swath_a && 'button-swath-a'" ng-click="button_swath_a = !button_swath_a; button_a_all = !(button_p100_a ||button_gcp_a ||button_swath_a ||button_mass_a ||button_rppa_a ||button_micro_a)">SWATH-MS protein quantification assay</button>
-                            <button ng-class="button_mass_a && 'button-mass-a-active' || !button_mass_a && 'button-mass-a'" ng-click="button_mass_a = !button_mass_a; button_a_all = !(button_p100_a ||button_gcp_a ||button_swath_a ||button_mass_a ||button_rppa_a ||button_micro_a)">MS protein state assay</button>
-                            <button ng-class="button_rppa_a && 'button-rppa-a-active' || !button_rppa_a && 'button-rppa-a'" ng-click="button_rppa_a = !button_rppa_a; button_a_all = !(button_p100_a ||button_gcp_a ||button_swath_a ||button_mass_a ||button_rppa_a ||button_micro_a)">RPPA protein state assay</button>
-                            <button ng-class="button_micro_a && 'button-micro-a-active' || !button_micro_a && 'button-micro-a'" ng-click="button_micro_a = !button_micro_a; button_a_all = !(button_p100_a ||button_gcp_a ||button_swath_a ||button_mass_a ||button_rppa_a ||button_micro_a)">Microwestern meso-scale quantitative western blotting assay</button>
+                            <button ng-class="button_p100_a && 'button-p100-a-active' || !button_p100_a && 'button-p100-a'" ng-click="button_p100_a = !button_p100_a; button_a_all = !(button_p100_a ||button_gcp_a ||button_swath_a ||button_mass_a ||button_rppa_a ||button_micro_a ||button_tmt_a)">P100 phosphoprotein quantification assay</button>
+                            <button ng-class="button_gcp_a && 'button-gcp-a-active' || !button_gcp_a && 'button-gcp-a'" ng-click="button_gcp_a = !button_gcp_a; button_a_all = !(button_p100_a ||button_gcp_a ||button_swath_a ||button_mass_a ||button_rppa_a ||button_micro_a ||button_tmt_a)">Global chromatin epigenetic profiling assay</button>
+                            <button ng-class="button_swath_a && 'button-swath-a-active' || !button_swath_a && 'button-swath-a'" ng-click="button_swath_a = !button_swath_a; button_a_all = !(button_p100_a ||button_gcp_a ||button_swath_a ||button_mass_a ||button_rppa_a ||button_micro_a ||button_tmt_a)">SWATH-MS protein quantification assay</button>
+                            <button ng-class="button_mass_a && 'button-mass-a-active' || !button_mass_a && 'button-mass-a'" ng-click="button_mass_a = !button_mass_a; button_a_all = !(button_p100_a ||button_gcp_a ||button_swath_a ||button_mass_a ||button_rppa_a ||button_micro_a ||button_tmt_a)">MS protein state assay</button>
+                            <button ng-class="button_rppa_a && 'button-rppa-a-active' || !button_rppa_a && 'button-rppa-a'" ng-click="button_rppa_a = !button_rppa_a; button_a_all = !(button_p100_a ||button_gcp_a ||button_swath_a ||button_mass_a ||button_rppa_a ||button_micro_a ||button_tmt_a)">RPPA protein state assay</button>
+                            <button ng-class="button_micro_a && 'button-micro-a-active' || !button_micro_a && 'button-micro-a'" ng-click="button_micro_a = !button_micro_a; button_a_all = !(button_p100_a ||button_gcp_a ||button_swath_a ||button_mass_a ||button_rppa_a ||button_micro_a ||button_tmt_a)">Microwestern meso-scale quantitative western blotting assay</button>
+                            <button ng-class="button_tmt_a && 'button-tmt-a-active' || !button_tmt_a && 'button-tmt-a'" ng-click="button_tmt_a = !button_tmt_a; button_a_all = !(button_p100_a ||button_gcp_a ||button_swath_a ||button_mass_a ||button_rppa_a ||button_micro_a ||button_tmt_a)">Tandem Mass Tag (TMT) Mass Spectrometry</button>
                         </div>
 
                     </div>
@@ -394,6 +395,56 @@
                                 <h3  style="font-size: 0.9em; font-weight: 200; padding-top: 15px;padding-bottom: 15px;">Proteomic peptide profiles using protein isolated from iPCS cell lines derived from amyotrophic lateral sclerosis (ALS), spinal muscular atrophy (SMA), and control (unaffected) subjects.</h3>
                             </div>
                         </div>
+                        <a name="tmt-sec"/>
+                        <div ng-show="(button_hms_c || button_c_all)&&(button_tmt_m || button_m_all)&&(button_tmt_a || button_a_all)">
+                            <div class="shadowedGlossary" style="padding-top: 50px; padding-bottom: 10px">
+
+
+                                <h3 class="fh5co-lead " style="font-size: 1.1em; font-weight: 500;">Tandem Mass Tag (HMS LINCS)</h3>
+
+
+                                <div class="col-md-12 "style="background-color:#eef2d7;">
+
+                                    <div class="row ">
+
+                                        <div class="col-md-9 centered-vertical" >
+                                            <h3  style="font-size: 0.9em; font-weight: 300; padding-top: 15px;padding-bottom: 15px;">
+                                                Breast cancer profiling of total proteome/phosphoproteome dataset for a 35-cell line breast cancer panel under basal conditions.
+                                            </h3>
+                                        </div>
+                                        <div class="col-md-3 vcenter centered-vertical">
+                                            <button class="button-about" ng-click="goToAssays('TMT')">Assay Info</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <i class="fa fa-gear"></i>&nbsp;<a href="http://lincsportal.ccs.miami.edu/datasets/view/LDS-1546" target="_blank">	Total proteome dataset for a 35-cell line breast cancer panel under basal conditions</a><br/>
+                                <div class="onerow">
+                                    <button class="button-hms-c"disabled>HMS LINCS</button>
+                                    <button class="button-tmt-m"disabled>Tandem Mass Tag (TMT) </button>
+                                    <button class="button-tmt-a"disabled>Tandem Mass Tag (TMT) Mass Spectrometry</button>
+                                </div>
+                                <br/>
+                                <h3 style="font-size: 0.9em; font-weight: 300; padding-top: 15px;padding-bottom: 15px;">
+                                    We measured the baseline proteomic profiles of two non-malignant breast cell lines and 33 breast cancer cell lines of which twenty were triple negative, six were hormone receptor positive, four were Her2 amplified, and three were established from triple negative patient-derived xenografts.
+                                </h3>
+                                <hr/>
+                                <i class="fa fa-gear"></i>&nbsp;<a href="http://lincsportal.ccs.miami.edu/datasets/view/LDS-1547" target="_blank">	Phosphoproteome dataset (including phosphotyrosine enrichment) for a 35-cell line breast cancer panel under basal conditions</a><br/>
+                                <div class="onerow">
+                                    <button class="button-hms-c"disabled>HMS LINCS</button>
+                                    <button class="button-tmt-m"disabled>Tandem Mass Tag (TMT) </button>
+                                    <button class="button-tmt-a"disabled>Tandem Mass Tag (TMT) Mass Spectrometry</button>
+                                </div>
+                                <br/>
+                                <h3 style="font-size: 0.9em; font-weight: 300; padding-top: 15px;padding-bottom: 15px;">
+                                    We measured the baseline phosphoproteomic profiles of two non-malignant breast cell lines and 33 breast cancer cell lines of which twenty were triple negative, six were hormone receptor positive, four were Her2 amplified, and three were established from triple negative patient-derived xenografts.
+                                </h3>
+                            </div>
+                        </div>
+
                         <a name="rppa-sec"/>
                         <div ng-show="(button_hms_c || button_c_all)&&(button_rppa_m || button_m_all)&&(button_rppa_a || button_a_all)">
                             <div class="shadowedGlossary" style="padding-top: 50px; padding-bottom: 10px">

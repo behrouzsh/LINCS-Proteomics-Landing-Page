@@ -10,7 +10,8 @@ urls:
   pilincsP100Api: http://eh3.uc.edu/pilincs/api-assays-paged/?order=asc&limit=100000&offset=0&tags=[{"name":"%s","flag":"Perturbation","annotation":"Pertiname"},{"p100":true}]
   stringNetworkJSON: https://string-db.org/api/json/network?identifiers=%s
   stringNetworkSVG: https://string-db.org/api/image/network?identifiers=%s
-  harmonizomeGene: http://amp.pharm.mssm.edu/Harmonizome/api/1.0/gene/%s
+  harmonizomeGene: https://amp.pharm.mssm.edu/Harmonizome/api/1.0/gene/%s
+  ensembleApiAddress: https://rest.ensembl.org/xrefs/symbol/homo_sapiens/%s?content-type=application/json
   pythonP100Api: http://127.0.0.1:5000/api/clust/P100/aggregatedforSlicing/%s
   pythonGCPApi: http://127.0.0.1:5000/api/clust/GCP/aggregatedforSlicing/%s
   downloadP100Api: http://127.0.0.1:5000/api/P100/downlowdslice/%s

@@ -142,25 +142,28 @@
 
             <ul class="nav nav-tabs nav-tabs3">
                 <!--<ul class="nav nav-pills nav-stacked col-md-3">-->
-                <li class="active" style="width:16.667%;"><a data-toggle="tab" data-target="#P100"
+                <li class="active" style="width:14.285%;"><a data-toggle="tab" data-target="#P100"
                                                              ng-click="selectExploreDiv('P100');">P100
                     (PCCSE)</a>
                 </li>
-                <li style="width:16.667%; "><a data-toggle="tab" data-target="#GCP"
+                <li style="width:14.285%; "><a data-toggle="tab" data-target="#GCP"
                                                ng-click="selectExploreDiv('GCP');">GCP
                     (PCCSE)</a></li>
-                <li style="width:16.667%;"><a data-toggle="tab" data-target="#DToxS"
+                <li style="width:14.285%;"><a data-toggle="tab" data-target="#DToxS"
                                               ng-click="selectExploreDiv('DToxS');">MS Protein
                     (LINCS
                     DToxS)</a></li>
-                <li style="width:16.667%;"><a data-toggle="tab" data-target="#SWATH"
+                <li style="width:14.285%;"><a data-toggle="tab" data-target="#SWATH"
                                               ng-click="selectExploreDiv('SWATH');">SWATH-MS
                     (NeuroLINCS)</a>
-                <li style="width:16.667%;"><a data-toggle="tab" data-target="#RPPA" ng-click="selectExploreDiv('RPPA');">RPPA
+                <li style="width:14.285%;"><a data-toggle="tab" data-target="#RPPA" ng-click="selectExploreDiv('RPPA');">RPPA
                     (HMS
                     LINCS)</a></li>
-                <li style="width:16.3%;"><a data-toggle="tab" data-target="#Micro" ng-click="selectExploreDiv('Micro');">Microwestern
+                <li style="width:14.285%;"><a data-toggle="tab" data-target="#Micro" ng-click="selectExploreDiv('Micro');">Microwestern
                     (DToxS)</a></li>
+                <li style="width:14.285%;"><a data-toggle="tab" data-target="#TMT" ng-click="selectExploreDiv('TMT');">TMT
+                    (HMS
+                    LINCS)</a></li>
             </ul>
 
             <div class="tab-content  tab-content text-left" style="padding-top: 20px">
@@ -426,6 +429,8 @@
                                                                     <button class="btn button-submit" style="" type="button"
                                                                             ng-click="updateP100Perturbagen(ctrl.P100ExploreCompoundInput)">Change Perturbation
                                                                     </button>
+
+
                                                                 </span>
                                                         </div>
 
@@ -437,6 +442,13 @@
                                                             <i ng-show="ctrl.clusterWait" class="fa fa-refresh fa-spin"
                                                                style="font-size:14px"></i>
                                                         </button>
+
+                                                        <div ng-show="!ctrl.clusterWait && !ctrl.clusterResult" style="margin-top: 10px; border-color: #9d9d9d; box-shadow: 0px 0px 5px  #888888;" >
+                                                            <h5>
+                                                                Can not generate clustergrammer, please use the other tab for more analysis.
+                                                                There might be just one signature for this perturbation.
+                                                            </h5>
+                                                        </div>
 
 
                                                         <!--<div class="input-group">-->
@@ -541,7 +553,7 @@
                                                         <!--<i ng-show="ctrl.showSmileSvgSpinner" class="fa fa-refresh fa-spin"-->
                                                         <!--style="font-size:14px"></i></button>-->
 
-                                                        <!--<div style="margin-top: 10px; border-color: #9d9d9d; box-shadow: 0px 0px 5px  #888888;" ng-bind-html="cpSvg4"></div>-->
+
 
 
                                                         <!--<input type="text" style="height: 40px;  width: 80%;"-->
@@ -1153,6 +1165,18 @@
                         averages across Level 3 replicates.
                     </p>
                 </div>
+                <div id="TMT" class="tab-pane fade">
+                    <!--<h3>Menu 3</h3>-->
+
+                    <p style="font-weight: 300">
+                        Tandem mass tag systems enable quantification and identification of specific
+                        labeled proteins in samples through tandem mass spectrometry procedures. In this assay,
+                        total proteome/phospho-proteome dataset for a 35-cell line breast cancer panel under basal conditions are
+                        studied. The baseline proteomic profiles of two non-malignant breast cell lines and 33 breast
+                        cancer cell lines of which twenty were triple negative, six were hormone receptor positive, four were Her2
+                        amplified, and three were established from triple negative patient-derived xenografts are measured.
+                    </p>
+                </div>
                 <!--</div>-->
             </div>
         </div>
@@ -1168,7 +1192,9 @@
                         (ctrl.showSWATHdiv && ctrl.SWATHSecondTab ) ||
                         (ctrl.showRPPAdiv && ctrl.RPPASecondTab ) ||
                         (ctrl.showDToxSdiv && ctrl.DToxSSecondTab ) ||
-                        (ctrl.showMicrodiv && ctrl.MicroSecondTab )" style="padding-top: 20px;">
+                        (ctrl.showMicrodiv && ctrl.MicroSecondTab )
+                        ||
+                        (ctrl.showTMTdiv && ctrl.TMTSecondTab)" style="padding-top: 20px;">
 
             <select class="soflow-color" style="margin-bottom: 10px;" ng-show="ctrl.showP100div"
                     ng-model="selectedphosphoPathways"
@@ -1234,7 +1260,8 @@
                         (ctrl.showSWATHdiv && ctrl.SWATHFirstTab && ctrl.assayHeatmap == 'SWATH') ||
                         (ctrl.showRPPAdiv && ctrl.RPPAFirstTab && ctrl.assayHeatmap == 'RPPA') ||
                         (ctrl.showDToxSdiv && ctrl.DToxSFirstTab && ctrl.assayHeatmap == 'DToxS') ||
-                        (ctrl.showMicrodiv && ctrl.MicroFirstTab && ctrl.assayHeatmap == 'Micro')"
+                        (ctrl.showMicrodiv && ctrl.MicroFirstTab && ctrl.assayHeatmap == 'Micro') ||
+                        (ctrl.showTMTdiv && ctrl.TMTFirstTab && ctrl.assayHeatmap == 'TMT')"
          style="padding-top: 20px;">
 
         <div id='container-id-1'>
@@ -1469,7 +1496,7 @@
         </div>
         <br/>
     </div>
-    <div ng-show=" ctrl.showRPPAdiv || ctrl.showSWATHdiv || ctrl.showDToxSdiv || ctrl.showP100div || ctrl.showGCPdiv">
+    <div ng-show=" ctrl.showRPPAdiv || ctrl.showSWATHdiv || ctrl.showDToxSdiv || ctrl.showP100div || ctrl.showGCPdiv || ctrl.showTMTdiv">
 
 
         <!--<div id="chart5"></div>-->

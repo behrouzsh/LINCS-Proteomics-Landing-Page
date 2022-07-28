@@ -150,24 +150,27 @@
                         <!--<a data-toggle="tab" data-target="#about"-->
                         <!--style="font-size: 14px; font-weight: 500" ng-click="showAboutSubTab()">About</a>-->
                         <!--</li>-->
-                        <li class="active" style="width:16.6666667%;"><a data-toggle="tab" href="#P100"
+                        <li class="active" style="width:14.285%;"><a data-toggle="tab" href="#P100"
                                                                          ng-click="showNetwork('P100')">P100
                             (PCCSE)</a>
                         </li>
-                        <li style="width:16.6666667%;"><a data-toggle="tab" href="#GCP"
+                        <li style="width:14.285%;"><a data-toggle="tab" href="#GCP"
                                                           ng-click="showNetwork('GCP')">GCP
                             (PCCSE)</a></li>
-                        <li style="width:16.6666667%;"><a data-toggle="tab" href="#DToxS"
+                        <li style="width:14.285%;"><a data-toggle="tab" href="#DToxS"
                                                           ng-click="showNetwork('DToxS')">MS
                             Protein State (DToxS)</a></li>
 
-                        <li style="width:16.6666667%;"><a data-toggle="tab" href="#SWATH"
+                        <li style="width:14.285%;"><a data-toggle="tab" href="#SWATH"
                                                           ng-click="showNetwork('SWATH')">SWATH-MS (NeuroLINCS)</a>
 
-                        <li style="width:16.6666667%;"><a data-toggle="tab" href="#Micro"
+                        <li style="width:14.285%;"><a data-toggle="tab" href="#Micro"
                                                           ng-click="showNetwork('Micro')">Microwestern (DToxS)</a></li>
-                        <li style="width:16.3%;"><a data-toggle="tab" href="#RPPA"
+                        <li style="width:14.285%;"><a data-toggle="tab" href="#RPPA"
                                                      ng-click="showNetwork('RPPA')">RPPA (HMS
+                            LINCS)</a></li>
+                        <li style="width:14.285%;"><a data-toggle="tab" href="#TMT"
+                                                      ng-click="showNetwork('TMT')">TMT (HMS
                             LINCS)</a></li>
 
                     </ul>
@@ -617,6 +620,68 @@
                                             sortable="'SM_LINCS_ID'" ng-if="mapping.SM_LINCS_ID != 'NA' ">
                                             <a class="tabled"
                                                ng-href="http://lincsportal.ccs.miami.edu/SmallMolecules/view/{{mapping.SM_LINCS_ID}}"
+                                               target="_blank">
+
+                                                {{mapping.SM_LINCS_ID}}
+                                            </a>
+                                        </td>
+
+
+                                        <!--<td style="font-weight: 400" title="'LINCS_SM'" filter="{ SM_LINCS_ID: 'text'}"-->
+                                        <!--sortable="'SM_LINCS_ID'">-->
+                                        <!--<a class="tabled" href ng-click="showDataForPerturbationGenes(mapping.SM_LINCS_ID)">{{mapping.lincs_cp}}</a>-->
+                                        <!--</td>-->
+
+                                        <!---->
+                                        <!--<td style="font-weight: 400" title="'description'" filter="{ symbol: 'text'}"-->
+                                        <!--sortable="'description'">-->
+                                        <!--<a >{{mapping.description}}</a>-->
+                                        <!--</td>-->
+                                        <!--<td style="font-weight: 400" title="'synonyms'" filter="{ symbol: 'text'}"-->
+                                        <!--sortable="'synonyms'">-->
+                                        <!--<a >{{mapping.synonyms}}</a>-->
+                                        <!--</td>-->
+
+
+                                    </tr>
+                                </table>
+                            </div>
+
+
+                        </div>
+                        <div id="TMT" class="tab-pane fade">
+                            <!--<h3>Menu 3</h3>-->
+
+                            <p class="fh5co-sub-lead ">
+                                Tandem mass tag systems enable quantification and identification of specific
+                                labeled proteins in samples through tandem mass spectrometry procedures. In this assay,
+                                total proteome/phospho-proteome dataset for a 35-cell line breast cancer panel under basal conditions are
+                                studied. The baseline proteomic profiles of two non-malignant breast cell lines and 33 breast
+                                cancer cell lines of which twenty were triple negative, six were hormone receptor positive, four were Her2
+                                amplified, and three were established from triple negative patient-derived xenografts are measured.
+                            </p>
+
+                            <div ng-show="ctrl.data_sets_2_compounds_info_show" style="margin-bottom: 40px;padding-bottom: 40px;">
+                                <h1 class="page-header" style="margin-top: 35px;margin-bottom: 25px; font-size:18px;">Analyzed Perturbations</h1>
+
+                                <table ng-table="ctrl.tableTMTCompounds" class="table table-bordered table-striped"
+                                       show-filter="true">
+                                    <tr ng-repeat="mapping in $data">
+
+                                        <td style="font-weight: 400" title="'Name'" filter="{ Name: 'text'}"
+                                            sortable="'Name'" ng-if="mapping.Name != 'NA' ">
+                                            <a >{{mapping.Name}}</a>
+                                        </td>
+
+                                        <td style="font-weight: 400" title="'Type'" filter="{ Type: 'text'}"
+                                            sortable="'Type'" ng-if="mapping.Type != 'na' ">
+                                            <a >{{mapping.Type.toLowerCase()}}</a>
+                                        </td>
+
+                                        <td style="font-weight: 400" title="'LINCS_ID'" filter="{ SM_LINCS_ID: 'text'}"
+                                            sortable="'SM_LINCS_ID'" ng-if="mapping.SM_LINCS_ID != 'NA' ">
+                                            <a class="tabled"
+                                               ng-href="http://lincsportal.ccs.miami.edu/cells/#/view/{{mapping.SM_LINCS_ID}}"
                                                target="_blank">
 
                                                 {{mapping.SM_LINCS_ID}}

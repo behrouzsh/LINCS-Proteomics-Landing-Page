@@ -51,10 +51,11 @@ public class RestAPI implements ErrorController {
 
 
     private final EmailService emailService;
-    private final ReadFromCSVService readFromCSVService;
+    //private final ReadFromCSVService readFromCSVService;
     private final SmileConverterService smileConverterService;
     private final StringGeneNetworkService stringGeneNetworkService;
     private final HarmonizomeGeneService harmonizomeGeneService;
+    private final EnsemblService ensemblService;
     private final ClusterFromPython clusterFromPython;
 //    private final servletContext servletContext;
 
@@ -67,15 +68,16 @@ public class RestAPI implements ErrorController {
 
     @Autowired
     //public RestAPI(HarmonizomeGeneService harmonizomeGeneService, HarmonizomeProteinService harmonizomeProteinService, PrositeService prositeService, PsiModService psiModService, UniprotService uniprotService, EnrichrService enrichrService, PCGService pcgService, KinaseService kinaseService, ShorthandService shorthandService, PhosphoService phosphoService, HarmonizomeGeneService harmonizomeGeneServics1) {
-    public RestAPI(ErrorAttributes errorAttributes, EmailService emailService, ReadFromCSVService readFromCSVService, SmileConverterService smileConverterService, StringGeneNetworkService stringGeneNetworkService, HarmonizomeGeneService harmonizomeGeneService, ClusterFromPython clusterFromPython) {
+    public RestAPI(ErrorAttributes errorAttributes, EmailService emailService, SmileConverterService smileConverterService, StringGeneNetworkService stringGeneNetworkService, HarmonizomeGeneService harmonizomeGeneService, EnsemblService ensemblService, ClusterFromPython clusterFromPython) {
 
 
         this.emailService = emailService;
         this.errorAttributes = errorAttributes;
-        this.readFromCSVService = readFromCSVService;
+        //this.readFromCSVService = readFromCSVService;
         this.smileConverterService = smileConverterService;
         this.stringGeneNetworkService = stringGeneNetworkService;
         this.harmonizomeGeneService = harmonizomeGeneService;
+        this.ensemblService = ensemblService;
         this.clusterFromPython = clusterFromPython;
     }
 
@@ -186,7 +188,16 @@ public class RestAPI implements ErrorController {
 
         return fp;
     }
+    @RequestMapping(value = "api/ensemblInfo/{geneName}", method = RequestMethod.GET)
+    public
+    @ResponseBody
+    String reportEnsemblGeneInfo(@PathVariable("geneName") String geneName) throws Exception {
+        //String smiles = "CCCCC1C(=O)N(N(C1=O)C1=CC=CC=C1)C1=CC=CC=C1";
+        //JSONArray fp =new JSONArray();
+        String fp = ensemblService.getResponse(geneName);
 
+        return fp;
+    }
     @RequestMapping(value = "api/geneNetwork/{geneName}", method = RequestMethod.GET)
     public
     @ResponseBody
@@ -228,7 +239,7 @@ public class RestAPI implements ErrorController {
         JSONParser parser = new JSONParser();
         try {
 
-            Object obj = parser.parse(new FileReader("src/main/resources/static/clustergrammer/GCP_aggregated_clustergram.json"));
+            Object obj = parser.parse(new FileReader("src/main/resources/static/clustergrammer/GCP_aggregated_clustergram_july_19.json"));
             jsonFile = (JSONObject) new JSONParser().parse(obj.toString());
 
 
@@ -296,7 +307,7 @@ public class RestAPI implements ErrorController {
         JSONParser parser = new JSONParser();
         try {
 
-            Object obj = parser.parse(new FileReader("src/main/resources/static/clustergrammer/P100_aggregated_clustergram.json"));
+            Object obj = parser.parse(new FileReader("src/main/resources/static/clustergrammer/P100_aggregated_clustergram_july_19.json"));
             jsonFile = (JSONObject) new JSONParser().parse(obj.toString());
 
 

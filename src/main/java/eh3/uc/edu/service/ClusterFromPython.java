@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ClusterFromPython {
-    private static final Logger log = LoggerFactory.getLogger(eh3.uc.edu.service.ClusterFromPython.class);
+    private static final Logger log = LoggerFactory.getLogger(ClusterFromPython.class);
 
 
 

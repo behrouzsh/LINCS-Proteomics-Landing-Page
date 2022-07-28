@@ -94,6 +94,7 @@ var Clustergrammer =
 
 	  // make visualization parameters using configuration object
 	  cgm.params = make_params(config);
+	  console.log(cgm.params);
 	  cgm.config = config;
 
 	  // set up zoom
@@ -215,6 +216,7 @@ var Clustergrammer =
 	  underscore.each(['row', 'col'], function (inst_rc) {
 
           console.log(config.network_data);
+          new_pinet_network = config.network_data;
           console.log(inst_rc + '_nodes');
 
 	    var inst_nodes = config.network_data[(inst_rc + '_nodes').toString()];
@@ -13226,12 +13228,17 @@ var Clustergrammer =
 
 	    d3.select(params.root).append('div').classed('sidebar_wrapper', true);
 
+	    //Added by Behrouz
+         //  d3.select(params.root).append('div').classed('pinet_wrapper', true);
+
 	    d3.select(params.root).append('div').classed('viz_wrapper', true);
 	  }
 
 	  var cont_dim = calc_viz_dimensions(params);
 
 	  d3.select(params.root + ' .sidebar_wrapper').style('float', 'left').style('width', params.sidebar_width + 'px').style('height', cont_dim.height + 'px').style('overflow', 'hidden');
+      //Added by Behrouz
+      // d3.select(params.root + ' .pinet_wrapper').style('float', 'left').style('width', params.sidebar_width + 'px').style('height', cont_dim.height + 'px').style('overflow', 'hidden');
 
 	  d3.select(params.viz.viz_wrapper).style('float', 'left').style('width', cont_dim.width + 'px').style('height', cont_dim.height + 'px');
 		};
@@ -16205,6 +16212,7 @@ var Clustergrammer =
 	    // Crop Triangle
 	    //////////////////////////////
 	    icons = d3.select(params.root + ' .' + inst_rc + '_dendro_icons_group').selectAll('path').data(dendro_info, function (d) {
+
 	      return d.name;
 	    }).enter().append('path').classed(button_class, true).attr('d', function (d) {
 
@@ -16261,6 +16269,7 @@ var Clustergrammer =
 
 	    dendro_crop_tip.html(function () {
 	      var full_string = 'Click to crop cluster';
+
 	      return full_string;
 	    });
 	  } else {
@@ -16391,6 +16400,16 @@ var Clustergrammer =
 
 	      // do not display dendrogram slider if filtering has been run
 	      d3.select(cgm.params.root + ' .' + inst_rc + '_slider_group').style('display', 'none');
+	      console.log(cgm);
+            console.log(cgm.params);
+            console.log(cgm.params.root);
+            console.log(cgm.params.root + ' .' + inst_rc + '_slider_group');
+	      console.log("adding pinet icon");
+	      if (inst_rc === "col")
+		  {
+		  	console.log("col");
+              //d3.select('').style('display', 'block');
+		  }
 
 	      // do not display other crop buttons since they are inactive
 	      d3.select(cgm.params.root + ' .' + other_rc + '_dendro_icons_container').style('display', 'none');
@@ -16403,7 +16422,7 @@ var Clustergrammer =
 	      ///////////////////
 	      // use class as 'global' variable
 	      d3.select(cgm.params.root + ' .' + inst_rc + '_dendro_icons_group').attr('transform', 'translate(0,0), scale(1,1)').classed('ran_filter', false);
-
+console.log("showing back col_slider_group or row_slider_group")
 	      d3.select(cgm.params.root + ' .' + other_rc + '_dendro_icons_group').attr('transform', 'translate(0,0), scale(1,1)');
 
 	      if (params.viz.inst_order[other_rc] === 'clust') {
@@ -16459,6 +16478,8 @@ var Clustergrammer =
 	    var inst_col_nodes = cgm.params.network_data.col_nodes;
 
 	    cgm.filter_viz_using_names(names);
+	    //These are the names of the selected columns or rows
+		  console.log(names);
 
 	    // overwrite with backup of original nodes
 	    cgm.params.inst_nodes.row_nodes = inst_row_nodes;
@@ -20808,6 +20829,8 @@ var Clustergrammer =
 	      d3.selectAll(params.root + ' .borders').style('fill', 'white');
 	      // d3.select(params.root+' .footer_section').style('display', 'none');
 	      d3.select(params.root + ' .sidebar_wrapper').style('display', 'none');
+	      //Added by Behrouz
+           //  d3.select(params.root + ' .pinet_wrapper').style('display', 'none');
 
 	      // contract view
 	    } else {
@@ -20823,6 +20846,8 @@ var Clustergrammer =
 	      // d3.select(params.root+' .footer_section').style('display', 'block');
 	      d3.select(params.root + ' .viz_wrapper').style('width', '100px');
 	      d3.select(params.root + ' .sidebar_wrapper').style('display', 'block');
+	      //Added by Behrouz
+           //  d3.select(params.root + ' .pinet_wrapper').style('display', 'block');
 	    }
 
 	    // // resize parent div
@@ -20887,7 +20912,8 @@ var Clustergrammer =
 
 
 	  d3.select(params.root + ' .sidebar_wrapper').style('height', cont_dim.height + 'px');
-
+	  //Added by Behrouz
+       //  d3.select(params.root + ' .pinet_wrapper').style('height', cont_dim.height + 'px');
 	  d3.select(params.viz.viz_wrapper)
 	  // .style('float', 'left')
 	  .style('margin-top', cont_dim.top + 'px').style('width', cont_dim.width + 'px').style('height', cont_dim.height + 'px');
@@ -23557,7 +23583,7 @@ var Clustergrammer =
 	      unit_name = 'variance';
 	    }
 
-	    d3.select(params.root + ' .title_' + filter_type).text('Top rows ' + unit_name + ': ' + filter_value);
+	    //d3.select(params.root + ' .title_' + filter_type).text('Top rows ' + unit_name + ': ' + filter_value);
 	  }
 
 	  return {
@@ -24689,7 +24715,7 @@ var Clustergrammer =
 	      run_on_opacity_slide(evt, value);
 	    });
 
-	    d3.select(cgm.params.root + ' .opacity_slider').call(slider_fun);
+	    //d3.select(cgm.params.root + ' .opacity_slider').call(slider_fun);
 	  }
 
 	  function run_on_dendro_slide(evt, value, inst_rc) {
@@ -25451,7 +25477,8 @@ var Clustergrammer =
 	  var inst_col_nodes = cgm.params.network_data.col_nodes;
 
 	  var new_network_data = filter_network_using_new_nodes(cgm.config, new_nodes);
-
+	  new_pinet_network = new_network_data;
+	  console.log(new_network_data);
 	  // takes entire cgm object
 	  // last argument tells it to not preserve categoty colors
 	  update_viz_with_network(cgm, new_network_data);
@@ -26246,7 +26273,7 @@ var Clustergrammer =
 
 	  // get rows/cols from brush-extent
 	  // works for differnt brushing directions (e.g. start end sites)
-
+console.log("here");
 	  var cgm = this;
 	  var params = cgm.params;
 
@@ -26334,7 +26361,7 @@ var Clustergrammer =
 
 	    underscore.each(params.matrix.matrix, function (row_data) {
 	      var y_trans = params.viz.y_scale(row_data.row_index);
-
+            console.log("here");
 	      if (y_trans > y_start && y_trans < y_end) {
 	        found_nodes.row.push(row_data.name);
 	      }
@@ -27610,66 +27637,72 @@ var Clustergrammer =
 	var make_modals = __webpack_require__(274);
 	var set_up_opacity_slider = __webpack_require__(276);
 	var make_colorbar = __webpack_require__(277);
+
 	var underscore = __webpack_require__(3);
 
 	/* Represents sidebar with controls.
 	 */
 	module.exports = function sidebar(cgm) {
 
-	  var params = cgm.params;
+        var params = cgm.params;
 
-	  var sidebar = d3.select(params.root + ' .sidebar_wrapper');
+        var sidebar = d3.select(params.root + ' .sidebar_wrapper');
 
-	  // console.log('is_expand ',params.viz.is_expand)
+        console.log("-------------------");
+        console.log(sidebar);
+        console.log(cgm.params.initialize_sidebar_icons);
 
-	  if (params.viz.is_expand) {
-	    sidebar.style('display', 'none');
-	  }
+        if (params.viz.is_expand) {
+            sidebar.style('display', 'none');
+        }
 
-	  sidebar.append('div').classed('title_section', true);
+        if (cgm.params.initialize_sidebar_icons) {
 
-	  if (params.sidebar.title != null) {
-	    sidebar.select('.title_section').append('h4')
-	    // .style('margin-left', params.sidebar.title_margin_left+'px')
-	    .style('margin-left', '20px').style('margin-top', '5px').style('margin-bottom', '0px').text(params.sidebar.title);
-	  }
+			sidebar.append('div').classed('title_section', true);
 
-	  sidebar.append('div').style('padding-right', '2px').classed('about_section', true);
+			if (params.sidebar.title != null) {
+				sidebar.select('.title_section').append('h4')
+				// .style('margin-left', params.sidebar.title_margin_left+'px')
+					.style('margin-left', '20px').style('margin-top', '5px').style('margin-bottom', '0px').text(params.sidebar.title);
+			}
 
-	  if (params.sidebar.about != null) {
+			sidebar.append('div').style('padding-right', '2px').classed('about_section', true);
 
-	    sidebar.select('.about_section').append('h5').classed('sidebar_text', true).style('margin-left', '7px').style('margin-top', '5px').style('margin-bottom', '2px').style('text-align', 'justify').html(params.sidebar.about);
-	  }
+			if (params.sidebar.about != null) {
 
-	  sidebar.append('div').classed('icons_section', true).style('text-align', 'center');
+				sidebar.select('.about_section').append('h5').classed('sidebar_text', true).style('margin-left', '7px').style('margin-top', '5px').style('margin-bottom', '2px').style('text-align', 'justify').html(params.sidebar.about);
+			}
 
-	  if (cgm.params.make_modals) {
-	    make_modals(params);
-	  }
+			sidebar.append('div').classed('icons_section', true).style('text-align', 'center');
 
-	  if (params.sidebar.icons) {
-	    make_icons(cgm, sidebar);
-	  }
+			if (cgm.params.make_modals) {
+				make_modals(params);
+			}
 
-	  set_up_reorder(params, sidebar);
+			if (params.sidebar.icons) {
+				make_icons(cgm, sidebar);
+			}
 
-	  set_up_search(sidebar, params);
+			set_up_reorder(params, sidebar);
 
-	  set_up_opacity_slider(sidebar);
+			set_up_search(sidebar, params);
 
-	  var possible_filter_names = underscore.keys(params.viz.possible_filters);
+			set_up_opacity_slider(sidebar);
 
-	  if (possible_filter_names.indexOf('enr_score_type') > -1) {
-	    possible_filter_names.sort(function (a, b) {
-	      return a.toLowerCase().localeCompare(b.toLowerCase());
-	    });
-	  }
+			var possible_filter_names = underscore.keys(params.viz.possible_filters);
 
-	  cgm.slider_functions = {};
+			if (possible_filter_names.indexOf('enr_score_type') > -1) {
+				possible_filter_names.sort(function (a, b) {
+					return a.toLowerCase().localeCompare(b.toLowerCase());
+				});
+			}
 
-	  underscore.each(possible_filter_names, function (inst_filter) {
-	    set_up_filters(cgm, inst_filter);
-	  });
+			cgm.slider_functions = {};
+
+			underscore.each(possible_filter_names, function (inst_filter) {
+				set_up_filters(cgm, inst_filter);
+			});
+		}
 
 	  ini_sidebar(cgm);
 
@@ -27682,6 +27715,7 @@ var Clustergrammer =
 	  }
 
 	  make_colorbar(cgm);
+
 		};
 
 /***/ }),
@@ -27916,7 +27950,8 @@ var Clustergrammer =
 	  search_container.append('input').classed('form-control', true).classed('gene_search_box', true).classed('sidebar_text', true).attr('type', 'text').attr('placeholder', params.sidebar.row_search.placeholder).style('height', params.sidebar.row_search.box.height + 'px').style('margin-top', '10px');
 
 	  search_container.append('div').classed('gene_search_button', true).style('margin-top', '5px').attr('data-toggle', 'buttons').append('button').classed('sidebar_text', true).html('Search').attr('type', 'button').classed('btn', true).classed('btn-primary', true).classed('submit_gene_button', true).style('width', '100%').style('font-size', '14px');
-		};
+
+	};
 
 /***/ }),
 /* 270 */
@@ -28707,9 +28742,9 @@ var Clustergrammer =
 
 	  var slider_container = sidebar.append('div').classed('opacity_slider_container', true).style('margin-top', '5px').style('padding-left', '10px').style('padding-right', '10px');
 
-	  slider_container.append('div').classed('sidebar_text', true).classed('opacity_slider_text', true).style('margin-bottom', '3px').text('Opacity Slider');
+	  //slider_container.append('div').classed('sidebar_text', true).classed('opacity_slider_text', true).style('margin-bottom', '3px').text('Opacity Slider');
 
-	  slider_container.append('div').classed('slider', true).classed('opacity_slider', true);
+	  //slider_container.append('div').classed('slider', true).classed('opacity_slider', true);
 		};
 
 /***/ }),
@@ -28721,6 +28756,8 @@ var Clustergrammer =
 	module.exports = function make_colorbar(cgm) {
 
 	  var params = cgm.params;
+        console.log("in make colorbar");
+	  console.log(cgm);
 
 	  d3.select(params.root + ' .sidebar_wrapper').append('div').classed('sidebar_text', true).style('padding-left', '10px').style('padding-top', '5px').text('Matrix Values');
 
@@ -28728,6 +28765,9 @@ var Clustergrammer =
 	  var colorbar_height = 13;
 	  var svg_height = 3 * colorbar_height;
 	  var svg_width = 1.2 * colorbar_width;
+
+        var pinet_width = svg_width;
+        var pinet_height = svg_width;
 	  var low_left_margin = 10;
 	  var top_margin = 33;
 	  var high_left_margin = colorbar_width + 10;
@@ -28735,6 +28775,7 @@ var Clustergrammer =
 	  var bar_margin_top = 3;
 
 	  var network_data = params.network_data;
+
 
 	  var max_link = underscore.max(network_data.links, function (d) {
 	    return d.value;
@@ -28746,7 +28787,8 @@ var Clustergrammer =
 
 	  var main_svg = d3.select(params.root + ' .sidebar_wrapper').append('svg').attr('height', svg_height + 'px').attr('width', svg_width + 'px');
 
-	  //Append a defs (for definition) element to your SVG
+
+        //Append a defs (for definition) element to your SVG
 	  var defs = main_svg.append("defs");
 
 	  //Append a linearGradient element to the defs and give it a unique id
@@ -28789,10 +28831,161 @@ var Clustergrammer =
 	      linearGradient.append("stop").attr("offset", "100%").attr("stop-color", "red");
 	    }
 
-	  // make colorbar
-	  main_svg.append('rect').classed('background', true).attr('height', colorbar_height + 'px').attr('width', colorbar_width + 'px').attr('fill', 'url(#linear-gradient)').attr('transform', 'translate(' + bar_margin_left + ', ' + bar_margin_top + ')').attr('stroke', 'grey').attr('stroke-width', '0.25px');
+	    // make colorbar
+	    main_svg.append('rect').classed('background', true).attr('height', colorbar_height + 'px').attr('width', colorbar_width + 'px').attr('fill', 'url(#linear-gradient)').attr('transform', 'translate(' + bar_margin_left + ', ' + bar_margin_top + ')').attr('stroke', 'grey').attr('stroke-width', '0.25px');
 
-	  // make title
+		console.log("Adding stuff to sidebar ");
+        //Added by Behrouz
+        // var tooltip = d3.select(params.root + ' .sidebar_wrapper')
+        //     .append("div")
+        //     .style("position", "absolute")
+        //     .style("z-index", "10")
+        //     .style("visibility", "hidden")
+        //     .text("a simple tooltip");
+        //d3.select("pinet_svg").remove();
+
+
+            //d3.select(params.root + ' .sidebar_wrapper').selectAll("pinet_svg").remove();
+            var pinet_svg = d3.select(params.root + ' .sidebar_wrapper').append('svg').attr('height', pinet_height + 'px').attr('width', pinet_width + 'px');
+
+
+            pinet_svg.append('svg:image').attr("xlink:href", "http://eh3.uc.edu/pinet/images/pinet-logo6.png")
+                .attr("x", svg_width / 5)
+
+                // .attr("y", "60")
+                .attr("width", svg_width / 2)
+                .attr("height", svg_width / 2);
+            // .append("svg:title")
+            // .text("Analyze row averaged values in pinet" )
+            pinet_svg.on({
+                "mouseover": function (d) {
+
+                    d3.select(this)
+                        .style("cursor", "pointer")
+                        .append("svg:title")
+                        .text("Analyze PTMProteins with row averaged values in pinet");
+                    // .select("text")
+                    //
+                    // .text(function (d) {
+                    //
+                    //     return "aaaa";
+                    // });
+                    //.classed('sidebar_tooltip', true).append('span').classed('sidebar_tooltip_text', true).html('Download matrix').style('left', '-200%');
+                    //;
+
+
+                }
+            })
+            //.on("mouseover", function(d){tooltip.text(d); return tooltip.style("visibility", "visible");})
+                .on({
+                    "mouseout": function (d) {
+                        d3.select(this).style("cursor", "default");
+
+                        d3.select(this).select("text")
+
+                            .text(function (d) {
+
+                                return "";
+                            });
+                    }
+                });
+
+            // .on('click', function () {
+            //
+            // 	//Sending data to pinet for analysis
+            // console.log("pinet clickeddd");
+            // console.log(cgm.params.network_data);
+            // console.log(cgm.params.network_data.row_nodes);
+            // console.log(cgm.params.network_data.col_nodes);
+            // d3.select(this).data(cgm.params.network_data);
+            // console.log(d3.select(this).data);
+            // var url = "http://eh3.uc.edu/pinet/proteinToPathway?list=";
+            // for (iter = 0; iter < cgm.params.network_data.row_nodes_names.length - 1; iter ++)
+            // {
+            // 	var ptmPr = cgm.params.network_data.row_nodes_names[iter].split("(", 1)[0].replace(/\+/g, '%2B').replace("[", "%5B").replace("]", "%5D");
+            // 	var ptmPrVal = getAvg(cgm.params.network_data.mat[iter]);
+            // 	// console.log(ptmPr);
+            // 	// console.log(ptmPrVal);
+            // 	url += ptmPr + "%20" + ptmPrVal + ",";
+            // }
+            //
+            // url += cgm.params.network_data.row_nodes_names[iter].split("(", 1)[0].replace(/\+/g, '%2B').replace("[", "%5B").replace("]", "%5D") + "%20" + getAvg(cgm.params.network_data.mat[iter]);
+            // window.open(url, '_blank');
+            // })
+            //.on("click", function() { handleClick(cgm.params.network_data) });
+
+
+            function getAvg(grades) {
+                return parseFloat(grades.reduce(function (p, c) {
+                        return p + c;
+                    }) / grades.length * 1.0.toFixed(4));
+            };
+            pinet_svg.on("click", function () {
+                handleClick()
+            });
+            function handleClick() {
+                // Use D3 to select element, change color back to normal
+
+
+                console.log(new_pinet_network);
+var url = "http://eh3.uc.edu/pinet/ptmToModifier?list=";
+
+for (iter = 0; iter < new_pinet_network.row_nodes_names.length - 1; iter++) {
+    var ptmPr = new_pinet_network.row_nodes_names[iter].split("(", 1)[0].replace(/\+/g, '%5B%2B').replace(/@/g, "%5D@").replace(/\[/g, "%7B").replace(/]/g, "%7D");
+    var ptmPrVal = getAvg(new_pinet_network.mat[iter]);
+    
+    url += ptmPr + "%20" + ptmPrVal + ",";
+}
+//var new_pinet_network_row = new_pinet_network.row_nodes_names[iter];
+//var new_pinet_network_peptide = new_pinet_network_row["cat-0"];
+//var new_pinet_network_gene = new_pinet_network_row["cat-2"];
+//getAvg(new_pinet_network.mat[iter])
+ptmPrVal = getAvg(new_pinet_network.mat[iter]);
+
+url += new_pinet_network.row_nodes_names[iter].split("(", 1)[0].replace(/\+/g, '%5B%2B').replace(/\+/g, '%5B%2B').replace(/@/g, "%5D@").replace(/\[/g, "%7B").replace(/]/g, "%7D") + "%20" + ptmPrVal;
+
+window.open(url, '_blank');
+
+                //var url = "http://eh3.uc.edu/pinet/proteinToPathway?list=";
+                //for (iter = 0; iter < new_pinet_network.row_nodes_names.length - 1; iter++) {
+                //    var ptmPr = new_pinet_network.row_nodes_names[iter].split("(", 1)[0].replace(/\+/g, '%2B').replace("[", "%5B").replace("]", "%5D");
+                //    var ptmPrVal = getAvg(new_pinet_network.mat[iter]);
+                    // console.log(ptmPr);
+                    // console.log(ptmPrVal);
+                //    url += ptmPr + "%20" + ptmPrVal + ",";
+                //}
+
+                //url += new_pinet_network.row_nodes_names[iter].split("(", 1)[0].replace(/\+/g, '%2B').replace("[", "%5B").replace("]", "%5D") + "%20" + getAvg(new_pinet_network.mat[iter]);
+                //window.open(url, '_blank');
+            }
+            //console.log(init_network);
+        
+
+
+        // var row = sidebar.select('.icons_section').style('margin-top', '7px').style('margin-left', '5%');
+        //
+        // var width_pct = '22%';
+        // var padding_left = '0px';
+        // var padding_right = '0px';
+        //
+        // row.append('div').classed('clust_icon', true).style('float', 'left').style('width', width_pct).style('padding-left', padding_left).style('padding-right', padding_right).append('i').classed('fa', true).classed('fa-share-alt', true).classed('icon_buttons', true).style('font-size', '25px').on('click', function () {
+        //     $(params.root + ' .share_info').modal('toggle');
+        //     $('.share_url').val(window.location.href);
+        //     cgm.save_matrix();
+        // }).classed('sidebar_tooltip', true).append('span').classed('sidebar_tooltip_text', true).html('Share').style('left', '0%');
+
+
+
+
+
+
+
+
+
+        //
+        //pinet_svg.append('rect').classed('background', true).attr('height', colorbar_height + 'px').attr('width', colorbar_width + 'px').attr('fill', 'url(#linear-gradient)').attr('transform', 'translate(' + bar_margin_left + ', ' + bar_margin_top + ')').attr('stroke', 'grey').attr('stroke-width', '0.25px');
+
+        // make title
 	  ///////////////
 
 	  var max_abs_val = Math.abs(Math.round(params.matrix.max_link * 10) / 10);

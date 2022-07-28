@@ -7,8 +7,13 @@ import org.json.simple.JSONObject;
 import org.openscience.cdk.CDKConstants;
 import org.openscience.cdk.depict.DepictionGenerator;
 import org.openscience.cdk.fingerprint.*;
+import org.openscience.cdk.interfaces.IChemObject;
 import org.openscience.cdk.interfaces.IChemObjectBuilder;
+import org.openscience.cdk.isomorphism.Pattern;
+import org.openscience.cdk.renderer.color.CDK2DAtomColors;
+import org.openscience.cdk.renderer.color.IAtomColorer;
 import org.openscience.cdk.silent.SilentChemObjectBuilder;
+import org.openscience.cdk.smiles.smarts.SmartsPattern;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -373,12 +378,29 @@ public class SmileConverterService {
         IAtomContainer mol = smipar.parseSmiles(translatedBack);
         mol.setProperty(CDKConstants.TITLE, smile);
 
+        Pattern ptrn = SmartsPattern.create(smiles, bldr);
+        Iterable<IChemObject> hits = ptrn.matchAll(mol)
+                .uniqueAtoms()
+                .toChemObjects();
+//        DepictionGenerator dptgen = new DepictionGenerator();
+//        dptgen.withSize(200, 250)
+//                .withHighlight(hits, Color.RED);
+//        dptgen.depict(mol)
+//                .writeTo("~/3016.png");
+
+
+
         DepictionGenerator dptgen = new DepictionGenerator();
+
+
+
+
         // size in px (raster) or mm (vector)
         // annotations are red by default
         dptgen.withSize(300, 200)
                 .withMolTitle()
-                .withTitleColor(Color.DARK_GRAY);
+                .withHighlight(hits, Color.RED)
+        ;
 //        dptgen.depict(mol)
 //                .writeTo("~/caffeine.png");
         System.out.println(dptgen.depict(mol).toSvgStr());

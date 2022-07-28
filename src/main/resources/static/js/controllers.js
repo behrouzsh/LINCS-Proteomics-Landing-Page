@@ -122,6 +122,7 @@ appModule.factory('SharedService', function( $http, $q, $sce, $location, NgTable
     vars.svgImg2;
 
     vars.selectedPerturbation = "TRAMETINIB";
+    vars.selectedPerturbationInput = "";
     vars.selectedPerturbationSmiles = "";
 
     vars.selectedCpInfoSmiles = "";
@@ -723,6 +724,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
     self.showMicroExplreCompoundInput = false;
     self.showRPPAExplreCompoundInput = false;
     self.showDToxSExplreCompoundInput = false;
+    self.showTMTExplreCompoundInput = false;
 
 
     self.P100ExploreCompounds = SharedService.getVar('P100ExploreCompounds');
@@ -731,6 +733,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
     self.MicroExploreCompounds = SharedService.getVar('MicroExploreCompounds');
     self.SWATHExploreCompounds = SharedService.getVar('SWATHExploreCompounds');
     self.DToxSExploreCompounds = SharedService.getVar('DToxSExploreCompounds');
+    self.TMTExploreCompounds = SharedService.getVar('TMTExploreCompounds');
 
 
     self.P100ExploreCompoundInput = SharedService.getVar('P100ExploreCompoundInput');
@@ -739,11 +742,18 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
     self.MicroExploreCompoundInput = SharedService.getVar('MicroExploreCompoundInput');
     self.SWATHExploreCompoundInput = SharedService.getVar('SWATHExploreCompoundInput');
     self.DToxSExploreCompoundInput = SharedService.getVar('DToxSExploreCompoundInput');
+    self.TMTExploreCompoundInput = SharedService.getVar('TMTExploreCompoundInput');
 
     $scope.removeFromGCPCps = function (cp) {
         var index = self.GCPExploreCompounds.indexOf(cp);
         if (index > -1) {
             self.GCPExploreCompounds.splice(index, 1);
+        }
+    }
+    $scope.removeFromTMTCps = function (cp) {
+        var index = self.TMTExploreCompounds.indexOf(cp);
+        if (index > -1) {
+            self.TMTExploreCompounds.splice(index, 1);
         }
     }
     $scope.removeFromP100Cps = function (cp) {
@@ -785,7 +795,12 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
         }
     }
 
-
+    $scope.addToTMTCps = function (cp) {
+        if (self.TMTExploreCompounds.indexOf(cp) == -1) {
+            self.TMTExploreCompounds.push(cp)
+            SharedService.setVar('TMTExploreCompounds', self.TMTExploreCompounds);
+        }
+    }
 
     $scope.addToP100Cps = function (cp) {
         if (self.P100ExploreCompounds.indexOf(cp) == -1) {
@@ -824,6 +839,11 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
     $scope.changeGCPCp = function (cp) {
         self.GCPExploreCompoundInput = cp;
         SharedService.setVar('GCPExploreCompoundInput', self.GCPExploreCompoundInput);
+
+    }
+    $scope.changeTMTCp = function (cp) {
+        self.TMTExploreCompoundInput = cp;
+        SharedService.setVar('TMTExploreCompoundInput', self.TMTExploreCompoundInput);
 
     }
     $scope.changeP100Cp = function (cp) {
@@ -916,13 +936,17 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
     {
         self.showSWATHExplreCompoundInput = true;
     }
-    if(self.MicroExplreCompoundInput !== "None")
+    if(self.MicroExploreCompoundInput!== "None")
     {
         self.showMicroExplreCompoundInput = true;
     }
     if(self.RPPAExploreCompoundInput !== "None")
     {
         self.showRPPAExplreCompoundInput = true;
+    }
+    if(self.TMTExploreCompoundInput !== "None")
+    {
+        self.showTMTExplreCompoundInput = true;
     }
     self.showP100Table = SharedService.getVar("showP100Table");
     self.showGCPTable = SharedService.getVar("showGCPTable");
@@ -933,6 +957,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
     self.showExploreRPPATable = SharedService.getVar("showExploreRPPATable");
     self.showExploreDToxSTable = SharedService.getVar("showExploreDToxSTable");
     self.showExploreMicroTable = SharedService.getVar("showExploreMicroTable");
+    self.showExploreTMTTable = SharedService.getVar("showExploreTMTTable");
 
     self.assayHeatmap = "None"
 
@@ -1010,6 +1035,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.showRPPAdiv = false;
             self.showDToxSdiv = false;
             self.showMicrodiv = false;
+            self.showTMTdiv = false;
 
             self.P100FirstTab = true;
             self.GCPFirstTab = false;
@@ -1017,6 +1043,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.RPPAFirstTab = false;
             self.DToxSFirstTab = false;
             self.MicroFirstTab = false;
+            self.TMTFirstTab = false;
 
         }
         if(self.exploreTab === "GCP"){
@@ -1028,6 +1055,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.showRPPAdiv = false;
             self.showDToxSdiv = false;
             self.showMicrodiv = false;
+            self.showTMTdiv = false;
 
             self.P100FirstTab = false;
             self.GCPFirstTab = true;
@@ -1035,6 +1063,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.RPPAFirstTab = false;
             self.DToxSFirstTab = false;
             self.MicroFirstTab = false;
+            self.TMTFirstTab = false;
 
         }
         if(self.exploreTab === "DToxS"){
@@ -1046,6 +1075,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.showRPPAdiv = false;
             self.showDToxSdiv = true;
             self.showMicrodiv = false;
+            self.showTMTdiv = false;
 
             self.P100FirstTab = false;
             self.GCPFirstTab = false;
@@ -1053,6 +1083,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.RPPAFirstTab = false;
             self.DToxSFirstTab = true;
             self.MicroFirstTab = false;
+            self.TMTFirstTab = false;
 
         }
         if(self.exploreTab === "SWATH"){
@@ -1064,6 +1095,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.showRPPAdiv = false;
             self.showDToxSdiv = false;
             self.showMicrodiv = false;
+            self.showTMTdiv = false;
 
             self.P100FirstTab = false;
             self.GCPFirstTab = false;
@@ -1071,6 +1103,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.RPPAFirstTab = false;
             self.DToxSFirstTab = false;
             self.MicroFirstTab = false;
+            self.TMTFirstTab = false;
 
         }
         if(self.exploreTab === "RPPA"){
@@ -1082,6 +1115,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.showRPPAdiv = true;
             self.showDToxSdiv = false;
             self.showMicrodiv = false;
+            self.showTMTdiv = false;
 
             self.P100FirstTab = false;
             self.GCPFirstTab = false;
@@ -1089,6 +1123,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.RPPAFirstTab = true;
             self.DToxSFirstTab = false;
             self.MicroFirstTab = false;
+            self.TMTFirstTab = false;
 
         }
         if(self.exploreTab === "Micro"){
@@ -1100,6 +1135,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.showRPPAdiv = false;
             self.showDToxSdiv = false;
             self.showMicrodiv = true;
+            self.showTMTdiv = false;
 
             self.P100FirstTab = false;
             self.GCPFirstTab = false;
@@ -1107,6 +1143,27 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.RPPAFirstTab = false;
             self.DToxSFirstTab = false;
             self.MicroFirstTab = true;
+            self.TMTFirstTab = false;
+
+        }
+        if(self.exploreTab === "TMT"){
+            $("#exploreViewTab li:eq(6) a").tab('show'); // to select 2nd Tab(0-indexed)
+            console.log("showing TMT tab");
+            self.showP100div = false;
+            self.showGCPdiv = false;
+            self.showSWATHdiv = false;
+            self.showRPPAdiv = false;
+            self.showDToxSdiv = false;
+            self.showMicrodiv = false;
+            self.showTMTdiv = true;
+
+            self.P100FirstTab = false;
+            self.GCPFirstTab = false;
+            self.SWATHFirstTab = false;
+            self.RPPAFirstTab = false;
+            self.DToxSFirstTab = false;
+            self.MicroFirstTab = false;
+            self.TMTFirstTab = true;
 
         }
 
@@ -1123,6 +1180,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.RPPAFirstTab = false;
             self.DToxSFirstTab = false;
             self.MicroFirstTab = false;
+            self.TMTFirstTab = false;
 
             self.P100SecondTab = false;
             self.GCPSecondTab = false;
@@ -1130,6 +1188,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.DToxSSecondTab = false;
             self.SWATHSecondTab = false;
             self.MicroSecondTab = false;
+            self.TMTSecondTab = false;
 
         }
 
@@ -1141,6 +1200,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.RPPAFirstTab = false;
             self.DToxSFirstTab = true;
             self.MicroFirstTab = false;
+            self.TMTFirstTab = false;
 
             self.P100SecondTab = false;
             self.GCPSecondTab = false;
@@ -1148,6 +1208,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.DToxSSecondTab = false;
             self.SWATHSecondTab = false;
             self.MicroSecondTab = false;
+            self.TMTSecondTab = false;
 
         }
         if(input === "SWATH"){
@@ -1157,6 +1218,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.RPPAFirstTab = false;
             self.DToxSFirstTab = false;
             self.MicroFirstTab = false;
+            self.TMTFirstTab = false;
 
             self.P100SecondTab = false;
             self.GCPSecondTab = false;
@@ -1164,6 +1226,24 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.DToxSSecondTab = false;
             self.SWATHSecondTab = false;
             self.MicroSecondTab = false;
+            self.TMTSecondTab = false;
+        }
+        if(input === "TMT"){
+            self.P100FirstTab = false;
+            self.GCPFirstTab = false;
+            self.SWATHFirstTab = false;
+            self.RPPAFirstTab = false;
+            self.DToxSFirstTab = false;
+            self.MicroFirstTab = false;
+            self.TMTFirstTab = true;
+
+            self.P100SecondTab = false;
+            self.GCPSecondTab = false;
+            self.RPPASecondTab = false;
+            self.DToxSSecondTab = false;
+            self.SWATHSecondTab = false;
+            self.MicroSecondTab = false;
+            self.TMTSecondTab = false;
         }
         if(input === "RPPA"){
             self.P100FirstTab = false;
@@ -1172,6 +1252,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.RPPAFirstTab = true;
             self.DToxSFirstTab = false;
             self.MicroFirstTab = false;
+            self.TMTFirstTab = false;
 
             self.P100SecondTab = false;
             self.GCPSecondTab = false;
@@ -1179,6 +1260,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.DToxSSecondTab = false;
             self.SWATHSecondTab = false;
             self.MicroSecondTab = false;
+            self.TMTSecondTab = false;
         }
         if(input === "Micro"){
             self.P100FirstTab = false;
@@ -1187,6 +1269,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.RPPAFirstTab = false;
             self.DToxSFirstTab = false;
             self.MicroFirstTab = true;
+            self.TMTFirstTab = false;
 
             self.P100SecondTab = false;
             self.GCPSecondTab = false;
@@ -1194,6 +1277,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.DToxSSecondTab = false;
             self.SWATHSecondTab = false;
             self.MicroSecondTab = false;
+            self.TMTSecondTab = false;
         }
         if(input === "GCP"){
             self.P100FirstTab = false;
@@ -1202,6 +1286,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.RPPAFirstTab = false;
             self.DToxSFirstTab = false;
             self.MicroFirstTab = false;
+            self.TMTFirstTab = false;
 
             self.P100SecondTab = false;
             self.GCPSecondTab = false;
@@ -1209,6 +1294,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.DToxSSecondTab = false;
             self.SWATHSecondTab = false;
             self.MicroSecondTab = false;
+            self.TMTSecondTab = false;
         }
         if(input === "P100"){
             self.P100FirstTab = true;
@@ -1217,6 +1303,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.RPPAFirstTab = false;
             self.DToxSFirstTab = false;
             self.MicroFirstTab = false;
+            self.TMTFirstTab = false;
 
             self.P100SecondTab = false;
             self.GCPSecondTab = false;
@@ -1224,6 +1311,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.DToxSSecondTab = false;
             self.SWATHSecondTab = false;
             self.MicroSecondTab = false;
+            self.TMTSecondTab = false;
         }
 
     }
@@ -1236,6 +1324,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
         self.DToxSSecondTab = false;
         self.SWATHSecondTab = false;
         self.MicroSecondTab = false;
+        self.TMTSecondTab = false;
 
         $("#GCPExploreTabs li:eq(0) a").tab('show');
         $("#P100ExploreTabs li:eq(0) a").tab('show');
@@ -1247,6 +1336,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.showRPPAdiv = false;
             self.showDToxSdiv = true;
             self.showMicrodiv = false;
+            self.showTMTdiv = false;
 
 
         }
@@ -1258,6 +1348,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.showRPPAdiv = false;
             self.showDToxSdiv = false;
             self.showMicrodiv = false;
+            self.showTMTdiv = false;
         }
         if(input === "RPPA"){
             self.showP100div = false;
@@ -1266,6 +1357,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.showRPPAdiv = true;
             self.showDToxSdiv = false;
             self.showMicrodiv = false;
+            self.showTMTdiv = false;
         }
         if(input === "Micro"){
             self.showP100div = false;
@@ -1274,6 +1366,16 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.showRPPAdiv = false;
             self.showDToxSdiv = false;
             self.showMicrodiv = true;
+            self.showTMTdiv = false;
+        }
+        if(input === "TMT"){
+            self.showP100div = false;
+            self.showGCPdiv = false;
+            self.showSWATHdiv = false;
+            self.showRPPAdiv = false;
+            self.showDToxSdiv = false;
+            self.showMicrodiv = false;
+            self.showTMTdiv = true;
         }
         if(input === "GCP"){
             self.showP100div = false;
@@ -1282,6 +1384,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.showRPPAdiv = false;
             self.showDToxSdiv = false;
             self.showMicrodiv = false;
+            self.showTMTdiv = false;
 
             self.P100FirstTab = false;
             self.GCPFirstTab = true;
@@ -1289,6 +1392,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.DToxSFirstTab = false;
             self.SWATHFirstTab = false;
             self.MicroFirstTab = false;
+            self.TMTFirstTab = false;
         }
         if(input === "P100"){
             self.showP100div = true;
@@ -1297,6 +1401,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.showRPPAdiv = false;
             self.showDToxSdiv = false;
             self.showMicrodiv = false;
+            self.showTMTdiv = false;
 
             self.P100FirstTab = true;
             self.GCPFirstTab = false;
@@ -1304,6 +1409,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.DToxSFirstTab = false;
             self.SWATHFirstTab = false;
             self.MicroFirstTab = false;
+            self.TMTFirstTab = false;
         }
 
     }
@@ -1317,6 +1423,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.RPPAFirstTab = false;
             self.DToxSFirstTab = false;
             self.MicroFirstTab = false;
+            self.TMTFirstTab = false;
 
             self.P100SecondTab = false;
             self.GCPSecondTab = false;
@@ -1324,6 +1431,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.DToxSSecondTab = false;
             self.SWATHSecondTab = false;
             self.MicroSecondTab = false;
+            self.TMTSecondTab = false;
 
         }
 
@@ -1335,6 +1443,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.RPPAFirstTab = false;
             self.DToxSFirstTab = false;
             self.MicroFirstTab = false;
+            self.TMTFirstTab = false;
 
             self.P100SecondTab = false;
             self.GCPSecondTab = false;
@@ -1342,6 +1451,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.DToxSSecondTab = true;
             self.SWATHSecondTab = false;
             self.MicroSecondTab = false;
+            self.TMTSecondTab = false;
 
         }
         if(input === "SWATH"){
@@ -1352,6 +1462,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.RPPAFirstTab = false;
             self.DToxSFirstTab = false;
             self.MicroFirstTab = false;
+            self.TMTFirstTab = false;
 
             self.P100SecondTab = false;
             self.GCPSecondTab = false;
@@ -1359,6 +1470,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.DToxSSecondTab = false;
             self.SWATHSecondTab = true;
             self.MicroSecondTab = false;
+            self.TMTSecondTab = false;
         }
         if(input === "RPPA"){
             self.P100FirstTab = false;
@@ -1367,6 +1479,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.RPPAFirstTab = false;
             self.DToxSFirstTab = false;
             self.MicroFirstTab = false;
+            self.TMTFirstTab = false;
 
             self.P100SecondTab = false;
             self.GCPSecondTab = false;
@@ -1374,6 +1487,24 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.DToxSSecondTab = false;
             self.SWATHSecondTab = false;
             self.MicroSecondTab = false;
+            self.TMTSecondTab = false;
+        }
+        if(input === "TMT"){
+            self.P100FirstTab = false;
+            self.GCPFirstTab = false;
+            self.SWATHFirstTab = false;
+            self.RPPAFirstTab = false;
+            self.DToxSFirstTab = false;
+            self.MicroFirstTab = false;
+            self.TMTFirstTab = false;
+
+            self.P100SecondTab = false;
+            self.GCPSecondTab = false;
+            self.RPPASecondTab = false;
+            self.DToxSSecondTab = false;
+            self.SWATHSecondTab = false;
+            self.MicroSecondTab = false;
+            self.TMTSecondTab = true;
         }
         if(input === "Micro"){
             self.P100FirstTab = false;
@@ -1382,6 +1513,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.RPPAFirstTab = false;
             self.DToxSFirstTab = false;
             self.MicroFirstTab = false;
+            self.TMTFirstTab = false;
 
             self.P100SecondTab = false;
             self.GCPSecondTab = false;
@@ -1389,6 +1521,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.DToxSSecondTab = false;
             self.SWATHSecondTab = false;
             self.MicroSecondTab = true;
+            self.TMTSecondTab = false;
         }
         if(input === "GCP"){
             self.P100FirstTab = false;
@@ -1397,6 +1530,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.RPPAFirstTab = false;
             self.DToxSFirstTab = false;
             self.MicroFirstTab = false;
+            self.TMTFirstTab = false;
 
             self.P100SecondTab = false;
             self.GCPSecondTab = true;
@@ -1404,6 +1538,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.DToxSSecondTab = false;
             self.SWATHSecondTab = false;
             self.MicroSecondTab = false;
+            self.TMTSecondTab = false;
         }
         if(input === "P100"){
             self.P100FirstTab = false;
@@ -1412,6 +1547,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.RPPAFirstTab = false;
             self.DToxSFirstTab = false;
             self.MicroFirstTab = false;
+            self.TMTFirstTab = false;
 
             self.P100SecondTab = true;
             self.GCPSecondTab = false;
@@ -1419,6 +1555,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             self.DToxSSecondTab = false;
             self.SWATHSecondTab = false;
             self.MicroSecondTab = false;
+            self.TMTSecondTab = false;
         }
 
     }
@@ -1603,12 +1740,14 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
     });
 
 
-
+    self.initialize_cluster_sidebar = true;
     self.make_clust = function(inst_network) {
         console.log(inst_network);
-        var about_string = 'Zoom, scroll, and click buttons to interact with the clustergram. <a href="http://amp.pharm.mssm.edu/clustergrammer/help"> <i class="fa fa-question-circle" aria-hidden="true"></i> </a>';
 
+        var about_string = '<a  target="_blank" href="http://amp.pharm.mssm.edu/clustergrammer/help"> About Clustergram </a>';
 
+        //d3.select("container-id-1").remove();
+        d3.select("container-id-1").empty();
         function matrix_update_callback() {
 
             if (genes_were_found[this.root]) {
@@ -1671,6 +1810,11 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
             'matrix_update_callback': matrix_update_callback,
             'cat_update_callback': cat_update_callback,
             'sidebar_width': 150,
+            //Added by Behrouz
+            'pinet':false,
+            //Added by Behrouz
+            'initialize_sidebar_icons' : self.initialize_cluster_sidebar
+
             // 'ini_view':{'N_row_var':20}
             // 'ini_expand':true
         };
@@ -1683,15 +1827,21 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
         });
 
         cgm = Clustergrammer(args);
-
-        check_setup_enrichr(cgm);
-
-        d3.select(cgm.params.root + ' .wait_message').remove();
+        // console.log(cgm);
+        // check_setup_enrichr(cgm);
+        //
+        // d3.select(cgm.params.root + ' .wait_message').remove();
 
         //});
 
-    }
+        //This is for not initializing the clustergrammer each time
+        if(self.initialize_cluster_sidebar)
+        {
+            self.initialize_cluster_sidebar = false;
+        }
 
+    }
+    self.clusterResult = true;
     self.runClusterGramSliced = function(in_network,cpInput){
 
         self.clusterWait = true;
@@ -1847,6 +1997,7 @@ appModule.controller("assayViewCtrl", ['$scope', '$http', '$location', '$window'
                 self.assayHeatmap = in_network;
             });
         }
+
         if(in_network === "SWATH") {
             $http.get('api/clust/SWATH').then(function (data) {
                 self.HEATMAP = data;
@@ -5537,6 +5688,7 @@ $scope.signatureIdView = signatureId;
             self.showSWATHdiv = false;
             self.showDToxSdiv = false;
             self.showMicrodiv = false;
+            self.showTMTdiv = false;
         }
         if (net === "GCP") {
             self.showP100div = false;
@@ -5545,6 +5697,7 @@ $scope.signatureIdView = signatureId;
             self.showSWATHdiv = false;
             self.showDToxSdiv = false;
             self.showMicrodiv = false;
+            self.showTMTdiv = false;
         }
         if (net === "RPPA") {
             self.showP100div = false;
@@ -5553,6 +5706,7 @@ $scope.signatureIdView = signatureId;
             self.showSWATHdiv = false;
             self.showDToxSdiv = false;
             self.showMicrodiv = false;
+            self.showTMTdiv = false;
         }
         if (net === "SWATH") {
             self.showP100div = false;
@@ -5561,6 +5715,7 @@ $scope.signatureIdView = signatureId;
             self.showSWATHdiv = true;
             self.showDToxSdiv = false;
             self.showMicrodiv = false;
+            self.showTMTdiv = false;
         }
         if (net === "DToxS") {
             self.showP100div = false;
@@ -5569,6 +5724,7 @@ $scope.signatureIdView = signatureId;
             self.showSWATHdiv = false;
             self.showDToxSdiv = true;
             self.showMicrodiv = false;
+            self.showTMTdiv = false;
         }
         if (net === "Micro") {
             self.showP100div = false;
@@ -5577,6 +5733,16 @@ $scope.signatureIdView = signatureId;
             self.showSWATHdiv = false;
             self.showDToxSdiv = false;
             self.showMicrodiv = true;
+            self.showTMTdiv = false;
+        }
+        if (net === "TMT") {
+            self.showP100div = false;
+            self.showGCPdiv = false;
+            self.showRPPAdiv = false;
+            self.showSWATHdiv = false;
+            self.showDToxSdiv = false;
+            self.showMicrodiv = false;
+            self.showTMTdiv = true;
         }
 
 
@@ -6915,38 +7081,8 @@ appModule.controller('GlossaryCtrl', ['$scope', '$sce', '$location', '$anchorScr
 
 
 
-    self.documents = [{
-        "name": "2-D-PAGE",
-        "text": "2-D-PAGE 2D PAGE is a separation method for gel-based proteomics (also known as classical proteomic approach). " +
-        "This method separates complex mixture of proteins based on " +
-        "molecular mass and charge, and can resolve hundreds to thousands intact proteins in" +
-        "a single gel. After 2D-PAGE, protein identification is usually performed by in-gel" +
-        "tryptic digestion and mass spectrometry. 2-D PAGE has two steps of protein separation. First, proteins in a complex sample" +
-        "are separated by their molecular charges (or isoelectric points; pI) in an IPG-strip" +
-        "(a precast gel strip with internal pI gradient) using isoelectric focusing. Second," +
-        "after isoelectric focusing, the separated proteins are resolved in SDS-PAGE" +
-        "by their molecular weights. This two-step separation results in a 2-D map of" +
-        "numerous protein spots. Ideally, one protein spot contains one proteoform. For" +
-        "protein identification, protein spots of interest are picked up and subjected to" +
-        "in-gel tryptic digestion. The digested peptides can be analyzed by mass spectrometry" +
-        "Application:" +
+    self.documents = [
 
-        "2D-PAGE is considered a great tool for detecting proteins with potentially changed" +
-        "post-translational" +
-            "modifications, i.e., phosphorylation and glycosylation. Phosphorylation adds" +
-        "negative charges to a protein, causing a shift of phosphorylated protein to more" +
-            "acidic pI. Glycosylation adds glycan branches to a protein, resulting in a shift of" +
-        "molecular size." +
-            "Limitations:" +
-
-        "Although gel-based proteomics has very simple analytical workflow, as a front-end" +
-            "separation strategy, 2-D PAGE is a laborious and time-consuming procedure which are" +
-        "disadvantages for large-scale proteomic projects. One needs a period of training to" +
-            "master this procedure and to achieve an acceptable level of result reproducibility." +
-        "In addition, depth of proteome coverage from a single analysis is much lower than" +
-            "mass spectrometric-based proteomics. All these limitations lead to decreased" +
-        "popularity of 2-D PAGE and gel-based proteomics in the field."
-},
     {   "name":"AspN",
         "text": "AspN aspn A metalloprotease enzyme that cleaves amino side of aspartic acid residues."
     },
@@ -7678,7 +7814,37 @@ appModule.controller('GlossaryCtrl', ['$scope', '$sce', '$location', '$anchorScr
         "ubiquitin remained on the lysine residue (GG--K) of the substrate peptide. The" +
         "GG--K is a basis of ubiquitin modified peptide enrichment and bottom-up proteomic" +
         "analysis."
-    }
+    }, {   "name": "2-D-PAGE",
+        "text": "2-D-PAGE 2D PAGE is a separation method for gel-based proteomics (also known as classical proteomic approach). " +
+    "This method separates complex mixture of proteins based on " +
+    "molecular mass and charge, and can resolve hundreds to thousands intact proteins in" +
+    "a single gel. After 2D-PAGE, protein identification is usually performed by in-gel" +
+    "tryptic digestion and mass spectrometry. 2-D PAGE has two steps of protein separation. First, proteins in a complex sample" +
+    "are separated by their molecular charges (or isoelectric points; pI) in an IPG-strip" +
+    "(a precast gel strip with internal pI gradient) using isoelectric focusing. Second," +
+    "after isoelectric focusing, the separated proteins are resolved in SDS-PAGE" +
+    "by their molecular weights. This two-step separation results in a 2-D map of" +
+    "numerous protein spots. Ideally, one protein spot contains one proteoform. For" +
+    "protein identification, protein spots of interest are picked up and subjected to" +
+    "in-gel tryptic digestion. The digested peptides can be analyzed by mass spectrometry" +
+    "Application:" +
+
+    "2D-PAGE is considered a great tool for detecting proteins with potentially changed" +
+    "post-translational" +
+    "modifications, i.e., phosphorylation and glycosylation. Phosphorylation adds" +
+    "negative charges to a protein, causing a shift of phosphorylated protein to more" +
+    "acidic pI. Glycosylation adds glycan branches to a protein, resulting in a shift of" +
+    "molecular size." +
+    "Limitations:" +
+
+    "Although gel-based proteomics has very simple analytical workflow, as a front-end" +
+    "separation strategy, 2-D PAGE is a laborious and time-consuming procedure which are" +
+    "disadvantages for large-scale proteomic projects. One needs a period of training to" +
+    "master this procedure and to achieve an acceptable level of result reproducibility." +
+    "In addition, depth of proteome coverage from a single analysis is much lower than" +
+    "mass spectrometric-based proteomics. All these limitations lead to decreased" +
+    "popularity of 2-D PAGE and gel-based proteomics in the field."
+}
     ]
 
     self.divList = [];
@@ -7798,6 +7964,11 @@ appModule.controller('GlossaryCtrl', ['$scope', '$sce', '$location', '$anchorScr
         if(self.assayTab === "Micro"){
             $("#assayViewTab li:eq(4) a").tab('show'); // to select 2nd Tab(0-indexed)
             console.log("showing Micro tab");
+
+        }
+        if(self.assayTab === "TMT"){
+            $("#assayViewTab li:eq(6) a").tab('show'); // to select 2nd Tab(0-indexed)
+            console.log("showing TMT tab");
 
         }
 
@@ -8386,6 +8557,7 @@ appModule.controller('NavigationCtrl', ['$scope', '$sce', '$location', '$anchorS
     $scope.button_mass_m = false;
     $scope.button_swath_m = false;
     $scope.button_rppa_m = false;
+    $scope.button_tmt_m = false;
 
     $scope.button_c_all = true;
     $scope.button_pccse_c = false;
@@ -8399,11 +8571,14 @@ appModule.controller('NavigationCtrl', ['$scope', '$sce', '$location', '$anchorS
     $scope.button_mass_a = false;
     $scope.button_swath_a = false;
     $scope.button_rppa_a = false;
+    $scope.button_tmt_a = false;
 
     $scope.showAssaysSubTabVal = true;
     $scope.showGlossarySubTabVal = false;
 
 
+    self.selectedPerturbation = SharedService.getVar("selectedPerturbation");
+    self.selectedPerturbationInput = SharedService.getVar("selectedPerturbationInput");
 
 
     self.showCompoundToDSTable = SharedService.getVar("showCompoundToDSTable");
@@ -8447,9 +8622,9 @@ appModule.controller('NavigationCtrl', ['$scope', '$sce', '$location', '$anchorS
 
             var svgImg2 = new XMLSerializer().serializeToString(apiSMILESSvg.documentElement);
 
-            console.log("apiSMILESSvg Success!");
             $scope.cpSvg4 = $sce.trustAsHtml(svgImg2);
-
+            self.cpSvg4String = $scope.cpSvg4;
+            console.log(self.cpSvg4String);
             self.showSmileSvg = true;
             console.log(self.showSmileSvg);
             })
@@ -8460,7 +8635,117 @@ appModule.controller('NavigationCtrl', ['$scope', '$sce', '$location', '$anchorS
 
     }
 
+    $scope.downloadSMILES = function (cpSvg4String) {
 
+        //var svgString = cpSvg4String;
+        console.log("saving svg as png");
+        console.log(cpSvg4String);
+        //var svgString = getSVGString(cpSvg4String);
+        var svgString = cpSvg4String;
+        svgString2Image(svgString, 10 * 300, 10 * 200, 'png', save); // passes Blob and filesize String to the callback
+
+        function save(dataBlob, filesize) {
+            saveAs(dataBlob, 'input-compound.png'); // FileSaver.js function
+        }
+    };
+    function getSVGString(svgNode) {
+        svgNode.setAttribute('xlink', 'http://www.w3.org/1999/xlink');
+        var cssStyleText = getCSSStyles(svgNode);
+        appendCSS(cssStyleText, svgNode);
+
+        var serializer = new XMLSerializer();
+        var svgString = serializer.serializeToString(svgNode);
+        svgString = svgString.replace(/(\w+)?:?xlink=/g, 'xmlns:xlink='); // Fix root xlink without namespace
+        svgString = svgString.replace(/NS\d+:href/g, 'xlink:href'); // Safari NS namespace fix
+
+        return svgString;
+
+        function getCSSStyles(parentElement) {
+            var selectorTextArr = [];
+
+            // Add Parent element Id and Classes to the list
+            selectorTextArr.push('#' + parentElement.id);
+            for (var c = 0; c < parentElement.classList.length; c++)
+                if (!contains('.' + parentElement.classList[c], selectorTextArr))
+                    selectorTextArr.push('.' + parentElement.classList[c]);
+
+            // Add Children element Ids and Classes to the list
+            var nodes = parentElement.getElementsByTagName("*");
+            for (var i = 0; i < nodes.length; i++) {
+                var id = nodes[i].id;
+                if (!contains('#' + id, selectorTextArr))
+                    selectorTextArr.push('#' + id);
+
+                var classes = nodes[i].classList;
+                for (var c = 0; c < classes.length; c++)
+                    if (!contains('.' + classes[c], selectorTextArr))
+                        selectorTextArr.push('.' + classes[c]);
+            }
+
+            // Extract CSS Rules
+            var extractedCSSText = "";
+            for (var i = 0; i < document.styleSheets.length; i++) {
+                var s = document.styleSheets[i];
+
+                try {
+                    if (!s.cssRules) continue;
+                } catch (e) {
+                    if (e.name !== 'SecurityError') throw e; // for Firefox
+                    continue;
+                }
+
+                var cssRules = s.cssRules;
+                for (var r = 0; r < cssRules.length; r++) {
+                    if (contains(cssRules[r].selectorText, selectorTextArr))
+                        extractedCSSText += cssRules[r].cssText;
+                }
+            }
+
+
+            return extractedCSSText;
+
+            function contains(str, arr) {
+                return arr.indexOf(str) === -1 ? false : true;
+            }
+
+        }
+
+        function appendCSS(cssText, element) {
+            var styleElement = document.createElement("style");
+            styleElement.setAttribute("type", "text/css");
+            styleElement.innerHTML = cssText;
+            var refNode = element.hasChildNodes() ? element.children[0] : null;
+            element.insertBefore(styleElement, refNode);
+        }
+    }
+
+
+    function svgString2Image(svgString, width, height, format, callback) {
+        var format = format ? format : 'png';
+
+        var imgsrc = 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(svgString))); // Convert SVG string to data URL
+        //var imgsrc = new XMLSerializer().serializeToString(svgString.documentElement);
+        var canvas = document.createElement("canvas");
+        var context = canvas.getContext("2d");
+
+        canvas.width = width;
+        canvas.height = height;
+
+        var image = new Image();
+        image.onload = function () {
+            context.clearRect(0, 0, width, height);
+            context.drawImage(image, 0, 0, width, height);
+
+            canvas.toBlob(function (blob) {
+                var filesize = Math.round(blob.length / 1024) + ' KB';
+                if (callback) callback(blob, filesize);
+            });
+
+
+        };
+
+        image.src = imgsrc;
+    }
 
     self.selectedPerturbation = SharedService.getVar('selectedPerturbation');
     self.selectedPerturbationSmiles = SharedService.getVar('selectedPerturbationSmiles');
@@ -8471,6 +8756,7 @@ appModule.controller('NavigationCtrl', ['$scope', '$sce', '$location', '$anchorS
 
     self.selectedGeneAsInput = SharedService.getVar('selectedGeneAsInput');
     if(self.showGeneSvg) {
+        //cosole.log(api/geneInfo/self.selectedGeneAsInput)
         $scope.stringUrlPng = "https://string-db.org/api/image/network?identifiers=" + self.selectedGeneAsInput;
     }
 
@@ -8500,29 +8786,59 @@ appModule.controller('NavigationCtrl', ['$scope', '$sce', '$location', '$anchorS
     //     $(".left").addClass("active");
     //
     // });
-    self.showPartLeft = true;
-    self.showPartRight = false;
+    self.showPart_pert = true;
+    self.showPart_prot = false;
+    self.showPart_info = false;
+    $scope.showPart_pert = true;
+    $scope.showPart_prot = false;
+    $scope.showPart_info = false;
 
     $(document).ready(function() {
         $(".left").click(function () {
             $(".left").removeClass("active");
             console.log("left");
             $(".right").removeClass("active");
+            $(".righter").removeClass("active");
             // $(".tab").addClass("active"); // instead of this do the below
             $(".left").addClass("active");
-            self.showPartLeft = true;
-            self.showPartRight = false;
+            $scope.showPart_pert = true;
+            $scope.showPart_prot = false;
+            $scope.showPart_info = false;
+            console.log($scope.showPart_pert);
+            console.log($scope.showPart_prot);
+            console.log($scope.showPart_info);
         });
     });
     $(document).ready(function() {
         $(".right").click(function () {
             $(".left").removeClass("active");
             $(".right").removeClass("active");
+            $(".righter").removeClass("active");
             console.log("right");
             // $(".tab").addClass("active"); // instead of this do the below
             $(".right").addClass("active");
-            self.showPartLeft = false;
-            self.showPartRight = true;
+            $scope.showPart_pert = false;
+            $scope.showPart_prot = false;
+            $scope.showPart_info = true;
+            console.log($scope.showPart_pert);
+            console.log($scope.showPart_prot);
+            console.log($scope.showPart_info);
+        });
+    });
+    $(document).ready(function() {
+        $(".righter").click(function () {
+            $(".left").removeClass("active");
+            $(".right").removeClass("active");
+            $(".righter").removeClass("active");
+            console.log("right");
+            // $(".tab").addClass("active"); // instead of this do the below
+            $(".righter").addClass("active");
+            $scope.showPart_pert = false;
+            $scope.showPart_prot = true;
+            $scope.showPart_info = false;
+            console.log($scope.showPart_pert);
+            console.log($scope.showPart_prot);
+            console.log($scope.showPart_info);
         });
     });
     // $scope.rightActive = function () {
@@ -8587,6 +8903,11 @@ appModule.controller('NavigationCtrl', ['$scope', '$sce', '$location', '$anchorS
         if(self.assayTab === "Micro"){
             $("#assayViewTab li:eq(4) a").tab('show'); // to select 2nd Tab(0-indexed)
             console.log("showing Micro tab");
+
+        }
+        if(self.assayTab === "TMT"){
+            $("#assayViewTab li:eq(6) a").tab('show'); // to select 2nd Tab(0-indexed)
+            console.log("showing TMT tab");
 
         }
 
@@ -8970,6 +9291,25 @@ appModule.controller('NavigationCtrl', ['$scope', '$sce', '$location', '$anchorS
     //
     //     window.location.href = "/lincsproteomics/about";
     // }
+    $scope.openInNewTab = function (selectedGeneAsInput) {
+        $http({
+            method: 'GET',
+            url: "api/ensemblInfo/" + self.selectedGeneAsInput,
+        }).success(function (ensemblStr) {
+            console.log("ensembl result");
+            console.log(ensemblStr);
+            let ensemblId = ensemblStr[0]["id"];
+            let stringUrlAddress = "https://string-db.org/network/9606.".concat(ensemblId);
+            //"https://string-db.org/network/9606." + ensemblId;
+            window.open(
+                stringUrlAddress, "_blank");
+            //https://string-db.org/network/9606.ENSG00000139718
+        }).error(function () {
+
+            console.log("Error in obtaining gene info from api/ensemblInfo");
+
+        });
+    }
     $scope.reportSimilarLINCSGenes = function (selectedGeneAsInput) {
         //console.log(SharedService.getVar('exploreCompound'));
         //console.log(SharedService.getVar('exploreTab'));
@@ -8989,6 +9329,18 @@ appModule.controller('NavigationCtrl', ['$scope', '$sce', '$location', '$anchorS
 
         $scope.stringUrlPng = "https://string-db.org/api/image/network?identifiers=" + self.selectedGeneAsInput;
 
+
+        $http({
+            method: 'GET',
+            url: "api/ensemblInfo/" + self.selectedGeneAsInput,
+        }).success(function (ensemblStr) {
+            console.log("ensembl result");
+            console.log(ensemblStr);
+        }).error(function () {
+
+        console.log("Error in obtaining gene info from api/ensemblInfo");
+
+    });
 
         $http({
             method: 'GET',
@@ -9015,7 +9367,7 @@ appModule.controller('NavigationCtrl', ['$scope', '$sce', '$location', '$anchorS
                 }).//$http.get("api/depictSmiles/" + self.translatedSmile)
                 success(function (localGeneInfo) {
                     listOfGenesIter += 1;
-                    console.log(localGeneInfo);
+                    //console.log(localGeneInfo);
                     all_gene_names = [];
                     if("symbol" in localGeneInfo){
                     all_gene_names.push(localGeneInfo["symbol"]);
@@ -9035,12 +9387,12 @@ appModule.controller('NavigationCtrl', ['$scope', '$sce', '$location', '$anchorS
                         var item = $scope.all_perturbations[j];
                         if (item.includes("SG01") || item.includes("SG02")) {
                             var itemName = item.split("_")[0];
-                            console.log(all_gene_names);
+                            //console.log(all_gene_names);
                             if (all_gene_names !== undefined ) {
                                 if (all_gene_names.length > 0 ) {
-                                    console.log(all_gene_names.length);
+                                    //console.log(all_gene_names.length);
                                     all_gene_names.forEach(function (k, l) {
-                                        console.log(all_gene_names[l]);
+                                        //console.log(all_gene_names[l]);
                                         if (itemName === all_gene_names[l].toUpperCase() && self.cpGeneSimilar.indexOf(all_gene_names[l]) == -1) {
                                             var cp_entry = {}
                                             cp_entry["symbol"] = localGeneInfo["symbol"];
@@ -9232,6 +9584,8 @@ appModule.controller('NavigationCtrl', ['$scope', '$sce', '$location', '$anchorS
         // SharedService.setVar('svgImg2', svgImg2);
         //console.log(svgImg2);
         $scope.cpSvg4 = $sce.trustAsHtml(svgImg2);
+        self.cpSvg4String = svgImg2;
+        console.log(self.cpSvg4String);
         // console.log($scope.cpSvg4);
         self.showSmileSvg = true;
         console.log(self.showSmileSvg);
@@ -9308,12 +9662,14 @@ appModule.controller('NavigationCtrl', ['$scope', '$sce', '$location', '$anchorS
         //console.log(SharedService.getVar('exploreCompound'));
         //console.log(SharedService.getVar('exploreTab'));
         //console.log(selectedPerturbation);
-        SharedService.setVar('selectedPerturbation', selectedPerturbation);
+        SharedService.setVar('selectedPerturbation', selectedPerturbation.toUpperCase());
+        SharedService.setVar('selectedPerturbationInput', selectedPerturbation.toUpperCase());
         //SharedService.setVar('exploreTab', "GCP");
 
         //console.log(SharedService.getVar('exploreCompound'));
         //console.log(SharedService.getVar('exploreTab'));
         self.selectedPerturbation = selectedPerturbation.toUpperCase();
+        self.selectedPerturbationInput = selectedPerturbation.toUpperCase();
         console.log(self.selectedPerturbation);
         self.selectedCpInfo = $scope.compound_info[self.selectedPerturbation];
         SharedService.setVar('selectedCpInfo', self.selectedCpInfo);
@@ -10539,7 +10895,7 @@ appModule.controller('NavigationCtrl', ['$scope', '$sce', '$location', '$anchorS
             // self.P100ProcessedJSON = data;
             // console.log(self.P100ProcessedJSON);
             // console.log(self.P100ProcessedJSON.Trametinib);
-            self.selectedPerturbation = 'TRAMETINIB';
+            //self.selectedPerturbation = SharedService.get("selectedPerturbation");
             $scope.all_perturbations = data;
             console.log($scope.all_perturbations);
         })
@@ -10558,6 +10914,12 @@ appModule.controller('NavigationCtrl', ['$scope', '$sce', '$location', '$anchorS
             // console.log(self.P100ProcessedJSON.Trametinib);
 
             $scope.data_sets_2_compounds_info = data;
+
+            self.tableTMTCompounds = new NgTableParams({
+
+                count: 5
+            }, {
+                total: data["TMT"].length,  dataset: data["TMT"],counts: [5, 10, 25]});
 
             self.tableP100Compounds = new NgTableParams({
 
@@ -10598,7 +10960,7 @@ appModule.controller('NavigationCtrl', ['$scope', '$sce', '$location', '$anchorS
             self.data_sets_2_compounds_info_show = true;
         })
     };
-    self.selectedPerturbation = 'TRAMETINIB';
+    //self.selectedPerturbation = 'TRAMETINIB';
     self.selectedDataSets = 'P100 (PCCSE)';
     $scope.dataSets = ["P100 (PCCSE)", "GCP (PCCSE)", "MS Protein State (LINCS DToxS)", "SWATH-MS protein quantification (NeuroLINCS)", "RPPA protein state (HMS LINCS)"];
 
