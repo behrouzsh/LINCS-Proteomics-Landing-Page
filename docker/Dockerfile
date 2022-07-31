@@ -5,7 +5,8 @@ RUN git clone https://github.com/behrouzsh/LINCS-Proteomics-Landing-Page.git
 
 RUN pip3 install virtualenv
 RUN apt-get update
-RUN sdk install gradle 4.1
+RUN apt-get install -y gradle llvm
+#RUN sdk install gradle 4.1
 
 RUN cd /LINCS-Proteomics-Landing-Page && gradle clean build -x test
 
