@@ -1,5 +1,5 @@
 FROM python:3.9
-
+ENV updateme=1
 RUN git clone https://github.com/behrouzsh/lincsproteomics_python.git
 RUN git clone https://github.com/behrouzsh/LINCS-Proteomics-Landing-Page.git
 
