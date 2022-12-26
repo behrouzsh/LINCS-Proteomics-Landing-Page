@@ -28849,7 +28849,7 @@ console.log("here");
             var pinet_svg = d3.select(params.root + ' .sidebar_wrapper').append('svg').attr('height', pinet_height + 'px').attr('width', pinet_width + 'px');
 
 
-            pinet_svg.append('svg:image').attr("xlink:href", "http://eh3.uc.edu/pinet/images/pinet-logo6.png")
+            pinet_svg.append('svg:image').attr("xlink:href", "http://www.pinet-server.org/pinet/images/pinet-logo6.png")
                 .attr("x", svg_width / 5)
 
                 // .attr("y", "60")
@@ -28928,7 +28928,7 @@ console.log("here");
 
 
                 console.log(new_pinet_network);
-var url = "http://eh3.uc.edu/pinet/ptmToModifier?list=";
+var url = "http://www.pinet-server.org/pinet/ptmToModifier?list=";
 
 for (iter = 0; iter < new_pinet_network.row_nodes_names.length - 1; iter++) {
     var ptmPr = new_pinet_network.row_nodes_names[iter].split("(", 1)[0].replace(/\+/g, '%5B%2B').replace(/@/g, "%5D@").replace(/\[/g, "%7B").replace(/]/g, "%7D");
